@@ -25,9 +25,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\fiammitprt05\Fermi\ArduinoFermi\</InstallUrl>
-    <UpdateUrl>\\fiammitprt05\Fermi\ArduinoFermi\</UpdateUrl>
-    <ApplicationRevision>51</ApplicationRevision>
+    <InstallUrl>\\fiammitfs02\CorporateShare\Prod\IB_Fermi\ArduinoFermi\</InstallUrl>
+    <ApplicationRevision>54</ApplicationRevision>
     <ApplicationVersion>0.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -256,21 +255,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\DatabaseFermi.mdb" />
     <Content Include="fiamm.ico" />
     <Content Include="img\Fiamm.png" />
   </ItemGroup>
   <ItemGroup>
-    <PublishFile Include="App_Data\DatabaseFermi.mdb">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>File</FileType>
-    </PublishFile>
     <PublishFile Include="ArduinoFermi.pdb">
       <Visible>False</Visible>
       <Group>
@@ -324,6 +312,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
