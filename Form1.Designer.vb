@@ -158,6 +158,7 @@ Partial Class Form1
         Me.Label22 = New System.Windows.Forms.Label()
         Me.LabelProduzioneSalvata = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
+        Me.TextBoxTimbratura = New System.Windows.Forms.TextBox()
         CType(Me.PictureBoxFiamm, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartProduzioneOraria, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -1462,12 +1463,20 @@ Partial Class Form1
         Me.Label23.TabIndex = 85
         Me.Label23.Text = "ProduzioneSalvata"
         '
+        'TextBoxTimbratura
+        '
+        Me.TextBoxTimbratura.Location = New System.Drawing.Point(366, 77)
+        Me.TextBoxTimbratura.Name = "TextBoxTimbratura"
+        Me.TextBoxTimbratura.Size = New System.Drawing.Size(100, 20)
+        Me.TextBoxTimbratura.TabIndex = 86
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1362, 741)
+        Me.Controls.Add(Me.TextBoxTimbratura)
         Me.Controls.Add(Me.Label23)
         Me.Controls.Add(Me.LabelProduzioneSalvata)
         Me.Controls.Add(Me.Label22)
@@ -1675,5 +1684,6 @@ Partial Class Form1
     Friend WithEvents Label22 As System.Windows.Forms.Label
     Friend WithEvents LabelProduzioneSalvata As System.Windows.Forms.Label
     Friend WithEvents Label23 As System.Windows.Forms.Label
+    Friend WithEvents TextBoxTimbratura As System.Windows.Forms.TextBox
 
 End Class
