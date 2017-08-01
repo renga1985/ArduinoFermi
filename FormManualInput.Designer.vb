@@ -171,9 +171,9 @@ Partial Class FormManualInput
         Me.LabelRepartoSelected.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelRepartoSelected.Location = New System.Drawing.Point(474, 151)
         Me.LabelRepartoSelected.Name = "LabelRepartoSelected"
-        Me.LabelRepartoSelected.Size = New System.Drawing.Size(95, 25)
+        Me.LabelRepartoSelected.Size = New System.Drawing.Size(204, 25)
         Me.LabelRepartoSelected.TabIndex = 15
-        Me.LabelRepartoSelected.Text = "Reparto"
+        Me.LabelRepartoSelected.Text = "RepartoModificato"
         '
         'LabelLineaSelected
         '
