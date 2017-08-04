@@ -53,6 +53,18 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Label5")>  _
+        Public Property Etichetta() As String
+            Get
+                Return CType(Me("Etichetta"),String)
+            End Get
+            Set
+                Me("Etichetta") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
