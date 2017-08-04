@@ -238,9 +238,6 @@ Public Class FormManualInput
     Private Sub TestBoxInizio_Leave(sender As Object, e As EventArgs) Handles TextBoxInizio.Leave
 
         Dim one As String
-        Dim two As String
-        Dim three As String
-        Dim four As String
         Dim sx As String
         Dim dx As String
 

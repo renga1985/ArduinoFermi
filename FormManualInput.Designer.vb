@@ -230,7 +230,7 @@ Partial Class FormManualInput
         'LastLinea
         '
         Me.LastLinea.AutoSize = True
-        Me.LastLinea.Location = New System.Drawing.Point(572, 187)
+        Me.LastLinea.Location = New System.Drawing.Point(661, 188)
         Me.LastLinea.Name = "LastLinea"
         Me.LastLinea.Size = New System.Drawing.Size(62, 13)
         Me.LastLinea.TabIndex = 20
@@ -239,7 +239,7 @@ Partial Class FormManualInput
         'LastReparto
         '
         Me.LastReparto.AutoSize = True
-        Me.LastReparto.Location = New System.Drawing.Point(572, 155)
+        Me.LastReparto.Location = New System.Drawing.Point(661, 156)
         Me.LastReparto.Name = "LastReparto"
         Me.LastReparto.Size = New System.Drawing.Size(74, 13)
         Me.LastReparto.TabIndex = 21
@@ -302,7 +302,7 @@ Partial Class FormManualInput
         'LastMacchina
         '
         Me.LastMacchina.AutoSize = True
-        Me.LastMacchina.Location = New System.Drawing.Point(572, 217)
+        Me.LastMacchina.Location = New System.Drawing.Point(661, 218)
         Me.LastMacchina.Name = "LastMacchina"
         Me.LastMacchina.Size = New System.Drawing.Size(83, 13)
         Me.LastMacchina.TabIndex = 21
@@ -311,7 +311,7 @@ Partial Class FormManualInput
         'LastFermo
         '
         Me.LastFermo.AutoSize = True
-        Me.LastFermo.Location = New System.Drawing.Point(572, 248)
+        Me.LastFermo.Location = New System.Drawing.Point(661, 249)
         Me.LastFermo.Name = "LastFermo"
         Me.LastFermo.Size = New System.Drawing.Size(65, 13)
         Me.LastFermo.TabIndex = 21
@@ -320,7 +320,7 @@ Partial Class FormManualInput
         'LastInizio
         '
         Me.LastInizio.AutoSize = True
-        Me.LastInizio.Location = New System.Drawing.Point(572, 297)
+        Me.LastInizio.Location = New System.Drawing.Point(661, 298)
         Me.LastInizio.Name = "LastInizio"
         Me.LastInizio.Size = New System.Drawing.Size(60, 13)
         Me.LastInizio.TabIndex = 21
@@ -329,7 +329,7 @@ Partial Class FormManualInput
         'LastDurata
         '
         Me.LastDurata.AutoSize = True
-        Me.LastDurata.Location = New System.Drawing.Point(572, 320)
+        Me.LastDurata.Location = New System.Drawing.Point(661, 321)
         Me.LastDurata.Name = "LastDurata"
         Me.LastDurata.Size = New System.Drawing.Size(68, 13)
         Me.LastDurata.TabIndex = 21
@@ -338,7 +338,7 @@ Partial Class FormManualInput
         'LastSecondario
         '
         Me.LastSecondario.AutoSize = True
-        Me.LastSecondario.Location = New System.Drawing.Point(572, 361)
+        Me.LastSecondario.Location = New System.Drawing.Point(661, 362)
         Me.LastSecondario.Name = "LastSecondario"
         Me.LastSecondario.Size = New System.Drawing.Size(90, 13)
         Me.LastSecondario.TabIndex = 21
@@ -347,7 +347,7 @@ Partial Class FormManualInput
         'LastDA
         '
         Me.LastDA.AutoSize = True
-        Me.LastDA.Location = New System.Drawing.Point(572, 395)
+        Me.LastDA.Location = New System.Drawing.Point(661, 396)
         Me.LastDA.Name = "LastDA"
         Me.LastDA.Size = New System.Drawing.Size(51, 13)
         Me.LastDA.TabIndex = 21
@@ -356,7 +356,7 @@ Partial Class FormManualInput
         'LastA
         '
         Me.LastA.AutoSize = True
-        Me.LastA.Location = New System.Drawing.Point(572, 420)
+        Me.LastA.Location = New System.Drawing.Point(661, 421)
         Me.LastA.Name = "LastA"
         Me.LastA.Size = New System.Drawing.Size(43, 13)
         Me.LastA.TabIndex = 21
@@ -366,7 +366,7 @@ Partial Class FormManualInput
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(572, 117)
+        Me.Label1.Location = New System.Drawing.Point(661, 118)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(175, 20)
         Me.Label1.TabIndex = 19
