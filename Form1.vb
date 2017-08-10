@@ -16,6 +16,7 @@ Public Class Form1
         UpdateChartCausali()
         UpdateStatistic()
         LoadProductionDataOfCurrentShift()
+        LoadManPower()
         SendToArduino("6")
     End Sub
 
@@ -68,7 +69,23 @@ Public Class Form1
         End If
     End Sub
 
-    
+    Private Sub LoadManpower()
+        Dim myConn As New SqlConnection(LblPathDatabase.Text)
+        Dim myCmd As SqlCommand
+        myCmd = myConn.CreateCommand()
+
+
+        myCmd.CommandText = "SELECT Cognome,Nome,DataEntrata FROM OreOperatori"
+        ' Open the connection    
+        myCmd.Connection.Open()
+        Dim dtRegistro As DataTable = New DataTable
+        Dim myDataAdapter As New SqlDataAdapter(myCmd)
+        myDataAdapter.Fill(dtRegistro)
+        DataGridViewManPower.DataSource = dtRegistro
+        myCmd.Connection.Close()
+
+
+    End Sub
 
     Private Sub SetUpSerialConnection()
         '    Try
@@ -80,7 +97,7 @@ Public Class Form1
         SerialPortArduino.Handshake = Handshake.None
         SerialPortArduino.Encoding = System.Text.Encoding.Default 'very important!
         'SerialPortArduino.ReadTimeout = 200
-        
+
         LblStatus.Text = ""
         ButtonRitentaConnessione.Visible = False
         'Catch ex As Exception
@@ -212,7 +229,7 @@ Public Class Form1
         'SerialPortArduino.DiscardInBuffer()
         'SerialPortArduino.Close()
         'SerialPortArduino.Dispose()
-      
+
         Dim LabelProduzioneNascostoAsInt As Integer
         If Integer.TryParse(LabelProduzioneNascosto.Text, LabelProduzioneNascostoAsInt) Then
             ' LabelProduzioneNascosto successfully parsed as Integer
@@ -1203,9 +1220,9 @@ Public Class Form1
 
     Private Sub SendToArduino(command As String)
 
-       
+
         SerialPortArduino.Write(command)
-      
+
     End Sub
 
     Private Sub EnableButton()
@@ -1315,4 +1332,34 @@ Public Class Form1
         ButtonNastriTrasporto.Enabled = False
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        LoadManpower()
+    End Sub
+
+    Private Sub TextBoxTimbratura_Leave(sender As Object, e As EventArgs) Handles TextBoxTimbratura.Leave
+        Dim myConn As New SqlConnection(LblPathDatabase.Text)
+        'first search the operator in the database
+        Dim cmd As SqlCommand
+        cmd = myConn.CreateCommand()
+        cmd.CommandText = "SELECT Cognome FROM Operatori WHERE IdBadge='" & TextBoxTimbratura.Text & "'"
+        cmd.Connection.Open()
+        If (IsDBNull(cmd.ExecuteScalar())) Then
+            'Do nothing
+            cmd.Connection.Close()
+            MsgBox("Operatore non riconosciuto", MsgBoxStyle.OkOnly)
+        Else
+            cmd.Connection.Close()
+            Dim myCmd2 As SqlCommand
+            myCmd2 = myConn.CreateCommand()
+            myCmd2.CommandText = "SELECT Cognome FROM OreOperatori WHERE ((IdBadge='" & TextBoxTimbratura.Text & "')and(DataUscita=NULL))"
+            myCmd2.Connection.Open()
+            If (IsDBNull(myCmd2.ex
+
+            myCmd2.CommandText = "INSERT INTO OreOperatori (Cognome,DataEntrata)VALUES (" & TextBoxTimbratura.Text & ",'" & DataFormatting(DateTime.Now) & "')"
+            ' Open the connection    
+            myCmd2.Connection.Open()
+            myCmd2.ExecuteNonQuery()
+            myCmd2.Connection.Close()
+        End If
+    End Sub
 End Class
