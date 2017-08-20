@@ -24,15 +24,15 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Title3 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
-        Dim ChartArea6 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend6 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Title4 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Me.SerialPortArduino = New System.IO.Ports.SerialPort(Me.components)
         Me.ButtonSvolgitore = New System.Windows.Forms.Button()
         Me.ButtonEspansore = New System.Windows.Forms.Button()
@@ -161,6 +161,8 @@ Partial Class Form1
         Me.TextBoxTimbratura = New System.Windows.Forms.TextBox()
         Me.DataGridViewManPower = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.LabelCognome = New System.Windows.Forms.Label()
+        Me.LabelNome = New System.Windows.Forms.Label()
         CType(Me.PictureBoxFiamm, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartProduzioneOraria, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -663,25 +665,25 @@ Partial Class Form1
         'ChartProduzioneOraria
         '
         Me.ChartProduzioneOraria.BackColor = System.Drawing.SystemColors.Control
-        ChartArea4.AxisX.Title = "Orario"
-        ChartArea4.AxisY.Title = "Pz."
-        ChartArea4.BackColor = System.Drawing.SystemColors.Control
-        ChartArea4.Name = "ChartArea1"
-        Me.ChartProduzioneOraria.ChartAreas.Add(ChartArea4)
-        Legend4.BackColor = System.Drawing.SystemColors.Control
-        Legend4.Name = "Legend1"
-        Me.ChartProduzioneOraria.Legends.Add(Legend4)
+        ChartArea1.AxisX.Title = "Orario"
+        ChartArea1.AxisY.Title = "Pz."
+        ChartArea1.BackColor = System.Drawing.SystemColors.Control
+        ChartArea1.Name = "ChartArea1"
+        Me.ChartProduzioneOraria.ChartAreas.Add(ChartArea1)
+        Legend1.BackColor = System.Drawing.SystemColors.Control
+        Legend1.Name = "Legend1"
+        Me.ChartProduzioneOraria.Legends.Add(Legend1)
         Me.ChartProduzioneOraria.Location = New System.Drawing.Point(-255, 435)
         Me.ChartProduzioneOraria.Name = "ChartProduzioneOraria"
-        Series2.BorderWidth = 4
-        Series2.ChartArea = "ChartArea1"
-        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series2.IsValueShownAsLabel = True
-        Series2.Legend = "Legend1"
-        Series2.LegendText = "Produzione oraria"
-        Series2.Name = "Series1"
-        Series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOraria.Series.Add(Series2)
+        Series1.BorderWidth = 4
+        Series1.ChartArea = "ChartArea1"
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series1.IsValueShownAsLabel = True
+        Series1.Legend = "Legend1"
+        Series1.LegendText = "Produzione oraria"
+        Series1.Name = "Series1"
+        Series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOraria.Series.Add(Series1)
         Me.ChartProduzioneOraria.Size = New System.Drawing.Size(1918, 269)
         Me.ChartProduzioneOraria.TabIndex = 49
         Me.ChartProduzioneOraria.Text = "Chart1"
@@ -859,35 +861,35 @@ Partial Class Form1
         '
         'ChartMacchine
         '
-        ChartArea5.Name = "ChartArea1"
-        Me.ChartMacchine.ChartAreas.Add(ChartArea5)
-        Legend5.Name = "Legend1"
-        Me.ChartMacchine.Legends.Add(Legend5)
+        ChartArea2.Name = "ChartArea1"
+        Me.ChartMacchine.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.ChartMacchine.Legends.Add(Legend2)
         Me.ChartMacchine.Location = New System.Drawing.Point(0, 693)
         Me.ChartMacchine.Name = "ChartMacchine"
         Me.ChartMacchine.Size = New System.Drawing.Size(705, 300)
         Me.ChartMacchine.TabIndex = 71
         Me.ChartMacchine.Text = "Chart"
-        Title3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title3.Name = "Title1"
-        Title3.Text = "Causali fermi - ultime 8 ore"
-        Me.ChartMacchine.Titles.Add(Title3)
+        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title1.Name = "Title1"
+        Title1.Text = "Causali fermi - ultime 8 ore"
+        Me.ChartMacchine.Titles.Add(Title1)
         '
         'ChartCausali
         '
-        ChartArea6.Name = "ChartArea1"
-        Me.ChartCausali.ChartAreas.Add(ChartArea6)
-        Legend6.Name = "Legend1"
-        Me.ChartCausali.Legends.Add(Legend6)
+        ChartArea3.Name = "ChartArea1"
+        Me.ChartCausali.ChartAreas.Add(ChartArea3)
+        Legend3.Name = "Legend1"
+        Me.ChartCausali.Legends.Add(Legend3)
         Me.ChartCausali.Location = New System.Drawing.Point(740, 693)
         Me.ChartCausali.Name = "ChartCausali"
         Me.ChartCausali.Size = New System.Drawing.Size(705, 300)
         Me.ChartCausali.TabIndex = 72
         Me.ChartCausali.Text = "Chart"
-        Title4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title4.Name = "Title1"
-        Title4.Text = "Causali fermi -LINEA GENERALE - ultime 8 ore"
-        Me.ChartCausali.Titles.Add(Title4)
+        Title2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title2.Name = "Title1"
+        Title2.Text = "Causali fermi -LINEA GENERALE - ultime 8 ore"
+        Me.ChartCausali.Titles.Add(Title2)
         '
         'Label17
         '
@@ -1530,12 +1532,34 @@ Partial Class Form1
         Me.Button1.UseVisualStyleBackColor = True
         Me.Button1.Visible = False
         '
+        'LabelCognome
+        '
+        Me.LabelCognome.AutoSize = True
+        Me.LabelCognome.Location = New System.Drawing.Point(363, 109)
+        Me.LabelCognome.Name = "LabelCognome"
+        Me.LabelCognome.Size = New System.Drawing.Size(52, 13)
+        Me.LabelCognome.TabIndex = 89
+        Me.LabelCognome.Text = "Cognome"
+        Me.LabelCognome.Visible = False
+        '
+        'LabelNome
+        '
+        Me.LabelNome.AutoSize = True
+        Me.LabelNome.Location = New System.Drawing.Point(465, 109)
+        Me.LabelNome.Name = "LabelNome"
+        Me.LabelNome.Size = New System.Drawing.Size(35, 13)
+        Me.LabelNome.TabIndex = 90
+        Me.LabelNome.Text = "Nome"
+        Me.LabelNome.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1362, 741)
+        Me.Controls.Add(Me.LabelNome)
+        Me.Controls.Add(Me.LabelCognome)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridViewManPower)
         Me.Controls.Add(Me.TextBoxTimbratura)
@@ -1750,5 +1774,7 @@ Partial Class Form1
     Friend WithEvents TextBoxTimbratura As System.Windows.Forms.TextBox
     Friend WithEvents DataGridViewManPower As System.Windows.Forms.DataGridView
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents LabelCognome As System.Windows.Forms.Label
+    Friend WithEvents LabelNome As System.Windows.Forms.Label
 
 End Class
