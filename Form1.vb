@@ -104,13 +104,6 @@ Public Class Form1
         Dim sr As StreamReader = New StreamReader(path)
         Do While sr.Peek() >= 0
             Dim rowstring As String = sr.ReadLine()
-            'Retrive Auto or Manual Insert
-            If Strings.Left(rowstring, 6) = "[Mode]" Then
-                If rowstring.Substring(7, rowstring.Length - 7) = "Manual" Then
-                    'FormManualInput.Show()
-                End If
-
-            End If
             'Retrive DatabasePath
             If Strings.Left(rowstring, 14) = "[DatabasePath]" Then
                 'We save this also in a label of the application

@@ -123,6 +123,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="DashboardProduzione.Designer.vb">
+      <DependentUpon>DashboardProduzione.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DashboardProduzione.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,12 @@
     <Compile Include="FormManualInput.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Launcher.Designer.vb">
+      <DependentUpon>Launcher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Launcher.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -193,6 +205,9 @@
     <EmbeddedResource Include="AnalisiFermi.resx">
       <DependentUpon>AnalisiFermi.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DashboardProduzione.resx">
+      <DependentUpon>DashboardProduzione.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormManualInput.resx">
       <DependentUpon>FormManualInput.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Launcher.resx">
+      <DependentUpon>Launcher.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
