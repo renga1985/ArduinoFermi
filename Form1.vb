@@ -16,6 +16,7 @@ Public Class Form1
         UpdateChartCausali()
         UpdateStatistic()
         LoadProductionDataOfCurrentShift()
+        LoadManPower()
         SendToArduino("6")
     End Sub
 
@@ -68,7 +69,24 @@ Public Class Form1
         End If
     End Sub
 
-    
+    Private Sub LoadManpower()
+        'Load manpower that are actually loaded into the line
+        Dim myConn As New SqlConnection(LblPathDatabase.Text)
+        Dim myCmd As SqlCommand
+        myCmd = myConn.CreateCommand()
+
+
+        myCmd.CommandText = "SELECT Cognome,Nome,DataEntrata FROM OreOperatori WHERE DataUscita IS NULL"
+        ' Open the connection    
+        myCmd.Connection.Open()
+        Dim dtRegistro As DataTable = New DataTable
+        Dim myDataAdapter As New SqlDataAdapter(myCmd)
+        myDataAdapter.Fill(dtRegistro)
+        DataGridViewManPower.DataSource = dtRegistro
+        myCmd.Connection.Close()
+
+
+    End Sub
 
     Private Sub SetUpSerialConnection()
         '    Try
@@ -80,7 +98,7 @@ Public Class Form1
         SerialPortArduino.Handshake = Handshake.None
         SerialPortArduino.Encoding = System.Text.Encoding.Default 'very important!
         'SerialPortArduino.ReadTimeout = 200
-        
+
         LblStatus.Text = ""
         ButtonRitentaConnessione.Visible = False
         'Catch ex As Exception
@@ -205,7 +223,7 @@ Public Class Form1
         'SerialPortArduino.DiscardInBuffer()
         'SerialPortArduino.Close()
         'SerialPortArduino.Dispose()
-      
+
         Dim LabelProduzioneNascostoAsInt As Integer
         If Integer.TryParse(LabelProduzioneNascosto.Text, LabelProduzioneNascostoAsInt) Then
             ' LabelProduzioneNascosto successfully parsed as Integer
@@ -1196,9 +1214,9 @@ Public Class Form1
 
     Private Sub SendToArduino(command As String)
 
-       
+
         SerialPortArduino.Write(command)
-      
+
     End Sub
 
     Private Sub EnableButton()
@@ -1308,4 +1326,65 @@ Public Class Form1
         ButtonNastriTrasporto.Enabled = False
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        LoadManpower()
+    End Sub
+
+    Private Sub TextBoxTimbratura_Leave(sender As Object, e As EventArgs) Handles TextBoxTimbratura.Leave
+        Dim myConn As New SqlConnection(LblPathDatabase.Text)
+        'first search the operator in the database
+        Dim cmd As SqlCommand
+        cmd = myConn.CreateCommand()
+        cmd.CommandText = "SELECT COUNT (Cognome) FROM Operatori WHERE IdBadge='" & TextBoxTimbratura.Text & "'"
+        cmd.Connection.Open()
+        If (cmd.ExecuteScalar()) = 0 Then
+            'Do nothing
+            cmd.Connection.Close()
+            MsgBox("Operatore non riconosciuto", MsgBoxStyle.OkOnly)
+            TextBoxTimbratura.Text = ""
+        Else
+            cmd.Connection.Close()
+            'Operator recognized
+            Dim myCmd4 As SqlCommand
+            myCmd4 = myConn.CreateCommand()
+            myCmd4.CommandText = "SELECT Cognome FROM Operatori WHERE ((IdBadge='" & TextBoxTimbratura.Text & "'))"
+            myCmd4.Connection.Open()
+            LabelCognome.Text = myCmd4.ExecuteScalar()
+            myCmd4.Connection.Close()
+
+            Dim myCmd5 As SqlCommand
+            myCmd5 = myConn.CreateCommand()
+            myCmd5.CommandText = "SELECT Nome FROM Operatori WHERE ((IdBadge='" & TextBoxTimbratura.Text & "'))"
+            myCmd5.Connection.Open()
+            LabelNome.Text = myCmd5.ExecuteScalar()
+            myCmd5.Connection.Close()
+            'Now check if the operator is leaving or loading
+            Dim myCmd2 As SqlCommand
+            myCmd2 = myConn.CreateCommand()
+            myCmd2.CommandText = "SELECT COUNT (Cognome) FROM OreOperatori WHERE ((IdBadge='" & TextBoxTimbratura.Text & "')and(DataUscita IS NULL))"
+            myCmd2.Connection.Open()
+            If (myCmd2.ExecuteScalar()) = 1 Then
+                'The operator is leaving the line
+                myCmd2.Connection.Close()
+                Dim myCmd6 As SqlCommand
+                myCmd6 = myConn.CreateCommand()
+                myCmd6.CommandText = "UPDATE OreOperatori SET DataUscita='" & DataFormatting(DateTime.Now) & "' WHERE ((IdBadge='" & TextBoxTimbratura.Text & "')and(DataUscita IS NULL))"
+                myCmd6.Connection.Open()
+                LabelNome.Text = myCmd6.ExecuteNonQuery()
+                myCmd6.Connection.Close()
+            Else
+                'The operator is loading into the line
+                myCmd2.Connection.Close()
+                Dim myCmd3 As SqlCommand
+                myCmd3 = myConn.CreateCommand()
+                myCmd3.CommandText = "INSERT INTO OreOperatori (Id_reparto,Id_linea,Linea,IdBadge,Cognome,Nome,DataEntrata,Reparto)VALUES (" & LblIdDepartment.Text & "," & LblIdLinea.Text & ",'" & LblLineDescription.Text & "'," & TextBoxTimbratura.Text & ",'" & LabelCognome.Text & "','" & LabelNome.Text & "','" & DataFormatting(DateTime.Now) & "','" & LblDepartmentDescription.Text & "')"
+                ' Open the connection    
+                myCmd3.Connection.Open()
+                myCmd3.ExecuteNonQuery()
+                myCmd3.Connection.Close()
+            End If
+        End If
+        TextBoxTimbratura.Text = ""
+        LoadManpower()
+    End Sub
 End Class
