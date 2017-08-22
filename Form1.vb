@@ -16,8 +16,9 @@ Public Class Form1
         UpdateChartCausali()
         UpdateStatistic()
         LoadProductionDataOfCurrentShift()
-        LoadManPower()
+        CheckOperatorLoadedInLine()
         SendToArduino("6")
+        LoadManpower()
     End Sub
 
     Private Sub LoadProductionDataOfCurrentShift()
@@ -1212,6 +1213,61 @@ Public Class Form1
         Return dataconvertita
     End Function
 
+    Private Sub CheckOperatorLoadedInLine()
+        Dim myConn As New SqlConnection(LblPathDatabase.Text)
+        'first search the operator in the database
+        Dim cmd As SqlCommand
+        cmd = myConn.CreateCommand()
+        cmd.CommandText = "SELECT COUNT (Cognome) FROM OreOperatori WHERE (Id_reparto=" & LblIdDepartment.Text & " AND Id_linea=" & LblIdLinea.Text & " AND DataUscita IS NULL)"
+        cmd.Connection.Open()
+        If cmd.ExecuteScalar() = 0 Then
+            'There is no operator loaded in to the line
+            cmd.Connection.Close()
+            TimerForRoutineRegistrationData.Stop()
+            LabelStatus.Text = "Registrazione dati in STOP"
+
+            OvalShapeRed.FillColor = Color.Red
+            'Turn on the red lamp
+            SendToArduino("1")
+            'Turn off yellow lamp
+            OvalShapeYellow.FillColor = Color.Silver
+            SendToArduino("2")
+            'Turn off green lamp
+            OvalShapeGreen.FillColor = Color.Silver
+            SendToArduino("4")
+            'We put the line in STOP in the DB
+
+
+            Dim myCmd As SqlCommand
+            myCmd = myConn.CreateCommand()
+            myCmd.CommandText = "UPDATE StatoLinee SET Stato='Stop' WHERE (Id_Reparto=" & LblIdDepartment.Text & " AND Id_Linea=" & LblIdLinea.Text & ")"
+
+            myCmd.Connection.Open()
+            myCmd.ExecuteNonQuery()
+            myCmd.Connection.Close()
+
+        Else
+            'There is at least one operator loaded in to the line
+            cmd.Connection.Close()
+            'Turn on the green lamp
+            SendToArduino("5")
+            OvalShapeGreen.FillColor = Color.Green
+
+
+
+            Dim myCmd2 As SqlCommand
+            myCmd2 = myConn.CreateCommand()
+            myCmd2.CommandText = "UPDATE StatoLinee SET Stato='Marcia' WHERE (Id_Reparto=" & LblIdDepartment.Text & " AND Id_Linea=" & LblIdLinea.Text & ")"
+
+            myCmd2.Connection.Open()
+            myCmd2.ExecuteNonQuery()
+            myCmd2.Connection.Close()
+            TimerForRoutineRegistrationData.Start()
+            LabelStatus.Text = "Registrazione dati in RUN"
+        End If
+
+    End Sub
+
     Private Sub SendToArduino(command As String)
 
 
@@ -1326,9 +1382,7 @@ Public Class Form1
         ButtonNastriTrasporto.Enabled = False
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        LoadManpower()
-    End Sub
+    
 
     Private Sub TextBoxTimbratura_Leave(sender As Object, e As EventArgs) Handles TextBoxTimbratura.Leave
         Dim myConn As New SqlConnection(LblPathDatabase.Text)
@@ -1386,5 +1440,7 @@ Public Class Form1
         End If
         TextBoxTimbratura.Text = ""
         LoadManpower()
+        CheckOperatorLoadedInLine()
     End Sub
+
 End Class
