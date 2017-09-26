@@ -372,7 +372,6 @@ Partial Class Form1
         Me.LabelContatoreFermata.Size = New System.Drawing.Size(13, 13)
         Me.LabelContatoreFermata.TabIndex = 19
         Me.LabelContatoreFermata.Text = "0"
-        Me.LabelContatoreFermata.Visible = False
         '
         'LabelCurrentTime
         '
@@ -392,7 +391,6 @@ Partial Class Form1
         Me.LabelProduzioneNascosto.Size = New System.Drawing.Size(43, 46)
         Me.LabelProduzioneNascosto.TabIndex = 21
         Me.LabelProduzioneNascosto.Text = "0"
-        Me.LabelProduzioneNascosto.Visible = False
         '
         'Label4
         '
@@ -442,7 +440,6 @@ Partial Class Form1
         Me.LabelContatoreRipartenza.Size = New System.Drawing.Size(13, 13)
         Me.LabelContatoreRipartenza.TabIndex = 26
         Me.LabelContatoreRipartenza.Text = "0"
-        Me.LabelContatoreRipartenza.Visible = False
         '
         'Label7
         '
@@ -513,7 +510,6 @@ Partial Class Form1
         Me.LabelContatoreGiustificativo.Size = New System.Drawing.Size(13, 13)
         Me.LabelContatoreGiustificativo.TabIndex = 33
         Me.LabelContatoreGiustificativo.Text = "0"
-        Me.LabelContatoreGiustificativo.Visible = False
         '
         'Label11
         '
@@ -840,7 +836,6 @@ Partial Class Form1
         Me.TextBoxProduzione.Size = New System.Drawing.Size(100, 20)
         Me.TextBoxProduzione.TabIndex = 68
         Me.TextBoxProduzione.Text = "0"
-        Me.TextBoxProduzione.Visible = False
         '
         'LabelContatoreProduzioneHidden
         '
@@ -1568,12 +1563,11 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1362, 741)
+        Me.ClientSize = New System.Drawing.Size(1354, 733)
         Me.Controls.Add(Me.LabelStatus)
         Me.Controls.Add(Me.Label24)
         Me.Controls.Add(Me.LabelNome)
         Me.Controls.Add(Me.LabelCognome)
-        Me.Controls.Add(Me.DataGridViewManPower)
         Me.Controls.Add(Me.TextBoxTimbratura)
         Me.Controls.Add(Me.Label23)
         Me.Controls.Add(Me.LabelProduzioneSalvata)
@@ -1637,6 +1631,7 @@ Partial Class Form1
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.ChartProduzioneOraria)
         Me.Controls.Add(Me.Tab)
+        Me.Controls.Add(Me.DataGridViewManPower)
         Me.Controls.Add(Me.ShapeContainer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1

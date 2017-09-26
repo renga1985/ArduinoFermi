@@ -24,7 +24,7 @@ Public Class Launcher
                     DashboardProduzione.Show()
                     Me.Close()
                 End If
-
+                Exit Do
             End If
         Loop
         sr.Close()

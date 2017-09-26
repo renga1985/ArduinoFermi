@@ -220,7 +220,16 @@ Public Class Form1
         '    SerialPortArduino.Open()
 
         'End If
-        LabelProduzioneNascosto.Text = SerialPortArduino.ReadLine()
+
+        'Aggiunta questa condizione if perchè altrimenti se la scrittura sulla porta e il timer non sono sincronizzati 
+        'l'applicazione aspetta che Arduino scrive sulla porta e va in ritardo lasciando che il tempo sia dettato da Arduino
+        'il tempo di scrittura sul seriale da Arduino è stato rallentato perchè la stessa velocità Scrittura su seriale-Timer applicazione
+        'dava problemi di perdita di dati
+        If SerialPortArduino.BytesToRead() > 0 Then
+            LabelProduzioneNascosto.Text = SerialPortArduino.ReadLine()
+        Else
+        End If
+        'MsgBox(LabelProduzioneNascosto.Text)
         'SerialPortArduino.DiscardInBuffer()
         'SerialPortArduino.Close()
         'SerialPortArduino.Dispose()
@@ -637,6 +646,7 @@ Public Class Form1
     Private Sub TimerMain_Tick(sender As Object, e As EventArgs) Handles TimerMain.Tick
         'This tick is enabled from the beginning
         LabelCurrentTime.Text = DateTime.Now.ToString()
+        'MsgBox(LabelCurrentTime.Text)
         If ButtonRitentaConnessione.Visible = True Then
             If ButtonRitentaConnessione.BackColor = Color.Transparent Then
                 ButtonRitentaConnessione.BackColor = Color.Silver

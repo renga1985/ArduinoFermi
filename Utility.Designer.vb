@@ -22,7 +22,11 @@ Partial Class Utility
     'Non modificarla nell'editor del codice.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.ButtonResetCounter = New System.Windows.Forms.Button()
+        Me.SerialPortArduino = New System.IO.Ports.SerialPort(Me.components)
+        Me.LabelProduzioneNascosto = New System.Windows.Forms.Label()
+        Me.TimerForRoutineRegistrationData = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'ButtonResetCounter
@@ -34,16 +38,40 @@ Partial Class Utility
         Me.ButtonResetCounter.Text = "ResetCounter"
         Me.ButtonResetCounter.UseVisualStyleBackColor = True
         '
+        'SerialPortArduino
+        '
+        Me.SerialPortArduino.PortName = "COM3"
+        '
+        'LabelProduzioneNascosto
+        '
+        Me.LabelProduzioneNascosto.AutoSize = True
+        Me.LabelProduzioneNascosto.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelProduzioneNascosto.Location = New System.Drawing.Point(217, 131)
+        Me.LabelProduzioneNascosto.Name = "LabelProduzioneNascosto"
+        Me.LabelProduzioneNascosto.Size = New System.Drawing.Size(43, 46)
+        Me.LabelProduzioneNascosto.TabIndex = 22
+        Me.LabelProduzioneNascosto.Text = "0"
+        '
+        'TimerForRoutineRegistrationData
+        '
+        Me.TimerForRoutineRegistrationData.Enabled = True
+        Me.TimerForRoutineRegistrationData.Interval = 200
+        '
         'Utility
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(616, 471)
+        Me.Controls.Add(Me.LabelProduzioneNascosto)
         Me.Controls.Add(Me.ButtonResetCounter)
         Me.Name = "Utility"
         Me.Text = "Utility"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents ButtonResetCounter As System.Windows.Forms.Button
+    Friend WithEvents SerialPortArduino As System.IO.Ports.SerialPort
+    Friend WithEvents LabelProduzioneNascosto As System.Windows.Forms.Label
+    Friend WithEvents TimerForRoutineRegistrationData As System.Windows.Forms.Timer
 End Class
