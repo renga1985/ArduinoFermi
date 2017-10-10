@@ -11,7 +11,7 @@ Public Class FormLineaGenerale
 
     Private Sub RegistraCausale(Id As String, Desc As String)
 
-        Dim fileAccess As String = ConfigurationManager.ConnectionStrings("ArduinoFermi.My.MySettings.DatabaseFermiConnectionString").ConnectionString
+        'Dim fileAccess As String = ConfigurationManager.ConnectionStrings("ArduinoFermi.My.MySettings.DatabaseFermiConnectionString").ConnectionString
         Dim myConn = New SqlConnection(Form1.LblPathDatabase.Text)
         Dim myCmd As SqlCommand
         myCmd = myConn.CreateCommand()
@@ -85,9 +85,9 @@ Public Class FormLineaGenerale
         'Turn off the yellow lamp
         Try
             Form1.OvalShapeYellow.FillColor = Color.Silver
-            Form1.SerialPortArduino.Open()
+            'Form1.SerialPortArduino.Open()
             Form1.SerialPortArduino.Write("2")
-            Form1.SerialPortArduino.Close()
+            'Form1.SerialPortArduino.Close()
         Catch ex As Exception
             Dim ans = MsgBox("Arduino is not connected", MsgBoxStyle.RetryCancel)
             If ans = MsgBoxResult.Retry Then
@@ -97,7 +97,7 @@ Public Class FormLineaGenerale
         Form1.LabelContatoreGiustificativo.Text = "0"
         'We put the line in Marcia in the DB
 
-        Dim fileAccess As String = Form1.LblPathDatabase.Text
+        'Dim fileAccess As String = Form1.LblPathDatabase.Text
         Dim myConn = New SqlConnection(Form1.LblPathDatabase.Text)
         Dim myCmd As SqlCommand
         myCmd = myConn.CreateCommand()

@@ -74,9 +74,9 @@ Public Class FormLineaGeneraleMontaggio
         'Turn off the yellow lamp
         Try
             Form1.OvalShapeYellow.FillColor = Color.Silver
-            Form1.SerialPortArduino.Open()
+            'Form1.SerialPortArduino.Open()
             Form1.SerialPortArduino.Write("2")
-            Form1.SerialPortArduino.Close()
+            'Form1.SerialPortArduino.Close()
         Catch ex As Exception
             Dim ans = MsgBox("Arduino is not connected", MsgBoxStyle.RetryCancel)
             If ans = MsgBoxResult.Retry Then

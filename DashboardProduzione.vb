@@ -1556,4 +1556,5 @@ Public Class DashboardProduzione
     Private Sub TimerCurrentTime_Tick(sender As Object, e As EventArgs) Handles TimerCurrentTime.Tick
         LabelCurrentTime.Text = DateTime.Now.ToString()
     End Sub
+
 End Class

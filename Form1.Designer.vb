@@ -554,7 +554,7 @@ Partial Class Form1
         '
         Me.PictureBoxFiamm.Image = CType(resources.GetObject("PictureBoxFiamm.Image"), System.Drawing.Image)
         Me.PictureBoxFiamm.InitialImage = Nothing
-        Me.PictureBoxFiamm.Location = New System.Drawing.Point(1392, 50)
+        Me.PictureBoxFiamm.Location = New System.Drawing.Point(1389, 50)
         Me.PictureBoxFiamm.Name = "PictureBoxFiamm"
         Me.PictureBoxFiamm.Size = New System.Drawing.Size(287, 175)
         Me.PictureBoxFiamm.TabIndex = 37
@@ -1493,7 +1493,7 @@ Partial Class Form1
         Me.LabelProduzioneSalvata.Size = New System.Drawing.Size(21, 13)
         Me.LabelProduzioneSalvata.TabIndex = 84
         Me.LabelProduzioneSalvata.Text = "No"
-        Me.LabelProduzioneSalvata.Visible = False
+        Me.LabelProduzioneSalvata.UseWaitCursor = True
         '
         'Label23
         '
@@ -1503,7 +1503,6 @@ Partial Class Form1
         Me.Label23.Size = New System.Drawing.Size(96, 13)
         Me.Label23.TabIndex = 85
         Me.Label23.Text = "ProduzioneSalvata"
-        Me.Label23.Visible = False
         '
         'TextBoxTimbratura
         '
@@ -1514,6 +1513,7 @@ Partial Class Form1
         '
         'DataGridViewManPower
         '
+        Me.DataGridViewManPower.AllowUserToResizeRows = False
         Me.DataGridViewManPower.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewManPower.Location = New System.Drawing.Point(574, 58)
         Me.DataGridViewManPower.Name = "DataGridViewManPower"

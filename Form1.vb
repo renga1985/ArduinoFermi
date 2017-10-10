@@ -77,7 +77,7 @@ Public Class Form1
         myCmd = myConn.CreateCommand()
 
 
-        myCmd.CommandText = "SELECT Cognome,Nome,DataEntrata FROM OreOperatori WHERE DataUscita IS NULL"
+        myCmd.CommandText = "SELECT Cognome,Nome,DataEntrata FROM OreOperatori WHERE ((Id_reparto=" & LblIdDepartment.Text & ") AND (Id_linea=" & LblIdLinea.Text & ") AND (DataUscita IS NULL))"
         ' Open the connection    
         myCmd.Connection.Open()
         Dim dtRegistro As DataTable = New DataTable
@@ -240,7 +240,7 @@ Public Class Form1
             Dim LabelProduzioneNascostoOldAsInt As Integer
             If Integer.TryParse(LabelProduzioneOldNascosto.Text, LabelProduzioneNascostoOldAsInt) Then
                 'check if the new value is near the old
-                If (Math.Abs(LabelProduzioneNascostoAsInt - LabelProduzioneNascostoOldAsInt)) < 3 Then
+                If (Math.Abs(LabelProduzioneNascostoAsInt - LabelProduzioneNascostoOldAsInt)) < 8 Then
                     'Here  we have a lot of propability to have a clean number
                     If (LabelProduzioneNascostoAsInt = LabelProduzioneNascostoOldAsInt) Then
                         'PRODUCTION=OLD PRODUCTION...The line is really in stop?
@@ -324,7 +324,8 @@ Public Class Form1
         'ONLY FOR TEST TO SAVE PRODUCTION EVERY 10 MINUTES
         Dim stringTime As String = Strings.Mid(LabelCurrentTime.Text, 16, 4)
         Label23.Text = stringTime
-        If stringTime = "0:00" And LabelProduzioneSalvata.Text = "No" Then
+        If stringTime = "0.00" And LabelProduzioneSalvata.Text = "No" Then
+
             SaveProduction()
             UpdateChart()
             UpdateIstogram()
@@ -355,22 +356,23 @@ Public Class Form1
         'In this case we have to close the record in the database with a stop not declared by the operator
         '--------------------------------------
         Dim myConn = New SqlConnection(LblPathDatabase.Text)
-        Dim myCmd As SqlCommand
-        myCmd = myConn.CreateCommand()
+        'Dim myCmd As SqlCommand
+        'myCmd = myConn.CreateCommand()
 
-        myCmd.CommandText = "SELECT DataInizioFermo FROM Fermi WHERE (Id=" & LabelIdFermo.Text & " AND IdReparto=" & LblIdDepartment.Text & " AND IdLinea=" & LblIdLinea.Text & ")"
+        'myCmd.CommandText = "SELECT DataInizioFermo FROM Fermi WHERE (Id=" & LabelIdFermo.Text & " AND IdReparto=" & LblIdDepartment.Text & " AND IdLinea=" & LblIdLinea.Text & ")"
 
-        Dim DataInizio As Date
-        myCmd.Connection.Open()
-        DataInizio = myCmd.ExecuteScalar()
-        myCmd.Connection.Close()
-        Dim Duration As TimeSpan = DateTime.Now().Subtract(DataInizio)
-        Dim TotalMinutesDuration As String = CInt(Duration.TotalMinutes()).ToString()
+        'Dim DataInizio As Date
+        'myCmd.Connection.Open()
+        'DataInizio = myCmd.ExecuteScalar()
+        'myCmd.Connection.Close()
+        'Dim Duration As TimeSpan = DateTime.Now().Subtract(DataInizio)
+        'Dim TotalMinutesDuration As String = CInt(Duration.TotalMinutes()).ToString()
 
         Dim myCmd2 As SqlCommand
         myCmd2 = myConn.CreateCommand()
 
-        myCmd2.CommandText = ("UPDATE Fermi SET IdMacchina=999,DescMacchina='Non Dichiarato',IdFermo=999,DescFermo='Non dichiarato',Durata='" & TotalMinutesDuration & "',DataFineFermo='" & DataFormatting(DateTime.Now()) & "' WHERE (Id=" & LabelIdFermo.Text & " AND IdReparto=" & LblIdDepartment.Text & " AND IdLinea=" & LblIdLinea.Text & ")")
+        'myCmd2.CommandText = ("UPDATE Fermi SET IdMacchina=999,DescMacchina='Non Dichiarato',IdFermo=999,DescFermo='Non dichiarato',Durata='" & TotalMinutesDuration & "',DataFineFermo='" & DataFormatting(DateTime.Now()) & "' WHERE (Id=" & LabelIdFermo.Text & " AND IdReparto=" & LblIdDepartment.Text & " AND IdLinea=" & LblIdLinea.Text & ")")
+        myCmd2.CommandText = ("UPDATE Fermi SET IdMacchina=999,DescMacchina='Non Dichiarato',IdFermo=999,DescFermo='Non dichiarato' WHERE (Id=" & LabelIdFermo.Text & " AND IdReparto=" & LblIdDepartment.Text & " AND IdLinea=" & LblIdLinea.Text & ")")
         myCmd2.Connection.Open()
         Dim numberOfRow As Int16 = myCmd2.ExecuteNonQuery()
 
@@ -530,7 +532,7 @@ Public Class Form1
         myCmd3.Connection.Open()
         Dim numberOfRow As Int16 = myCmd3.ExecuteNonQuery()
         myCmd3.Connection.Close()
-
+        LabelContatoreRipartenza.Text = "0"
     End Sub
 
     Private Sub ButtonLineaGenerale_Click(sender As Object, e As EventArgs) Handles ButtonLineaGenerale.Click
@@ -826,6 +828,17 @@ Public Class Form1
     End Sub
 
     Private Sub VisualizzaFermateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisualizzaFermateToolStripMenuItem.Click
+
+        'Query to update the table LineaAttiva, used later by the dataSet to show only the records of the current line
+
+        Dim myConn = New SqlConnection(LblPathDatabase.Text)
+        Dim myCmd As SqlCommand
+        myCmd = myConn.CreateCommand()
+        myCmd.CommandText = "UPDATE LineaAttiva SET IdReparto=" & LblIdDepartment.Text & ", IdLine=" & LblIdLinea.Text & " WHERE [Id]=1"
+        myCmd.Connection.Open()
+        myCmd.ExecuteNonQuery()
+        myCmd.Connection.Close()
+
         VisualizzaFermate.Show()
     End Sub
 
@@ -1442,6 +1455,7 @@ Public Class Form1
                     myCmd6.Connection.Open()
                     LabelNome.Text = myCmd6.ExecuteNonQuery()
                     myCmd6.Connection.Close()
+                    CheckOperatorLoadedInLineOUT()
                 Else
                     'The operator is loading into the line
                     myCmd2.Connection.Close()
@@ -1452,12 +1466,92 @@ Public Class Form1
                     myCmd3.Connection.Open()
                     myCmd3.ExecuteNonQuery()
                     myCmd3.Connection.Close()
+                    CheckOperatorLoadedInLineIN()
                 End If
+                LoadManpower()
             End If
             TextBoxTimbratura.Text = ""
-            LoadManpower()
-            CheckOperatorLoadedInLine()
         Else
         End If
     End Sub
+
+    Private Sub CheckOperatorLoadedInLineIN()
+        'funzione lanciata quando un operatore si è caricato in linea
+        Dim myConn As New SqlConnection(LblPathDatabase.Text)
+        'first search the operator in the database
+        Dim cmd As SqlCommand
+        cmd = myConn.CreateCommand()
+        cmd.CommandText = "SELECT COUNT (Cognome) FROM OreOperatori WHERE (Id_reparto=" & LblIdDepartment.Text & " AND Id_linea=" & LblIdLinea.Text & " AND DataUscita IS NULL)"
+        cmd.Connection.Open()
+        If cmd.ExecuteScalar() = 1 Then
+            'It is the first operator loaded in line, so we start the line
+            cmd.Connection.Close()
+            'Turn on the green lamp
+            SendToArduino("5")
+            OvalShapeGreen.FillColor = Color.Green
+            'Turn off yellow lamp
+            OvalShapeYellow.FillColor = Color.Silver
+            SendToArduino("2")
+            OvalShapeRed.FillColor = Color.Silver
+            'Turn off the red lamp
+            SendToArduino("0")
+
+
+            Dim myCmd2 As SqlCommand
+            myCmd2 = myConn.CreateCommand()
+            myCmd2.CommandText = "UPDATE StatoLinee SET Stato='Marcia' WHERE (Id_Reparto=" & LblIdDepartment.Text & " AND Id_Linea=" & LblIdLinea.Text & ")"
+
+            myCmd2.Connection.Open()
+            myCmd2.ExecuteNonQuery()
+            myCmd2.Connection.Close()
+            TimerForRoutineRegistrationData.Start()
+            LabelStatus.Text = "Registrazione dati in RUN"
+
+        Else
+            'There is already at least one operator loaded in to the line
+            'we do nothing
+        End If
+
+    End Sub
+
+    Private Sub CheckOperatorLoadedInLineOUT()
+
+        Dim myConn As New SqlConnection(LblPathDatabase.Text)
+        'first search the operator in the database
+        Dim cmd As SqlCommand
+        cmd = myConn.CreateCommand()
+        cmd.CommandText = "SELECT COUNT (Cognome) FROM OreOperatori WHERE (Id_reparto=" & LblIdDepartment.Text & " AND Id_linea=" & LblIdLinea.Text & " AND DataUscita IS NULL)"
+        cmd.Connection.Open()
+        If cmd.ExecuteScalar() = 0 Then
+            'There is no operator loaded in to the line, so we stop the line
+            cmd.Connection.Close()
+            TimerForRoutineRegistrationData.Stop()
+            LabelStatus.Text = "Registrazione dati in STOP"
+
+            OvalShapeRed.FillColor = Color.Red
+            'Turn on the red lamp
+            SendToArduino("1")
+            'Turn off yellow lamp
+            OvalShapeYellow.FillColor = Color.Silver
+            SendToArduino("2")
+            'Turn off green lamp
+            OvalShapeGreen.FillColor = Color.Silver
+            SendToArduino("4")
+            'We put the line in STOP in the DB
+
+            Dim myCmd As SqlCommand
+            myCmd = myConn.CreateCommand()
+            myCmd.CommandText = "UPDATE StatoLinee SET Stato='Stop' WHERE (Id_Reparto=" & LblIdDepartment.Text & " AND Id_Linea=" & LblIdLinea.Text & ")"
+
+            myCmd.Connection.Open()
+            myCmd.ExecuteNonQuery()
+            myCmd.Connection.Close()
+
+        Else
+            'There is at least one more operator loaded in to the line
+            'we do nothing
+        End If
+
+    End Sub
+
 End Class

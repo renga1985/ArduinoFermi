@@ -65,6 +65,17 @@ Namespace My
                 Me("Etichetta") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-NFISVQ2\SQLEXPRESS;Initial Catalog=VRNFermi;User ID=sa;Passwo"& _ 
+            "rd=sa")>  _
+        Public ReadOnly Property VRNFermiConnectionString() As String
+            Get
+                Return CType(Me("VRNFermiConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

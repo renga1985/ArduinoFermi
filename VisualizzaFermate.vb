@@ -8,11 +8,27 @@ Public Class VisualizzaFermate
 
     Sub UpdateGrid()
 
+        'Definisco la stringa inizio e ci salvo la data di inizio fermo secondo il formato richiesto
+        Dim data As Date
+        data = DateTimePickerFrom.Text
+        Dim inizio As String
+        'inizio = data.Year.ToString() & "-" & data.Month.ToString() & "-" & data.Day.ToString() & " 00:00:00"
+        inizio = data.Year.ToString() & "-" & data.Day.ToString() & "-" & data.Month.ToString() & " 00:00:00"
+
+        'Definisco la stringa fine e ci salvo la data di inizio fermo secondo il formato richiesto
+        Dim data2 As Date
+        data2 = DateTimePickerTo.Text
+        Dim fine As String
+        'fine = data.Year.ToString() & "-" & data.Month.ToString() & "-" & data.Day.ToString() & " 00:00:00"
+        fine = data.Year.ToString() & "-" & data.Day.ToString() & "-" & data.Month.ToString() & " 00:00:00"
 
         Dim myConn = New SqlConnection(Form1.LblPathDatabase.Text)
         Dim myCmd As SqlCommand
         myCmd = myConn.CreateCommand()
-        myCmd.CommandText = "SELECT Id,Data,DescReparto,DescLinea,DescMacchina,DescFermo,Durata,Datafinefermo FROM Fermi WHERE (DATA >= '" & DateTimePickerFrom.Value.ToString("yyyy-MM-ddTHH:mm:ss") & "')AND(DATA <= '" & DateTimePickerTo.Value.ToString("yyyy-MM-ddTHH:mm:ss") & "')AND(IdReparto=" & Form1.LblIdDepartment.Text & ")AND(IdLinea=" & Form1.LblIdLinea.Text & ")"
+        'myCmd.CommandText = "SELECT Id,Data,DescReparto,DescLinea,DescMacchina,DescFermo,Durata,Datafinefermo FROM Fermi WHERE (DATA >= '" & DateTimePickerFrom.Value.ToString("yyyy-MM-ddTHH:mm:ss") & "')AND(DATA <= '" & DateTimePickerTo.Value.ToString("yyyy-MM-ddTHH:mm:ss") & "')AND(IdReparto=" & Form1.LblIdDepartment.Text & ")AND(IdLinea=" & Form1.LblIdLinea.Text & ")"
+        'myCmd.CommandText = "SELECT Id,Data,DescReparto,DescLinea,DescMacchina,DescFermo,Durata,Datafinefermo FROM Fermi WHERE (DATA >= '" & inizio & "')AND(DATA <= '" & fine & "')AND(IdReparto=" & Form1.LblIdDepartment.Text & ")AND(IdLinea=" & Form1.LblIdLinea.Text & ")"
+        'myCmd.CommandText = "SELECT Id,Data,IdReparto,DescReparto,IdLinea,DescLinea,IdMacchina,DescMacchina,IdFermo,DescFermo,Inizio,Durata,Datafinefermo FROM Fermi"
+        myCmd.CommandText = "SELECT Id,DescMacchina,DescFermo,Durat FROM Fermi"
 
         myCmd.Connection.Open()
         Dim dtRegistro As DataTable = New DataTable
@@ -20,6 +36,7 @@ Public Class VisualizzaFermate
         myDataAdapter.Fill(dtRegistro)
         DataGridViewFernate.DataSource = dtRegistro
         myCmd.Connection.Close()
+
         '------------------
         'Dim fileAccess As String = Form1.LblPathDatabase.Text
         'Dim conAccess = New OleDb.OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & fileAccess & ";")
@@ -34,13 +51,48 @@ Public Class VisualizzaFermate
     End Sub
 
     Private Sub VisualizzaFermate_Load(sender As Object, e As EventArgs) Handles Me.Load
-        UpdateGrid()
+        'TODO: questa riga di codice carica i dati nella tabella 'VRNFermiDataSet.Fermi'. È possibile spostarla o rimuoverla se necessario.
+        Me.FermiTableAdapter.Fill(Me.VRNFermiDataSet.Fermi)
+
+        'Dim myConn = New SqlConnection(Form1.LblPathDatabase.Text)
+        'Dim myCmd As SqlCommand
+        'myCmd = myConn.CreateCommand()
+        'myCmd.CommandText = "UPDATE LineaAttiva SET [IdReparto]=" & Form1.LblIdDepartment.Text & ", [IdLine]=" & Form1.LblIdLinea.Text & " WHERE [Id]=1"
+
+        'UpdateGrid()
+        UpdateGrid2()
     End Sub
 
     Private Sub ButtonUpdate_Click(sender As Object, e As EventArgs) Handles ButtonUpdate.Click
-        UpdateGrid()
+        Dim myConn = New SqlConnection(Form1.LblPathDatabase.Text)
+        Dim myCmd As SqlCommand
+        myCmd = myConn.CreateCommand()
+        myCmd.CommandText = "SELECT From LineaAttiva IdReparto WHERE [Id]=1"
+        'myCmd.CommandText = "UPDATE LineaAttiva SET IdReparto=" & Form1.LblIdDepartment.Text & ", IdLine=" & Form1.LblIdLinea.Text & " WHERE [Id]=1"
+    End Sub
+    Sub UpdateGrid2()
+        Me.FermiTableAdapter.Fill(Me.VRNFermiDataSet.Fermi)
     End Sub
 
+    Sub UpdateDatabase()
+
+        Dim myConn = New SqlConnection(Form1.LblPathDatabase.Text)
+        Dim myCmd As SqlCommand
+        myCmd = myConn.CreateCommand()
+        'myCmd.CommandText = "UPDATE Fermi2 SET DescMacchina=@pDescMacchina,DescFermo=@pDescFermo,Durata=@pDurata WHERE Id=@pId"
+        myCmd.CommandText = "UPDATE [dbo].[Fermi2] SET [Id] = @Id, [DescMacchina] = @DescMacchina, [DescFermo] = @DescFermo, [Durat] = @Durat WHERE (([Id] = @Original_Id) AND ((@IsNull_DescMacchina = 1 AND [DescMacchina] IS NULL) OR ([DescMacchina] = @Original_DescMacchina)) AND ((@IsNull_DescFermo = 1 AND [DescFermo] IS NULL) OR ([DescFermo] = @Original_DescFermo)) AND ((@IsNull_Durat = 1 AND [Durat] IS NULL) OR ([Durat] = @Original_Durat))); SELECT Id, DescMacchina, DescFermo, Durat FROM Fermi2 WHERE (Id = @Id)"
+        myCmd.Connection.Open()
+        Dim dtRegistro As DataTable = New DataTable
+        Dim myDataAdapter As New SqlDataAdapter(myCmd)
+        myDataAdapter.Update(dtRegistro)
+        DataGridViewFernate.DataSource = dtRegistro
+        myCmd.Connection.Close()
+
+    End Sub
+
+    Sub UpdateDatabase2()
+        Me.FermiTableAdapter.Update(Me.VRNFermiDataSet.Fermi)
+    End Sub
     'Private Sub BtnExportInExcel_Click(sender As Object, e As EventArgs) Handles BtnExportInExcel.Click
     '    'Funzione che esporta in excel ciò che è visualizzato in quel momento nella GridView della pagina Registro
     '    'NOTA: Utilizzo un secondo GridView in quanto nel primo ho la prima colonna contente un'immagine che potrebbe darmi problemi
@@ -109,4 +161,11 @@ Public Class VisualizzaFermate
 
     '    End If
     'End Sub
+
+    Private Sub SaveClick(sender As Object, e As EventArgs) Handles ButtonSave.Click
+
+        'UpdateDatabase()
+        UpdateDatabase2()
+
+    End Sub
 End Class
