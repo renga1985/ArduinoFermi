@@ -23,54 +23,54 @@ Partial Class DashboardProduzione
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ChartArea25 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series25 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea26 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series26 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea27 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series27 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea28 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series28 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea29 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series29 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea30 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series30 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea31 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series31 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea32 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series32 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea33 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series33 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea34 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series34 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea35 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series35 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea36 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series36 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea37 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series37 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea38 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series38 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea39 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series39 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea40 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series40 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea41 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series41 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea42 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series42 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea43 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series43 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea44 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series44 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea45 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series45 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea46 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series46 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea47 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series47 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea48 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series48 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea6 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series6 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea7 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series7 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea8 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series8 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea9 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series9 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea10 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series10 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea11 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series11 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea12 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series12 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea13 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series13 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea14 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series14 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea15 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series15 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea16 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series16 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea17 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series17 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea18 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series18 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea19 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series19 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea20 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series20 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea21 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series21 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea22 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series22 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea23 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series23 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea24 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series24 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DashboardProduzione))
         Me.ProgressBarStirLinea1 = New System.Windows.Forms.ProgressBar()
         Me.LabelStirLinea1 = New System.Windows.Forms.Label()
@@ -540,9 +540,6 @@ Partial Class DashboardProduzione
         Me.TimerCurrentTime = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBoxFiamm = New System.Windows.Forms.PictureBox()
         Me.LabelPathDatabase = New System.Windows.Forms.Label()
-        Me.VRNFermiDataSet = New ArduinoFermi.VRNFermiDataSet()
-        Me.Fermi2BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Fermi2TableAdapter = New ArduinoFermi.VRNFermiDataSetTableAdapters.Fermi2TableAdapter()
         CType(Me.ChartProduzioneOrariaStiratura1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartProduzioneOrariaStiratura2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartProduzioneOrariaStiratura3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -575,8 +572,6 @@ Partial Class DashboardProduzione
         Me.TabPlanning.SuspendLayout()
         CType(Me.DataGridViewLanciMontaggio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxFiamm, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.VRNFermiDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Fermi2BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ProgressBarStirLinea1
@@ -833,19 +828,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaStiratura1
         '
         Me.ChartProduzioneOrariaStiratura1.BackColor = System.Drawing.SystemColors.Control
-        ChartArea25.BackColor = System.Drawing.SystemColors.Control
-        ChartArea25.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaStiratura1.ChartAreas.Add(ChartArea25)
+        ChartArea1.BackColor = System.Drawing.SystemColors.Control
+        ChartArea1.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaStiratura1.ChartAreas.Add(ChartArea1)
         Me.ChartProduzioneOrariaStiratura1.Location = New System.Drawing.Point(63, 87)
         Me.ChartProduzioneOrariaStiratura1.Name = "ChartProduzioneOrariaStiratura1"
-        Series25.BorderWidth = 4
-        Series25.ChartArea = "ChartArea1"
-        Series25.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series25.IsValueShownAsLabel = True
-        Series25.LegendText = "Produzione oraria"
-        Series25.Name = "Series1"
-        Series25.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaStiratura1.Series.Add(Series25)
+        Series1.BorderWidth = 4
+        Series1.ChartArea = "ChartArea1"
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series1.IsValueShownAsLabel = True
+        Series1.LegendText = "Produzione oraria"
+        Series1.Name = "Series1"
+        Series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaStiratura1.Series.Add(Series1)
         Me.ChartProduzioneOrariaStiratura1.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaStiratura1.TabIndex = 50
         Me.ChartProduzioneOrariaStiratura1.Text = "Chart1"
@@ -863,19 +858,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaStiratura2
         '
         Me.ChartProduzioneOrariaStiratura2.BackColor = System.Drawing.SystemColors.Control
-        ChartArea26.BackColor = System.Drawing.SystemColors.Control
-        ChartArea26.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaStiratura2.ChartAreas.Add(ChartArea26)
+        ChartArea2.BackColor = System.Drawing.SystemColors.Control
+        ChartArea2.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaStiratura2.ChartAreas.Add(ChartArea2)
         Me.ChartProduzioneOrariaStiratura2.Location = New System.Drawing.Point(63, 173)
         Me.ChartProduzioneOrariaStiratura2.Name = "ChartProduzioneOrariaStiratura2"
-        Series26.BorderWidth = 4
-        Series26.ChartArea = "ChartArea1"
-        Series26.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series26.IsValueShownAsLabel = True
-        Series26.LegendText = "Produzione oraria"
-        Series26.Name = "Series1"
-        Series26.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaStiratura2.Series.Add(Series26)
+        Series2.BorderWidth = 4
+        Series2.ChartArea = "ChartArea1"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series2.IsValueShownAsLabel = True
+        Series2.LegendText = "Produzione oraria"
+        Series2.Name = "Series1"
+        Series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaStiratura2.Series.Add(Series2)
         Me.ChartProduzioneOrariaStiratura2.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaStiratura2.TabIndex = 52
         Me.ChartProduzioneOrariaStiratura2.Text = "Chart1"
@@ -977,19 +972,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaStiratura3
         '
         Me.ChartProduzioneOrariaStiratura3.BackColor = System.Drawing.SystemColors.Control
-        ChartArea27.BackColor = System.Drawing.SystemColors.Control
-        ChartArea27.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaStiratura3.ChartAreas.Add(ChartArea27)
+        ChartArea3.BackColor = System.Drawing.SystemColors.Control
+        ChartArea3.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaStiratura3.ChartAreas.Add(ChartArea3)
         Me.ChartProduzioneOrariaStiratura3.Location = New System.Drawing.Point(63, 262)
         Me.ChartProduzioneOrariaStiratura3.Name = "ChartProduzioneOrariaStiratura3"
-        Series27.BorderWidth = 4
-        Series27.ChartArea = "ChartArea1"
-        Series27.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series27.IsValueShownAsLabel = True
-        Series27.LegendText = "Produzione oraria"
-        Series27.Name = "Series1"
-        Series27.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaStiratura3.Series.Add(Series27)
+        Series3.BorderWidth = 4
+        Series3.ChartArea = "ChartArea1"
+        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series3.IsValueShownAsLabel = True
+        Series3.LegendText = "Produzione oraria"
+        Series3.Name = "Series1"
+        Series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaStiratura3.Series.Add(Series3)
         Me.ChartProduzioneOrariaStiratura3.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaStiratura3.TabIndex = 70
         Me.ChartProduzioneOrariaStiratura3.Text = "Chart1"
@@ -1045,19 +1040,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaStiratura4
         '
         Me.ChartProduzioneOrariaStiratura4.BackColor = System.Drawing.SystemColors.Control
-        ChartArea28.BackColor = System.Drawing.SystemColors.Control
-        ChartArea28.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaStiratura4.ChartAreas.Add(ChartArea28)
+        ChartArea4.BackColor = System.Drawing.SystemColors.Control
+        ChartArea4.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaStiratura4.ChartAreas.Add(ChartArea4)
         Me.ChartProduzioneOrariaStiratura4.Location = New System.Drawing.Point(63, 348)
         Me.ChartProduzioneOrariaStiratura4.Name = "ChartProduzioneOrariaStiratura4"
-        Series28.BorderWidth = 4
-        Series28.ChartArea = "ChartArea1"
-        Series28.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series28.IsValueShownAsLabel = True
-        Series28.LegendText = "Produzione oraria"
-        Series28.Name = "Series1"
-        Series28.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaStiratura4.Series.Add(Series28)
+        Series4.BorderWidth = 4
+        Series4.ChartArea = "ChartArea1"
+        Series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series4.IsValueShownAsLabel = True
+        Series4.LegendText = "Produzione oraria"
+        Series4.Name = "Series1"
+        Series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaStiratura4.Series.Add(Series4)
         Me.ChartProduzioneOrariaStiratura4.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaStiratura4.TabIndex = 80
         Me.ChartProduzioneOrariaStiratura4.Text = "Chart2"
@@ -1113,19 +1108,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaStiratura5
         '
         Me.ChartProduzioneOrariaStiratura5.BackColor = System.Drawing.SystemColors.Control
-        ChartArea29.BackColor = System.Drawing.SystemColors.Control
-        ChartArea29.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaStiratura5.ChartAreas.Add(ChartArea29)
+        ChartArea5.BackColor = System.Drawing.SystemColors.Control
+        ChartArea5.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaStiratura5.ChartAreas.Add(ChartArea5)
         Me.ChartProduzioneOrariaStiratura5.Location = New System.Drawing.Point(63, 436)
         Me.ChartProduzioneOrariaStiratura5.Name = "ChartProduzioneOrariaStiratura5"
-        Series29.BorderWidth = 4
-        Series29.ChartArea = "ChartArea1"
-        Series29.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series29.IsValueShownAsLabel = True
-        Series29.LegendText = "Produzione oraria"
-        Series29.Name = "Series1"
-        Series29.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaStiratura5.Series.Add(Series29)
+        Series5.BorderWidth = 4
+        Series5.ChartArea = "ChartArea1"
+        Series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series5.IsValueShownAsLabel = True
+        Series5.LegendText = "Produzione oraria"
+        Series5.Name = "Series1"
+        Series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaStiratura5.Series.Add(Series5)
         Me.ChartProduzioneOrariaStiratura5.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaStiratura5.TabIndex = 90
         Me.ChartProduzioneOrariaStiratura5.Text = "Chart3"
@@ -1181,19 +1176,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaStiratura6
         '
         Me.ChartProduzioneOrariaStiratura6.BackColor = System.Drawing.SystemColors.Control
-        ChartArea30.BackColor = System.Drawing.SystemColors.Control
-        ChartArea30.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaStiratura6.ChartAreas.Add(ChartArea30)
+        ChartArea6.BackColor = System.Drawing.SystemColors.Control
+        ChartArea6.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaStiratura6.ChartAreas.Add(ChartArea6)
         Me.ChartProduzioneOrariaStiratura6.Location = New System.Drawing.Point(63, 527)
         Me.ChartProduzioneOrariaStiratura6.Name = "ChartProduzioneOrariaStiratura6"
-        Series30.BorderWidth = 4
-        Series30.ChartArea = "ChartArea1"
-        Series30.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series30.IsValueShownAsLabel = True
-        Series30.LegendText = "Produzione oraria"
-        Series30.Name = "Series1"
-        Series30.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaStiratura6.Series.Add(Series30)
+        Series6.BorderWidth = 4
+        Series6.ChartArea = "ChartArea1"
+        Series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series6.IsValueShownAsLabel = True
+        Series6.LegendText = "Produzione oraria"
+        Series6.Name = "Series1"
+        Series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaStiratura6.Series.Add(Series6)
         Me.ChartProduzioneOrariaStiratura6.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaStiratura6.TabIndex = 100
         Me.ChartProduzioneOrariaStiratura6.Text = "Chart4"
@@ -2014,19 +2009,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaMontaggio8
         '
         Me.ChartProduzioneOrariaMontaggio8.BackColor = System.Drawing.SystemColors.Control
-        ChartArea31.BackColor = System.Drawing.SystemColors.Control
-        ChartArea31.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaMontaggio8.ChartAreas.Add(ChartArea31)
+        ChartArea7.BackColor = System.Drawing.SystemColors.Control
+        ChartArea7.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaMontaggio8.ChartAreas.Add(ChartArea7)
         Me.ChartProduzioneOrariaMontaggio8.Location = New System.Drawing.Point(59, 647)
         Me.ChartProduzioneOrariaMontaggio8.Name = "ChartProduzioneOrariaMontaggio8"
-        Series31.BorderWidth = 4
-        Series31.ChartArea = "ChartArea1"
-        Series31.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series31.IsValueShownAsLabel = True
-        Series31.LegendText = "Produzione oraria"
-        Series31.Name = "Series1"
-        Series31.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaMontaggio8.Series.Add(Series31)
+        Series7.BorderWidth = 4
+        Series7.ChartArea = "ChartArea1"
+        Series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series7.IsValueShownAsLabel = True
+        Series7.LegendText = "Produzione oraria"
+        Series7.Name = "Series1"
+        Series7.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaMontaggio8.Series.Add(Series7)
         Me.ChartProduzioneOrariaMontaggio8.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaMontaggio8.TabIndex = 129
         Me.ChartProduzioneOrariaMontaggio8.Text = "Chart1"
@@ -2118,19 +2113,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaMontaggio7
         '
         Me.ChartProduzioneOrariaMontaggio7.BackColor = System.Drawing.SystemColors.Control
-        ChartArea32.BackColor = System.Drawing.SystemColors.Control
-        ChartArea32.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaMontaggio7.ChartAreas.Add(ChartArea32)
+        ChartArea8.BackColor = System.Drawing.SystemColors.Control
+        ChartArea8.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaMontaggio7.ChartAreas.Add(ChartArea8)
         Me.ChartProduzioneOrariaMontaggio7.Location = New System.Drawing.Point(59, 566)
         Me.ChartProduzioneOrariaMontaggio7.Name = "ChartProduzioneOrariaMontaggio7"
-        Series32.BorderWidth = 4
-        Series32.ChartArea = "ChartArea1"
-        Series32.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series32.IsValueShownAsLabel = True
-        Series32.LegendText = "Produzione oraria"
-        Series32.Name = "Series1"
-        Series32.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaMontaggio7.Series.Add(Series32)
+        Series8.BorderWidth = 4
+        Series8.ChartArea = "ChartArea1"
+        Series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series8.IsValueShownAsLabel = True
+        Series8.LegendText = "Produzione oraria"
+        Series8.Name = "Series1"
+        Series8.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaMontaggio7.Series.Add(Series8)
         Me.ChartProduzioneOrariaMontaggio7.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaMontaggio7.TabIndex = 119
         Me.ChartProduzioneOrariaMontaggio7.Text = "Chart1"
@@ -2222,19 +2217,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaMontaggio6
         '
         Me.ChartProduzioneOrariaMontaggio6.BackColor = System.Drawing.SystemColors.Control
-        ChartArea33.BackColor = System.Drawing.SystemColors.Control
-        ChartArea33.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaMontaggio6.ChartAreas.Add(ChartArea33)
+        ChartArea9.BackColor = System.Drawing.SystemColors.Control
+        ChartArea9.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaMontaggio6.ChartAreas.Add(ChartArea9)
         Me.ChartProduzioneOrariaMontaggio6.Location = New System.Drawing.Point(59, 482)
         Me.ChartProduzioneOrariaMontaggio6.Name = "ChartProduzioneOrariaMontaggio6"
-        Series33.BorderWidth = 4
-        Series33.ChartArea = "ChartArea1"
-        Series33.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series33.IsValueShownAsLabel = True
-        Series33.LegendText = "Produzione oraria"
-        Series33.Name = "Series1"
-        Series33.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaMontaggio6.Series.Add(Series33)
+        Series9.BorderWidth = 4
+        Series9.ChartArea = "ChartArea1"
+        Series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series9.IsValueShownAsLabel = True
+        Series9.LegendText = "Produzione oraria"
+        Series9.Name = "Series1"
+        Series9.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaMontaggio6.Series.Add(Series9)
         Me.ChartProduzioneOrariaMontaggio6.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaMontaggio6.TabIndex = 109
         Me.ChartProduzioneOrariaMontaggio6.Text = "Chart1"
@@ -2326,19 +2321,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaMontaggio5
         '
         Me.ChartProduzioneOrariaMontaggio5.BackColor = System.Drawing.SystemColors.Control
-        ChartArea34.BackColor = System.Drawing.SystemColors.Control
-        ChartArea34.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaMontaggio5.ChartAreas.Add(ChartArea34)
+        ChartArea10.BackColor = System.Drawing.SystemColors.Control
+        ChartArea10.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaMontaggio5.ChartAreas.Add(ChartArea10)
         Me.ChartProduzioneOrariaMontaggio5.Location = New System.Drawing.Point(59, 399)
         Me.ChartProduzioneOrariaMontaggio5.Name = "ChartProduzioneOrariaMontaggio5"
-        Series34.BorderWidth = 4
-        Series34.ChartArea = "ChartArea1"
-        Series34.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series34.IsValueShownAsLabel = True
-        Series34.LegendText = "Produzione oraria"
-        Series34.Name = "Series1"
-        Series34.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaMontaggio5.Series.Add(Series34)
+        Series10.BorderWidth = 4
+        Series10.ChartArea = "ChartArea1"
+        Series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series10.IsValueShownAsLabel = True
+        Series10.LegendText = "Produzione oraria"
+        Series10.Name = "Series1"
+        Series10.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaMontaggio5.Series.Add(Series10)
         Me.ChartProduzioneOrariaMontaggio5.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaMontaggio5.TabIndex = 99
         Me.ChartProduzioneOrariaMontaggio5.Text = "Chart1"
@@ -2430,19 +2425,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaMontaggio4
         '
         Me.ChartProduzioneOrariaMontaggio4.BackColor = System.Drawing.SystemColors.Control
-        ChartArea35.BackColor = System.Drawing.SystemColors.Control
-        ChartArea35.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaMontaggio4.ChartAreas.Add(ChartArea35)
+        ChartArea11.BackColor = System.Drawing.SystemColors.Control
+        ChartArea11.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaMontaggio4.ChartAreas.Add(ChartArea11)
         Me.ChartProduzioneOrariaMontaggio4.Location = New System.Drawing.Point(59, 309)
         Me.ChartProduzioneOrariaMontaggio4.Name = "ChartProduzioneOrariaMontaggio4"
-        Series35.BorderWidth = 4
-        Series35.ChartArea = "ChartArea1"
-        Series35.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series35.IsValueShownAsLabel = True
-        Series35.LegendText = "Produzione oraria"
-        Series35.Name = "Series1"
-        Series35.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaMontaggio4.Series.Add(Series35)
+        Series11.BorderWidth = 4
+        Series11.ChartArea = "ChartArea1"
+        Series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series11.IsValueShownAsLabel = True
+        Series11.LegendText = "Produzione oraria"
+        Series11.Name = "Series1"
+        Series11.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaMontaggio4.Series.Add(Series11)
         Me.ChartProduzioneOrariaMontaggio4.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaMontaggio4.TabIndex = 89
         Me.ChartProduzioneOrariaMontaggio4.Text = "Chart1"
@@ -2534,19 +2529,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaMontaggio3
         '
         Me.ChartProduzioneOrariaMontaggio3.BackColor = System.Drawing.SystemColors.Control
-        ChartArea36.BackColor = System.Drawing.SystemColors.Control
-        ChartArea36.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaMontaggio3.ChartAreas.Add(ChartArea36)
+        ChartArea12.BackColor = System.Drawing.SystemColors.Control
+        ChartArea12.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaMontaggio3.ChartAreas.Add(ChartArea12)
         Me.ChartProduzioneOrariaMontaggio3.Location = New System.Drawing.Point(59, 219)
         Me.ChartProduzioneOrariaMontaggio3.Name = "ChartProduzioneOrariaMontaggio3"
-        Series36.BorderWidth = 4
-        Series36.ChartArea = "ChartArea1"
-        Series36.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series36.IsValueShownAsLabel = True
-        Series36.LegendText = "Produzione oraria"
-        Series36.Name = "Series1"
-        Series36.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaMontaggio3.Series.Add(Series36)
+        Series12.BorderWidth = 4
+        Series12.ChartArea = "ChartArea1"
+        Series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series12.IsValueShownAsLabel = True
+        Series12.LegendText = "Produzione oraria"
+        Series12.Name = "Series1"
+        Series12.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaMontaggio3.Series.Add(Series12)
         Me.ChartProduzioneOrariaMontaggio3.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaMontaggio3.TabIndex = 79
         Me.ChartProduzioneOrariaMontaggio3.Text = "Chart1"
@@ -2674,19 +2669,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaMontaggio2
         '
         Me.ChartProduzioneOrariaMontaggio2.BackColor = System.Drawing.SystemColors.Control
-        ChartArea37.BackColor = System.Drawing.SystemColors.Control
-        ChartArea37.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaMontaggio2.ChartAreas.Add(ChartArea37)
+        ChartArea13.BackColor = System.Drawing.SystemColors.Control
+        ChartArea13.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaMontaggio2.ChartAreas.Add(ChartArea13)
         Me.ChartProduzioneOrariaMontaggio2.Location = New System.Drawing.Point(59, 136)
         Me.ChartProduzioneOrariaMontaggio2.Name = "ChartProduzioneOrariaMontaggio2"
-        Series37.BorderWidth = 4
-        Series37.ChartArea = "ChartArea1"
-        Series37.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series37.IsValueShownAsLabel = True
-        Series37.LegendText = "Produzione oraria"
-        Series37.Name = "Series1"
-        Series37.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaMontaggio2.Series.Add(Series37)
+        Series13.BorderWidth = 4
+        Series13.ChartArea = "ChartArea1"
+        Series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series13.IsValueShownAsLabel = True
+        Series13.LegendText = "Produzione oraria"
+        Series13.Name = "Series1"
+        Series13.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaMontaggio2.Series.Add(Series13)
         Me.ChartProduzioneOrariaMontaggio2.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaMontaggio2.TabIndex = 65
         Me.ChartProduzioneOrariaMontaggio2.Text = "Chart1"
@@ -2732,19 +2727,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaMontaggio1
         '
         Me.ChartProduzioneOrariaMontaggio1.BackColor = System.Drawing.SystemColors.Control
-        ChartArea38.BackColor = System.Drawing.SystemColors.Control
-        ChartArea38.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaMontaggio1.ChartAreas.Add(ChartArea38)
+        ChartArea14.BackColor = System.Drawing.SystemColors.Control
+        ChartArea14.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaMontaggio1.ChartAreas.Add(ChartArea14)
         Me.ChartProduzioneOrariaMontaggio1.Location = New System.Drawing.Point(59, 48)
         Me.ChartProduzioneOrariaMontaggio1.Name = "ChartProduzioneOrariaMontaggio1"
-        Series38.BorderWidth = 4
-        Series38.ChartArea = "ChartArea1"
-        Series38.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series38.IsValueShownAsLabel = True
-        Series38.LegendText = "Produzione oraria"
-        Series38.Name = "Series1"
-        Series38.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaMontaggio1.Series.Add(Series38)
+        Series14.BorderWidth = 4
+        Series14.ChartArea = "ChartArea1"
+        Series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series14.IsValueShownAsLabel = True
+        Series14.LegendText = "Produzione oraria"
+        Series14.Name = "Series1"
+        Series14.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaMontaggio1.Series.Add(Series14)
         Me.ChartProduzioneOrariaMontaggio1.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaMontaggio1.TabIndex = 51
         Me.ChartProduzioneOrariaMontaggio1.Text = "Chart1"
@@ -3769,19 +3764,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaFormazione5
         '
         Me.ChartProduzioneOrariaFormazione5.BackColor = System.Drawing.SystemColors.Control
-        ChartArea39.BackColor = System.Drawing.SystemColors.Control
-        ChartArea39.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaFormazione5.ChartAreas.Add(ChartArea39)
+        ChartArea15.BackColor = System.Drawing.SystemColors.Control
+        ChartArea15.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaFormazione5.ChartAreas.Add(ChartArea15)
         Me.ChartProduzioneOrariaFormazione5.Location = New System.Drawing.Point(71, 486)
         Me.ChartProduzioneOrariaFormazione5.Name = "ChartProduzioneOrariaFormazione5"
-        Series39.BorderWidth = 4
-        Series39.ChartArea = "ChartArea1"
-        Series39.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series39.IsValueShownAsLabel = True
-        Series39.LegendText = "Produzione oraria"
-        Series39.Name = "Series1"
-        Series39.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaFormazione5.Series.Add(Series39)
+        Series15.BorderWidth = 4
+        Series15.ChartArea = "ChartArea1"
+        Series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series15.IsValueShownAsLabel = True
+        Series15.LegendText = "Produzione oraria"
+        Series15.Name = "Series1"
+        Series15.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaFormazione5.Series.Add(Series15)
         Me.ChartProduzioneOrariaFormazione5.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaFormazione5.TabIndex = 108
         Me.ChartProduzioneOrariaFormazione5.Text = "Chart1"
@@ -3789,19 +3784,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaFormazione4
         '
         Me.ChartProduzioneOrariaFormazione4.BackColor = System.Drawing.SystemColors.Control
-        ChartArea40.BackColor = System.Drawing.SystemColors.Control
-        ChartArea40.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaFormazione4.ChartAreas.Add(ChartArea40)
+        ChartArea16.BackColor = System.Drawing.SystemColors.Control
+        ChartArea16.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaFormazione4.ChartAreas.Add(ChartArea16)
         Me.ChartProduzioneOrariaFormazione4.Location = New System.Drawing.Point(71, 396)
         Me.ChartProduzioneOrariaFormazione4.Name = "ChartProduzioneOrariaFormazione4"
-        Series40.BorderWidth = 4
-        Series40.ChartArea = "ChartArea1"
-        Series40.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series40.IsValueShownAsLabel = True
-        Series40.LegendText = "Produzione oraria"
-        Series40.Name = "Series1"
-        Series40.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaFormazione4.Series.Add(Series40)
+        Series16.BorderWidth = 4
+        Series16.ChartArea = "ChartArea1"
+        Series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series16.IsValueShownAsLabel = True
+        Series16.LegendText = "Produzione oraria"
+        Series16.Name = "Series1"
+        Series16.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaFormazione4.Series.Add(Series16)
         Me.ChartProduzioneOrariaFormazione4.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaFormazione4.TabIndex = 107
         Me.ChartProduzioneOrariaFormazione4.Text = "Chart1"
@@ -3809,19 +3804,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaFormazione3
         '
         Me.ChartProduzioneOrariaFormazione3.BackColor = System.Drawing.SystemColors.Control
-        ChartArea41.BackColor = System.Drawing.SystemColors.Control
-        ChartArea41.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaFormazione3.ChartAreas.Add(ChartArea41)
+        ChartArea17.BackColor = System.Drawing.SystemColors.Control
+        ChartArea17.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaFormazione3.ChartAreas.Add(ChartArea17)
         Me.ChartProduzioneOrariaFormazione3.Location = New System.Drawing.Point(71, 306)
         Me.ChartProduzioneOrariaFormazione3.Name = "ChartProduzioneOrariaFormazione3"
-        Series41.BorderWidth = 4
-        Series41.ChartArea = "ChartArea1"
-        Series41.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series41.IsValueShownAsLabel = True
-        Series41.LegendText = "Produzione oraria"
-        Series41.Name = "Series1"
-        Series41.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaFormazione3.Series.Add(Series41)
+        Series17.BorderWidth = 4
+        Series17.ChartArea = "ChartArea1"
+        Series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series17.IsValueShownAsLabel = True
+        Series17.LegendText = "Produzione oraria"
+        Series17.Name = "Series1"
+        Series17.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaFormazione3.Series.Add(Series17)
         Me.ChartProduzioneOrariaFormazione3.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaFormazione3.TabIndex = 106
         Me.ChartProduzioneOrariaFormazione3.Text = "Chart1"
@@ -3829,19 +3824,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaFormazione2
         '
         Me.ChartProduzioneOrariaFormazione2.BackColor = System.Drawing.SystemColors.Control
-        ChartArea42.BackColor = System.Drawing.SystemColors.Control
-        ChartArea42.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaFormazione2.ChartAreas.Add(ChartArea42)
+        ChartArea18.BackColor = System.Drawing.SystemColors.Control
+        ChartArea18.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaFormazione2.ChartAreas.Add(ChartArea18)
         Me.ChartProduzioneOrariaFormazione2.Location = New System.Drawing.Point(71, 223)
         Me.ChartProduzioneOrariaFormazione2.Name = "ChartProduzioneOrariaFormazione2"
-        Series42.BorderWidth = 4
-        Series42.ChartArea = "ChartArea1"
-        Series42.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series42.IsValueShownAsLabel = True
-        Series42.LegendText = "Produzione oraria"
-        Series42.Name = "Series1"
-        Series42.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaFormazione2.Series.Add(Series42)
+        Series18.BorderWidth = 4
+        Series18.ChartArea = "ChartArea1"
+        Series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series18.IsValueShownAsLabel = True
+        Series18.LegendText = "Produzione oraria"
+        Series18.Name = "Series1"
+        Series18.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaFormazione2.Series.Add(Series18)
         Me.ChartProduzioneOrariaFormazione2.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaFormazione2.TabIndex = 105
         Me.ChartProduzioneOrariaFormazione2.Text = "Chart1"
@@ -3849,19 +3844,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaFormazione1
         '
         Me.ChartProduzioneOrariaFormazione1.BackColor = System.Drawing.SystemColors.Control
-        ChartArea43.BackColor = System.Drawing.SystemColors.Control
-        ChartArea43.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaFormazione1.ChartAreas.Add(ChartArea43)
+        ChartArea19.BackColor = System.Drawing.SystemColors.Control
+        ChartArea19.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaFormazione1.ChartAreas.Add(ChartArea19)
         Me.ChartProduzioneOrariaFormazione1.Location = New System.Drawing.Point(71, 135)
         Me.ChartProduzioneOrariaFormazione1.Name = "ChartProduzioneOrariaFormazione1"
-        Series43.BorderWidth = 4
-        Series43.ChartArea = "ChartArea1"
-        Series43.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series43.IsValueShownAsLabel = True
-        Series43.LegendText = "Produzione oraria"
-        Series43.Name = "Series1"
-        Series43.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaFormazione1.Series.Add(Series43)
+        Series19.BorderWidth = 4
+        Series19.ChartArea = "ChartArea1"
+        Series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series19.IsValueShownAsLabel = True
+        Series19.LegendText = "Produzione oraria"
+        Series19.Name = "Series1"
+        Series19.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaFormazione1.Series.Add(Series19)
         Me.ChartProduzioneOrariaFormazione1.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaFormazione1.TabIndex = 104
         Me.ChartProduzioneOrariaFormazione1.Text = "Chart1"
@@ -4711,19 +4706,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaFin5
         '
         Me.ChartProduzioneOrariaFin5.BackColor = System.Drawing.SystemColors.Control
-        ChartArea44.BackColor = System.Drawing.SystemColors.Control
-        ChartArea44.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaFin5.ChartAreas.Add(ChartArea44)
+        ChartArea20.BackColor = System.Drawing.SystemColors.Control
+        ChartArea20.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaFin5.ChartAreas.Add(ChartArea20)
         Me.ChartProduzioneOrariaFin5.Location = New System.Drawing.Point(91, 403)
         Me.ChartProduzioneOrariaFin5.Name = "ChartProduzioneOrariaFin5"
-        Series44.BorderWidth = 4
-        Series44.ChartArea = "ChartArea1"
-        Series44.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series44.IsValueShownAsLabel = True
-        Series44.LegendText = "Produzione oraria"
-        Series44.Name = "Series1"
-        Series44.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaFin5.Series.Add(Series44)
+        Series20.BorderWidth = 4
+        Series20.ChartArea = "ChartArea1"
+        Series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series20.IsValueShownAsLabel = True
+        Series20.LegendText = "Produzione oraria"
+        Series20.Name = "Series1"
+        Series20.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaFin5.Series.Add(Series20)
         Me.ChartProduzioneOrariaFin5.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaFin5.TabIndex = 161
         Me.ChartProduzioneOrariaFin5.Text = "Chart1"
@@ -4731,19 +4726,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaFin4
         '
         Me.ChartProduzioneOrariaFin4.BackColor = System.Drawing.SystemColors.Control
-        ChartArea45.BackColor = System.Drawing.SystemColors.Control
-        ChartArea45.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaFin4.ChartAreas.Add(ChartArea45)
+        ChartArea21.BackColor = System.Drawing.SystemColors.Control
+        ChartArea21.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaFin4.ChartAreas.Add(ChartArea21)
         Me.ChartProduzioneOrariaFin4.Location = New System.Drawing.Point(91, 313)
         Me.ChartProduzioneOrariaFin4.Name = "ChartProduzioneOrariaFin4"
-        Series45.BorderWidth = 4
-        Series45.ChartArea = "ChartArea1"
-        Series45.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series45.IsValueShownAsLabel = True
-        Series45.LegendText = "Produzione oraria"
-        Series45.Name = "Series1"
-        Series45.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaFin4.Series.Add(Series45)
+        Series21.BorderWidth = 4
+        Series21.ChartArea = "ChartArea1"
+        Series21.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series21.IsValueShownAsLabel = True
+        Series21.LegendText = "Produzione oraria"
+        Series21.Name = "Series1"
+        Series21.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaFin4.Series.Add(Series21)
         Me.ChartProduzioneOrariaFin4.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaFin4.TabIndex = 160
         Me.ChartProduzioneOrariaFin4.Text = "Chart1"
@@ -4751,19 +4746,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaFin3
         '
         Me.ChartProduzioneOrariaFin3.BackColor = System.Drawing.SystemColors.Control
-        ChartArea46.BackColor = System.Drawing.SystemColors.Control
-        ChartArea46.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaFin3.ChartAreas.Add(ChartArea46)
+        ChartArea22.BackColor = System.Drawing.SystemColors.Control
+        ChartArea22.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaFin3.ChartAreas.Add(ChartArea22)
         Me.ChartProduzioneOrariaFin3.Location = New System.Drawing.Point(91, 223)
         Me.ChartProduzioneOrariaFin3.Name = "ChartProduzioneOrariaFin3"
-        Series46.BorderWidth = 4
-        Series46.ChartArea = "ChartArea1"
-        Series46.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series46.IsValueShownAsLabel = True
-        Series46.LegendText = "Produzione oraria"
-        Series46.Name = "Series1"
-        Series46.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaFin3.Series.Add(Series46)
+        Series22.BorderWidth = 4
+        Series22.ChartArea = "ChartArea1"
+        Series22.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series22.IsValueShownAsLabel = True
+        Series22.LegendText = "Produzione oraria"
+        Series22.Name = "Series1"
+        Series22.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaFin3.Series.Add(Series22)
         Me.ChartProduzioneOrariaFin3.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaFin3.TabIndex = 159
         Me.ChartProduzioneOrariaFin3.Text = "Chart1"
@@ -4771,19 +4766,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaFin2
         '
         Me.ChartProduzioneOrariaFin2.BackColor = System.Drawing.SystemColors.Control
-        ChartArea47.BackColor = System.Drawing.SystemColors.Control
-        ChartArea47.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaFin2.ChartAreas.Add(ChartArea47)
+        ChartArea23.BackColor = System.Drawing.SystemColors.Control
+        ChartArea23.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaFin2.ChartAreas.Add(ChartArea23)
         Me.ChartProduzioneOrariaFin2.Location = New System.Drawing.Point(91, 140)
         Me.ChartProduzioneOrariaFin2.Name = "ChartProduzioneOrariaFin2"
-        Series47.BorderWidth = 4
-        Series47.ChartArea = "ChartArea1"
-        Series47.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series47.IsValueShownAsLabel = True
-        Series47.LegendText = "Produzione oraria"
-        Series47.Name = "Series1"
-        Series47.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaFin2.Series.Add(Series47)
+        Series23.BorderWidth = 4
+        Series23.ChartArea = "ChartArea1"
+        Series23.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series23.IsValueShownAsLabel = True
+        Series23.LegendText = "Produzione oraria"
+        Series23.Name = "Series1"
+        Series23.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaFin2.Series.Add(Series23)
         Me.ChartProduzioneOrariaFin2.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaFin2.TabIndex = 158
         Me.ChartProduzioneOrariaFin2.Text = "Chart1"
@@ -4791,19 +4786,19 @@ Partial Class DashboardProduzione
         'ChartProduzioneOrariaFin1
         '
         Me.ChartProduzioneOrariaFin1.BackColor = System.Drawing.SystemColors.Control
-        ChartArea48.BackColor = System.Drawing.SystemColors.Control
-        ChartArea48.Name = "ChartArea1"
-        Me.ChartProduzioneOrariaFin1.ChartAreas.Add(ChartArea48)
+        ChartArea24.BackColor = System.Drawing.SystemColors.Control
+        ChartArea24.Name = "ChartArea1"
+        Me.ChartProduzioneOrariaFin1.ChartAreas.Add(ChartArea24)
         Me.ChartProduzioneOrariaFin1.Location = New System.Drawing.Point(91, 52)
         Me.ChartProduzioneOrariaFin1.Name = "ChartProduzioneOrariaFin1"
-        Series48.BorderWidth = 4
-        Series48.ChartArea = "ChartArea1"
-        Series48.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series48.IsValueShownAsLabel = True
-        Series48.LegendText = "Produzione oraria"
-        Series48.Name = "Series1"
-        Series48.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOrariaFin1.Series.Add(Series48)
+        Series24.BorderWidth = 4
+        Series24.ChartArea = "ChartArea1"
+        Series24.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series24.IsValueShownAsLabel = True
+        Series24.LegendText = "Produzione oraria"
+        Series24.Name = "Series1"
+        Series24.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOrariaFin1.Series.Add(Series24)
         Me.ChartProduzioneOrariaFin1.Size = New System.Drawing.Size(514, 68)
         Me.ChartProduzioneOrariaFin1.TabIndex = 157
         Me.ChartProduzioneOrariaFin1.Text = "Chart1"
@@ -5299,20 +5294,6 @@ Partial Class DashboardProduzione
         Me.LabelPathDatabase.TabIndex = 141
         Me.LabelPathDatabase.Visible = False
         '
-        'VRNFermiDataSet
-        '
-        Me.VRNFermiDataSet.DataSetName = "VRNFermiDataSet"
-        Me.VRNFermiDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Fermi2BindingSource
-        '
-        Me.Fermi2BindingSource.DataMember = "Fermi2"
-        Me.Fermi2BindingSource.DataSource = Me.VRNFermiDataSet
-        '
-        'Fermi2TableAdapter
-        '
-        Me.Fermi2TableAdapter.ClearBeforeFill = True
-        '
         'DashboardProduzione
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -5360,8 +5341,6 @@ Partial Class DashboardProduzione
         Me.TabPlanning.ResumeLayout(False)
         CType(Me.DataGridViewLanciMontaggio, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxFiamm, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VRNFermiDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Fermi2BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -5831,9 +5810,8 @@ Partial Class DashboardProduzione
     Friend WithEvents TabPlanning As System.Windows.Forms.TabPage
     Friend WithEvents ButtonImportaLanci As System.Windows.Forms.Button
     Friend WithEvents DataGridViewLanciMontaggio As System.Windows.Forms.DataGridView
-    Friend WithEvents VRNFermiDataSet As ArduinoFermi.VRNFermiDataSet
-    Friend WithEvents Fermi2BindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Fermi2TableAdapter As ArduinoFermi.VRNFermiDataSetTableAdapters.Fermi2TableAdapter
+    '  Friend WithEvents Fermi2BindingSource As System.Windows.Forms.BindingSource
+    ' Friend WithEvents Fermi2TableAdapter As ArduinoFermi.VRNFermiDataSetTableAdapters.Fermi2TableAdapter
     Friend WithEvents ButtonVisualizzaLanci As System.Windows.Forms.Button
     Friend WithEvents LabelLancioMontLinea1 As System.Windows.Forms.Label
     Friend WithEvents LabelLancioMontLinea2 As System.Windows.Forms.Label

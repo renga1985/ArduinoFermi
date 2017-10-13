@@ -15,7 +15,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
-    <PublishUrl>D:\Progetti .Net\ApplicazioniPubblicazioni\</PublishUrl>
+    <PublishUrl>C:\ArduinoFermi\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -26,7 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\fiammitfs02\CorporateShare\Prod\IB_Fermi\ArduinoFermi\</InstallUrl>
-    <ApplicationRevision>65</ApplicationRevision>
+    <ApplicationRevision>66</ApplicationRevision>
     <ApplicationVersion>0.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -215,6 +215,7 @@
     <Compile Include="VRNFermiDataSet.vb">
       <DependentUpon>VRNFermiDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Worksheet.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AnalisiFermi.resx">
@@ -367,7 +368,7 @@
     <COMReference Include="Microsoft.Office.Core">
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>
-      <VersionMinor>5</VersionMinor>
+      <VersionMinor>4</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
@@ -376,7 +377,7 @@
     <COMReference Include="Microsoft.Office.Interop.Excel">
       <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>1</VersionMajor>
-      <VersionMinor>7</VersionMinor>
+      <VersionMinor>6</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
