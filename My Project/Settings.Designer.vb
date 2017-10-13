@@ -69,8 +69,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-NFISVQ2\SQLEXPRESS;Initial Catalog=VRNFermi;User ID=sa;Passwo"& _ 
-            "rd=sa")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=MATTI\SQLEXPRESS;Initial Catalog=VRNFermi;Integrated Security=True")>  _
         Public ReadOnly Property VRNFermiConnectionString() As String
             Get
                 Return CType(Me("VRNFermiConnectionString"),String)
