@@ -164,6 +164,7 @@ Partial Class Form1
         Me.LabelNome = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.LabelStatus = New System.Windows.Forms.Label()
+        Me.ButtonScegliLancioProduzione = New System.Windows.Forms.Button()
         CType(Me.PictureBoxFiamm, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartProduzioneOraria, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -1558,12 +1559,22 @@ Partial Class Form1
         Me.LabelStatus.TabIndex = 92
         Me.LabelStatus.Text = "Registrazione dati in STOP"
         '
+        'ButtonScegliLancioProduzione
+        '
+        Me.ButtonScegliLancioProduzione.Location = New System.Drawing.Point(1066, 224)
+        Me.ButtonScegliLancioProduzione.Name = "ButtonScegliLancioProduzione"
+        Me.ButtonScegliLancioProduzione.Size = New System.Drawing.Size(148, 23)
+        Me.ButtonScegliLancioProduzione.TabIndex = 93
+        Me.ButtonScegliLancioProduzione.Text = "Scegli Lancio Produzione"
+        Me.ButtonScegliLancioProduzione.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1354, 733)
+        Me.Controls.Add(Me.ButtonScegliLancioProduzione)
         Me.Controls.Add(Me.LabelStatus)
         Me.Controls.Add(Me.Label24)
         Me.Controls.Add(Me.LabelNome)
@@ -1784,5 +1795,6 @@ Partial Class Form1
     Friend WithEvents LabelNome As System.Windows.Forms.Label
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents LabelStatus As System.Windows.Forms.Label
+    Friend WithEvents ButtonScegliLancioProduzione As System.Windows.Forms.Button
 
 End Class

@@ -324,7 +324,7 @@ Public Class Form1
         'ONLY FOR TEST TO SAVE PRODUCTION EVERY 10 MINUTES
         Dim stringTime As String = Strings.Mid(LabelCurrentTime.Text, 16, 4)
         Label23.Text = stringTime
-        If stringTime = "0.00" And LabelProduzioneSalvata.Text = "No" Then
+        If stringTime = "0:00" And LabelProduzioneSalvata.Text = "No" Then
 
             SaveProduction()
             UpdateChart()
@@ -1507,6 +1507,8 @@ Public Class Form1
             TimerForRoutineRegistrationData.Start()
             LabelStatus.Text = "Registrazione dati in RUN"
 
+            SceltaLancio.Show()
+
         Else
             'There is already at least one operator loaded in to the line
             'we do nothing
@@ -1554,4 +1556,7 @@ Public Class Form1
 
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ButtonScegliLancioProduzione.Click
+        SceltaLancio.Show()
+    End Sub
 End Class

@@ -2,11 +2,14 @@
 Imports System.Data.OleDb
 Imports System.IO
 Imports System.Data.SqlClient
+Imports Excel = Microsoft.Office.Interop.Excel
 
 Public Class DashboardProduzione
 
 
     Private Sub DashboardProduzione_Load1(sender As Object, e As EventArgs) Handles Me.Load
+        'TODO: This line of code loads data into the 'VRNFermiDataSet.Fermi2' table. You can move, or remove it, as needed.
+
         'We take some other parameters from config.txt
         Dim path As String = "C:\ArduinoFermi\config.txt"
         'Try
@@ -1455,7 +1458,39 @@ Public Class DashboardProduzione
         TotProduzioneMontaggio.Text = (CInt(LabelProductionShiftMontaggio1.Text) + CInt(LabelProductionShiftMontaggio2.Text) + CInt(LabelProductionShiftMontaggio3.Text) + CInt(LabelProductionShiftMontaggio4.Text) + CInt(LabelProductionShiftMontaggio5.Text) + CInt(LabelProductionShiftMontaggio6.Text) + CInt(LabelProductionShiftMontaggio7.Text) + CInt(LabelProductionShiftMontaggio8.Text)).ToString
         TotProduzioneFormazione.Text = (CInt(LabelProductionShiftFormazione1.Text) + CInt(LabelProductionShiftFormazione2.Text) + CInt(LabelProductionShiftFormazione3.Text) + CInt(LabelProductionShiftFormazione4.Text) + CInt(LabelProductionShiftFormazione5.Text)).ToString
         TotProduzioneFinitura.Text = (CInt(LabelProductionShiftFin1.Text) + CInt(LabelProductionShiftFin2.Text) + CInt(LabelProductionShiftFin3.Text) + CInt(LabelProductionShiftFin4.Text) + CInt(LabelProductionShiftFin5.Text)).ToString
+
+        LabelLancioMontLinea1.Text = ShowLanciProduzioneIncorso(80, 1)
+        LabelLancioMontLinea2.Text = ShowLanciProduzioneIncorso(80, 2)
+
     End Sub
+
+    Function ShowLanciProduzioneIncorso(Reparto As String, Linea As String)
+
+        Dim myConn As New SqlConnection(LabelPathDatabase.Text)
+        Dim myCmd As SqlCommand
+        myCmd = myConn.CreateCommand()
+        myCmd.CommandText = "SELECT LancioInCorso FROM StatoLinee WHERE (Id_Reparto=" & Reparto & ") AND (Id_linea=" & Linea & ")"
+        myCmd.Connection.Open()
+        Dim Lancio As String = myCmd.ExecuteScalar()
+        myCmd.Connection.Close()
+
+        Dim myCmd2 As SqlCommand
+        myCmd2 = myConn.CreateCommand()
+        myCmd2.CommandText = "SELECT Materiale FROM LanciProduzione WHERE (Ordpian='" & Lancio & "')"
+        myCmd2.Connection.Open()
+        Dim Testo As String = Lancio & " - " & myCmd2.ExecuteScalar()
+        myCmd2.Connection.Close()
+
+        Dim myCmd3 As SqlCommand
+        myCmd3 = myConn.CreateCommand()
+        myCmd3.CommandText = "SELECT Serie FROM LanciProduzione WHERE (Ordpian=" & Lancio & ")"
+        myCmd3.Connection.Open()
+        Testo = Testo & " - " & myCmd3.ExecuteScalar()
+        myCmd3.Connection.Close()
+
+        Return Testo
+
+    End Function
 
     Function UpdateTrafficLight(Reparto As String, Linea As String)
         Dim Stato As String
@@ -1557,4 +1592,73 @@ Public Class DashboardProduzione
         LabelCurrentTime.Text = DateTime.Now.ToString()
     End Sub
 
+    Private Sub ButtonImportaLanci_Click(sender As Object, e As EventArgs) Handles ButtonImportaLanci.Click
+
+        Dim xlApp As Excel.Application
+        Dim xlWorkBook As Excel.Workbook
+        Dim xlWorkSheet As Excel.Worksheet
+        Dim range As Excel.Range
+        Dim rCnt As Integer
+       Dim Obj As Object
+
+        xlApp = New Excel.Application
+        xlWorkBook = xlApp.Workbooks.Open("\\fiammitfs02\CorporateShare\Prod\IB_Fermi\ArduinoFermi\lista lanci produzione.xlsx")
+        xlWorkSheet = xlWorkBook.Worksheets("Foglio1")
+        Dim myConn As New SqlConnection(LabelPathDatabase.Text)
+        Dim myCmd As SqlCommand
+
+        range = xlWorkSheet.UsedRange
+
+
+        myCmd = myConn.CreateCommand()
+        myCmd.Connection.Open()
+        For rCnt = 1 To 9 'DA SISTEMARE IL CONTEGGIO DELLE RIGHE
+            myCmd.CommandText = ("INSERT INTO LanciProduzione (Ordpian,Materiale,[Materiale pianif#],Linea,[Qtà ordine],UMO,[Fine card#],Sequenza,SERIE,ProgressivoQuantita)VALUES (" & range.Cells(rCnt + 1, 1).value.ToString & "," & range.Cells(rCnt + 1, 2).value.ToString & ",'" & range.Cells(rCnt + 1, 3).value.ToString & "','" & range.Cells(rCnt + 1, 4).value.ToString & "','" & range.Cells(rCnt + 1, 5).value.ToString & "','" & range.Cells(rCnt + 1, 6).value.ToString & "','" & CDate(range.Cells(rCnt + 1, 7).value.ToString) & "','" & range.Cells(rCnt + 1, 8).value.ToString & "','" & range.Cells(rCnt + 1, 9).value.ToString & "','" & range.Cells(rCnt + 1, 10).value.ToString & "')")
+            myCmd.ExecuteNonQuery()
+        Next
+        myCmd.Connection.Close()
+
+        xlWorkBook.Close()
+        xlApp.Quit()
+
+        releaseObject(xlApp)
+        releaseObject(xlWorkBook)
+        releaseObject(xlWorkSheet)
+
+        MsgBox("Lanci correttamente importati", MsgBoxStyle.OkOnly)
+
+    End Sub
+
+
+    Private Sub releaseObject(ByVal obj As Object)
+        Try
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
+            obj = Nothing
+        Catch ex As Exception
+            obj = Nothing
+        Finally
+            GC.Collect()
+        End Try
+    End Sub
+
+    Private Sub ButtonVisualizzaLanci_Click(sender As Object, e As EventArgs) Handles ButtonVisualizzaLanci.Click
+
+        Dim myConn As New SqlConnection(LabelPathDatabase.Text)
+        Dim myCmd As SqlCommand
+
+        myCmd = myConn.CreateCommand()
+
+        myCmd.CommandText = "SELECT * FROM LanciProduzione"
+
+        myCmd.Connection.Open()
+        Dim dtRegistro As DataTable = New DataTable
+        Dim myDataAdapter As New SqlDataAdapter(myCmd)
+        myDataAdapter.Fill(dtRegistro)
+        DataGridViewLanciMontaggio.DataSource = dtRegistro
+        myCmd.Connection.Close()
+
+
+    End Sub
+
+    
 End Class
