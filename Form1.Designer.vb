@@ -24,15 +24,15 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea7 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend7 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea8 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend8 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Title5 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea9 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend9 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Title6 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Me.SerialPortArduino = New System.IO.Ports.SerialPort(Me.components)
         Me.ButtonSvolgitore = New System.Windows.Forms.Button()
         Me.ButtonEspansore = New System.Windows.Forms.Button()
@@ -392,6 +392,7 @@ Partial Class Form1
         Me.LabelProduzioneNascosto.Size = New System.Drawing.Size(43, 46)
         Me.LabelProduzioneNascosto.TabIndex = 21
         Me.LabelProduzioneNascosto.Text = "0"
+        Me.LabelProduzioneNascosto.Visible = False
         '
         'Label4
         '
@@ -665,25 +666,25 @@ Partial Class Form1
         'ChartProduzioneOraria
         '
         Me.ChartProduzioneOraria.BackColor = System.Drawing.SystemColors.Control
-        ChartArea1.AxisX.Title = "Orario"
-        ChartArea1.AxisY.Title = "Pz."
-        ChartArea1.BackColor = System.Drawing.SystemColors.Control
-        ChartArea1.Name = "ChartArea1"
-        Me.ChartProduzioneOraria.ChartAreas.Add(ChartArea1)
-        Legend1.BackColor = System.Drawing.SystemColors.Control
-        Legend1.Name = "Legend1"
-        Me.ChartProduzioneOraria.Legends.Add(Legend1)
+        ChartArea7.AxisX.Title = "Orario"
+        ChartArea7.AxisY.Title = "Pz."
+        ChartArea7.BackColor = System.Drawing.SystemColors.Control
+        ChartArea7.Name = "ChartArea1"
+        Me.ChartProduzioneOraria.ChartAreas.Add(ChartArea7)
+        Legend7.BackColor = System.Drawing.SystemColors.Control
+        Legend7.Name = "Legend1"
+        Me.ChartProduzioneOraria.Legends.Add(Legend7)
         Me.ChartProduzioneOraria.Location = New System.Drawing.Point(-255, 435)
         Me.ChartProduzioneOraria.Name = "ChartProduzioneOraria"
-        Series1.BorderWidth = 4
-        Series1.ChartArea = "ChartArea1"
-        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series1.IsValueShownAsLabel = True
-        Series1.Legend = "Legend1"
-        Series1.LegendText = "Produzione oraria"
-        Series1.Name = "Series1"
-        Series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOraria.Series.Add(Series1)
+        Series3.BorderWidth = 4
+        Series3.ChartArea = "ChartArea1"
+        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series3.IsValueShownAsLabel = True
+        Series3.Legend = "Legend1"
+        Series3.LegendText = "Produzione oraria"
+        Series3.Name = "Series1"
+        Series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOraria.Series.Add(Series3)
         Me.ChartProduzioneOraria.Size = New System.Drawing.Size(1918, 269)
         Me.ChartProduzioneOraria.TabIndex = 49
         Me.ChartProduzioneOraria.Text = "Chart1"
@@ -860,35 +861,35 @@ Partial Class Form1
         '
         'ChartMacchine
         '
-        ChartArea2.Name = "ChartArea1"
-        Me.ChartMacchine.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.ChartMacchine.Legends.Add(Legend2)
+        ChartArea8.Name = "ChartArea1"
+        Me.ChartMacchine.ChartAreas.Add(ChartArea8)
+        Legend8.Name = "Legend1"
+        Me.ChartMacchine.Legends.Add(Legend8)
         Me.ChartMacchine.Location = New System.Drawing.Point(0, 693)
         Me.ChartMacchine.Name = "ChartMacchine"
         Me.ChartMacchine.Size = New System.Drawing.Size(705, 300)
         Me.ChartMacchine.TabIndex = 71
         Me.ChartMacchine.Text = "Chart"
-        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title1.Name = "Title1"
-        Title1.Text = "Causali fermi - ultime 8 ore"
-        Me.ChartMacchine.Titles.Add(Title1)
+        Title5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title5.Name = "Title1"
+        Title5.Text = "Causali fermi - ultime 8 ore"
+        Me.ChartMacchine.Titles.Add(Title5)
         '
         'ChartCausali
         '
-        ChartArea3.Name = "ChartArea1"
-        Me.ChartCausali.ChartAreas.Add(ChartArea3)
-        Legend3.Name = "Legend1"
-        Me.ChartCausali.Legends.Add(Legend3)
+        ChartArea9.Name = "ChartArea1"
+        Me.ChartCausali.ChartAreas.Add(ChartArea9)
+        Legend9.Name = "Legend1"
+        Me.ChartCausali.Legends.Add(Legend9)
         Me.ChartCausali.Location = New System.Drawing.Point(740, 693)
         Me.ChartCausali.Name = "ChartCausali"
         Me.ChartCausali.Size = New System.Drawing.Size(705, 300)
         Me.ChartCausali.TabIndex = 72
         Me.ChartCausali.Text = "Chart"
-        Title2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title2.Name = "Title1"
-        Title2.Text = "Causali fermi -LINEA GENERALE - ultime 8 ore"
-        Me.ChartCausali.Titles.Add(Title2)
+        Title6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title6.Name = "Title1"
+        Title6.Text = "Causali fermi -LINEA GENERALE - ultime 8 ore"
+        Me.ChartCausali.Titles.Add(Title6)
         '
         'Label17
         '
@@ -1495,6 +1496,7 @@ Partial Class Form1
         Me.LabelProduzioneSalvata.TabIndex = 84
         Me.LabelProduzioneSalvata.Text = "No"
         Me.LabelProduzioneSalvata.UseWaitCursor = True
+        Me.LabelProduzioneSalvata.Visible = False
         '
         'Label23
         '
@@ -1504,6 +1506,7 @@ Partial Class Form1
         Me.Label23.Size = New System.Drawing.Size(96, 13)
         Me.Label23.TabIndex = 85
         Me.Label23.Text = "ProduzioneSalvata"
+        Me.Label23.Visible = False
         '
         'TextBoxTimbratura
         '
@@ -1561,7 +1564,7 @@ Partial Class Form1
         '
         'ButtonScegliLancioProduzione
         '
-        Me.ButtonScegliLancioProduzione.Location = New System.Drawing.Point(1066, 224)
+        Me.ButtonScegliLancioProduzione.Location = New System.Drawing.Point(1052, 231)
         Me.ButtonScegliLancioProduzione.Name = "ButtonScegliLancioProduzione"
         Me.ButtonScegliLancioProduzione.Size = New System.Drawing.Size(148, 23)
         Me.ButtonScegliLancioProduzione.TabIndex = 93
