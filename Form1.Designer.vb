@@ -24,15 +24,15 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim ChartArea7 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend7 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea8 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend8 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Title5 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
-        Dim ChartArea9 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend9 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Title6 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea28 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend28 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series10 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea29 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend29 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Title19 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea30 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend30 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Title20 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Me.SerialPortArduino = New System.IO.Ports.SerialPort(Me.components)
         Me.ButtonSvolgitore = New System.Windows.Forms.Button()
         Me.ButtonEspansore = New System.Windows.Forms.Button()
@@ -165,6 +165,17 @@ Partial Class Form1
         Me.Label24 = New System.Windows.Forms.Label()
         Me.LabelStatus = New System.Windows.Forms.Label()
         Me.ButtonScegliLancioProduzione = New System.Windows.Forms.Button()
+        Me.TabFormazione = New System.Windows.Forms.TabPage()
+        Me.ButtonLineaGeneraleFormazione = New System.Windows.Forms.Button()
+        Me.ButtonPinzaCarico = New System.Windows.Forms.Button()
+        Me.ButtonInseritoreOcchioMagico = New System.Windows.Forms.Button()
+        Me.ButtonPrimoRiempimento = New System.Windows.Forms.Button()
+        Me.ButtonPosaRampeFormazione = New System.Windows.Forms.Button()
+        Me.ButtonRotatoreSpintore1 = New System.Windows.Forms.Button()
+        Me.ButtonCarrelloCarico = New System.Windows.Forms.Button()
+        Me.ButtonNastriCarico = New System.Windows.Forms.Button()
+        Me.ButtonNastriScarico = New System.Windows.Forms.Button()
+        Me.ButtonCarrelloScarico = New System.Windows.Forms.Button()
         CType(Me.PictureBoxFiamm, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartProduzioneOraria, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -175,6 +186,7 @@ Partial Class Form1
         Me.TabMontaggio.SuspendLayout()
         Me.TabCarica.SuspendLayout()
         CType(Me.DataGridViewManPower, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabFormazione.SuspendLayout()
         Me.SuspendLayout()
         '
         'ButtonSvolgitore
@@ -666,25 +678,25 @@ Partial Class Form1
         'ChartProduzioneOraria
         '
         Me.ChartProduzioneOraria.BackColor = System.Drawing.SystemColors.Control
-        ChartArea7.AxisX.Title = "Orario"
-        ChartArea7.AxisY.Title = "Pz."
-        ChartArea7.BackColor = System.Drawing.SystemColors.Control
-        ChartArea7.Name = "ChartArea1"
-        Me.ChartProduzioneOraria.ChartAreas.Add(ChartArea7)
-        Legend7.BackColor = System.Drawing.SystemColors.Control
-        Legend7.Name = "Legend1"
-        Me.ChartProduzioneOraria.Legends.Add(Legend7)
+        ChartArea28.AxisX.Title = "Orario"
+        ChartArea28.AxisY.Title = "Pz."
+        ChartArea28.BackColor = System.Drawing.SystemColors.Control
+        ChartArea28.Name = "ChartArea1"
+        Me.ChartProduzioneOraria.ChartAreas.Add(ChartArea28)
+        Legend28.BackColor = System.Drawing.SystemColors.Control
+        Legend28.Name = "Legend1"
+        Me.ChartProduzioneOraria.Legends.Add(Legend28)
         Me.ChartProduzioneOraria.Location = New System.Drawing.Point(-255, 435)
         Me.ChartProduzioneOraria.Name = "ChartProduzioneOraria"
-        Series3.BorderWidth = 4
-        Series3.ChartArea = "ChartArea1"
-        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series3.IsValueShownAsLabel = True
-        Series3.Legend = "Legend1"
-        Series3.LegendText = "Produzione oraria"
-        Series3.Name = "Series1"
-        Series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
-        Me.ChartProduzioneOraria.Series.Add(Series3)
+        Series10.BorderWidth = 4
+        Series10.ChartArea = "ChartArea1"
+        Series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series10.IsValueShownAsLabel = True
+        Series10.Legend = "Legend1"
+        Series10.LegendText = "Produzione oraria"
+        Series10.Name = "Series1"
+        Series10.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
+        Me.ChartProduzioneOraria.Series.Add(Series10)
         Me.ChartProduzioneOraria.Size = New System.Drawing.Size(1918, 269)
         Me.ChartProduzioneOraria.TabIndex = 49
         Me.ChartProduzioneOraria.Text = "Chart1"
@@ -861,35 +873,35 @@ Partial Class Form1
         '
         'ChartMacchine
         '
-        ChartArea8.Name = "ChartArea1"
-        Me.ChartMacchine.ChartAreas.Add(ChartArea8)
-        Legend8.Name = "Legend1"
-        Me.ChartMacchine.Legends.Add(Legend8)
+        ChartArea29.Name = "ChartArea1"
+        Me.ChartMacchine.ChartAreas.Add(ChartArea29)
+        Legend29.Name = "Legend1"
+        Me.ChartMacchine.Legends.Add(Legend29)
         Me.ChartMacchine.Location = New System.Drawing.Point(0, 693)
         Me.ChartMacchine.Name = "ChartMacchine"
         Me.ChartMacchine.Size = New System.Drawing.Size(705, 300)
         Me.ChartMacchine.TabIndex = 71
         Me.ChartMacchine.Text = "Chart"
-        Title5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title5.Name = "Title1"
-        Title5.Text = "Causali fermi - ultime 8 ore"
-        Me.ChartMacchine.Titles.Add(Title5)
+        Title19.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title19.Name = "Title1"
+        Title19.Text = "Causali fermi - ultime 8 ore"
+        Me.ChartMacchine.Titles.Add(Title19)
         '
         'ChartCausali
         '
-        ChartArea9.Name = "ChartArea1"
-        Me.ChartCausali.ChartAreas.Add(ChartArea9)
-        Legend9.Name = "Legend1"
-        Me.ChartCausali.Legends.Add(Legend9)
+        ChartArea30.Name = "ChartArea1"
+        Me.ChartCausali.ChartAreas.Add(ChartArea30)
+        Legend30.Name = "Legend1"
+        Me.ChartCausali.Legends.Add(Legend30)
         Me.ChartCausali.Location = New System.Drawing.Point(740, 693)
         Me.ChartCausali.Name = "ChartCausali"
         Me.ChartCausali.Size = New System.Drawing.Size(705, 300)
         Me.ChartCausali.TabIndex = 72
         Me.ChartCausali.Text = "Chart"
-        Title6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title6.Name = "Title1"
-        Title6.Text = "Causali fermi -LINEA GENERALE - ultime 8 ore"
-        Me.ChartCausali.Titles.Add(Title6)
+        Title20.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title20.Name = "Title1"
+        Title20.Text = "Causali fermi -LINEA GENERALE - ultime 8 ore"
+        Me.ChartCausali.Titles.Add(Title20)
         '
         'Label17
         '
@@ -985,6 +997,7 @@ Partial Class Form1
         '
         Me.Tab.Controls.Add(Me.TabStiratura)
         Me.Tab.Controls.Add(Me.TabMontaggio)
+        Me.Tab.Controls.Add(Me.TabFormazione)
         Me.Tab.Controls.Add(Me.TabCarica)
         Me.Tab.Location = New System.Drawing.Point(0, 266)
         Me.Tab.Multiline = True
@@ -1571,6 +1584,135 @@ Partial Class Form1
         Me.ButtonScegliLancioProduzione.Text = "Scegli Lancio Produzione"
         Me.ButtonScegliLancioProduzione.UseVisualStyleBackColor = True
         '
+        'TabFormazione
+        '
+        Me.TabFormazione.Controls.Add(Me.ButtonCarrelloScarico)
+        Me.TabFormazione.Controls.Add(Me.ButtonNastriScarico)
+        Me.TabFormazione.Controls.Add(Me.ButtonNastriCarico)
+        Me.TabFormazione.Controls.Add(Me.ButtonCarrelloCarico)
+        Me.TabFormazione.Controls.Add(Me.ButtonRotatoreSpintore1)
+        Me.TabFormazione.Controls.Add(Me.ButtonPosaRampeFormazione)
+        Me.TabFormazione.Controls.Add(Me.ButtonPrimoRiempimento)
+        Me.TabFormazione.Controls.Add(Me.ButtonInseritoreOcchioMagico)
+        Me.TabFormazione.Controls.Add(Me.ButtonPinzaCarico)
+        Me.TabFormazione.Controls.Add(Me.ButtonLineaGeneraleFormazione)
+        Me.TabFormazione.Location = New System.Drawing.Point(4, 22)
+        Me.TabFormazione.Name = "TabFormazione"
+        Me.TabFormazione.Size = New System.Drawing.Size(1672, 144)
+        Me.TabFormazione.TabIndex = 3
+        Me.TabFormazione.Text = "Formazione"
+        Me.TabFormazione.UseVisualStyleBackColor = True
+        '
+        'ButtonLineaGeneraleFormazione
+        '
+        Me.ButtonLineaGeneraleFormazione.Enabled = False
+        Me.ButtonLineaGeneraleFormazione.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonLineaGeneraleFormazione.Location = New System.Drawing.Point(635, 3)
+        Me.ButtonLineaGeneraleFormazione.Name = "ButtonLineaGeneraleFormazione"
+        Me.ButtonLineaGeneraleFormazione.Size = New System.Drawing.Size(339, 43)
+        Me.ButtonLineaGeneraleFormazione.TabIndex = 32
+        Me.ButtonLineaGeneraleFormazione.Text = "Linea Generale"
+        Me.ButtonLineaGeneraleFormazione.UseVisualStyleBackColor = True
+        '
+        'ButtonPinzaCarico
+        '
+        Me.ButtonPinzaCarico.Enabled = False
+        Me.ButtonPinzaCarico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonPinzaCarico.Location = New System.Drawing.Point(8, 48)
+        Me.ButtonPinzaCarico.Name = "ButtonPinzaCarico"
+        Me.ButtonPinzaCarico.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonPinzaCarico.TabIndex = 33
+        Me.ButtonPinzaCarico.Text = "Pinza carico manuale"
+        Me.ButtonPinzaCarico.UseVisualStyleBackColor = True
+        '
+        'ButtonInseritoreOcchioMagico
+        '
+        Me.ButtonInseritoreOcchioMagico.Enabled = False
+        Me.ButtonInseritoreOcchioMagico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonInseritoreOcchioMagico.Location = New System.Drawing.Point(188, 48)
+        Me.ButtonInseritoreOcchioMagico.Name = "ButtonInseritoreOcchioMagico"
+        Me.ButtonInseritoreOcchioMagico.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonInseritoreOcchioMagico.TabIndex = 34
+        Me.ButtonInseritoreOcchioMagico.Text = "Inseritore occhio magico"
+        Me.ButtonInseritoreOcchioMagico.UseVisualStyleBackColor = True
+        '
+        'ButtonPrimoRiempimento
+        '
+        Me.ButtonPrimoRiempimento.Enabled = False
+        Me.ButtonPrimoRiempimento.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonPrimoRiempimento.Location = New System.Drawing.Point(368, 48)
+        Me.ButtonPrimoRiempimento.Name = "ButtonPrimoRiempimento"
+        Me.ButtonPrimoRiempimento.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonPrimoRiempimento.TabIndex = 35
+        Me.ButtonPrimoRiempimento.Text = "1° riempimento"
+        Me.ButtonPrimoRiempimento.UseVisualStyleBackColor = True
+        '
+        'ButtonPosaRampeFormazione
+        '
+        Me.ButtonPosaRampeFormazione.Enabled = False
+        Me.ButtonPosaRampeFormazione.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonPosaRampeFormazione.Location = New System.Drawing.Point(548, 48)
+        Me.ButtonPosaRampeFormazione.Name = "ButtonPosaRampeFormazione"
+        Me.ButtonPosaRampeFormazione.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonPosaRampeFormazione.TabIndex = 36
+        Me.ButtonPosaRampeFormazione.Text = "Posa Rampe Formazione"
+        Me.ButtonPosaRampeFormazione.UseVisualStyleBackColor = True
+        '
+        'ButtonRotatoreSpintore1
+        '
+        Me.ButtonRotatoreSpintore1.Enabled = False
+        Me.ButtonRotatoreSpintore1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonRotatoreSpintore1.Location = New System.Drawing.Point(728, 48)
+        Me.ButtonRotatoreSpintore1.Name = "ButtonRotatoreSpintore1"
+        Me.ButtonRotatoreSpintore1.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonRotatoreSpintore1.TabIndex = 37
+        Me.ButtonRotatoreSpintore1.Text = "Rotatore e Spintore 1°riemp"
+        Me.ButtonRotatoreSpintore1.UseVisualStyleBackColor = True
+        '
+        'ButtonCarrelloCarico
+        '
+        Me.ButtonCarrelloCarico.Enabled = False
+        Me.ButtonCarrelloCarico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonCarrelloCarico.Location = New System.Drawing.Point(908, 48)
+        Me.ButtonCarrelloCarico.Name = "ButtonCarrelloCarico"
+        Me.ButtonCarrelloCarico.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonCarrelloCarico.TabIndex = 38
+        Me.ButtonCarrelloCarico.Text = "Carrello carico"
+        Me.ButtonCarrelloCarico.UseVisualStyleBackColor = True
+        '
+        'ButtonNastriCarico
+        '
+        Me.ButtonNastriCarico.Enabled = False
+        Me.ButtonNastriCarico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonNastriCarico.Location = New System.Drawing.Point(1088, 48)
+        Me.ButtonNastriCarico.Name = "ButtonNastriCarico"
+        Me.ButtonNastriCarico.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonNastriCarico.TabIndex = 39
+        Me.ButtonNastriCarico.Text = "Nastri carico"
+        Me.ButtonNastriCarico.UseVisualStyleBackColor = True
+        '
+        'ButtonNastriScarico
+        '
+        Me.ButtonNastriScarico.Enabled = False
+        Me.ButtonNastriScarico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonNastriScarico.Location = New System.Drawing.Point(548, 100)
+        Me.ButtonNastriScarico.Name = "ButtonNastriScarico"
+        Me.ButtonNastriScarico.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonNastriScarico.TabIndex = 40
+        Me.ButtonNastriScarico.Text = "Nastri scarico"
+        Me.ButtonNastriScarico.UseVisualStyleBackColor = True
+        '
+        'ButtonCarrelloScarico
+        '
+        Me.ButtonCarrelloScarico.Enabled = False
+        Me.ButtonCarrelloScarico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonCarrelloScarico.Location = New System.Drawing.Point(729, 100)
+        Me.ButtonCarrelloScarico.Name = "ButtonCarrelloScarico"
+        Me.ButtonCarrelloScarico.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonCarrelloScarico.TabIndex = 41
+        Me.ButtonCarrelloScarico.Text = "Carrello scarico"
+        Me.ButtonCarrelloScarico.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1663,6 +1805,7 @@ Partial Class Form1
         Me.TabMontaggio.ResumeLayout(False)
         Me.TabCarica.ResumeLayout(False)
         CType(Me.DataGridViewManPower, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabFormazione.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1799,5 +1942,16 @@ Partial Class Form1
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents LabelStatus As System.Windows.Forms.Label
     Friend WithEvents ButtonScegliLancioProduzione As System.Windows.Forms.Button
+    Friend WithEvents TabFormazione As System.Windows.Forms.TabPage
+    Friend WithEvents ButtonLineaGeneraleFormazione As System.Windows.Forms.Button
+    Friend WithEvents ButtonCarrelloScarico As System.Windows.Forms.Button
+    Friend WithEvents ButtonNastriScarico As System.Windows.Forms.Button
+    Friend WithEvents ButtonNastriCarico As System.Windows.Forms.Button
+    Friend WithEvents ButtonCarrelloCarico As System.Windows.Forms.Button
+    Friend WithEvents ButtonRotatoreSpintore1 As System.Windows.Forms.Button
+    Friend WithEvents ButtonPosaRampeFormazione As System.Windows.Forms.Button
+    Friend WithEvents ButtonPrimoRiempimento As System.Windows.Forms.Button
+    Friend WithEvents ButtonInseritoreOcchioMagico As System.Windows.Forms.Button
+    Friend WithEvents ButtonPinzaCarico As System.Windows.Forms.Button
 
 End Class

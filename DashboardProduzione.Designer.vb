@@ -836,7 +836,6 @@ Partial Class DashboardProduzione
         Series1.BorderWidth = 4
         Series1.ChartArea = "ChartArea1"
         Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series1.IsValueShownAsLabel = True
         Series1.LegendText = "Produzione oraria"
         Series1.Name = "Series1"
         Series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
@@ -2677,7 +2676,6 @@ Partial Class DashboardProduzione
         Series13.BorderWidth = 4
         Series13.ChartArea = "ChartArea1"
         Series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series13.IsValueShownAsLabel = True
         Series13.LegendText = "Produzione oraria"
         Series13.Name = "Series1"
         Series13.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
@@ -2735,7 +2733,6 @@ Partial Class DashboardProduzione
         Series14.BorderWidth = 4
         Series14.ChartArea = "ChartArea1"
         Series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series14.IsValueShownAsLabel = True
         Series14.LegendText = "Produzione oraria"
         Series14.Name = "Series1"
         Series14.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time

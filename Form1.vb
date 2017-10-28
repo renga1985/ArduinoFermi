@@ -140,15 +140,23 @@ Public Class Form1
                 'We delete the tab page that we don not use
                 If LblDepartmentDescription.Text = "Stiratura" Then
                     Tab.TabPages.Remove(TabMontaggio)
+                    Tab.TabPages.Remove(TabFormazione)
                     Tab.TabPages.Remove(TabCarica)
                 End If
                 If LblDepartmentDescription.Text = "Montaggio" Then
                     Tab.TabPages.Remove(TabStiratura)
+                    Tab.TabPages.Remove(TabFormazione)
+                    Tab.TabPages.Remove(TabCarica)
+                End If
+                If LblDepartmentDescription.Text = "Formazione" Then
+                    Tab.TabPages.Remove(TabStiratura)
+                    Tab.TabPages.Remove(TabMontaggio)
                     Tab.TabPages.Remove(TabCarica)
                 End If
                 If LblDepartmentDescription.Text = "Carica" Then
                     Tab.TabPages.Remove(TabStiratura)
                     Tab.TabPages.Remove(TabMontaggio)
+                    Tab.TabPages.Remove(TabFormazione)
                 End If
                 'Here we have to use Me instead of Form1 to don't have an error
                 Me.Text = Me.Text & " - " & rowstring.Substring(24, rowstring.Length - 24)
@@ -1078,6 +1086,12 @@ Public Class Form1
         Frm.ShowDialog()
     End Sub
 
+    Private Sub ButtonLineaGeneraleFormazione_Click(sender As Object, e As EventArgs) Handles ButtonLineaGeneraleFormazione.Click
+        Dim pass As String = LabelIdFermo.Text
+        Dim Frm As New FormLineaGeneraleFormazione(pass)
+        Frm.ShowDialog()
+    End Sub
+
     Private Sub ButtonLineaGeneraleCarica_Click(sender As Object, e As EventArgs) Handles ButtonLineaGeneraleCarica.Click
         Dim pass As String = LabelIdFermo.Text
         Dim Frm As New FormLineaGeneraleCarica(pass)
@@ -1334,6 +1348,17 @@ Public Class Form1
         ButtonPinzaPaletizzatore.Enabled = True
         ButtonRobot.Enabled = True
         ButtonNastriTrasportatori.Enabled = True
+        'Disable the button of formazione
+        ButtonLineaGeneraleFormazione.Enabled = True
+        ButtonPinzaCarico.Enabled = True
+        ButtonInseritoreOcchioMagico.Enabled = True
+        ButtonPrimoRiempimento.Enabled = True
+        ButtonPosaRampeFormazione.Enabled = True
+        ButtonRotatoreSpintore1.Enabled = True
+        ButtonCarrelloCarico.Enabled = True
+        ButtonNastriCarico.Enabled = True
+        ButtonNastriScarico.Enabled = True
+        ButtonCarrelloScarico.Enabled = True
         'Enable the button of carica
         ButtonLineaGeneraleCarica.Enabled = True
         ButtonRotatore.Enabled = True
@@ -1388,6 +1413,17 @@ Public Class Form1
         ButtonPinzaPaletizzatore.Enabled = False
         ButtonRobot.Enabled = False
         ButtonNastriTrasportatori.Enabled = False
+        'Disable the button of formazione
+        ButtonLineaGeneraleFormazione.Enabled = False
+        ButtonPinzaCarico.Enabled = False
+        ButtonInseritoreOcchioMagico.Enabled = False
+        ButtonPrimoRiempimento.Enabled = False
+        ButtonPosaRampeFormazione.Enabled = False
+        ButtonRotatoreSpintore1.Enabled = False
+        ButtonCarrelloCarico.Enabled = False
+        ButtonNastriCarico.Enabled = False
+        ButtonNastriScarico.Enabled = False
+        ButtonCarrelloScarico.Enabled = False
         'Disable the button of carica
         ButtonLineaGeneraleCarica.Enabled = False
         ButtonRotatore.Enabled = False
@@ -1558,5 +1594,79 @@ Public Class Form1
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ButtonScegliLancioProduzione.Click
         SceltaLancio.Show()
+    End Sub
+
+ 
+
+    Private Sub ButtonPinzaCarico_Click(sender As Object, e As EventArgs) Handles ButtonPinzaCarico.Click
+        Dim pass As String = LabelIdFermo.Text
+        Dim idMacchina As String = "05"
+        Dim DescMacchina As String = "Pinza carico manuale"
+        Dim Frm As New FormMacchina(pass, idMacchina, DescMacchina)
+        Frm.ShowDialog()
+    End Sub
+
+    Private Sub ButtonInseritoreOcchioMagico_Click(sender As Object, e As EventArgs) Handles ButtonInseritoreOcchioMagico.Click
+        Dim pass As String = LabelIdFermo.Text
+        Dim idMacchina As String = "10"
+        Dim DescMacchina As String = "Inseritore occhio magico"
+        Dim Frm As New FormMacchina(pass, idMacchina, DescMacchina)
+        Frm.ShowDialog()
+    End Sub
+
+    Private Sub ButtonPrimoRiempimento_Click(sender As Object, e As EventArgs) Handles ButtonPrimoRiempimento.Click
+        Dim pass As String = LabelIdFermo.Text
+        Dim idMacchina As String = "15"
+        Dim DescMacchina As String = "1° riempimento"
+        Dim Frm As New FormMacchina(pass, idMacchina, DescMacchina)
+        Frm.ShowDialog()
+    End Sub
+
+    Private Sub ButtonPosaRampeFormazione_Click(sender As Object, e As EventArgs) Handles ButtonPosaRampeFormazione.Click
+        Dim pass As String = LabelIdFermo.Text
+        Dim idMacchina As String = "20"
+        Dim DescMacchina As String = "Posa rampe"
+        Dim Frm As New FormMacchina(pass, idMacchina, DescMacchina)
+        Frm.ShowDialog()
+    End Sub
+
+    Private Sub ButtonRotatoreSpintore1_Click(sender As Object, e As EventArgs) Handles ButtonRotatoreSpintore1.Click
+        Dim pass As String = LabelIdFermo.Text
+        Dim idMacchina As String = "25"
+        Dim DescMacchina As String = "Rotatore e spintore 1°riempimento"
+        Dim Frm As New FormMacchina(pass, idMacchina, DescMacchina)
+        Frm.ShowDialog()
+    End Sub
+
+    Private Sub ButtonCarrelloCarico_Click(sender As Object, e As EventArgs) Handles ButtonCarrelloCarico.Click
+        Dim pass As String = LabelIdFermo.Text
+        Dim idMacchina As String = "30"
+        Dim DescMacchina As String = "Carrello carico"
+        Dim Frm As New FormMacchina(pass, idMacchina, DescMacchina)
+        Frm.ShowDialog()
+    End Sub
+
+    Private Sub ButtonNastriCarico_Click(sender As Object, e As EventArgs) Handles ButtonNastriCarico.Click
+        Dim pass As String = LabelIdFermo.Text
+        Dim idMacchina As String = "35"
+        Dim DescMacchina As String = "Nastri carico"
+        Dim Frm As New FormMacchina(pass, idMacchina, DescMacchina)
+        Frm.ShowDialog()
+    End Sub
+
+    Private Sub ButtonNastriScarico_Click(sender As Object, e As EventArgs) Handles ButtonNastriScarico.Click
+        Dim pass As String = LabelIdFermo.Text
+        Dim idMacchina As String = "40"
+        Dim DescMacchina As String = "Nastri scarico"
+        Dim Frm As New FormMacchina(pass, idMacchina, DescMacchina)
+        Frm.ShowDialog()
+    End Sub
+
+    Private Sub ButtonCarrelloScarico_Click(sender As Object, e As EventArgs) Handles ButtonCarrelloScarico.Click
+        Dim pass As String = LabelIdFermo.Text
+        Dim idMacchina As String = "45"
+        Dim DescMacchina As String = "Carrello scarico"
+        Dim Frm As New FormMacchina(pass, idMacchina, DescMacchina)
+        Frm.ShowDialog()
     End Sub
 End Class

@@ -79,6 +79,17 @@ Public Class FormMacchina
         Form1.ButtonPinzaPaletizzatore.Enabled = False
         Form1.ButtonRobot.Enabled = False
         Form1.ButtonNastriTrasportatori.Enabled = False
+        'Disable the button of formazione
+        Form1.ButtonLineaGeneraleFormazione.Enabled = False
+        Form1.ButtonPinzaCarico.Enabled = False
+        Form1.ButtonInseritoreOcchioMagico.Enabled = False
+        Form1.ButtonPrimoRiempimento.Enabled = False
+        Form1.ButtonPosaRampeFormazione.Enabled = False
+        Form1.ButtonRotatoreSpintore1.Enabled = False
+        Form1.ButtonCarrelloCarico.Enabled = False
+        Form1.ButtonNastriCarico.Enabled = False
+        Form1.ButtonNastriScarico.Enabled = False
+        Form1.ButtonCarrelloScarico.Enabled = False
         'Disable the button of carica
         Form1.ButtonLineaGeneraleCarica.Enabled = False
         Form1.ButtonRotatore.Enabled = False
