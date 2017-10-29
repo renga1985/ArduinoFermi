@@ -540,6 +540,7 @@ Partial Class DashboardProduzione
         Me.TimerCurrentTime = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBoxFiamm = New System.Windows.Forms.PictureBox()
         Me.LabelPathDatabase = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.ChartProduzioneOrariaStiratura1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartProduzioneOrariaStiratura2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartProduzioneOrariaStiratura3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -5812,4 +5813,5 @@ Partial Class DashboardProduzione
     Friend WithEvents ButtonVisualizzaLanci As System.Windows.Forms.Button
     Friend WithEvents LabelLancioMontLinea1 As System.Windows.Forms.Label
     Friend WithEvents LabelLancioMontLinea2 As System.Windows.Forms.Label
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
 End Class

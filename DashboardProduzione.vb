@@ -1661,5 +1661,29 @@ Public Class DashboardProduzione
 
     End Sub
 
+    Private Sub ChartProduzioneOrariaStiratura1_Click(sender As Object, e As EventArgs) Handles ChartProduzioneOrariaStiratura1.Click
+        Dim RepartoAnalisiFermi As String = "75"
+        Dim LineaAnalisiFermi As String = "01"
+        Dim Frm As New AnalisiFermi(RepartoAnalisiFermi, LineaAnalisiFermi)
+        Frm.ShowDialog()
+    End Sub
 
+
+    Private Sub ChartProduzioneOrariaMontaggio1_Click(sender As Object, e As EventArgs) Handles ChartProduzioneOrariaMontaggio1.Click
+        Dim RepartoAnalisiFermi As String = "80"
+        Dim LineaAnalisiFermi As String = "01"
+        Dim Frm As New AnalisiFermi(RepartoAnalisiFermi, LineaAnalisiFermi)
+        Frm.ShowDialog()
+
+    End Sub
+
+    Private Sub ChartProduzioneOrariaMontaggio2_Click(sender As Object, e As EventArgs) Handles ChartProduzioneOrariaMontaggio2.Click
+        Dim RepartoAnalisiFermi As String = "80"
+        Dim LineaAnalisiFermi As String = "02"
+        Dim Frm As New AnalisiFermi(RepartoAnalisiFermi, LineaAnalisiFermi)
+        Frm.ShowDialog()
+
+    End Sub
+
+  
 End Class

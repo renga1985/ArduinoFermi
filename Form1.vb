@@ -853,9 +853,6 @@ Public Class Form1
 
 
 
-    Private Sub AnalisiFermiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AnalisiFermiToolStripMenuItem.Click
-        AnalisiFermi.Show()
-    End Sub
 
     Private Sub UtilityToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UtilityToolStripMenuItem.Click
         Utility.Show()

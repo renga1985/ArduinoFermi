@@ -2,34 +2,68 @@
 Imports System.Windows.Forms.DataVisualization.Charting
 Imports System.Configuration
 Imports System.Data.SqlClient
+Imports System.IO
 
 Public Class AnalisiFermi
 
+    Dim Reparto As String = ""
+    Dim Linea As String = ""
+    Public Sub New(ByVal empid As String, ByVal empid2 As String)
+        InitializeComponent()
+        Reparto = empid
+        Linea = empid2
+    End Sub
+
     Private Sub AnalisiFermi_Load(sender As Object, e As EventArgs) Handles Me.Load
-        If Form1.LblDepartmentDescription.Text = "Stiratura" Then
-            'ComboBoxMacchina.Items.Item(
-        End If
+
+        'We take some other parameters from config.txt
+        Dim path As String = "C:\ArduinoFermi\config.txt"
+        'Try
+        Dim sr As StreamReader = New StreamReader(path)
+        Do While sr.Peek() >= 0
+            Dim rowstring As String = sr.ReadLine()
+            'Retrive DatabasePath
+            If Strings.Left(rowstring, 14) = "[DatabasePath]" Then
+                'We save this also in a label of the application
+                LabelPathDatabase.Text = rowstring.Substring(15, rowstring.Length - 15)
+            End If
+        Loop
+
+        ComboBoxA.SelectedItem = DateTime.Now().Hour.ToString()
+        ComboBoxDa.SelectedItem = DateTime.Now().AddHours(-8).Hour.ToString()
+
+        ComboBoxGeneraleA.SelectedItem = DateTime.Now().Hour.ToString()
+        ComboBoxGeneraleDa.SelectedItem = DateTime.Now().AddHours(-8).Hour.ToString()
 
         UpdateChart()
-        UpdateChartCausali()
+        UpdateChartGenerale()
     End Sub
 
     Private Sub ButtonUpdate_Click(sender As Object, e As EventArgs) Handles ButtonUpdate.Click
         UpdateChart()
-        UpdateChartCausali()
+        UpdateChartGenerale()
     End Sub
 
+    Function DataFormatting(Datadaconvertire As DateTime)
+        Dim dataconvertita As String
+        dataconvertita = Datadaconvertire.Year().ToString() & "-" & Datadaconvertire.Day().ToString() & "-" & Datadaconvertire.Month().ToString() & " " & Datadaconvertire.Hour().ToString() & ":" & Datadaconvertire.Minute().ToString() & ":" & Datadaconvertire.Second().ToString()
+
+        Return dataconvertita
+    End Function
+
+
     Sub UpdateChart()
+
         ChartMacchine.Series.Clear()
         'Enable 3D chart
         ChartMacchine.ChartAreas("ChartArea1").Area3DStyle.Enable3D = True
 
         ChartMacchine.Series.Add("Serie1")
         ChartMacchine.Series("Serie1").LegendText = "Totale minuti fermata"
-        Dim myconn As New SqlConnection(Form1.LblPathDatabase.Text)
+        Dim myconn As New SqlConnection(LabelPathDatabase.Text)
         Dim myCmd As SqlCommand
         myCmd = myconn.CreateCommand()
-        myCmd.CommandText = "SELECT DESCMACCHINA,SUM(DURATA) AS DurataTot FROM FERMI WHERE (DATA >= '" & DateTimePickerDa.Value.ToString("yyyy-MM-ddTHH:mm:ss") & "')AND(DATA <= '" & DateTimePickerA.Value.ToString("yyyy-MM-ddTHH:mm:ss") & "') GROUP BY DESCMACCHINA ORDER BY SUM(DURATA);"
+        myCmd.CommandText = "SELECT DESCMACCHINA,SUM(DURATA) AS DurataTot FROM FERMI WHERE (IdReparto=" & Reparto & ")AND(IdLinea=" & Linea & ")AND(DATAinizioFermo >= '" & DateTimePickerDa.Value.Year().ToString() & "-" & DateTimePickerDa.Value.Day().ToString() & "-" & DateTimePickerDa.Value.Month().ToString() & " " & ComboBoxDa.SelectedItem.ToString() & ":00:00' )AND(DATAfinefermo <= '" & DateTimePickerA.Value.Year().ToString() & "-" & DateTimePickerA.Value.Day().ToString() & "-" & DateTimePickerA.Value.Month().ToString() & " " & ComboBoxA.SelectedItem.ToString() & ":00:00') GROUP BY DESCMACCHINA ORDER BY SUM(DURATA);"
         ' Create a database command on the connection using query    
 
         ' Open the connection    
@@ -50,18 +84,18 @@ Public Class AnalisiFermi
         ChartMacchine.ChartAreas("ChartArea1").AxisX.Interval = 1
     End Sub
 
-    Sub UpdateChartCausali()
+    Sub UpdateChartGenerale()
         ChartCausali.Series.Clear()
         'Enable 3D chart
         ChartCausali.ChartAreas("ChartArea1").Area3DStyle.Enable3D = True
 
         ChartCausali.Series.Add("Serie1")
         ChartCausali.Series("Serie1").LegendText = "Totale minuti fermata"
-        Dim myConn As New SqlConnection(Form1.LblPathDatabase.Text)
+        Dim myConn As New SqlConnection(LabelPathDatabase.Text)
         Dim myCmd As SqlCommand
         myCmd = myConn.CreateCommand()
 
-        myCmd.CommandText = "SELECT DESCFERMO,SUM(DURATA) AS DurataTot FROM FERMI WHERE (DATA >= '" & DateTimePickerCausaliDa.Value.ToString("yyyy-MM-ddTHH:mm:ss") & "')AND(DATA <= '" & DateTimePickerCausaliA.Value.ToString("yyyy-MM-ddTHH:mm:ss") & "')AND(IdMacchina=0) GROUP BY DESCFERMO ORDER BY SUM(DURATA);"
+        myCmd.CommandText = "SELECT DESCFERMO,SUM(DURATA) AS DurataTot FROM FERMI WHERE (IdReparto=" & Reparto & ")AND(IdLinea=" & Linea & ")AND(DATAInizioFermo >= '" & DateTimePickerGENERALIDa.Value.Year().ToString() & "-" & DateTimePickerGENERALIDa.Value.Day().ToString() & "-" & DateTimePickerGENERALIDa.Value.Month().ToString() & " " & ComboBoxGeneraleDa.SelectedItem.ToString() & ":00:00')AND(DATAFineFermo <= '" & DateTimePickerGENERALIA.Value.Year().ToString() & "-" & DateTimePickerGENERALIA.Value.Day().ToString() & "-" & DateTimePickerGENERALIA.Value.Month().ToString() & " " & ComboBoxGeneraleA.SelectedItem.ToString() & ":00:00')AND(IdMacchina=0) GROUP BY DESCFERMO ORDER BY SUM(DURATA);"
 
         ' Create a database command on the connection using query    
 
