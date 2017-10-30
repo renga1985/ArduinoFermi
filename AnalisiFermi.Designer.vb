@@ -22,26 +22,26 @@ Partial Class AnalisiFermi
     'Non modificarla nell'editor del codice.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim ChartArea11 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend11 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim ChartArea12 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend12 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Me.ChartMacchine = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.DateTimePickerDa = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePickerA = New System.Windows.Forms.DateTimePicker()
         Me.ButtonUpdate = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.ComboBoxA = New System.Windows.Forms.ComboBox()
+        Me.ComboBoxDa = New System.Windows.Forms.ComboBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.ComboBoxGeneraleA = New System.Windows.Forms.ComboBox()
+        Me.ComboBoxGeneraleDa = New System.Windows.Forms.ComboBox()
         Me.ButtonUpdateCausali = New System.Windows.Forms.Button()
         Me.DateTimePickerGENERALIDa = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePickerGENERALIA = New System.Windows.Forms.DateTimePicker()
         Me.ChartCausali = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.LabelPathDatabase = New System.Windows.Forms.Label()
-        Me.ComboBoxDa = New System.Windows.Forms.ComboBox()
-        Me.ComboBoxA = New System.Windows.Forms.ComboBox()
-        Me.ComboBoxGeneraleDa = New System.Windows.Forms.ComboBox()
-        Me.ComboBoxGeneraleA = New System.Windows.Forms.ComboBox()
         CType(Me.ChartMacchine, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -51,10 +51,10 @@ Partial Class AnalisiFermi
         '
         'ChartMacchine
         '
-        ChartArea1.Name = "ChartArea1"
-        Me.ChartMacchine.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.ChartMacchine.Legends.Add(Legend1)
+        ChartArea11.Name = "ChartArea1"
+        Me.ChartMacchine.ChartAreas.Add(ChartArea11)
+        Legend11.Name = "Legend1"
+        Me.ChartMacchine.Legends.Add(Legend11)
         Me.ChartMacchine.Location = New System.Drawing.Point(3, 6)
         Me.ChartMacchine.Name = "ChartMacchine"
         Me.ChartMacchine.Size = New System.Drawing.Size(936, 624)
@@ -111,6 +111,24 @@ Partial Class AnalisiFermi
         Me.TabPage1.Text = "Fermi"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'ComboBoxA
+        '
+        Me.ComboBoxA.FormattingEnabled = True
+        Me.ComboBoxA.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
+        Me.ComboBoxA.Location = New System.Drawing.Point(1151, 32)
+        Me.ComboBoxA.Name = "ComboBoxA"
+        Me.ComboBoxA.Size = New System.Drawing.Size(44, 21)
+        Me.ComboBoxA.TabIndex = 5
+        '
+        'ComboBoxDa
+        '
+        Me.ComboBoxDa.FormattingEnabled = True
+        Me.ComboBoxDa.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
+        Me.ComboBoxDa.Location = New System.Drawing.Point(1151, 6)
+        Me.ComboBoxDa.Name = "ComboBoxDa"
+        Me.ComboBoxDa.Size = New System.Drawing.Size(44, 21)
+        Me.ComboBoxDa.TabIndex = 4
+        '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.ComboBoxGeneraleA)
@@ -126,6 +144,24 @@ Partial Class AnalisiFermi
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Fermi-LINEA GENERALE"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'ComboBoxGeneraleA
+        '
+        Me.ComboBoxGeneraleA.FormattingEnabled = True
+        Me.ComboBoxGeneraleA.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
+        Me.ComboBoxGeneraleA.Location = New System.Drawing.Point(1154, 35)
+        Me.ComboBoxGeneraleA.Name = "ComboBoxGeneraleA"
+        Me.ComboBoxGeneraleA.Size = New System.Drawing.Size(44, 21)
+        Me.ComboBoxGeneraleA.TabIndex = 8
+        '
+        'ComboBoxGeneraleDa
+        '
+        Me.ComboBoxGeneraleDa.FormattingEnabled = True
+        Me.ComboBoxGeneraleDa.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
+        Me.ComboBoxGeneraleDa.Location = New System.Drawing.Point(1154, 6)
+        Me.ComboBoxGeneraleDa.Name = "ComboBoxGeneraleDa"
+        Me.ComboBoxGeneraleDa.Size = New System.Drawing.Size(44, 21)
+        Me.ComboBoxGeneraleDa.TabIndex = 7
         '
         'ButtonUpdateCausali
         '
@@ -152,10 +188,10 @@ Partial Class AnalisiFermi
         '
         'ChartCausali
         '
-        ChartArea2.Name = "ChartArea1"
-        Me.ChartCausali.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.ChartCausali.Legends.Add(Legend2)
+        ChartArea12.Name = "ChartArea1"
+        Me.ChartCausali.ChartAreas.Add(ChartArea12)
+        Legend12.Name = "Legend1"
+        Me.ChartCausali.Legends.Add(Legend12)
         Me.ChartCausali.Location = New System.Drawing.Point(6, 3)
         Me.ChartCausali.Name = "ChartCausali"
         Me.ChartCausali.Size = New System.Drawing.Size(893, 624)
@@ -171,42 +207,6 @@ Partial Class AnalisiFermi
         Me.LabelPathDatabase.TabIndex = 8
         Me.LabelPathDatabase.Text = "LblPathDatabase"
         Me.LabelPathDatabase.Visible = False
-        '
-        'ComboBoxDa
-        '
-        Me.ComboBoxDa.FormattingEnabled = True
-        Me.ComboBoxDa.Items.AddRange(New Object() {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
-        Me.ComboBoxDa.Location = New System.Drawing.Point(1151, 6)
-        Me.ComboBoxDa.Name = "ComboBoxDa"
-        Me.ComboBoxDa.Size = New System.Drawing.Size(44, 21)
-        Me.ComboBoxDa.TabIndex = 4
-        '
-        'ComboBoxA
-        '
-        Me.ComboBoxA.FormattingEnabled = True
-        Me.ComboBoxA.Items.AddRange(New Object() {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
-        Me.ComboBoxA.Location = New System.Drawing.Point(1151, 32)
-        Me.ComboBoxA.Name = "ComboBoxA"
-        Me.ComboBoxA.Size = New System.Drawing.Size(44, 21)
-        Me.ComboBoxA.TabIndex = 5
-        '
-        'ComboBoxGeneraleDa
-        '
-        Me.ComboBoxGeneraleDa.FormattingEnabled = True
-        Me.ComboBoxGeneraleDa.Items.AddRange(New Object() {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
-        Me.ComboBoxGeneraleDa.Location = New System.Drawing.Point(1154, 6)
-        Me.ComboBoxGeneraleDa.Name = "ComboBoxGeneraleDa"
-        Me.ComboBoxGeneraleDa.Size = New System.Drawing.Size(44, 21)
-        Me.ComboBoxGeneraleDa.TabIndex = 7
-        '
-        'ComboBoxGeneraleA
-        '
-        Me.ComboBoxGeneraleA.FormattingEnabled = True
-        Me.ComboBoxGeneraleA.Items.AddRange(New Object() {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
-        Me.ComboBoxGeneraleA.Location = New System.Drawing.Point(1154, 35)
-        Me.ComboBoxGeneraleA.Name = "ComboBoxGeneraleA"
-        Me.ComboBoxGeneraleA.Size = New System.Drawing.Size(44, 21)
-        Me.ComboBoxGeneraleA.TabIndex = 8
         '
         'AnalisiFermi
         '

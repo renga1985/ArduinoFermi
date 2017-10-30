@@ -28,12 +28,17 @@ Public Class AnalisiFermi
                 LabelPathDatabase.Text = rowstring.Substring(15, rowstring.Length - 15)
             End If
         Loop
-
+        Dim datada As DateTime = DateTime.Now().AddHours(-8)
+        ComboBoxDa.SelectedItem = datada.Hour.ToString()
         ComboBoxA.SelectedItem = DateTime.Now().Hour.ToString()
-        ComboBoxDa.SelectedItem = DateTime.Now().AddHours(-8).Hour.ToString()
+
+
+        Dim dataGeneraleDa As DateTime = DateTime.Now().AddHours(-8)
+        ComboBoxGeneraleDa.SelectedItem = dataGeneraleDa.Hour.ToString()
 
         ComboBoxGeneraleA.SelectedItem = DateTime.Now().Hour.ToString()
-        ComboBoxGeneraleDa.SelectedItem = DateTime.Now().AddHours(-8).Hour.ToString()
+        
+
 
         UpdateChart()
         UpdateChartGenerale()
