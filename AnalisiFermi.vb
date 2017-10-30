@@ -15,7 +15,6 @@ Public Class AnalisiFermi
     End Sub
 
     Private Sub AnalisiFermi_Load(sender As Object, e As EventArgs) Handles Me.Load
-
         'We take some other parameters from config.txt
         Dim path As String = "C:\ArduinoFermi\config.txt"
         'Try
@@ -31,17 +30,13 @@ Public Class AnalisiFermi
         Dim datada As DateTime = DateTime.Now().AddHours(-8)
         ComboBoxDa.SelectedItem = datada.Hour.ToString()
         ComboBoxA.SelectedItem = DateTime.Now().Hour.ToString()
-
-
         Dim dataGeneraleDa As DateTime = DateTime.Now().AddHours(-8)
         ComboBoxGeneraleDa.SelectedItem = dataGeneraleDa.Hour.ToString()
-
         ComboBoxGeneraleA.SelectedItem = DateTime.Now().Hour.ToString()
-        
-
-
         UpdateChart()
         UpdateChartGenerale()
+        UpdateGridFermi()
+        UpdateGridOperatori()
     End Sub
 
     Private Sub ButtonUpdate_Click(sender As Object, e As EventArgs) Handles ButtonUpdate.Click
@@ -56,9 +51,35 @@ Public Class AnalisiFermi
         Return dataconvertita
     End Function
 
+    Sub UpdateGridOperatori()
+        Dim myConn As New SqlConnection(LabelPathDatabase.Text)
+        Dim myCmd As SqlCommand
+        myCmd = myConn.CreateCommand()
+        myCmd.CommandText = "SELECT Cognome,Nome,DataEntrata,DataUscita FROM OreOperatori WHERE (Id_Reparto=" & Reparto & ") and (Id_linea=" & Linea & ")AND(DATAentrata >= '" & DateTimePickerDa.Value.Year().ToString() & "-" & DateTimePickerDa.Value.Day().ToString() & "-" & DateTimePickerDa.Value.Month().ToString() & " " & ComboBoxDa.SelectedItem.ToString() & ":00:00' )"
+        myCmd.Connection.Open()
+        Dim dtRegistro As DataTable = New DataTable
+        Dim myDataAdapter As New SqlDataAdapter(myCmd)
+        myDataAdapter.Fill(dtRegistro)
+        DataGridViewOperatori.DataSource = dtRegistro
+        myCmd.Connection.Close()
+    End Sub
+
+    Sub UpdateGridFermi()
+        Dim myConn As New SqlConnection(LabelPathDatabase.Text)
+        Dim myCmd As SqlCommand
+        myCmd = myConn.CreateCommand()
+        myCmd.CommandText = "SELECT Datainiziofermo,Datafinefermo,DescMacchina,DescFermo,Durata,DescFermoEsteso FROM FERMI WHERE (IdReparto=" & Reparto & ") and (Idlinea=" & Linea & ")AND(DATAinizioFermo >= '" & DateTimePickerDa.Value.Year().ToString() & "-" & DateTimePickerDa.Value.Day().ToString() & "-" & DateTimePickerDa.Value.Month().ToString() & " " & ComboBoxDa.SelectedItem.ToString() & ":00:00' )AND(DATAfinefermo <= '" & DateTimePickerA.Value.Year().ToString() & "-" & DateTimePickerA.Value.Day().ToString() & "-" & DateTimePickerA.Value.Month().ToString() & " " & ComboBoxA.SelectedItem.ToString() & ":00:00')"
+        myCmd.Connection.Open()
+        Dim dtRegistro As DataTable = New DataTable
+        Dim myDataAdapter As New SqlDataAdapter(myCmd)
+        myDataAdapter.Fill(dtRegistro)
+        DataGridViewFermi.DataSource = dtRegistro
+        myCmd.Connection.Close()
+
+    End Sub
+
 
     Sub UpdateChart()
-
         ChartMacchine.Series.Clear()
         'Enable 3D chart
         ChartMacchine.ChartAreas("ChartArea1").Area3DStyle.Enable3D = True
