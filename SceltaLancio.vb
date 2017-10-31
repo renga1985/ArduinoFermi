@@ -164,51 +164,60 @@ Public Class SceltaLancio
     End Sub
     Private Sub ButtonConfermaLancio_Click(sender As Object, e As EventArgs) Handles ButtonConfermaLancio.Click
 
-        Dim myConn As New SqlConnection(Form1.LblPathDatabase.Text)
-        Dim myCmd As SqlCommand
-        myCmd = myConn.CreateCommand()
+        If ComboBoxTurno.Text = "" Then
 
-        myCmd.CommandText = "INSERT INTO Produzione (DataInizio,Turno,IdReparto,Reparto,IdLinea,Linea,Lancio,Codice) VALUES ('" & DataFormatting(DateTime.Now) & "','" & LabelTurno.Text & "','" & Form1.LblIdDepartment.Text & "','" & Form1.LblDepartmentDescription.Text & "','" & Form1.LblIdLinea.Text & "','" & Form1.LblLineDescription.Text & "','" & TextBoxLancioProduzione.Text & "','" & LabelCodice.Text & "')"
-        myCmd.Connection.Open()
-        myCmd.ExecuteNonQuery()
-        myCmd.Connection.Close()
+            'Message error and do nothing 
+            MsgBox("Inserire il turno di produzione corrente")
 
-        Dim myCmd2 As SqlCommand
-        myCmd2 = myConn.CreateCommand()
-        myCmd2.CommandText = "UPDATE StatoLinee SET LancioInCorso ='" & TextBoxLancioProduzione.Text & "' WHERE (Id_reparto ='" & Form1.LblIdDepartment.Text & "' AND Id_linea='" & Form1.LblIdLinea.Text & "')"
-        myCmd2.Connection.Open()
-        myCmd2.ExecuteNonQuery()
-        myCmd2.Connection.Close()
+        Else
 
-        'Show the label and textbox with production data
+            Dim myConn As New SqlConnection(Form1.LblPathDatabase.Text)
+            Dim myCmd As SqlCommand
+            myCmd = myConn.CreateCommand()
 
-        LabelLancio.Visible = True
-        LabelProduzioneTurno.Visible = True
-        LabelPallett.Visible = True
-        LabelPezzi.Visible = True
-        LabelPoliRifatti.Visible = True
-        TextBoxPallett.Visible = True
-        TextBoxProduzionePezzi.Visible = True
-        TextBoxPoliRifatti.Visible = True
-        LabelScartoTurno.Visible = True
-        LabelFuoriCella.Visible = True
-        LabelPoloPiantato.Visible = True
-        LabelPoloFuso.Visible = True
-        LabelAltro.Visible = True
-        TextBoxScartoFuoriCella.Visible = True
-        TextBoxScartoPoloPiantato.Visible = True
-        TextBoxScartoPoloFuso.Visible = True
-        TextBoxScartoAltro.Visible = True
-        LabelControlloDistruttivo.Visible = True
-        TextBoxControlloDistruttivo.Visible = True
-        LabelNote.Visible = True
-        RichTextBoxNote.Visible = True
+            myCmd.CommandText = "INSERT INTO Produzione (DataInizio,Turno,IdReparto,Reparto,IdLinea,Linea,Lancio,Codice) VALUES ('" & DataFormatting(DateTime.Now) & "','" & ComboBoxTurno.Text & "','" & Form1.LblIdDepartment.Text & "','" & Form1.LblDepartmentDescription.Text & "','" & Form1.LblIdLinea.Text & "','" & Form1.LblLineDescription.Text & "','" & TextBoxLancioProduzione.Text & "','" & LabelCodice.Text & "')"
+            myCmd.Connection.Open()
+            myCmd.ExecuteNonQuery()
+            myCmd.Connection.Close()
 
-        ComboBoxLancio.Visible = False
+            Dim myCmd2 As SqlCommand
+            myCmd2 = myConn.CreateCommand()
+            myCmd2.CommandText = "UPDATE StatoLinee SET LancioInCorso ='" & TextBoxLancioProduzione.Text & "' WHERE (Id_reparto ='" & Form1.LblIdDepartment.Text & "' AND Id_linea='" & Form1.LblIdLinea.Text & "')"
+            myCmd2.Connection.Open()
+            myCmd2.ExecuteNonQuery()
+            myCmd2.Connection.Close()
 
-        ButtonConfermaLancio.Enabled = False
-        ButtonCancella.Enabled = False
-        ButtonChiudiLancio.Enabled = True
+            'Show the label and textbox with production data
+
+            LabelLancio.Visible = True
+            LabelProduzioneTurno.Visible = True
+            LabelPallett.Visible = True
+            LabelPezzi.Visible = True
+            LabelPoliRifatti.Visible = True
+            TextBoxPallett.Visible = True
+            TextBoxProduzionePezzi.Visible = True
+            TextBoxPoliRifatti.Visible = True
+            LabelScartoTurno.Visible = True
+            LabelFuoriCella.Visible = True
+            LabelPoloPiantato.Visible = True
+            LabelPoloFuso.Visible = True
+            LabelAltro.Visible = True
+            TextBoxScartoFuoriCella.Visible = True
+            TextBoxScartoPoloPiantato.Visible = True
+            TextBoxScartoPoloFuso.Visible = True
+            TextBoxScartoAltro.Visible = True
+            LabelControlloDistruttivo.Visible = True
+            TextBoxControlloDistruttivo.Visible = True
+            LabelNote.Visible = True
+            RichTextBoxNote.Visible = True
+
+            ComboBoxLancio.Visible = False
+
+            ButtonConfermaLancio.Enabled = False
+            ButtonCancella.Enabled = False
+            ButtonChiudiLancio.Enabled = True
+
+        End If
 
     End Sub
 
@@ -218,7 +227,6 @@ Public Class SceltaLancio
 
         Return dataconvertita
     End Function
-
 
     Private Sub ButtonChiudiLancio_Click(sender As Object, e As EventArgs) Handles ButtonChiudiLancio.Click
 
@@ -403,8 +411,7 @@ Public Class SceltaLancio
 
                 Dim myCmd2 As SqlCommand
                 myCmd2 = myConn.CreateCommand()
-                myCmd2.CommandText = ("SELECT Sum(Durata) FROM Fermi WHERE ((IdReparto='" &
-                Form1.LblIdDepartment.Text & "') AND (IdLinea='" & Form1.LblIdLinea.Text & "')AND(DATA >= '" & DataFormatting(DataInizio) & "')AND(DATA <= '" & DataFormatting(DataFine) & "'))")
+                myCmd2.CommandText = ("SELECT Sum(Durata) FROM Fermi WHERE ((IdReparto='" & Form1.LblIdDepartment.Text & "') AND (IdLinea='" & Form1.LblIdLinea.Text & "')AND(DATA >= '" & DataFormatting(DataInizio) & "')AND(DATA <= '" & DataFormatting(DataFine) & "'))")
                 Dim Durata As String
                 myCmd2.Connection.Open()
 

@@ -78,7 +78,6 @@ Public Class AnalisiFermi
 
     End Sub
 
-
     Sub UpdateChart()
         ChartMacchine.Series.Clear()
         'Enable 3D chart

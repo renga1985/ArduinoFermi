@@ -201,12 +201,11 @@ Partial Class SceltaLancio
         'LabelTurno
         '
         Me.LabelTurno.AutoSize = True
-        Me.LabelTurno.Location = New System.Drawing.Point(409, 49)
+        Me.LabelTurno.Location = New System.Drawing.Point(387, 9)
         Me.LabelTurno.Name = "LabelTurno"
-        Me.LabelTurno.Size = New System.Drawing.Size(13, 13)
+        Me.LabelTurno.Size = New System.Drawing.Size(35, 13)
         Me.LabelTurno.TabIndex = 2
-        Me.LabelTurno.Text = "1"
-        Me.LabelTurno.Visible = False
+        Me.LabelTurno.Text = "Turno"
         '
         'ButtonSalvaTurno
         '
@@ -343,7 +342,7 @@ Partial Class SceltaLancio
         '
         Me.ComboBoxTurno.FormattingEnabled = True
         Me.ComboBoxTurno.Items.AddRange(New Object() {"1", "2", "3"})
-        Me.ComboBoxTurno.Location = New System.Drawing.Point(400, 17)
+        Me.ComboBoxTurno.Location = New System.Drawing.Point(428, 2)
         Me.ComboBoxTurno.Name = "ComboBoxTurno"
         Me.ComboBoxTurno.Size = New System.Drawing.Size(41, 21)
         Me.ComboBoxTurno.TabIndex = 13
@@ -352,7 +351,7 @@ Partial Class SceltaLancio
         '
         Me.LabelLancio.AutoSize = True
         Me.LabelLancio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelLancio.Location = New System.Drawing.Point(11, 17)
+        Me.LabelLancio.Location = New System.Drawing.Point(12, 13)
         Me.LabelLancio.Name = "LabelLancio"
         Me.LabelLancio.Size = New System.Drawing.Size(56, 20)
         Me.LabelLancio.TabIndex = 3

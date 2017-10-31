@@ -32,6 +32,8 @@ Partial Class AnalisiFermi
         Me.ButtonUpdate = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.DataGridViewOperatori = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewFermi = New System.Windows.Forms.DataGridView()
         Me.ComboBoxA = New System.Windows.Forms.ComboBox()
         Me.ComboBoxDa = New System.Windows.Forms.ComboBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -42,15 +44,13 @@ Partial Class AnalisiFermi
         Me.DateTimePickerGENERALIA = New System.Windows.Forms.DateTimePicker()
         Me.ChartCausali = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.LabelPathDatabase = New System.Windows.Forms.Label()
-        Me.DataGridViewFermi = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewOperatori = New System.Windows.Forms.DataGridView()
         CType(Me.ChartMacchine, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        CType(Me.DataGridViewOperatori, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridViewFermi, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.ChartCausali, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridViewFermi, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridViewOperatori, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ChartMacchine
@@ -116,6 +116,22 @@ Partial Class AnalisiFermi
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Fermi"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'DataGridViewOperatori
+        '
+        Me.DataGridViewOperatori.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewOperatori.Location = New System.Drawing.Point(22, 401)
+        Me.DataGridViewOperatori.Name = "DataGridViewOperatori"
+        Me.DataGridViewOperatori.Size = New System.Drawing.Size(427, 224)
+        Me.DataGridViewOperatori.TabIndex = 7
+        '
+        'DataGridViewFermi
+        '
+        Me.DataGridViewFermi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewFermi.Location = New System.Drawing.Point(476, 401)
+        Me.DataGridViewFermi.Name = "DataGridViewFermi"
+        Me.DataGridViewFermi.Size = New System.Drawing.Size(719, 224)
+        Me.DataGridViewFermi.TabIndex = 6
         '
         'ComboBoxA
         '
@@ -214,22 +230,6 @@ Partial Class AnalisiFermi
         Me.LabelPathDatabase.Text = "LblPathDatabase"
         Me.LabelPathDatabase.Visible = False
         '
-        'DataGridViewFermi
-        '
-        Me.DataGridViewFermi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewFermi.Location = New System.Drawing.Point(476, 401)
-        Me.DataGridViewFermi.Name = "DataGridViewFermi"
-        Me.DataGridViewFermi.Size = New System.Drawing.Size(719, 224)
-        Me.DataGridViewFermi.TabIndex = 6
-        '
-        'DataGridViewOperatori
-        '
-        Me.DataGridViewOperatori.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewOperatori.Location = New System.Drawing.Point(22, 401)
-        Me.DataGridViewOperatori.Name = "DataGridViewOperatori"
-        Me.DataGridViewOperatori.Size = New System.Drawing.Size(427, 224)
-        Me.DataGridViewOperatori.TabIndex = 7
-        '
         'AnalisiFermi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -242,10 +242,10 @@ Partial Class AnalisiFermi
         CType(Me.ChartMacchine, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        CType(Me.DataGridViewOperatori, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridViewFermi, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         CType(Me.ChartCausali, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridViewFermi, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridViewOperatori, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
