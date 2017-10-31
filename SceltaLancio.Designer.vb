@@ -56,6 +56,7 @@ Partial Class SceltaLancio
         Me.LabelControlloDistruttivo = New System.Windows.Forms.Label()
         Me.TextBoxControlloDistruttivo = New System.Windows.Forms.TextBox()
         Me.ComboBoxTurno = New System.Windows.Forms.ComboBox()
+        Me.LabelLancio = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'ComboBoxLancio
@@ -347,6 +348,16 @@ Partial Class SceltaLancio
         Me.ComboBoxTurno.Size = New System.Drawing.Size(41, 21)
         Me.ComboBoxTurno.TabIndex = 13
         '
+        'LabelLancio
+        '
+        Me.LabelLancio.AutoSize = True
+        Me.LabelLancio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelLancio.Location = New System.Drawing.Point(11, 17)
+        Me.LabelLancio.Name = "LabelLancio"
+        Me.LabelLancio.Size = New System.Drawing.Size(56, 20)
+        Me.LabelLancio.TabIndex = 3
+        Me.LabelLancio.Text = "Lancio"
+        '
         'SceltaLancio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -378,6 +389,7 @@ Partial Class SceltaLancio
         Me.Controls.Add(Me.LabelPoliRifatti)
         Me.Controls.Add(Me.LabelPezzi)
         Me.Controls.Add(Me.LabelPallett)
+        Me.Controls.Add(Me.LabelLancio)
         Me.Controls.Add(Me.LabelProduzioneTurno)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.LabelQuantitàMancante)
@@ -426,4 +438,5 @@ Partial Class SceltaLancio
     Friend WithEvents LabelControlloDistruttivo As System.Windows.Forms.Label
     Friend WithEvents TextBoxControlloDistruttivo As System.Windows.Forms.TextBox
     Friend WithEvents ComboBoxTurno As System.Windows.Forms.ComboBox
+    Friend WithEvents LabelLancio As System.Windows.Forms.Label
 End Class
