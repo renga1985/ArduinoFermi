@@ -1595,37 +1595,37 @@ Public Class DashboardProduzione
 
     Private Sub ButtonImportaLanci_Click(sender As Object, e As EventArgs) Handles ButtonImportaLanci.Click
 
-        Dim xlApp As Application
-        Dim xlWorkBook As Excel.Workbook
-        Dim xlWorkSheet As Excel.Worksheet
-        Dim range As Excel.Range
-        Dim rCnt As Integer
-        Dim Obj As Object
+        'Dim xlApp As Application
+        'Dim xlWorkBook As Excel.Workbook
+        'Dim xlWorkSheet As Excel.Worksheet
+        'Dim range As Excel.Range
+        'Dim rCnt As Integer
+        'Dim Obj As Object
 
-        xlApp = New Excel.Application
-        xlWorkBook = xlApp.Workbooks.Open("\\fiammitfs02\CorporateShare\Prod\IB_Fermi\ArduinoFermi\lista lanci produzione.xlsx")
-        xlWorkSheet = xlWorkBook.Worksheets("Foglio1")
-        Dim myConn As New SqlConnection(LabelPathDatabase.Text)
-        Dim myCmd As SqlCommand
+        'xlApp = New Excel.Application
+        'xlWorkBook = xlApp.Workbooks.Open("\\fiammitfs02\CorporateShare\Prod\IB_Fermi\ArduinoFermi\lista lanci produzione.xlsx")
+        'xlWorkSheet = xlWorkBook.Worksheets("Foglio1")
+        'Dim myConn As New SqlConnection(LabelPathDatabase.Text)
+        'Dim myCmd As SqlCommand
 
-        range = xlWorkSheet.UsedRange
+        'range = xlWorkSheet.UsedRange
 
-        myCmd = myConn.CreateCommand()
-        myCmd.Connection.Open()
-        For rCnt = 1 To 9 'DA SISTEMARE IL CONTEGGIO DELLE RIGHE
-            myCmd.CommandText = ("INSERT INTO LanciProduzione (Ordpian,Materiale,[Materiale pianif#],Linea,[Qtà ordine],UMO,[Fine card#],Sequenza,SERIE,ProgressivoQuantita)VALUES (" & range.Cells(rCnt + 1, 1).value.ToString & "," & range.Cells(rCnt + 1, 2).value.ToString & ",'" & range.Cells(rCnt + 1, 3).value.ToString & "','" & range.Cells(rCnt + 1, 4).value.ToString & "','" & range.Cells(rCnt + 1, 5).value.ToString & "','" & range.Cells(rCnt + 1, 6).value.ToString & "','" & CDate(range.Cells(rCnt + 1, 7).value.ToString) & "','" & range.Cells(rCnt + 1, 8).value.ToString & "','" & range.Cells(rCnt + 1, 9).value.ToString & "','" & range.Cells(rCnt + 1, 10).value.ToString & "')")
-            myCmd.ExecuteNonQuery()
-        Next
-        myCmd.Connection.Close()
+        'myCmd = myConn.CreateCommand()
+        'myCmd.Connection.Open()
+        'For rCnt = 1 To 9 'DA SISTEMARE IL CONTEGGIO DELLE RIGHE
+        '    myCmd.CommandText = ("INSERT INTO LanciProduzione (Ordpian,Materiale,[Materiale pianif#],Linea,[Qtà ordine],UMO,[Fine card#],Sequenza,SERIE,ProgressivoQuantita)VALUES (" & range.Cells(rCnt + 1, 1).value.ToString & "," & range.Cells(rCnt + 1, 2).value.ToString & ",'" & range.Cells(rCnt + 1, 3).value.ToString & "','" & range.Cells(rCnt + 1, 4).value.ToString & "','" & range.Cells(rCnt + 1, 5).value.ToString & "','" & range.Cells(rCnt + 1, 6).value.ToString & "','" & CDate(range.Cells(rCnt + 1, 7).value.ToString) & "','" & range.Cells(rCnt + 1, 8).value.ToString & "','" & range.Cells(rCnt + 1, 9).value.ToString & "','" & range.Cells(rCnt + 1, 10).value.ToString & "')")
+        '    myCmd.ExecuteNonQuery()
+        'Next
+        'myCmd.Connection.Close()
 
-        xlWorkBook.Close()
-        xlApp.Quit()
+        'xlWorkBook.Close()
+        'xlApp.Quit()
 
-        releaseObject(xlApp)
-        releaseObject(xlWorkBook)
-        releaseObject(xlWorkSheet)
+        'releaseObject(xlApp)
+        'releaseObject(xlWorkBook)
+        'releaseObject(xlWorkSheet)
 
-        MsgBox("Lanci correttamente importati", MsgBoxStyle.OkOnly)
+        'MsgBox("Lanci correttamente importati", MsgBoxStyle.OkOnly)
 
     End Sub
 
@@ -1661,27 +1661,32 @@ Public Class DashboardProduzione
     End Sub
 
     Private Sub ChartProduzioneOrariaStiratura1_Click(sender As Object, e As EventArgs) Handles ChartProduzioneOrariaStiratura1.Click
-        Dim RepartoAnalisiFermi As String = "75"
-        Dim LineaAnalisiFermi As String = "01"
-        Dim Frm As New AnalisiFermi(RepartoAnalisiFermi, LineaAnalisiFermi)
+        Dim IdRepartoAnalisiFermi As String = "75"
+        Dim RepartoAnalisiFermi As String = "Stiratura"
+        Dim IdLineaAnalisiFermi As String = "01"
+        Dim LineaAnalisiFermi As String = "Linea 1"
+        Dim Frm As New AnalisiFermi(IdRepartoAnalisiFermi, RepartoAnalisiFermi, IdLineaAnalisiFermi, LineaAnalisiFermi)
         Frm.ShowDialog()
     End Sub
 
 
     Private Sub ChartProduzioneOrariaMontaggio1_Click(sender As Object, e As EventArgs) Handles ChartProduzioneOrariaMontaggio1.Click
-        Dim RepartoAnalisiFermi As String = "80"
-        Dim LineaAnalisiFermi As String = "01"
-        Dim Frm As New AnalisiFermi(RepartoAnalisiFermi, LineaAnalisiFermi)
+        Dim IdRepartoAnalisiFermi As String = "80"
+        Dim RepartoAnalisiFermi As String = "Montaggio"
+        Dim IdLineaAnalisiFermi As String = "01"
+        Dim LineaAnalisiFermi As String = "Linea 1"
+        Dim Frm As New AnalisiFermi(IdRepartoAnalisiFermi, RepartoAnalisiFermi, IdLineaAnalisiFermi, LineaAnalisiFermi)
         Frm.ShowDialog()
 
     End Sub
 
     Private Sub ChartProduzioneOrariaMontaggio2_Click(sender As Object, e As EventArgs) Handles ChartProduzioneOrariaMontaggio2.Click
-        Dim RepartoAnalisiFermi As String = "80"
-        Dim LineaAnalisiFermi As String = "02"
-        Dim Frm As New AnalisiFermi(RepartoAnalisiFermi, LineaAnalisiFermi)
+        Dim IdRepartoAnalisiFermi As String = "80"
+        Dim RepartoAnalisiFermi As String = "Montaggio"
+        Dim IdLineaAnalisiFermi As String = "02"
+        Dim LineaAnalisiFermi As String = "Linea 2"
+        Dim Frm As New AnalisiFermi(IdRepartoAnalisiFermi, RepartoAnalisiFermi, IdLineaAnalisiFermi, LineaAnalisiFermi)
         Frm.ShowDialog()
-
     End Sub
 
 

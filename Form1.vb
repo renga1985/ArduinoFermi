@@ -835,26 +835,8 @@ Public Class Form1
         SetUpSerialConnection()
     End Sub
 
-    Private Sub VisualizzaFermateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisualizzaFermateToolStripMenuItem.Click
 
-        'Query to update the table LineaAttiva, used later by the dataSet to show only the records of the current line
-
-        Dim myConn = New SqlConnection(LblPathDatabase.Text)
-        Dim myCmd As SqlCommand
-        myCmd = myConn.CreateCommand()
-        myCmd.CommandText = "UPDATE LineaAttiva SET IdReparto=" & LblIdDepartment.Text & ", IdLine=" & LblIdLinea.Text & " WHERE [Id]=1"
-        myCmd.Connection.Open()
-        myCmd.ExecuteNonQuery()
-        myCmd.Connection.Close()
-
-        VisualizzaFermate.Show()
-    End Sub
-
-
-
-
-
-    Private Sub UtilityToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UtilityToolStripMenuItem.Click
+    Private Sub UtilityToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Utility.Show()
     End Sub
 
@@ -1589,9 +1571,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ButtonScegliLancioProduzione.Click
-        SceltaLancio.Show()
-    End Sub
+  
 
  
 
@@ -1665,5 +1645,18 @@ Public Class Form1
         Dim DescMacchina As String = "Carrello scarico"
         Dim Frm As New FormMacchina(pass, idMacchina, DescMacchina)
         Frm.ShowDialog()
+    End Sub
+
+    Private Sub VisualizzaProduzioneToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VisualizzaProduzioneToolStripMenuItem.Click
+        Dim IdRepartoAnalisiFermi As String = LblIdDepartment.Text
+        Dim RepartoAnalisiFermi As String = LblDepartmentDescription.Text
+        Dim IdLineaAnalisiFermi As String = LblIdLinea.Text
+        Dim LineaAnalisiFermi As String = LblLineDescription.Text
+        Dim Frm As New AnalisiFermi(IdRepartoAnalisiFermi, RepartoAnalisiFermi, IdLineaAnalisiFermi, LineaAnalisiFermi)
+        Frm.ShowDialog()
+    End Sub
+
+    Private Sub ScegliLancioProduzioneToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ScegliLancioProduzioneToolStripMenuItem.Click
+        SceltaLancio.Show()
     End Sub
 End Class

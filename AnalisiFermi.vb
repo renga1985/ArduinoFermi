@@ -6,15 +6,23 @@ Imports System.IO
 
 Public Class AnalisiFermi
 
+    Dim IdReparto As String = ""
     Dim Reparto As String = ""
+    Dim IdLinea As String = ""
     Dim Linea As String = ""
-    Public Sub New(ByVal empid As String, ByVal empid2 As String)
+    Public Sub New(ByVal empidRep As String, ByVal empRep As String, ByVal empidLin As String, ByVal empLin As String)
         InitializeComponent()
-        Reparto = empid
-        Linea = empid2
+        IdReparto = empidRep
+        Reparto = empRep
+        IdLinea = empidLin
+        Linea = empLin
     End Sub
 
     Private Sub AnalisiFermi_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'TODO: questa riga di codice carica i dati nella tabella 'VRNFermiDataSet.Fermi'. È possibile spostarla o rimuoverla se necessario.
+        ' Me.FermiTableAdapter.Fill(Me.VRNFermiDataSet.Fermi)
+        'TODO: questa riga di codice carica i dati nella tabella 'VRNFermiDataSet.Fermi'. È possibile spostarla o rimuoverla se necessario.
+        ' Me.FermiTableAdapter.Fill(Me.VRNFermiDataSet.Fermi)
         'We take some other parameters from config.txt
         Dim path As String = "C:\ArduinoFermi\config.txt"
         'Try
@@ -37,11 +45,16 @@ Public Class AnalisiFermi
         UpdateChartGenerale()
         UpdateGridFermi()
         UpdateGridOperatori()
+        UpdateLanci()
+        LabelTitolo.Text = Reparto + "-" + Linea
     End Sub
 
     Private Sub ButtonUpdate_Click(sender As Object, e As EventArgs) Handles ButtonUpdate.Click
         UpdateChart()
         UpdateChartGenerale()
+        UpdateGridFermi()
+        UpdateGridOperatori()
+        UpdateLanci()
     End Sub
 
     Function DataFormatting(Datadaconvertire As DateTime)
@@ -51,11 +64,24 @@ Public Class AnalisiFermi
         Return dataconvertita
     End Function
 
+    Sub UpdateLanci()
+        Dim myConn As New SqlConnection(LabelPathDatabase.Text)
+        Dim myCmd As SqlCommand
+        myCmd = myConn.CreateCommand()
+        myCmd.CommandText = "SELECT Lancio,Codice,Pallett,Produzione,[Poli Rifatti],Scarto FROM Produzione WHERE (IdReparto=" & IdReparto & ") and (Idlinea=" & IdLinea & ")AND(DATAinizio >= '" & DateTimePickerDa.Value.Year().ToString() & "-" & DateTimePickerDa.Value.Day().ToString() & "-" & DateTimePickerDa.Value.Month().ToString() & " " & ComboBoxDa.SelectedItem.ToString() & ":00:00' )"
+        myCmd.Connection.Open()
+        Dim dtRegistro As DataTable = New DataTable
+        Dim myDataAdapter As New SqlDataAdapter(myCmd)
+        myDataAdapter.Fill(dtRegistro)
+        DataGridViewLanci.DataSource = dtRegistro
+        myCmd.Connection.Close()
+    End Sub
+
     Sub UpdateGridOperatori()
         Dim myConn As New SqlConnection(LabelPathDatabase.Text)
         Dim myCmd As SqlCommand
         myCmd = myConn.CreateCommand()
-        myCmd.CommandText = "SELECT Cognome,Nome,DataEntrata,DataUscita FROM OreOperatori WHERE (Id_Reparto=" & Reparto & ") and (Id_linea=" & Linea & ")AND(DATAentrata >= '" & DateTimePickerDa.Value.Year().ToString() & "-" & DateTimePickerDa.Value.Day().ToString() & "-" & DateTimePickerDa.Value.Month().ToString() & " " & ComboBoxDa.SelectedItem.ToString() & ":00:00' )"
+        myCmd.CommandText = "SELECT Cognome,Nome,DataEntrata,DataUscita FROM OreOperatori WHERE (Id_Reparto=" & IdReparto & ") and (Id_linea=" & IdLinea & ")AND(DATAentrata >= '" & DateTimePickerDa.Value.Year().ToString() & "-" & DateTimePickerDa.Value.Day().ToString() & "-" & DateTimePickerDa.Value.Month().ToString() & " " & ComboBoxDa.SelectedItem.ToString() & ":00:00' )"
         myCmd.Connection.Open()
         Dim dtRegistro As DataTable = New DataTable
         Dim myDataAdapter As New SqlDataAdapter(myCmd)
@@ -68,7 +94,7 @@ Public Class AnalisiFermi
         Dim myConn As New SqlConnection(LabelPathDatabase.Text)
         Dim myCmd As SqlCommand
         myCmd = myConn.CreateCommand()
-        myCmd.CommandText = "SELECT Datainiziofermo,Datafinefermo,DescMacchina,DescFermo,Durata,DescFermoEsteso FROM FERMI WHERE (IdReparto=" & Reparto & ") and (Idlinea=" & Linea & ")AND(DATAinizioFermo >= '" & DateTimePickerDa.Value.Year().ToString() & "-" & DateTimePickerDa.Value.Day().ToString() & "-" & DateTimePickerDa.Value.Month().ToString() & " " & ComboBoxDa.SelectedItem.ToString() & ":00:00' )AND(DATAfinefermo <= '" & DateTimePickerA.Value.Year().ToString() & "-" & DateTimePickerA.Value.Day().ToString() & "-" & DateTimePickerA.Value.Month().ToString() & " " & ComboBoxA.SelectedItem.ToString() & ":00:00')"
+        myCmd.CommandText = "SELECT Datainiziofermo,Datafinefermo,DescMacchina,DescFermo,Durata,DescFermoEsteso FROM FERMI WHERE (IdReparto=" & IdReparto & ") and (Idlinea=" & IdLinea & ")AND(DATAinizioFermo >= '" & DateTimePickerDa.Value.Year().ToString() & "-" & DateTimePickerDa.Value.Day().ToString() & "-" & DateTimePickerDa.Value.Month().ToString() & " " & ComboBoxDa.SelectedItem.ToString() & ":00:00' )AND(DATAfinefermo <= '" & DateTimePickerA.Value.Year().ToString() & "-" & DateTimePickerA.Value.Day().ToString() & "-" & DateTimePickerA.Value.Month().ToString() & " " & ComboBoxA.SelectedItem.ToString() & ":00:00')"
         myCmd.Connection.Open()
         Dim dtRegistro As DataTable = New DataTable
         Dim myDataAdapter As New SqlDataAdapter(myCmd)
@@ -88,7 +114,7 @@ Public Class AnalisiFermi
         Dim myconn As New SqlConnection(LabelPathDatabase.Text)
         Dim myCmd As SqlCommand
         myCmd = myconn.CreateCommand()
-        myCmd.CommandText = "SELECT DESCMACCHINA,SUM(DURATA) AS DurataTot FROM FERMI WHERE (IdReparto=" & Reparto & ")AND(IdLinea=" & Linea & ")AND(DATAinizioFermo >= '" & DateTimePickerDa.Value.Year().ToString() & "-" & DateTimePickerDa.Value.Day().ToString() & "-" & DateTimePickerDa.Value.Month().ToString() & " " & ComboBoxDa.SelectedItem.ToString() & ":00:00' )AND(DATAfinefermo <= '" & DateTimePickerA.Value.Year().ToString() & "-" & DateTimePickerA.Value.Day().ToString() & "-" & DateTimePickerA.Value.Month().ToString() & " " & ComboBoxA.SelectedItem.ToString() & ":00:00') GROUP BY DESCMACCHINA ORDER BY SUM(DURATA);"
+        myCmd.CommandText = "SELECT DESCMACCHINA,SUM(DURATA) AS DurataTot FROM FERMI WHERE (IdReparto=" & IdReparto & ")AND(IdLinea=" & IdLinea & ")AND(DATAinizioFermo >= '" & DateTimePickerDa.Value.Year().ToString() & "-" & DateTimePickerDa.Value.Day().ToString() & "-" & DateTimePickerDa.Value.Month().ToString() & " " & ComboBoxDa.SelectedItem.ToString() & ":00:00' )AND(DATAfinefermo <= '" & DateTimePickerA.Value.Year().ToString() & "-" & DateTimePickerA.Value.Day().ToString() & "-" & DateTimePickerA.Value.Month().ToString() & " " & ComboBoxA.SelectedItem.ToString() & ":00:00') GROUP BY DESCMACCHINA ORDER BY SUM(DURATA);"
         ' Create a database command on the connection using query    
 
         ' Open the connection    
@@ -120,7 +146,7 @@ Public Class AnalisiFermi
         Dim myCmd As SqlCommand
         myCmd = myConn.CreateCommand()
 
-        myCmd.CommandText = "SELECT DESCFERMO,SUM(DURATA) AS DurataTot FROM FERMI WHERE (IdReparto=" & Reparto & ")AND(IdLinea=" & Linea & ")AND(DATAInizioFermo >= '" & DateTimePickerGENERALIDa.Value.Year().ToString() & "-" & DateTimePickerGENERALIDa.Value.Day().ToString() & "-" & DateTimePickerGENERALIDa.Value.Month().ToString() & " " & ComboBoxGeneraleDa.SelectedItem.ToString() & ":00:00')AND(DATAFineFermo <= '" & DateTimePickerGENERALIA.Value.Year().ToString() & "-" & DateTimePickerGENERALIA.Value.Day().ToString() & "-" & DateTimePickerGENERALIA.Value.Month().ToString() & " " & ComboBoxGeneraleA.SelectedItem.ToString() & ":00:00')AND(IdMacchina=0) GROUP BY DESCFERMO ORDER BY SUM(DURATA);"
+        myCmd.CommandText = "SELECT DESCFERMO,SUM(DURATA) AS DurataTot FROM FERMI WHERE (IdReparto=" & IdReparto & ")AND(IdLinea=" & IdLinea & ")AND(DATAInizioFermo >= '" & DateTimePickerGENERALIDa.Value.Year().ToString() & "-" & DateTimePickerGENERALIDa.Value.Day().ToString() & "-" & DateTimePickerGENERALIDa.Value.Month().ToString() & " " & ComboBoxGeneraleDa.SelectedItem.ToString() & ":00:00')AND(DATAFineFermo <= '" & DateTimePickerGENERALIA.Value.Year().ToString() & "-" & DateTimePickerGENERALIA.Value.Day().ToString() & "-" & DateTimePickerGENERALIA.Value.Month().ToString() & " " & ComboBoxGeneraleA.SelectedItem.ToString() & ":00:00')AND(IdMacchina=0) GROUP BY DESCFERMO ORDER BY SUM(DURATA);"
 
         ' Create a database command on the connection using query    
 

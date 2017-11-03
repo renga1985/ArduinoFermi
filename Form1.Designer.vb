@@ -96,9 +96,8 @@ Partial Class Form1
         Me.ButtonRitentaConnessione = New System.Windows.Forms.Button()
         Me.LblStatus = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.VisualizzaFermateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VisualizzaProduzioneToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UtilityToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ScegliLancioProduzioneToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TextBoxProduzione = New System.Windows.Forms.TextBox()
         Me.LabelContatoreProduzioneHidden = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -174,7 +173,6 @@ Partial Class Form1
         Me.LabelNome = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.LabelStatus = New System.Windows.Forms.Label()
-        Me.ButtonScegliLancioProduzione = New System.Windows.Forms.Button()
         CType(Me.PictureBoxFiamm, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartProduzioneOraria, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -811,30 +809,24 @@ Partial Class Form1
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VisualizzaFermateToolStripMenuItem, Me.VisualizzaProduzioneToolStripMenuItem, Me.UtilityToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VisualizzaProduzioneToolStripMenuItem, Me.ScegliLancioProduzioneToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1680, 24)
         Me.MenuStrip1.TabIndex = 67
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'VisualizzaFermateToolStripMenuItem
-        '
-        Me.VisualizzaFermateToolStripMenuItem.Name = "VisualizzaFermateToolStripMenuItem"
-        Me.VisualizzaFermateToolStripMenuItem.Size = New System.Drawing.Size(113, 20)
-        Me.VisualizzaFermateToolStripMenuItem.Text = "Visualizza fermate"
-        '
         'VisualizzaProduzioneToolStripMenuItem
         '
         Me.VisualizzaProduzioneToolStripMenuItem.Name = "VisualizzaProduzioneToolStripMenuItem"
-        Me.VisualizzaProduzioneToolStripMenuItem.Size = New System.Drawing.Size(132, 20)
-        Me.VisualizzaProduzioneToolStripMenuItem.Text = "Visualizza produzione"
+        Me.VisualizzaProduzioneToolStripMenuItem.Size = New System.Drawing.Size(155, 20)
+        Me.VisualizzaProduzioneToolStripMenuItem.Text = "Visualizza dati produzione"
         '
-        'UtilityToolStripMenuItem
+        'ScegliLancioProduzioneToolStripMenuItem
         '
-        Me.UtilityToolStripMenuItem.Name = "UtilityToolStripMenuItem"
-        Me.UtilityToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
-        Me.UtilityToolStripMenuItem.Text = "Utility"
+        Me.ScegliLancioProduzioneToolStripMenuItem.Name = "ScegliLancioProduzioneToolStripMenuItem"
+        Me.ScegliLancioProduzioneToolStripMenuItem.Size = New System.Drawing.Size(151, 20)
+        Me.ScegliLancioProduzioneToolStripMenuItem.Text = "Scegli Lancio Produzione"
         '
         'TextBoxProduzione
         '
@@ -1697,22 +1689,12 @@ Partial Class Form1
         Me.LabelStatus.TabIndex = 92
         Me.LabelStatus.Text = "Registrazione dati in STOP"
         '
-        'ButtonScegliLancioProduzione
-        '
-        Me.ButtonScegliLancioProduzione.Location = New System.Drawing.Point(1052, 231)
-        Me.ButtonScegliLancioProduzione.Name = "ButtonScegliLancioProduzione"
-        Me.ButtonScegliLancioProduzione.Size = New System.Drawing.Size(148, 23)
-        Me.ButtonScegliLancioProduzione.TabIndex = 93
-        Me.ButtonScegliLancioProduzione.Text = "Scegli Lancio Produzione"
-        Me.ButtonScegliLancioProduzione.UseVisualStyleBackColor = True
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1371, 750)
-        Me.Controls.Add(Me.ButtonScegliLancioProduzione)
+        Me.ClientSize = New System.Drawing.Size(1388, 767)
         Me.Controls.Add(Me.LabelStatus)
         Me.Controls.Add(Me.Label24)
         Me.Controls.Add(Me.LabelNome)
@@ -1866,12 +1848,10 @@ Partial Class Form1
     Friend WithEvents ButtonRitentaConnessione As System.Windows.Forms.Button
     Friend WithEvents LblStatus As System.Windows.Forms.Label
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
-    Friend WithEvents VisualizzaFermateToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VisualizzaProduzioneToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TextBoxProduzione As System.Windows.Forms.TextBox
     Friend WithEvents LabelContatoreProduzioneHidden As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents UtilityToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ChartMacchine As System.Windows.Forms.DataVisualization.Charting.Chart
     Friend WithEvents ChartCausali As System.Windows.Forms.DataVisualization.Charting.Chart
     Friend WithEvents Label17 As System.Windows.Forms.Label
@@ -1933,7 +1913,6 @@ Partial Class Form1
     Friend WithEvents LabelNome As System.Windows.Forms.Label
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents LabelStatus As System.Windows.Forms.Label
-    Friend WithEvents ButtonScegliLancioProduzione As System.Windows.Forms.Button
     Friend WithEvents TabFormazione As System.Windows.Forms.TabPage
     Friend WithEvents ButtonLineaGeneraleFormazione As System.Windows.Forms.Button
     Friend WithEvents ButtonCarrelloScarico As System.Windows.Forms.Button
@@ -1945,5 +1924,6 @@ Partial Class Form1
     Friend WithEvents ButtonPrimoRiempimento As System.Windows.Forms.Button
     Friend WithEvents ButtonInseritoreOcchioMagico As System.Windows.Forms.Button
     Friend WithEvents ButtonPinzaCarico As System.Windows.Forms.Button
+    Friend WithEvents ScegliLancioProduzioneToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

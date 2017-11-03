@@ -204,26 +204,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Settings.vb" />
-    <Compile Include="SqlTableAdapter.vb" />
     <Compile Include="Utility.Designer.vb">
       <DependentUpon>Utility.vb</DependentUpon>
     </Compile>
     <Compile Include="Utility.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VisualizzaFermate.Designer.vb">
-      <DependentUpon>VisualizzaFermate.vb</DependentUpon>
-    </Compile>
-    <Compile Include="VisualizzaFermate.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VRNFermiDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VRNFermiDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="VRNFermiDataSet.vb">
-      <DependentUpon>VRNFermiDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Worksheet.vb" />
   </ItemGroup>
@@ -270,9 +255,6 @@
     <EmbeddedResource Include="Utility.resx">
       <DependentUpon>Utility.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VisualizzaFermate.resx">
-      <DependentUpon>VisualizzaFermate.vb</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="ArduinoFermi_ChiaveTemporanea.pfx" />
@@ -290,17 +272,6 @@
     </None>
     <None Include="App.config">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="VRNFermiDataSet.xsc">
-      <DependentUpon>VRNFermiDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="VRNFermiDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>VRNFermiDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="VRNFermiDataSet.xss">
-      <DependentUpon>VRNFermiDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -378,15 +349,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="Microsoft.Office.Core">
-      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
-      <VersionMajor>2</VersionMajor>
-      <VersionMinor>4</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
     <COMReference Include="Microsoft.Office.Interop.Excel">
       <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>1</VersionMajor>
