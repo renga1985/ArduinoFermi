@@ -1690,4 +1690,48 @@ Public Class DashboardProduzione
     End Sub
 
 
+    Private Sub ChartProduzioneOrariaStiratura2_Click(sender As Object, e As EventArgs) Handles ChartProduzioneOrariaStiratura2.Click
+        Dim IdRepartoAnalisiFermi As String = "75"
+        Dim RepartoAnalisiFermi As String = "Stiratura"
+        Dim IdLineaAnalisiFermi As String = "02"
+        Dim LineaAnalisiFermi As String = "Linea 2"
+        Dim Frm As New AnalisiFermi(IdRepartoAnalisiFermi, RepartoAnalisiFermi, IdLineaAnalisiFermi, LineaAnalisiFermi)
+        Frm.ShowDialog()
+    End Sub
+
+    Private Sub ChartProduzioneOrariaStiratura3_Click(sender As Object, e As EventArgs) Handles ChartProduzioneOrariaStiratura3.Click
+        Dim IdRepartoAnalisiFermi As String = "75"
+        Dim RepartoAnalisiFermi As String = "Stiratura"
+        Dim IdLineaAnalisiFermi As String = "03"
+        Dim LineaAnalisiFermi As String = "Linea 3"
+        Dim Frm As New AnalisiFermi(IdRepartoAnalisiFermi, RepartoAnalisiFermi, IdLineaAnalisiFermi, LineaAnalisiFermi)
+        Frm.ShowDialog()
+    End Sub
+
+    Private Sub ChartProduzioneOrariaStiratura4_Click(sender As Object, e As EventArgs) Handles ChartProduzioneOrariaStiratura4.Click
+        Dim IdRepartoAnalisiFermi As String = "75"
+        Dim RepartoAnalisiFermi As String = "Stiratura"
+        Dim IdLineaAnalisiFermi As String = "04"
+        Dim LineaAnalisiFermi As String = "Linea 4"
+        Dim Frm As New AnalisiFermi(IdRepartoAnalisiFermi, RepartoAnalisiFermi, IdLineaAnalisiFermi, LineaAnalisiFermi)
+        Frm.ShowDialog()
+    End Sub
+
+    Private Sub ChartProduzioneOrariaStiratura5_Click(sender As Object, e As EventArgs) Handles ChartProduzioneOrariaStiratura5.Click
+        Dim IdRepartoAnalisiFermi As String = "75"
+        Dim RepartoAnalisiFermi As String = "Stiratura"
+        Dim IdLineaAnalisiFermi As String = "05"
+        Dim LineaAnalisiFermi As String = "Linea 5"
+        Dim Frm As New AnalisiFermi(IdRepartoAnalisiFermi, RepartoAnalisiFermi, IdLineaAnalisiFermi, LineaAnalisiFermi)
+        Frm.ShowDialog()
+    End Sub
+
+    Private Sub ChartProduzioneOrariaStiratura6_Click(sender As Object, e As EventArgs) Handles ChartProduzioneOrariaStiratura6.Click
+        Dim IdRepartoAnalisiFermi As String = "75"
+        Dim RepartoAnalisiFermi As String = "Stiratura"
+        Dim IdLineaAnalisiFermi As String = "06"
+        Dim LineaAnalisiFermi As String = "Linea 6"
+        Dim Frm As New AnalisiFermi(IdRepartoAnalisiFermi, RepartoAnalisiFermi, IdLineaAnalisiFermi, LineaAnalisiFermi)
+        Frm.ShowDialog()
+    End Sub
 End Class

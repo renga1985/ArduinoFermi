@@ -1522,7 +1522,7 @@ Public Class Form1
             TimerForRoutineRegistrationData.Start()
             LabelStatus.Text = "Registrazione dati in RUN"
 
-            SceltaLancio.Show()
+            SceltaLancioMontaggio.Show()
 
         Else
             'There is already at least one operator loaded in to the line
@@ -1571,9 +1571,9 @@ Public Class Form1
 
     End Sub
 
-  
 
- 
+
+
 
     Private Sub ButtonPinzaCarico_Click(sender As Object, e As EventArgs) Handles ButtonPinzaCarico.Click
         Dim pass As String = LabelIdFermo.Text
@@ -1657,6 +1657,6 @@ Public Class Form1
     End Sub
 
     Private Sub ScegliLancioProduzioneToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ScegliLancioProduzioneToolStripMenuItem.Click
-        SceltaLancio.Show()
+        SceltaLancioMontaggio.Show()
     End Sub
 End Class

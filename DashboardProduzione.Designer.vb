@@ -540,7 +540,6 @@ Partial Class DashboardProduzione
         Me.TimerCurrentTime = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBoxFiamm = New System.Windows.Forms.PictureBox()
         Me.LabelPathDatabase = New System.Windows.Forms.Label()
-
         CType(Me.ChartProduzioneOrariaStiratura1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartProduzioneOrariaStiratura2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartProduzioneOrariaStiratura3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -866,7 +865,6 @@ Partial Class DashboardProduzione
         Series2.BorderWidth = 4
         Series2.ChartArea = "ChartArea1"
         Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series2.IsValueShownAsLabel = True
         Series2.LegendText = "Produzione oraria"
         Series2.Name = "Series1"
         Series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
@@ -980,7 +978,6 @@ Partial Class DashboardProduzione
         Series3.BorderWidth = 4
         Series3.ChartArea = "ChartArea1"
         Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series3.IsValueShownAsLabel = True
         Series3.LegendText = "Produzione oraria"
         Series3.Name = "Series1"
         Series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
@@ -1048,7 +1045,6 @@ Partial Class DashboardProduzione
         Series4.BorderWidth = 4
         Series4.ChartArea = "ChartArea1"
         Series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series4.IsValueShownAsLabel = True
         Series4.LegendText = "Produzione oraria"
         Series4.Name = "Series1"
         Series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
@@ -1116,7 +1112,6 @@ Partial Class DashboardProduzione
         Series5.BorderWidth = 4
         Series5.ChartArea = "ChartArea1"
         Series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series5.IsValueShownAsLabel = True
         Series5.LegendText = "Produzione oraria"
         Series5.Name = "Series1"
         Series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time
@@ -1184,7 +1179,6 @@ Partial Class DashboardProduzione
         Series6.BorderWidth = 4
         Series6.ChartArea = "ChartArea1"
         Series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series6.IsValueShownAsLabel = True
         Series6.LegendText = "Produzione oraria"
         Series6.Name = "Series1"
         Series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time

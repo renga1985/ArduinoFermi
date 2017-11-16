@@ -46,6 +46,7 @@ Public Class AnalisiFermi
         UpdateGridFermi()
         UpdateGridOperatori()
         UpdateLanci()
+        UpdateProd()
         LabelTitolo.Text = Reparto + "-" + Linea
     End Sub
 
@@ -55,6 +56,7 @@ Public Class AnalisiFermi
         UpdateGridFermi()
         UpdateGridOperatori()
         UpdateLanci()
+        UpdateProd()
     End Sub
 
     Function DataFormatting(Datadaconvertire As DateTime)
@@ -76,7 +78,18 @@ Public Class AnalisiFermi
         DataGridViewLanci.DataSource = dtRegistro
         myCmd.Connection.Close()
     End Sub
-
+    Sub UpdateProd()
+        Dim myConn As New SqlConnection(LabelPathDatabase.Text)
+        Dim myCmd As SqlCommand
+        myCmd = myConn.CreateCommand()
+        myCmd.CommandText = "SELECT Data,ProduzioneStep FROM DatiProduzione WHERE (Id_reparto=" & IdReparto & ") and (Id_linea=" & IdLinea & ") AND (Data >= '" & DateTimePickerDa.Value.Year().ToString() & "-" & DateTimePickerDa.Value.Day().ToString() & "-" & DateTimePickerDa.Value.Month().ToString() & " " & ComboBoxDa.SelectedItem.ToString() & ":00:00') AND (Data <= '" & DateTimePickerA.Value.Year().ToString() & "-" & DateTimePickerA.Value.Day().ToString() & "-" & DateTimePickerA.Value.Month().ToString() & " " & ComboBoxA.SelectedItem.ToString() & ":00:00') ORDER By Data Desc "
+        myCmd.Connection.Open()
+        Dim dtRegistro As DataTable = New DataTable
+        Dim myDataAdapter As New SqlDataAdapter(myCmd)
+        myDataAdapter.Fill(dtRegistro)
+        DataGridViewTestProd.DataSource = dtRegistro
+        myCmd.Connection.Close()
+    End Sub
     Sub UpdateGridOperatori()
         Dim myConn As New SqlConnection(LabelPathDatabase.Text)
         Dim myCmd As SqlCommand
@@ -86,7 +99,7 @@ Public Class AnalisiFermi
         myCmd.CommandText = myCmd.CommandText + "((DATAentrata <= '" & DateTimePickerDa.Value.Year().ToString() & "-" & DateTimePickerDa.Value.Day().ToString() & "-" & DateTimePickerDa.Value.Month().ToString() & " " & ComboBoxDa.SelectedItem.ToString() & ":00:00' )AND(DATAuscita >= '" & DateTimePickerDa.Value.Year().ToString() & "-" & DateTimePickerDa.Value.Day().ToString() & "-" & DateTimePickerDa.Value.Month().ToString() & " " & ComboBoxA.SelectedItem.ToString() & ":00:00'))OR"
         myCmd.CommandText = myCmd.CommandText + "((DATAentrata <= '" & DateTimePickerA.Value.Year().ToString() & "-" & DateTimePickerA.Value.Day().ToString() & "-" & DateTimePickerA.Value.Month().ToString() & " " & ComboBoxDa.SelectedItem.ToString() & ":00:00' )AND(DATAuscita >= '" & DateTimePickerA.Value.Year().ToString() & "-" & DateTimePickerA.Value.Day().ToString() & "-" & DateTimePickerA.Value.Month().ToString() & " " & ComboBoxA.SelectedItem.ToString() & ":00:00'))OR"
         myCmd.CommandText = myCmd.CommandText + "((DATAentrata <= '" & DateTimePickerDa.Value.Year().ToString() & "-" & DateTimePickerDa.Value.Day().ToString() & "-" & DateTimePickerDa.Value.Month().ToString() & " " & ComboBoxDa.SelectedItem.ToString() & ":00:00' )AND(DATAuscita >= '" & DateTimePickerA.Value.Year().ToString() & "-" & DateTimePickerA.Value.Day().ToString() & "-" & DateTimePickerA.Value.Month().ToString() & " " & ComboBoxA.SelectedItem.ToString() & ":00:00'))OR"
-        myCmd.CommandText = myCmd.CommandText + "((DATAuscita ='')))"
+        myCmd.CommandText = myCmd.CommandText + "((DATAentrata <= '" & DateTimePickerA.Value.Year().ToString() & "-" & DateTimePickerA.Value.Day().ToString() & "-" & DateTimePickerA.Value.Month().ToString() & " " & ComboBoxDa.SelectedItem.ToString() & ":00:00' )AND(DATAuscita IS NULL)))"
         myCmd.Connection.Open()
         Dim dtRegistro As DataTable = New DataTable
         Dim myDataAdapter As New SqlDataAdapter(myCmd)

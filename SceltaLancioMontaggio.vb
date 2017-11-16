@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class SceltaLancio
+Public Class SceltaLancioMontaggio
 
     Private Sub SceltaLancio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -72,6 +72,13 @@ Public Class SceltaLancio
             myCmd3.Connection.Open()
             TextBoxLancioProduzione.Text = myCmd3.ExecuteScalar()
             myCmd3.Connection.Close()
+
+            Dim myCmd4 As SqlCommand
+            myCmd4 = myConn.CreateCommand()
+            myCmd4.CommandText = "SELECT Turno FROM Produzione WHERE (Lancio='" & TextBoxLancioProduzione.Text & "' AND DataFine IS NULL)"
+            myCmd4.Connection.Open()
+            ComboBoxTurno.Text = myCmd4.ExecuteScalar()
+            myCmd4.Connection.Close()
 
             ComboBoxLancio.Visible = False
 
@@ -187,6 +194,13 @@ Public Class SceltaLancio
             myCmd2.ExecuteNonQuery()
             myCmd2.Connection.Close()
 
+            Dim myCmd3 As SqlCommand
+            myCmd3 = myConn.CreateCommand()
+            myCmd3.CommandText = "UPDATE LanciProduzione SET StatoLancio ='In corso' WHERE (Ordpian ='" & TextBoxLancioProduzione.Text & "')"
+            myCmd3.Connection.Open()
+            myCmd3.ExecuteNonQuery()
+            myCmd3.Connection.Close()
+
             'Show the label and textbox with production data
 
             LabelLancio.Visible = True
@@ -230,157 +244,176 @@ Public Class SceltaLancio
 
     Private Sub ButtonChiudiLancio_Click(sender As Object, e As EventArgs) Handles ButtonChiudiLancio.Click
 
-        If ComboBoxTurno.Text = "" Then
-
-            'Message error and do nothing 
-            MsgBox("Inserire il turno di produzione corrente")
-
+        If TextBoxProduzionePezzi.Text = "" Then
+            MsgBox("Inserire il numero di pezzi prodotti")
+            Exit Sub
         Else
+        End If
 
-            Dim myConn As New SqlConnection(Form1.LblPathDatabase.Text)
+        If TextBoxPallett.Text = "" Then
+            MsgBox("Inserire il numero di pallett prodotti")
+            Exit Sub
+        Else
+        End If
 
-            'Ricavo data di inizio e la durata della produzione 
+        Dim myConn As New SqlConnection(Form1.LblPathDatabase.Text)
 
-            Dim myCmd As SqlCommand
-            myCmd = myConn.CreateCommand()
-            myCmd.CommandText = "SELECT DataInizio FROM Produzione WHERE (IdReparto=" & Form1.LblIdDepartment.Text & " AND IdLinea=" & Form1.LblIdLinea.Text & " AND DataFine IS NULL)"
-            myCmd.Connection.Open()
-            Dim DataInizio As Date
-            DataInizio = myCmd.ExecuteScalar()
+        'Ricavo data di inizio e la durata della produzione 
+
+        Dim myCmd As SqlCommand
+        myCmd = myConn.CreateCommand()
+        myCmd.CommandText = "SELECT DataInizio FROM Produzione WHERE (IdReparto=" & Form1.LblIdDepartment.Text & " AND IdLinea=" & Form1.LblIdLinea.Text & " AND DataFine IS NULL)"
+        myCmd.Connection.Open()
+        Dim DataInizio As Date
+        DataInizio = myCmd.ExecuteScalar()
+        myCmd.Connection.Close()
+
+        Dim DataFine As Date
+        DataFine = DateTime.Now
+
+        Dim Duration As TimeSpan = DateTime.Now().Subtract(DataInizio)
+        Dim TotalMinutesDuration As String = CInt(Duration.TotalMinutes()).ToString()
+
+        'Calcolo fermi
+
+        Dim myCmd2 As SqlCommand
+        myCmd2 = myConn.CreateCommand()
+        myCmd2.CommandText = ("SELECT Sum(Durata) FROM Fermi WHERE ((IdReparto='" & Form1.LblIdDepartment.Text & "') AND (IdLinea='" & Form1.LblIdLinea.Text & "')AND(DATA >= '" & DataFormatting(DataInizio) & "')AND(DATA <= '" & DataFormatting(DataFine) & "'))")
+        Dim Durata As String
+        myCmd2.Connection.Open()
+
+
+        If IsDBNull(myCmd2.ExecuteScalar()) Then
+            'close the connection and put stop duration as 0
+            Durata = "0"
             myCmd.Connection.Close()
+        Else
+            Durata = myCmd2.ExecuteScalar().ToString
+            myCmd2.Connection.Close()
+        End If
 
-            Dim DataFine As Date
-            DataFine = DateTime.Now
+        If TextBoxPoliRifatti.Text = "" Then
+            TextBoxPoliRifatti.Text = "0"
+        Else
+        End If
 
-            Dim Duration As TimeSpan = DateTime.Now().Subtract(DataInizio)
-            Dim TotalMinutesDuration As String = CInt(Duration.TotalMinutes()).ToString()
+        If TextBoxScartoFuoriCella.Text = "" Then
+            TextBoxScartoFuoriCella.Text = "0"
+        Else
+        End If
 
-            'Calcolo fermi
+        If TextBoxScartoPoloPiantato.Text = "" Then
+            TextBoxScartoPoloPiantato.Text = "0"
+        Else
+        End If
 
-            Dim myCmd2 As SqlCommand
-            myCmd2 = myConn.CreateCommand()
-            myCmd2.CommandText = ("SELECT Sum(Durata) FROM Fermi WHERE ((IdReparto='" & Form1.LblIdDepartment.Text & "') AND (IdLinea='" & Form1.LblIdLinea.Text & "')AND(DATA >= '" & DataFormatting(DataInizio) & "')AND(DATA <= '" & DataFormatting(DataFine) & "'))")
-            Dim Durata As String
-            myCmd2.Connection.Open()
+        If TextBoxScartoPoloFuso.Text = "" Then
+            TextBoxScartoPoloFuso.Text = "0"
+        Else
+        End If
 
+        If TextBoxScartoAltro.Text = "" Then
+            TextBoxScartoAltro.Text = "0"
+        Else
+        End If
 
-            If IsDBNull(myCmd2.ExecuteScalar()) Then
-                'close the connection and put stop duration as 0
-                Durata = "0"
-                myCmd.Connection.Close()
-            Else
-                Durata = myCmd2.ExecuteScalar().ToString
-                myCmd2.Connection.Close()
-            End If
+        If TextBoxControlloDistruttivo.Text = "" Then
+            TextBoxControlloDistruttivo.Text = "0"
+        Else
+        End If
 
-            If TextBoxPoliRifatti.Text = "" Then
-                TextBoxPoliRifatti.Text = "0"
-            Else
-            End If
+        Dim myCmd3 As SqlCommand
+        myCmd3 = myConn.CreateCommand()
+        'myCmd3.CommandText = "UPDATE Produzione SET DataFine='" & DataFormatting(DateTime.Now) & "', Pallett='" & TextBoxPallett.Text & "', Produzione = '" & (CInt(TextBoxProduzionePezzi.Text) + CInt(TextBoxPoliRifatti.Text)).ToString & "', Scarto='" & (CInt(TextBoxScartoFuoriCella.Text) + CInt(TextBoxScartoPoloPiantato.Text) + CInt(TextBoxScartoPoloFuso.Text) + CInt(TextBoxScartoAltro.Text)).ToString & "', Minuti='" & (CInt(TotalMinutesDuration) - CInt(Durata)).ToString & "' WHERE (IdReparto='" & Form1.LblIdDepartment.Text & "' AND IdLinea='" & Form1.LblIdLinea.Text & "' AND DataFine IS NULL)"
+        myCmd3.CommandText = "UPDATE Produzione SET DataFine='" & DataFormatting(DateTime.Now) & "', Pallett='" & TextBoxPallett.Text & "', Produzione = '" & TextBoxProduzionePezzi.Text & "',[Poli Rifatti]='" & TextBoxPoliRifatti.Text & "', Scarto='" & (CInt(TextBoxScartoFuoriCella.Text) + CInt(TextBoxScartoPoloPiantato.Text) + CInt(TextBoxScartoPoloFuso.Text) + CInt(TextBoxScartoAltro.Text)).ToString & "', Minuti = '" & (CInt(TotalMinutesDuration) - CInt(Durata)).ToString & "'  WHERE (IdReparto='" & Form1.LblIdDepartment.Text & "' AND IdLinea='" & Form1.LblIdLinea.Text & "' AND DataFine IS NULL)"
+        myCmd3.Connection.Open()
+        myCmd3.ExecuteNonQuery()
+        myCmd3.Connection.Close()
 
-            If TextBoxScartoFuoriCella.Text = "" Then
-                TextBoxScartoFuoriCella.Text = "0"
-            Else
-            End If
+        Dim myCmd4 As SqlCommand
+        myCmd4 = myConn.CreateCommand()
+        myCmd4.CommandText = "UPDATE LanciProduzione SET QuantitàMancante = '" & (CInt(LabelQuantitàMancante.Text) - CInt(TextBoxProduzionePezzi.Text) - CInt(TextBoxPoliRifatti.Text)).ToString & "' WHERE (Ordpian='" & TextBoxLancioProduzione.Text & "')"
+        myCmd4.Connection.Open()
+        myCmd4.ExecuteNonQuery()
+        myCmd4.Connection.Close()
 
-            If TextBoxScartoPoloPiantato.Text = "" Then
-                TextBoxScartoPoloPiantato.Text = "0"
-            Else
-            End If
-
-            If TextBoxScartoPoloFuso.Text = "" Then
-                TextBoxScartoPoloFuso.Text = "0"
-            Else
-            End If
-
-            If TextBoxScartoAltro.Text = "" Then
-                TextBoxScartoAltro.Text = "0"
-            Else
-            End If
-
-            If TextBoxControlloDistruttivo.Text = "" Then
-                TextBoxControlloDistruttivo.Text = "0"
-            Else
-            End If
-
-            Dim myCmd3 As SqlCommand
-            myCmd3 = myConn.CreateCommand()
-            'myCmd3.CommandText = "UPDATE Produzione SET DataFine='" & DataFormatting(DateTime.Now) & "', Pallett='" & TextBoxPallett.Text & "', Produzione = '" & (CInt(TextBoxProduzionePezzi.Text) + CInt(TextBoxPoliRifatti.Text)).ToString & "', Scarto='" & (CInt(TextBoxScartoFuoriCella.Text) + CInt(TextBoxScartoPoloPiantato.Text) + CInt(TextBoxScartoPoloFuso.Text) + CInt(TextBoxScartoAltro.Text)).ToString & "', Minuti='" & (CInt(TotalMinutesDuration) - CInt(Durata)).ToString & "' WHERE (IdReparto='" & Form1.LblIdDepartment.Text & "' AND IdLinea='" & Form1.LblIdLinea.Text & "' AND DataFine IS NULL)"
-            myCmd3.CommandText = "UPDATE Produzione SET DataFine='" & DataFormatting(DateTime.Now) & "', Pallett='" & TextBoxPallett.Text & "', Produzione = '" & TextBoxProduzionePezzi.Text & "',[Poli Rifatti]='" & TextBoxPoliRifatti.Text & "', Scarto='" & (CInt(TextBoxScartoFuoriCella.Text) + CInt(TextBoxScartoPoloPiantato.Text) + CInt(TextBoxScartoPoloFuso.Text) + CInt(TextBoxScartoAltro.Text)).ToString & "', Minuti = '" & (CInt(TotalMinutesDuration) - CInt(Durata)).ToString & "'  WHERE (IdReparto='" & Form1.LblIdDepartment.Text & "' AND IdLinea='" & Form1.LblIdLinea.Text & "' AND DataFine IS NULL)"
-            myCmd3.Connection.Open()
-            myCmd3.ExecuteNonQuery()
-            myCmd3.Connection.Close()
-
-            Dim myCmd4 As SqlCommand
-            myCmd4 = myConn.CreateCommand()
-            myCmd4.CommandText = "UPDATE LanciProduzione SET QuantitàMancante = '" & (CInt(LabelQuantitàMancante.Text) - CInt(TextBoxProduzionePezzi.Text) - CInt(TextBoxPoliRifatti.Text)).ToString & "' WHERE (Ordpian='" & TextBoxLancioProduzione.Text & "')"
-            myCmd4.Connection.Open()
-            myCmd4.ExecuteNonQuery()
-            myCmd4.Connection.Close()
-
-            If (CInt(LabelQuantitàMancante.Text) - CInt(TextBoxProduzionePezzi.Text)) <= 0 Then
-                Dim myCmd5 As SqlCommand
-                myCmd5 = myConn.CreateCommand()
-                myCmd5.CommandText = "UPDATE LanciProduzione SET StatoLancio = 'CHIUSO' WHERE (Ordpian='" & TextBoxLancioProduzione.Text & "')"
-                myCmd5.Connection.Open()
-                myCmd5.ExecuteNonQuery()
-                myCmd5.Connection.Close()
-            Else
-            End If
-
-            TextBoxPallett.Text = ""
-            TextBoxProduzionePezzi.Text = ""
-            TextBoxPoliRifatti.Text = ""
-            TextBoxScartoFuoriCella.Text = ""
-            TextBoxScartoPoloPiantato.Text = ""
-            TextBoxScartoPoloFuso.Text = ""
-            TextBoxScartoAltro.Text = ""
-            TextBoxControlloDistruttivo.Text = ""
-
-            ComboBoxLancio.Text = ""
-            TextBoxLancioProduzione.Text = ""
-            LabelCodice.Text = ""
-            LabelQuantitàLancio.Text = ""
-            LabelQuantitàMancante.Text = ""
-
-            LabelLancio.Visible = False
-            LabelPallett.Visible = False
-            LabelPezzi.Visible = False
-            LabelPoliRifatti.Visible = False
-            TextBoxPallett.Visible = False
-            TextBoxProduzionePezzi.Visible = False
-            TextBoxPoliRifatti.Visible = False
-            LabelScartoTurno.Visible = False
-            LabelFuoriCella.Visible = False
-            LabelPoloPiantato.Visible = False
-            LabelPoloFuso.Visible = False
-            LabelAltro.Visible = False
-            TextBoxScartoFuoriCella.Visible = False
-            TextBoxScartoPoloPiantato.Visible = False
-            TextBoxScartoPoloFuso.Visible = False
-            TextBoxScartoAltro.Visible = False
-            LabelControlloDistruttivo.Visible = False
-            TextBoxControlloDistruttivo.Visible = False
-            LabelNote.Visible = False
-            RichTextBoxNote.Visible = False
-
-            ComboBoxLancio.Visible = True
-
-            ButtonChiudiLancio.Enabled = False
-            ButtonConfermaLancio.Enabled = True
-            ButtonCancella.Enabled = True
+        If (CInt(LabelQuantitàMancante.Text) - CInt(TextBoxProduzionePezzi.Text)) <= 0 Then
+            Dim myCmd5 As SqlCommand
+            myCmd5 = myConn.CreateCommand()
+            myCmd5.CommandText = "UPDATE LanciProduzione SET StatoLancio = 'Chiuso' WHERE (Ordpian='" & TextBoxLancioProduzione.Text & "')"
+            myCmd5.Connection.Open()
+            myCmd5.ExecuteNonQuery()
+            myCmd5.Connection.Close()
+        Else
+            Dim myCmd6 As SqlCommand
+            myCmd6 = myConn.CreateCommand()
+            myCmd6.CommandText = "UPDATE LanciProduzione SET StatoLancio = 'Sospeso' WHERE (Ordpian='" & TextBoxLancioProduzione.Text & "')"
+            myCmd6.Connection.Open()
+            myCmd6.ExecuteNonQuery()
+            myCmd6.Connection.Close()
 
         End If
+
+        Dim myCmd7 As SqlCommand
+        myCmd7 = myConn.CreateCommand()
+        myCmd7.CommandText = "UPDATE StatoLinee SET LancioInCorso ='0' WHERE (Id_reparto ='" & Form1.LblIdDepartment.Text & "' AND Id_linea='" & Form1.LblIdLinea.Text & "')"
+        myCmd7.Connection.Open()
+        myCmd7.ExecuteNonQuery()
+        myCmd7.Connection.Close()
+
+        Dim myCmd8 As SqlCommand
+        myCmd8 = myConn.CreateCommand()
+        myCmd8.CommandText = "INSERT INTO ScartoMontaggio (Turno,IdReparto,Reparto,IdLinea,Linea,Codice,[Fuori Cella],[Polo Piantato],[Polo Fuso],Altro,[Scarto Totale],[Controllo Distruttivo]) VALUES ('" & ComboBoxTurno.Text & "','" & Form1.LblIdDepartment.Text & "','" & Form1.LblDepartmentDescription.Text & "','" & Form1.LblIdLinea.Text & "','" & Form1.LblLineDescription.Text & "','" & LabelCodice.Text & "','" & TextBoxScartoFuoriCella.Text & "','" & TextBoxScartoPoloPiantato.Text & "','" & TextBoxScartoPoloFuso.Text & "','" & TextBoxScartoAltro.Text & "','" & (CInt(TextBoxScartoFuoriCella.Text) + CInt(TextBoxScartoPoloPiantato.Text) + CInt(TextBoxScartoPoloFuso.Text) + CInt(TextBoxScartoAltro.Text)).ToString & "','" & TextBoxControlloDistruttivo.Text & "')"
+        myCmd8.Connection.Open()
+        myCmd8.ExecuteNonQuery()
+        myCmd8.Connection.Close()
+
+        TextBoxPallett.Text = ""
+        TextBoxProduzionePezzi.Text = ""
+        TextBoxPoliRifatti.Text = ""
+        TextBoxScartoFuoriCella.Text = ""
+        TextBoxScartoPoloPiantato.Text = ""
+        TextBoxScartoPoloFuso.Text = ""
+        TextBoxScartoAltro.Text = ""
+        TextBoxControlloDistruttivo.Text = ""
+
+        ComboBoxLancio.Text = ""
+        TextBoxLancioProduzione.Text = ""
+        ComboBoxTurno.Text = ""
+        LabelCodice.Text = ""
+        LabelQuantitàLancio.Text = ""
+        LabelQuantitàMancante.Text = ""
+
+        LabelLancio.Visible = False
+        LabelPallett.Visible = False
+        LabelPezzi.Visible = False
+        LabelPoliRifatti.Visible = False
+        TextBoxPallett.Visible = False
+        TextBoxProduzionePezzi.Visible = False
+        TextBoxPoliRifatti.Visible = False
+        LabelScartoTurno.Visible = False
+        LabelFuoriCella.Visible = False
+        LabelPoloPiantato.Visible = False
+        LabelPoloFuso.Visible = False
+        LabelAltro.Visible = False
+        TextBoxScartoFuoriCella.Visible = False
+        TextBoxScartoPoloPiantato.Visible = False
+        TextBoxScartoPoloFuso.Visible = False
+        TextBoxScartoAltro.Visible = False
+        LabelControlloDistruttivo.Visible = False
+        TextBoxControlloDistruttivo.Visible = False
+        LabelNote.Visible = False
+        RichTextBoxNote.Visible = False
+
+        ComboBoxLancio.Visible = True
+
+        ButtonChiudiLancio.Enabled = False
+        ButtonConfermaLancio.Enabled = True
+        ButtonCancella.Enabled = True
+
     End Sub
 
     Private Sub ButtonSalvaTurno_Click(sender As Object, e As EventArgs) Handles ButtonSalvaTurno.Click
-
-        If ComboBoxTurno.Text = "" Then
-
-            'Message error and do nothing 
-            MsgBox("Inserire il turno di produzione corrente")
-
-        Else
 
             Dim msg = MsgBox("Chiudere il lancio di produzione in corso?", MsgBoxStyle.YesNo)
 
@@ -508,11 +541,12 @@ Public Class SceltaLancio
                 myCmd.ExecuteNonQuery()
                 myCmd.Connection.Close()
 
-                ComboBoxTurno.Text = ""
-
+                If ComboBoxTurno.Text = "3" Then
+                    ComboBoxTurno.Text = "1"
+                Else
+                    ComboBoxTurno.Text = ComboBoxTurno.Text + 1
+                End If
             End If
-
-        End If
 
     End Sub
 

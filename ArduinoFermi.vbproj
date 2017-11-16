@@ -26,7 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\fiammitfs02\CorporateShare\Prod\IB_Fermi\ArduinoFermi\</InstallUrl>
-    <ApplicationRevision>75</ApplicationRevision>
+    <ApplicationRevision>79</ApplicationRevision>
     <ApplicationVersion>0.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -197,10 +197,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="SceltaLancio.Designer.vb">
-      <DependentUpon>SceltaLancio.vb</DependentUpon>
+    <Compile Include="SceltaLancioMontaggio.Designer.vb">
+      <DependentUpon>SceltaLancioMontaggio.vb</DependentUpon>
     </Compile>
-    <Compile Include="SceltaLancio.vb">
+    <Compile Include="SceltaLancioMontaggio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceltaLancioStiratura.Designer.vb">
+      <DependentUpon>SceltaLancioStiratura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SceltaLancioStiratura.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Settings.vb" />
@@ -249,8 +255,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SceltaLancio.resx">
-      <DependentUpon>SceltaLancio.vb</DependentUpon>
+    <EmbeddedResource Include="SceltaLancioMontaggio.resx">
+      <DependentUpon>SceltaLancioMontaggio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utility.resx">
       <DependentUpon>Utility.vb</DependentUpon>

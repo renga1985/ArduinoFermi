@@ -36,34 +36,40 @@ Public Class FormManualInput
         If LabelRepartoSelected.Text = "" Then
             MsgBox("Inserire il reparto")
             TextBoxReparto.SelectAll()
+            Exit Sub
         End If
 
         If LabelLineaSelected.Text = "" Then
             MsgBox("Inserire la linea")
             TextBoxLinea.SelectAll()
+            Exit Sub
         End If
 
         If LabelMacchinaSelected.Text = "" Then
             MsgBox("Inserire la macchina")
             TextBoxMacchina.SelectAll()
+            Exit Sub
         End If
 
         If LabelFermoSelected.Text = "" Then
             MsgBox("Inserire il fermo")
             TextBoxFermo.SelectAll()
+            Exit Sub
         End If
 
         If TextBoxInizio.Text = "" Then
             MsgBox("Inserire l'ora di inizio del fermo")
             TextBoxInizio.SelectAll()
+            Exit Sub
         End If
 
         If TextBoxDurata.Text = "" Then
             MsgBox("Inserire la durata del fermo")
             TextBoxReparto.SelectAll()
+            Exit Sub
         End If
 
-        'Definisco il valore identificativo del fermo, per farlo lancio una query che selezioni la riga Id dei fermi e la ordine in modo decrescente, quindi salvo il primo valore e aggiungo 1
+        'Id value of the new stop
 
         Dim ValoreId As Integer
         Dim myConn = New SqlConnection(LabelPath.Text)
@@ -74,12 +80,10 @@ Public Class FormManualInput
         ValoreId = myCmd1.ExecuteScalar() + 1
         myCmd1.Connection.Close()
 
-        'Definisco la stringa "adesso" e ci salvo la data corrente secondo il formato richiesto (ce ne sono due per i problemi di farmato con SQL)
         Dim adesso As String
         'adesso = DateTime.Now().Year.ToString() & "-" & DateTime.Now().Month.ToString() & "-" & DateTime.Now.Day.ToString & " " & DateTime.Now.Hour.ToString & ":" & DateTime.Now.Minute.ToString & ":" & DateTime.Now.Second.ToString
         adesso = DateTime.Now().Year.ToString() & "-" & DateTime.Now().Day.ToString() & "-" & DateTime.Now.Month.ToString & " " & DateTime.Now.Hour.ToString & ":" & DateTime.Now.Minute.ToString & ":" & DateTime.Now.Second.ToString
 
-        'Definisco la stringa inizio e ci salvo la data di inizio fermo secondo il formato richiesto
         Dim data As Date
         data = DateTimePicker1.Text
         Dim inizio As String
@@ -98,7 +102,7 @@ Public Class FormManualInput
         'Dim myConn = New SqlConnection(LabelPath.Text)
         Dim myCmd2 As SqlCommand
         myCmd2 = myConn.CreateCommand()
-        myCmd2.CommandText = "INSERT INTO Fermi (Id,Data,IdReparto,DescReparto,IdLinea,DescLInea,IdMacchina,DescMAcchina,IdFermo,DescFermo,Inizio,Durata,Secondario,Da,A,DataInizioFermo,DataFineFermo)VALUES ('" & ValoreId & "','" & adesso & "','" & TextBoxReparto.Text & "','" & LabelRepartoSelected.Text & "','" & TextBoxLinea.Text & "','" & LabelLineaSelected.Text & "','" & TextBoxMacchina.Text & "','" & LabelMacchinaSelected.Text & "','" & TextBoxFermo.Text & "','" & LabelFermoSelected.Text & "','" & inizio & "','" & TextBoxDurata.Text & "','" & ComboBoxSecondario.Text & "','" & TextBoxDA.Text & "','" & TextBoxA.Text & "','" & inizio & "','" & fine & "')"
+        myCmd2.CommandText = "INSERT INTO Fermi (Id,Data,IdReparto,DescReparto,IdLinea,DescLInea,IdMacchina,DescMAcchina,IdFermo,DescFermo,Durata,Secondario,Da,A,DataInizioFermo,DataFineFermo,DescFermoEsteso)VALUES ('" & ValoreId & "','" & adesso & "','" & TextBoxReparto.Text & "','" & LabelRepartoSelected.Text & "','" & TextBoxLinea.Text & "','" & LabelLineaSelected.Text & "','" & TextBoxMacchina.Text & "','" & LabelMacchinaSelected.Text & "','" & TextBoxFermo.Text & "','" & LabelFermoSelected.Text & "','" & TextBoxDurata.Text & "','" & ComboBoxSecondario.Text & "','" & TextBoxDA.Text & "','" & TextBoxA.Text & "','" & inizio & "','" & fine & "','MANUALE')"
 
         myCmd2.Connection.Open()
         Dim numberOfRow As Int16 = myCmd2.ExecuteNonQuery()
@@ -116,6 +120,11 @@ Public Class FormManualInput
         LastDA.Text = TextBoxDA.Text
         LastA.Text = TextBoxA.Text
 
+        TextBoxInizio.Text = ""
+        TextBoxDA.Text = ""
+        TextBoxA.Text = ""
+        ComboBoxSecondario.Text = "FALSO"
+
         'Mi riposiziono sul box macchina per partire da qui con il nuovo fermo
 
         TextBoxMacchina.SelectAll()
@@ -130,7 +139,7 @@ Public Class FormManualInput
             'Crea il comando della query che seleziona il reparto inserito dalla tabella apposita
             Dim myCmd As SqlCommand
             myCmd = myConn.CreateCommand()
-            myCmd.CommandText = "SELECT Reparto FROM Reparti WHERE Id_reparto=" & TextBoxReparto.Text & ""
+            myCmd.CommandText = "SELECT Reparto FROM Reparti WHERE IdReparto=" & TextBoxReparto.Text & ""
             myCmd.Connection.Open()
             'Esegue il comando e salva la prima colonna della prima riga della query sull'etichetta della Linea
             LabelRepartoSelected.Text = myCmd.ExecuteScalar()
@@ -147,7 +156,7 @@ Public Class FormManualInput
             'Crea il comando della query che seleziona la linea inserita
             Dim myCmd As SqlCommand
             myCmd = myConn.CreateCommand()
-            myCmd.CommandText = "SELECT Linea FROM Linee WHERE (Id_reparto=" & TextBoxReparto.Text & " AND Id_linea=" & TextBoxLinea.Text & ")"
+            myCmd.CommandText = "SELECT Linea FROM Linee WHERE (IdReparto=" & TextBoxReparto.Text & " AND IdLinea=" & TextBoxLinea.Text & ")"
             myCmd.Connection.Open()
             LabelLineaSelected.Text = myCmd.ExecuteScalar()
             myCmd.Connection.Close()
@@ -160,7 +169,7 @@ Public Class FormManualInput
 
             Dim myCmd As SqlCommand
             myCmd = myConn.CreateCommand()
-            myCmd.CommandText = "SELECT Macchina FROM Macchine WHERE (Id_reparto=" & TextBoxReparto.Text & "AND Id_macchina=" & TextBoxMacchina.Text & ")"
+            myCmd.CommandText = "SELECT Macchina FROM Macchine WHERE (IdReparto=" & TextBoxReparto.Text & "AND IdMacchina=" & TextBoxMacchina.Text & ")"
             myCmd.Connection.Open()
             LabelMacchinaSelected.Text = myCmd.ExecuteScalar()
             myCmd.Connection.Close()
@@ -173,7 +182,7 @@ Public Class FormManualInput
 
             Dim myCmd As SqlCommand
             myCmd = myConn.CreateCommand()
-            myCmd.CommandText = "SELECT Fermo FROM CodiceFermi WHERE (Id_reparto=" & TextBoxReparto.Text & "AND Id_macchina=" & TextBoxMacchina.Text & " AND Id_fermo=" & TextBoxFermo.Text & ")"
+            myCmd.CommandText = "SELECT Fermo FROM CodiceFermi WHERE (IdReparto=" & TextBoxReparto.Text & "AND IdMacchina=" & TextBoxMacchina.Text & " AND IdFermo=" & TextBoxFermo.Text & ")"
             myCmd.Connection.Open()
             LabelFermoSelected.Text = myCmd.ExecuteScalar()
             myCmd.Connection.Close()
@@ -241,24 +250,24 @@ Public Class FormManualInput
         Dim sx As String
         Dim dx As String
 
-        'Caso di errore 1: non inserito lo 0 davanti al numero 
-
-        If TextBoxInizio.Text.Substring(1, 1) = "." Then
-            one = Strings.Left(TextBoxInizio.Text, 1)
-            sx = "0" & one
-            dx = Strings.Right(TextBoxInizio.Text, 2)
-            TextBoxInizio.Text = sx & "." & dx
+        If TextBoxInizio.Text = "" Then
         Else
+
+            If TextBoxInizio.Text.Substring(1, 1) = "." Then
+                one = Strings.Left(TextBoxInizio.Text, 1)
+                sx = "0" & one
+                dx = Strings.Right(TextBoxInizio.Text, 2)
+                TextBoxInizio.Text = sx & "." & dx
+            Else
+            End If
+
+            If TextBoxInizio.Text.Length = 5 Then
+            Else
+                MsgBox("Formato ora non corretto")
+                TextBoxInizio.SelectAll()
+            End If
+
         End If
-
-        'Caso di errore 2:non inserito lo 0 in fondo
-
-        If TextBoxInizio.Text.Length < 5 Or TextBoxInizio.Text.Substring(2, 1) <> "." Then
-            MsgBox("Formato ora non corretto")
-            TextBoxInizio.SelectAll()
-        Else
-        End If
-
 
     End Sub
 
