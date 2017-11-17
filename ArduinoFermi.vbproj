@@ -258,6 +258,9 @@
     <EmbeddedResource Include="SceltaLancioMontaggio.resx">
       <DependentUpon>SceltaLancioMontaggio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SceltaLancioStiratura.resx">
+      <DependentUpon>SceltaLancioStiratura.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Utility.resx">
       <DependentUpon>Utility.vb</DependentUpon>
     </EmbeddedResource>

@@ -25,7 +25,7 @@ Partial Class SceltaLancioMontaggio
         Me.ComboBoxLancio = New System.Windows.Forms.ComboBox()
         Me.LabelMateriale = New System.Windows.Forms.Label()
         Me.LabelCodice = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.LabelQP = New System.Windows.Forms.Label()
         Me.LabelQuantitàLancio = New System.Windows.Forms.Label()
         Me.LabelQM = New System.Windows.Forms.Label()
         Me.LabelQuantitàMancante = New System.Windows.Forms.Label()
@@ -85,14 +85,14 @@ Partial Class SceltaLancioMontaggio
         Me.LabelCodice.TabIndex = 2
         Me.LabelCodice.Text = "Label2"
         '
-        'Label3
+        'LabelQP
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(232, 20)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(88, 13)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Quantità Prevista"
+        Me.LabelQP.AutoSize = True
+        Me.LabelQP.Location = New System.Drawing.Point(232, 20)
+        Me.LabelQP.Name = "LabelQP"
+        Me.LabelQP.Size = New System.Drawing.Size(88, 13)
+        Me.LabelQP.TabIndex = 3
+        Me.LabelQP.Text = "Quantità Prevista"
         '
         'LabelQuantitàLancio
         '
@@ -357,7 +357,7 @@ Partial Class SceltaLancioMontaggio
         Me.LabelLancio.TabIndex = 3
         Me.LabelLancio.Text = "Lancio"
         '
-        'SceltaLancio
+        'SceltaLancioMontaggio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -390,14 +390,14 @@ Partial Class SceltaLancioMontaggio
         Me.Controls.Add(Me.LabelPallett)
         Me.Controls.Add(Me.LabelLancio)
         Me.Controls.Add(Me.LabelProduzioneTurno)
-        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.LabelQP)
         Me.Controls.Add(Me.LabelQuantitàMancante)
         Me.Controls.Add(Me.LabelQuantitàLancio)
         Me.Controls.Add(Me.LabelTurno)
         Me.Controls.Add(Me.LabelCodice)
         Me.Controls.Add(Me.LabelMateriale)
         Me.Controls.Add(Me.ComboBoxLancio)
-        Me.Name = "SceltaLancio"
+        Me.Name = "SceltaLancioMontaggio"
         Me.Text = "SceltaLancio"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -406,7 +406,7 @@ Partial Class SceltaLancioMontaggio
     Friend WithEvents ComboBoxLancio As System.Windows.Forms.ComboBox
     Friend WithEvents LabelMateriale As System.Windows.Forms.Label
     Friend WithEvents LabelCodice As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents LabelQP As System.Windows.Forms.Label
     Friend WithEvents LabelQuantitàLancio As System.Windows.Forms.Label
     Friend WithEvents LabelQM As System.Windows.Forms.Label
     Friend WithEvents LabelQuantitàMancante As System.Windows.Forms.Label
