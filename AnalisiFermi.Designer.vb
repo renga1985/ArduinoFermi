@@ -32,6 +32,7 @@ Partial Class AnalisiFermi
         Me.ButtonUpdate = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.DataGridViewTestProd = New System.Windows.Forms.DataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DataGridViewLanci = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -49,16 +50,18 @@ Partial Class AnalisiFermi
         Me.ChartCausali = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.LabelPathDatabase = New System.Windows.Forms.Label()
         Me.LabelTitolo = New System.Windows.Forms.Label()
-        Me.DataGridViewTestProd = New System.Windows.Forms.DataGridView()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.ChartMacchine, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        CType(Me.DataGridViewTestProd, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridViewLanci, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridViewOperatori, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridViewFermi, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.ChartCausali, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridViewTestProd, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ChartMacchine
@@ -69,28 +72,28 @@ Partial Class AnalisiFermi
         Me.ChartMacchine.Legends.Add(Legend1)
         Me.ChartMacchine.Location = New System.Drawing.Point(3, 6)
         Me.ChartMacchine.Name = "ChartMacchine"
-        Me.ChartMacchine.Size = New System.Drawing.Size(654, 346)
+        Me.ChartMacchine.Size = New System.Drawing.Size(479, 346)
         Me.ChartMacchine.TabIndex = 0
         Me.ChartMacchine.Text = "Chart"
         '
         'DateTimePickerDa
         '
         Me.DateTimePickerDa.CustomFormat = ""
-        Me.DateTimePickerDa.Location = New System.Drawing.Point(945, 7)
+        Me.DateTimePickerDa.Location = New System.Drawing.Point(768, 7)
         Me.DateTimePickerDa.Name = "DateTimePickerDa"
         Me.DateTimePickerDa.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePickerDa.TabIndex = 1
         '
         'DateTimePickerA
         '
-        Me.DateTimePickerA.Location = New System.Drawing.Point(945, 32)
+        Me.DateTimePickerA.Location = New System.Drawing.Point(768, 33)
         Me.DateTimePickerA.Name = "DateTimePickerA"
         Me.DateTimePickerA.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePickerA.TabIndex = 2
         '
         'ButtonUpdate
         '
-        Me.ButtonUpdate.Location = New System.Drawing.Point(945, 84)
+        Me.ButtonUpdate.Location = New System.Drawing.Point(768, 83)
         Me.ButtonUpdate.Name = "ButtonUpdate"
         Me.ButtonUpdate.Size = New System.Drawing.Size(75, 23)
         Me.ButtonUpdate.TabIndex = 3
@@ -109,6 +112,9 @@ Partial Class AnalisiFermi
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Label6)
+        Me.TabPage1.Controls.Add(Me.Label5)
+        Me.TabPage1.Controls.Add(Me.Label4)
         Me.TabPage1.Controls.Add(Me.DataGridViewTestProd)
         Me.TabPage1.Controls.Add(Me.Label3)
         Me.TabPage1.Controls.Add(Me.DataGridViewLanci)
@@ -130,10 +136,18 @@ Partial Class AnalisiFermi
         Me.TabPage1.Text = "Fermi"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'DataGridViewTestProd
+        '
+        Me.DataGridViewTestProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewTestProd.Location = New System.Drawing.Point(507, 174)
+        Me.DataGridViewTestProd.Name = "DataGridViewTestProd"
+        Me.DataGridViewTestProd.Size = New System.Drawing.Size(240, 178)
+        Me.DataGridViewTestProd.TabIndex = 12
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(728, 158)
+        Me.Label3.Location = New System.Drawing.Point(765, 158)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(99, 13)
         Me.Label3.TabIndex = 11
@@ -185,7 +199,7 @@ Partial Class AnalisiFermi
         '
         Me.ComboBoxA.FormattingEnabled = True
         Me.ComboBoxA.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
-        Me.ComboBoxA.Location = New System.Drawing.Point(1151, 32)
+        Me.ComboBoxA.Location = New System.Drawing.Point(974, 32)
         Me.ComboBoxA.Name = "ComboBoxA"
         Me.ComboBoxA.Size = New System.Drawing.Size(44, 21)
         Me.ComboBoxA.TabIndex = 5
@@ -194,7 +208,7 @@ Partial Class AnalisiFermi
         '
         Me.ComboBoxDa.FormattingEnabled = True
         Me.ComboBoxDa.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
-        Me.ComboBoxDa.Location = New System.Drawing.Point(1151, 6)
+        Me.ComboBoxDa.Location = New System.Drawing.Point(974, 6)
         Me.ComboBoxDa.Name = "ComboBoxDa"
         Me.ComboBoxDa.Size = New System.Drawing.Size(44, 21)
         Me.ComboBoxDa.TabIndex = 4
@@ -287,19 +301,38 @@ Partial Class AnalisiFermi
         Me.LabelTitolo.TabIndex = 9
         Me.LabelTitolo.Text = "LabelTitolo"
         '
-        'DataGridViewTestProd
+        'Label4
         '
-        Me.DataGridViewTestProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewTestProd.Location = New System.Drawing.Point(522, 174)
-        Me.DataGridViewTestProd.Name = "DataGridViewTestProd"
-        Me.DataGridViewTestProd.Size = New System.Drawing.Size(240, 150)
-        Me.DataGridViewTestProd.TabIndex = 12
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(507, 155)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(92, 13)
+        Me.Label4.TabIndex = 13
+        Me.Label4.Text = "Dati di produzione"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(726, 9)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(21, 13)
+        Me.Label5.TabIndex = 14
+        Me.Label5.Text = "Da"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(726, 35)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(14, 13)
+        Me.Label6.TabIndex = 15
+        Me.Label6.Text = "A"
         '
         'AnalisiFermi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1227, 672)
+        Me.ClientSize = New System.Drawing.Size(1218, 729)
         Me.Controls.Add(Me.LabelTitolo)
         Me.Controls.Add(Me.LabelPathDatabase)
         Me.Controls.Add(Me.TabControl1)
@@ -309,12 +342,12 @@ Partial Class AnalisiFermi
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        CType(Me.DataGridViewTestProd, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridViewLanci, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridViewOperatori, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridViewFermi, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         CType(Me.ChartCausali, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridViewTestProd, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -343,5 +376,8 @@ Partial Class AnalisiFermi
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents DataGridViewLanci As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTestProd As System.Windows.Forms.DataGridView
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 
 End Class
