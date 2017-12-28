@@ -1,6 +1,6 @@
 ﻿Imports System
 Imports System.Reflection
-Imports System.Runtime.InteropServices
+'Imports System.Runtime.InteropServices
 
 ' Le informazioni generali relative a un assembly sono controllate dal seguente 
 ' insieme di attributi. Per modificare le informazioni associate a un assembly
@@ -15,10 +15,10 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyCopyright("Copyright ©  2015")> 
 <Assembly: AssemblyTrademark("")> 
 
-<Assembly: ComVisible(False)>
+'<Assembly: ComVisible(False)>
 
 'Se il progetto viene esposto a COM, il GUID seguente verrà utilizzato come ID della libreria dei tipi
-<Assembly: Guid("79850902-c102-4571-8314-500cc0d3cebd")> 
+'<Assembly: Guid("79850902-c102-4571-8314-500cc0d3cebd")> 
 
 ' Le informazioni sulla versione di un assembly sono costituite dai seguenti quattro valori:
 '

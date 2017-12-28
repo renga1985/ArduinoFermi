@@ -2,7 +2,6 @@
 Imports System.Data.OleDb
 Imports System.IO
 Imports System.Data.SqlClient
-Imports Excel = Microsoft.Office.Interop.Excel
 Imports System.Net.Mime.MediaTypeNames
 
 Public Class DashboardProduzione
@@ -1595,38 +1594,31 @@ Public Class DashboardProduzione
 
     Private Sub ButtonImportaLanci_Click(sender As Object, e As EventArgs) Handles ButtonImportaLanci.Click
 
-        'Dim xlApp As Application
-        'Dim xlWorkBook As Excel.Workbook
-        'Dim xlWorkSheet As Excel.Worksheet
-        'Dim range As Excel.Range
-        'Dim rCnt As Integer
-        'Dim Obj As Object
-
-        'xlApp = New Excel.Application
-        'xlWorkBook = xlApp.Workbooks.Open("\\fiammitfs02\CorporateShare\Prod\IB_Fermi\ArduinoFermi\lista lanci produzione.xlsx")
-        'xlWorkSheet = xlWorkBook.Worksheets("Foglio1")
-        'Dim myConn As New SqlConnection(LabelPathDatabase.Text)
-        'Dim myCmd As SqlCommand
-
-        'range = xlWorkSheet.UsedRange
-
-        'myCmd = myConn.CreateCommand()
-        'myCmd.Connection.Open()
-        'For rCnt = 1 To 9 'DA SISTEMARE IL CONTEGGIO DELLE RIGHE
-        '    myCmd.CommandText = ("INSERT INTO LanciProduzione (Ordpian,Materiale,[Materiale pianif#],Linea,[Qtà ordine],UMO,[Fine card#],Sequenza,SERIE,ProgressivoQuantita)VALUES (" & range.Cells(rCnt + 1, 1).value.ToString & "," & range.Cells(rCnt + 1, 2).value.ToString & ",'" & range.Cells(rCnt + 1, 3).value.ToString & "','" & range.Cells(rCnt + 1, 4).value.ToString & "','" & range.Cells(rCnt + 1, 5).value.ToString & "','" & range.Cells(rCnt + 1, 6).value.ToString & "','" & CDate(range.Cells(rCnt + 1, 7).value.ToString) & "','" & range.Cells(rCnt + 1, 8).value.ToString & "','" & range.Cells(rCnt + 1, 9).value.ToString & "','" & range.Cells(rCnt + 1, 10).value.ToString & "')")
-        '    myCmd.ExecuteNonQuery()
-        'Next
-        'myCmd.Connection.Close()
-
-        'xlWorkBook.Close()
-        'xlApp.Quit()
-
-        'releaseObject(xlApp)
-        'releaseObject(xlWorkBook)
-        'releaseObject(xlWorkSheet)
-
-        'MsgBox("Lanci correttamente importati", MsgBoxStyle.OkOnly)
-
+        'declare variables - edit these based on your particular situation 
+        Dim ssqltable As String = "LanciProduzione"
+        ' make sure your sheet name is correct, here sheet name is sheet1, so you can change your sheet name if have    different 
+        Dim myexceldataquery As String = "select * from [Foglio1$] WHERE Materiale='7800811'"
+        'Try
+        'create our connection strings 
+        Dim sexcelconnectionstring As String = (Convert.ToString("provider=microsoft.jet.oledb.4.0;data source=D:\Progetti .Net\Visual Studio 2012 applicazioni\ArduinoFermi\lista lanci produzione.xlsx; extended properties=" + """excel 8.0;hdr=yes;"""))
+        Dim ssqlconnectionstring As String = "Data Source=localhost\SQLEXPRESS;Initial Catalog=DatabaseFermiSQL;Integrated Security=True"
+        'execute a query to erase any previous data from our destination table 
+        'series of commands to bulk copy data from the excel file into our sql table 
+        Dim oledbconn As New OleDbConnection(sexcelconnectionstring)
+        Dim oledbcmd As New OleDbCommand(myexceldataquery, oledbconn)
+        oledbconn.Open()
+        Dim dr As OleDbDataReader = oledbcmd.ExecuteReader()
+        Dim bulkcopy As New SqlBulkCopy(ssqlconnectionstring)
+        bulkcopy.DestinationTableName = ssqltable
+        While dr.Read()
+            bulkcopy.WriteToServer(dr)
+        End While
+        dr.Close()
+        oledbconn.Close()
+        MsgBox("File imported into sql server.")
+        'handle exception 
+        'Catch ex As Exception
+        'End Try
     End Sub
 
 

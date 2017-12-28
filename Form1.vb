@@ -1425,7 +1425,7 @@ Public Class Form1
         ButtonNastriTrasporto.Enabled = False
     End Sub
 
-    
+
 
     Private Sub TextBoxTimbratura_TextChanged(sender As Object, e As EventArgs) Handles TextBoxTimbratura.TextChanged
         If TextBoxTimbratura.Text.Length = 18 Then
@@ -1522,7 +1522,7 @@ Public Class Form1
             TimerForRoutineRegistrationData.Start()
             LabelStatus.Text = "Registrazione dati in RUN"
 
-            SceltaLancioMontaggio.Show()
+            'SceltaLancio.Show()
 
         Else
             'There is already at least one operator loaded in to the line
@@ -1657,6 +1657,6 @@ Public Class Form1
     End Sub
 
     Private Sub ScegliLancioProduzioneToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ScegliLancioProduzioneToolStripMenuItem.Click
-        SceltaLancioMontaggio.Show()
+        'SceltaLancio.Show()
     End Sub
 End Class
