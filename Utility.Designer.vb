@@ -27,6 +27,11 @@ Partial Class Utility
         Me.SerialPortArduino = New System.IO.Ports.SerialPort(Me.components)
         Me.LabelProduzioneNascosto = New System.Windows.Forms.Label()
         Me.TimerForRoutineRegistrationData = New System.Windows.Forms.Timer(Me.components)
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.LblIdDepartment = New System.Windows.Forms.Label()
+        Me.LblIdLIne = New System.Windows.Forms.Label()
+        Me.LabelPath = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'ButtonResetCounter
@@ -57,11 +62,59 @@ Partial Class Utility
         Me.TimerForRoutineRegistrationData.Enabled = True
         Me.TimerForRoutineRegistrationData.Interval = 200
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.ComboBox1.Location = New System.Drawing.Point(23, 36)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 23
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(23, 103)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.TabIndex = 24
+        '
+        'LblIdDepartment
+        '
+        Me.LblIdDepartment.AutoSize = True
+        Me.LblIdDepartment.Location = New System.Drawing.Point(416, 45)
+        Me.LblIdDepartment.Name = "LblIdDepartment"
+        Me.LblIdDepartment.Size = New System.Drawing.Size(19, 13)
+        Me.LblIdDepartment.TabIndex = 25
+        Me.LblIdDepartment.Text = "80"
+        '
+        'LblIdLIne
+        '
+        Me.LblIdLIne.AutoSize = True
+        Me.LblIdLIne.Location = New System.Drawing.Point(416, 103)
+        Me.LblIdLIne.Name = "LblIdLIne"
+        Me.LblIdLIne.Size = New System.Drawing.Size(13, 13)
+        Me.LblIdLIne.TabIndex = 25
+        Me.LblIdLIne.Text = "1"
+        '
+        'LabelPath
+        '
+        Me.LabelPath.AutoSize = True
+        Me.LabelPath.Location = New System.Drawing.Point(105, 237)
+        Me.LabelPath.Name = "LabelPath"
+        Me.LabelPath.Size = New System.Drawing.Size(445, 13)
+        Me.LabelPath.TabIndex = 25
+        Me.LabelPath.Text = "Server=DESKTOP-NFISVQ2\SQLEXPRESS;Database=VRNFermi;User Id=sa;Password=sa;"
+        '
         'Utility
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(616, 471)
+        Me.Controls.Add(Me.LabelPath)
+        Me.Controls.Add(Me.LblIdLIne)
+        Me.Controls.Add(Me.LblIdDepartment)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.LabelProduzioneNascosto)
         Me.Controls.Add(Me.ButtonResetCounter)
         Me.Name = "Utility"
@@ -74,4 +127,9 @@ Partial Class Utility
     Friend WithEvents SerialPortArduino As System.IO.Ports.SerialPort
     Friend WithEvents LabelProduzioneNascosto As System.Windows.Forms.Label
     Friend WithEvents TimerForRoutineRegistrationData As System.Windows.Forms.Timer
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents LblIdDepartment As System.Windows.Forms.Label
+    Friend WithEvents LblIdLIne As System.Windows.Forms.Label
+    Friend WithEvents LabelPath As System.Windows.Forms.Label
 End Class

@@ -58,6 +58,7 @@ Partial Class FormManualInput
         Me.LastDA = New System.Windows.Forms.Label()
         Me.LastA = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ButtonVisualizzaFermi = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'LabelData
@@ -372,11 +373,22 @@ Partial Class FormManualInput
         Me.Label1.TabIndex = 19
         Me.Label1.Text = "Ultimo fermo inserito"
         '
+        'ButtonVisualizzaFermi
+        '
+        Me.ButtonVisualizzaFermi.Location = New System.Drawing.Point(664, 69)
+        Me.ButtonVisualizzaFermi.Name = "ButtonVisualizzaFermi"
+        Me.ButtonVisualizzaFermi.Size = New System.Drawing.Size(117, 38)
+        Me.ButtonVisualizzaFermi.TabIndex = 22
+        Me.ButtonVisualizzaFermi.TabStop = False
+        Me.ButtonVisualizzaFermi.Text = "Visualizza Fermi"
+        Me.ButtonVisualizzaFermi.UseVisualStyleBackColor = True
+        '
         'FormManualInput
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1362, 741)
+        Me.ClientSize = New System.Drawing.Size(1020, 741)
+        Me.Controls.Add(Me.ButtonVisualizzaFermi)
         Me.Controls.Add(Me.ComboBoxSecondario)
         Me.Controls.Add(Me.LastA)
         Me.Controls.Add(Me.LastDA)
@@ -413,7 +425,7 @@ Partial Class FormManualInput
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.LabelReparto)
         Me.Controls.Add(Me.LabelData)
-        Me.Cursor = System.Windows.Forms.Cursors.Cross
+        Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.Name = "FormManualInput"
         Me.Text = "FormManualInput"
         Me.ResumeLayout(False)
@@ -456,4 +468,5 @@ Partial Class FormManualInput
     Friend WithEvents LastDA As System.Windows.Forms.Label
     Friend WithEvents LastA As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents ButtonVisualizzaFermi As System.Windows.Forms.Button
 End Class

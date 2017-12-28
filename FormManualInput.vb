@@ -127,7 +127,7 @@ Public Class FormManualInput
 
         'Mi riposiziono sul box macchina per partire da qui con il nuovo fermo
 
-        TextBoxMacchina.SelectAll()
+        TextBoxMacchina.Select()
 
     End Sub
 
@@ -244,7 +244,7 @@ Public Class FormManualInput
 
     End Function
 
-    Private Sub TestBoxInizio_Leave(sender As Object, e As EventArgs) Handles TextBoxInizio.Leave
+    Private Sub TextBoxInizio_Leave(sender As Object, e As EventArgs) Handles TextBoxInizio.Leave
 
         Dim one As String
         Dim sx As String
@@ -314,4 +314,9 @@ Public Class FormManualInput
     Private Sub TextBoxA_Enter(sender As Object, e As EventArgs) Handles TextBoxA.Enter
         TextBoxA.SelectAll()
     End Sub
+
+    Private Sub ButtonVisualizzaFermi_Click(sender As Object, e As EventArgs) Handles ButtonVisualizzaFermi.Click
+        VisualizzaFermateManuale.Show()
+    End Sub
+
 End Class

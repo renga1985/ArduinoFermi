@@ -26,7 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\fiammitfs02\CorporateShare\Prod\IB_Fermi\ArduinoFermi\</InstallUrl>
-    <ApplicationRevision>79</ApplicationRevision>
+    <ApplicationRevision>85</ApplicationRevision>
     <ApplicationVersion>0.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -134,6 +134,12 @@
     </Compile>
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisualizzaFermateManuale.Designer.vb">
+      <DependentUpon>VisualizzaFermateManuale.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VisualizzaFermateManuale.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLineaGenerale.Designer.vb">
@@ -264,6 +270,9 @@
     <EmbeddedResource Include="Utility.resx">
       <DependentUpon>Utility.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VisualizzaFermateManuale.resx">
+      <DependentUpon>VisualizzaFermateManuale.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="ArduinoFermi_ChiaveTemporanea.pfx" />
@@ -272,7 +281,6 @@
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
-      <LastGenOutput>Application1.Designer.vb</LastGenOutput>
     </None>
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
