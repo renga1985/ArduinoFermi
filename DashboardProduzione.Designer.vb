@@ -139,6 +139,12 @@ Partial Class DashboardProduzione
         Me.Label37 = New System.Windows.Forms.Label()
         Me.TabDashboard = New System.Windows.Forms.TabControl()
         Me.TabStiratura = New System.Windows.Forms.TabPage()
+        Me.LabelLancioStirLinea6 = New System.Windows.Forms.Label()
+        Me.LabelLancioStirLinea5 = New System.Windows.Forms.Label()
+        Me.LabelLancioStirLinea3 = New System.Windows.Forms.Label()
+        Me.LabelLancioStirLinea4 = New System.Windows.Forms.Label()
+        Me.LabelLancioStirLinea2 = New System.Windows.Forms.Label()
+        Me.LabelLancioStirLinea1 = New System.Windows.Forms.Label()
         Me.TotProduzioneStiratura = New System.Windows.Forms.Label()
         Me.Label41 = New System.Windows.Forms.Label()
         Me.Label40 = New System.Windows.Forms.Label()
@@ -533,9 +539,13 @@ Partial Class DashboardProduzione
         Me.OvalShapeYellowFinLin1 = New Microsoft.VisualBasic.PowerPacks.OvalShape()
         Me.OvalShapeRedFinLin1 = New Microsoft.VisualBasic.PowerPacks.OvalShape()
         Me.TabPlanning = New System.Windows.Forms.TabPage()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.LabelStiratura = New System.Windows.Forms.Label()
+        Me.ButtonVisualizzaLanciMontaggio = New System.Windows.Forms.Button()
         Me.ButtonVisualizzaLanci = New System.Windows.Forms.Button()
         Me.DataGridViewLanciMontaggio = New System.Windows.Forms.DataGridView()
-        Me.ButtonImportaLanci = New System.Windows.Forms.Button()
+        Me.ButtonImportaLanciMontaggio = New System.Windows.Forms.Button()
+        Me.ButtonImportaLanciStiratura = New System.Windows.Forms.Button()
         Me.LabelCurrentTime = New System.Windows.Forms.Label()
         Me.TimerCurrentTime = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBoxFiamm = New System.Windows.Forms.PictureBox()
@@ -803,7 +813,7 @@ Partial Class DashboardProduzione
         '
         'TimerUpdate
         '
-        Me.TimerUpdate.Interval = 5000
+        Me.TimerUpdate.Interval = 60000
         '
         'LabelUnitaMisuraStir1
         '
@@ -1240,6 +1250,12 @@ Partial Class DashboardProduzione
         '
         'TabStiratura
         '
+        Me.TabStiratura.Controls.Add(Me.LabelLancioStirLinea6)
+        Me.TabStiratura.Controls.Add(Me.LabelLancioStirLinea5)
+        Me.TabStiratura.Controls.Add(Me.LabelLancioStirLinea3)
+        Me.TabStiratura.Controls.Add(Me.LabelLancioStirLinea4)
+        Me.TabStiratura.Controls.Add(Me.LabelLancioStirLinea2)
+        Me.TabStiratura.Controls.Add(Me.LabelLancioStirLinea1)
         Me.TabStiratura.Controls.Add(Me.TotProduzioneStiratura)
         Me.TabStiratura.Controls.Add(Me.Label41)
         Me.TabStiratura.Controls.Add(Me.Label40)
@@ -1310,6 +1326,60 @@ Partial Class DashboardProduzione
         Me.TabStiratura.TabIndex = 0
         Me.TabStiratura.Text = "Stiratura"
         Me.TabStiratura.UseVisualStyleBackColor = True
+        '
+        'LabelLancioStirLinea6
+        '
+        Me.LabelLancioStirLinea6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelLancioStirLinea6.Location = New System.Drawing.Point(646, 577)
+        Me.LabelLancioStirLinea6.Name = "LabelLancioStirLinea6"
+        Me.LabelLancioStirLinea6.Size = New System.Drawing.Size(112, 18)
+        Me.LabelLancioStirLinea6.TabIndex = 0
+        Me.LabelLancioStirLinea6.Text = "LancioInCorso"
+        '
+        'LabelLancioStirLinea5
+        '
+        Me.LabelLancioStirLinea5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelLancioStirLinea5.Location = New System.Drawing.Point(647, 486)
+        Me.LabelLancioStirLinea5.Name = "LabelLancioStirLinea5"
+        Me.LabelLancioStirLinea5.Size = New System.Drawing.Size(112, 18)
+        Me.LabelLancioStirLinea5.TabIndex = 0
+        Me.LabelLancioStirLinea5.Text = "LancioInCorso"
+        '
+        'LabelLancioStirLinea3
+        '
+        Me.LabelLancioStirLinea3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelLancioStirLinea3.Location = New System.Drawing.Point(646, 304)
+        Me.LabelLancioStirLinea3.Name = "LabelLancioStirLinea3"
+        Me.LabelLancioStirLinea3.Size = New System.Drawing.Size(112, 18)
+        Me.LabelLancioStirLinea3.TabIndex = 0
+        Me.LabelLancioStirLinea3.Text = "LancioInCorso"
+        '
+        'LabelLancioStirLinea4
+        '
+        Me.LabelLancioStirLinea4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelLancioStirLinea4.Location = New System.Drawing.Point(647, 392)
+        Me.LabelLancioStirLinea4.Name = "LabelLancioStirLinea4"
+        Me.LabelLancioStirLinea4.Size = New System.Drawing.Size(112, 18)
+        Me.LabelLancioStirLinea4.TabIndex = 0
+        Me.LabelLancioStirLinea4.Text = "LancioInCorso"
+        '
+        'LabelLancioStirLinea2
+        '
+        Me.LabelLancioStirLinea2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelLancioStirLinea2.Location = New System.Drawing.Point(646, 209)
+        Me.LabelLancioStirLinea2.Name = "LabelLancioStirLinea2"
+        Me.LabelLancioStirLinea2.Size = New System.Drawing.Size(112, 24)
+        Me.LabelLancioStirLinea2.TabIndex = 0
+        Me.LabelLancioStirLinea2.Text = "LancioInCorso"
+        '
+        'LabelLancioStirLinea1
+        '
+        Me.LabelLancioStirLinea1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelLancioStirLinea1.Location = New System.Drawing.Point(646, 122)
+        Me.LabelLancioStirLinea1.Name = "LabelLancioStirLinea1"
+        Me.LabelLancioStirLinea1.Size = New System.Drawing.Size(112, 24)
+        Me.LabelLancioStirLinea1.TabIndex = 0
+        Me.LabelLancioStirLinea1.Text = "LancioInCorso"
         '
         'TotProduzioneStiratura
         '
@@ -5217,15 +5287,48 @@ Partial Class DashboardProduzione
         '
         'TabPlanning
         '
+        Me.TabPlanning.Controls.Add(Me.Label27)
+        Me.TabPlanning.Controls.Add(Me.LabelStiratura)
+        Me.TabPlanning.Controls.Add(Me.ButtonVisualizzaLanciMontaggio)
         Me.TabPlanning.Controls.Add(Me.ButtonVisualizzaLanci)
         Me.TabPlanning.Controls.Add(Me.DataGridViewLanciMontaggio)
-        Me.TabPlanning.Controls.Add(Me.ButtonImportaLanci)
+        Me.TabPlanning.Controls.Add(Me.ButtonImportaLanciMontaggio)
+        Me.TabPlanning.Controls.Add(Me.ButtonImportaLanciStiratura)
         Me.TabPlanning.Location = New System.Drawing.Point(4, 22)
         Me.TabPlanning.Name = "TabPlanning"
         Me.TabPlanning.Size = New System.Drawing.Size(997, 774)
         Me.TabPlanning.TabIndex = 4
         Me.TabPlanning.Text = "Planning"
         Me.TabPlanning.UseVisualStyleBackColor = True
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.Location = New System.Drawing.Point(204, 574)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(122, 26)
+        Me.Label27.TabIndex = 3
+        Me.Label27.Text = "Montaggio"
+        '
+        'LabelStiratura
+        '
+        Me.LabelStiratura.AutoSize = True
+        Me.LabelStiratura.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelStiratura.Location = New System.Drawing.Point(42, 574)
+        Me.LabelStiratura.Name = "LabelStiratura"
+        Me.LabelStiratura.Size = New System.Drawing.Size(103, 26)
+        Me.LabelStiratura.TabIndex = 3
+        Me.LabelStiratura.Text = "Stiratura"
+        '
+        'ButtonVisualizzaLanciMontaggio
+        '
+        Me.ButtonVisualizzaLanciMontaggio.Location = New System.Drawing.Point(209, 619)
+        Me.ButtonVisualizzaLanciMontaggio.Name = "ButtonVisualizzaLanciMontaggio"
+        Me.ButtonVisualizzaLanciMontaggio.Size = New System.Drawing.Size(93, 23)
+        Me.ButtonVisualizzaLanciMontaggio.TabIndex = 2
+        Me.ButtonVisualizzaLanciMontaggio.Text = "Visualizza Lanci"
+        Me.ButtonVisualizzaLanciMontaggio.UseVisualStyleBackColor = True
         '
         'ButtonVisualizzaLanci
         '
@@ -5244,14 +5347,23 @@ Partial Class DashboardProduzione
         Me.DataGridViewLanciMontaggio.Size = New System.Drawing.Size(895, 318)
         Me.DataGridViewLanciMontaggio.TabIndex = 1
         '
-        'ButtonImportaLanci
+        'ButtonImportaLanciMontaggio
         '
-        Me.ButtonImportaLanci.Location = New System.Drawing.Point(205, 619)
-        Me.ButtonImportaLanci.Name = "ButtonImportaLanci"
-        Me.ButtonImportaLanci.Size = New System.Drawing.Size(75, 23)
-        Me.ButtonImportaLanci.TabIndex = 0
-        Me.ButtonImportaLanci.Text = "Importa lanci"
-        Me.ButtonImportaLanci.UseVisualStyleBackColor = True
+        Me.ButtonImportaLanciMontaggio.Location = New System.Drawing.Point(209, 649)
+        Me.ButtonImportaLanciMontaggio.Name = "ButtonImportaLanciMontaggio"
+        Me.ButtonImportaLanciMontaggio.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonImportaLanciMontaggio.TabIndex = 0
+        Me.ButtonImportaLanciMontaggio.Text = "Importa lanci"
+        Me.ButtonImportaLanciMontaggio.UseVisualStyleBackColor = True
+        '
+        'ButtonImportaLanciStiratura
+        '
+        Me.ButtonImportaLanciStiratura.Location = New System.Drawing.Point(47, 649)
+        Me.ButtonImportaLanciStiratura.Name = "ButtonImportaLanciStiratura"
+        Me.ButtonImportaLanciStiratura.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonImportaLanciStiratura.TabIndex = 0
+        Me.ButtonImportaLanciStiratura.Text = "Importa lanci"
+        Me.ButtonImportaLanciStiratura.UseVisualStyleBackColor = True
         '
         'LabelCurrentTime
         '
@@ -5331,6 +5443,7 @@ Partial Class DashboardProduzione
         CType(Me.ChartProduzioneOrariaFin2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChartProduzioneOrariaFin1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPlanning.ResumeLayout(False)
+        Me.TabPlanning.PerformLayout()
         CType(Me.DataGridViewLanciMontaggio, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxFiamm, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -5800,7 +5913,7 @@ Partial Class DashboardProduzione
     Friend WithEvents LabelProductionShiftFin1 As System.Windows.Forms.Label
     Friend WithEvents LabelPathDatabase As System.Windows.Forms.Label
     Friend WithEvents TabPlanning As System.Windows.Forms.TabPage
-    Friend WithEvents ButtonImportaLanci As System.Windows.Forms.Button
+    Friend WithEvents ButtonImportaLanciStiratura As System.Windows.Forms.Button
     Friend WithEvents DataGridViewLanciMontaggio As System.Windows.Forms.DataGridView
     '  Friend WithEvents Fermi2BindingSource As System.Windows.Forms.BindingSource
     ' Friend WithEvents Fermi2TableAdapter As ArduinoFermi.VRNFermiDataSetTableAdapters.Fermi2TableAdapter
@@ -5808,4 +5921,14 @@ Partial Class DashboardProduzione
     Friend WithEvents LabelLancioMontLinea1 As System.Windows.Forms.Label
     Friend WithEvents LabelLancioMontLinea2 As System.Windows.Forms.Label
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents LabelStiratura As System.Windows.Forms.Label
+    Friend WithEvents LabelLancioStirLinea1 As System.Windows.Forms.Label
+    Friend WithEvents LabelLancioStirLinea6 As System.Windows.Forms.Label
+    Friend WithEvents LabelLancioStirLinea5 As System.Windows.Forms.Label
+    Friend WithEvents LabelLancioStirLinea3 As System.Windows.Forms.Label
+    Friend WithEvents LabelLancioStirLinea4 As System.Windows.Forms.Label
+    Friend WithEvents LabelLancioStirLinea2 As System.Windows.Forms.Label
+    Friend WithEvents Label27 As System.Windows.Forms.Label
+    Friend WithEvents ButtonVisualizzaLanciMontaggio As System.Windows.Forms.Button
+    Friend WithEvents ButtonImportaLanciMontaggio As System.Windows.Forms.Button
 End Class

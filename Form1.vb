@@ -1657,6 +1657,15 @@ Public Class Form1
     End Sub
 
     Private Sub ScegliLancioProduzioneToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ScegliLancioProduzioneToolStripMenuItem.Click
-        'SceltaLancio.Show()
+
+        If LblIdDepartment.Text = "75" Then
+            SceltaLancioStiratura.Show()
+        Else
+            If LblIdDepartment.Text = "80" Then
+                SceltaLancioMontaggio.Show()
+            Else
+            End If
+        End If
+
     End Sub
 End Class
