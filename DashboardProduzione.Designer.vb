@@ -803,7 +803,7 @@ Partial Class DashboardProduzione
         '
         'TimerUpdate
         '
-        Me.TimerUpdate.Interval = 5000
+        Me.TimerUpdate.Interval = 60000
         '
         'LabelUnitaMisuraStir1
         '
