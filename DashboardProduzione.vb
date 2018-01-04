@@ -1615,7 +1615,8 @@ Public Class DashboardProduzione
         'Try
         'create our connection strings 
         Dim sexcelconnectionstring As String = (Convert.ToString("provider=microsoft.jet.oledb.4.0;data source=\\fiammitfs02\CorporateShare\Prod\IB_Fermi\ArduinoFermi\lista lanci produzione.xlsx; extended properties=" + """excel 8.0;hdr=no;"""))
-        Dim ssqlconnectionstring As String = "Server=DESKTOP-NFISVQ2\SQLEXPRESS;Database=VRNFermi;User Id=sa;Password=sa;Integrated Security=True"
+        Dim ssqlconnectionstring As String = "Server=DESKTOP-NFISVQ2\SQLEXPRESS;Database=VRNFermi;User Id=sa;Password=sa;"
+
         'execute a query to erase any previous data from our destination table 
         'series of commands to bulk copy data from the excel file into our sql table 
         Dim oledbconn As New OleDbConnection(sexcelconnectionstring)
