@@ -304,16 +304,16 @@ Partial Class SceltaLancioStiratura
         Me.ButtonConfermaLancio.Name = "ButtonConfermaLancio"
         Me.ButtonConfermaLancio.Size = New System.Drawing.Size(99, 34)
         Me.ButtonConfermaLancio.TabIndex = 4
-        Me.ButtonConfermaLancio.Text = "Conferma Lancio"
+        Me.ButtonConfermaLancio.Text = "Conferma Produzione"
         Me.ButtonConfermaLancio.UseVisualStyleBackColor = True
         '
         'ButtonChiudiLancio
         '
         Me.ButtonChiudiLancio.Location = New System.Drawing.Point(323, 235)
         Me.ButtonChiudiLancio.Name = "ButtonChiudiLancio"
-        Me.ButtonChiudiLancio.Size = New System.Drawing.Size(99, 34)
+        Me.ButtonChiudiLancio.Size = New System.Drawing.Size(106, 34)
         Me.ButtonChiudiLancio.TabIndex = 4
-        Me.ButtonChiudiLancio.Text = "ChiudiLancio"
+        Me.ButtonChiudiLancio.Text = "Cambio Produzione"
         Me.ButtonChiudiLancio.UseVisualStyleBackColor = True
         '
         'ButtonCancella

@@ -5305,7 +5305,7 @@ Partial Class DashboardProduzione
         '
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(204, 574)
+        Me.Label27.Location = New System.Drawing.Point(199, 477)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(122, 26)
         Me.Label27.TabIndex = 3
@@ -5315,7 +5315,7 @@ Partial Class DashboardProduzione
         '
         Me.LabelStiratura.AutoSize = True
         Me.LabelStiratura.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelStiratura.Location = New System.Drawing.Point(42, 574)
+        Me.LabelStiratura.Location = New System.Drawing.Point(37, 477)
         Me.LabelStiratura.Name = "LabelStiratura"
         Me.LabelStiratura.Size = New System.Drawing.Size(103, 26)
         Me.LabelStiratura.TabIndex = 3
@@ -5323,7 +5323,7 @@ Partial Class DashboardProduzione
         '
         'ButtonVisualizzaLanciMontaggio
         '
-        Me.ButtonVisualizzaLanciMontaggio.Location = New System.Drawing.Point(209, 619)
+        Me.ButtonVisualizzaLanciMontaggio.Location = New System.Drawing.Point(204, 522)
         Me.ButtonVisualizzaLanciMontaggio.Name = "ButtonVisualizzaLanciMontaggio"
         Me.ButtonVisualizzaLanciMontaggio.Size = New System.Drawing.Size(93, 23)
         Me.ButtonVisualizzaLanciMontaggio.TabIndex = 2
@@ -5332,7 +5332,7 @@ Partial Class DashboardProduzione
         '
         'ButtonVisualizzaLanci
         '
-        Me.ButtonVisualizzaLanci.Location = New System.Drawing.Point(47, 619)
+        Me.ButtonVisualizzaLanci.Location = New System.Drawing.Point(42, 522)
         Me.ButtonVisualizzaLanci.Name = "ButtonVisualizzaLanci"
         Me.ButtonVisualizzaLanci.Size = New System.Drawing.Size(93, 23)
         Me.ButtonVisualizzaLanci.TabIndex = 2
@@ -5344,12 +5344,12 @@ Partial Class DashboardProduzione
         Me.DataGridViewLanciMontaggio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewLanciMontaggio.Location = New System.Drawing.Point(7, 24)
         Me.DataGridViewLanciMontaggio.Name = "DataGridViewLanciMontaggio"
-        Me.DataGridViewLanciMontaggio.Size = New System.Drawing.Size(895, 318)
+        Me.DataGridViewLanciMontaggio.Size = New System.Drawing.Size(978, 401)
         Me.DataGridViewLanciMontaggio.TabIndex = 1
         '
         'ButtonImportaLanciMontaggio
         '
-        Me.ButtonImportaLanciMontaggio.Location = New System.Drawing.Point(209, 649)
+        Me.ButtonImportaLanciMontaggio.Location = New System.Drawing.Point(204, 552)
         Me.ButtonImportaLanciMontaggio.Name = "ButtonImportaLanciMontaggio"
         Me.ButtonImportaLanciMontaggio.Size = New System.Drawing.Size(75, 23)
         Me.ButtonImportaLanciMontaggio.TabIndex = 0
@@ -5358,7 +5358,7 @@ Partial Class DashboardProduzione
         '
         'ButtonImportaLanciStiratura
         '
-        Me.ButtonImportaLanciStiratura.Location = New System.Drawing.Point(47, 649)
+        Me.ButtonImportaLanciStiratura.Location = New System.Drawing.Point(42, 552)
         Me.ButtonImportaLanciStiratura.Name = "ButtonImportaLanciStiratura"
         Me.ButtonImportaLanciStiratura.Size = New System.Drawing.Size(75, 23)
         Me.ButtonImportaLanciStiratura.TabIndex = 0

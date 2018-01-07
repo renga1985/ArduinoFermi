@@ -414,7 +414,7 @@ Public Class SceltaLancioStiratura
 
     Private Sub ButtonSalvaTurno_Click(sender As Object, e As EventArgs) Handles ButtonSalvaTurno.Click
 
-        Dim msg = MsgBox("Chiudere il lancio di produzione in corso?", MsgBoxStyle.YesNo)
+        Dim msg = MsgBox("Cambio di produzione in corso?", MsgBoxStyle.YesNo)
 
         If msg = MsgBoxResult.Yes Then
             ButtonChiudiLancio.PerformClick()

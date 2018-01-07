@@ -23,6 +23,7 @@ Public Class DashboardProduzione
             End If
         Loop
         sr.Close()
+        Inizio()
         TimerUpdate.Start()
     End Sub
 
@@ -34,6 +35,11 @@ Public Class DashboardProduzione
     End Function
 
     Private Sub TimerUpdate_Tick(sender As Object, e As EventArgs) Handles TimerUpdate.Tick
+        Inizio()
+    End Sub
+
+    Private Sub Inizio()
+
         'STIRATURA LINEA 1
         'Update the traffic light
         Dim status As String = UpdateTrafficLight(75, 1)
@@ -1655,7 +1661,7 @@ Public Class DashboardProduzione
 
         myCmd = myConn.CreateCommand()
 
-        myCmd.CommandText = "SELECT * FROM LanciProduzione"
+        myCmd.CommandText = "SELECT * FROM LanciProduzione WHERE IdReparto='75'"
 
         myCmd.Connection.Open()
         Dim dtRegistro As DataTable = New DataTable
