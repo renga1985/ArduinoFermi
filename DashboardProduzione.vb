@@ -23,6 +23,7 @@ Public Class DashboardProduzione
             End If
         Loop
         sr.Close()
+        Inizio()
         TimerUpdate.Start()
     End Sub
 
@@ -34,6 +35,11 @@ Public Class DashboardProduzione
     End Function
 
     Private Sub TimerUpdate_Tick(sender As Object, e As EventArgs) Handles TimerUpdate.Tick
+        Inizio()
+    End Sub
+
+    Private Sub Inizio()
+
         'STIRATURA LINEA 1
         'Update the traffic light
         Dim status As String = UpdateTrafficLight(75, 1)
@@ -1461,6 +1467,12 @@ Public Class DashboardProduzione
 
         LabelLancioMontLinea1.Text = ShowLanciProduzioneIncorso(80, 1)
         LabelLancioMontLinea2.Text = ShowLanciProduzioneIncorso(80, 2)
+        LabelLancioStirLinea1.Text = ShowLanciProduzioneIncorso(75, 1)
+        LabelLancioStirLinea2.Text = ShowLanciProduzioneIncorso(75, 2)
+        LabelLancioStirLinea3.Text = ShowLanciProduzioneIncorso(75, 3)
+        LabelLancioStirLinea4.Text = ShowLanciProduzioneIncorso(75, 4)
+        LabelLancioStirLinea5.Text = ShowLanciProduzioneIncorso(75, 5)
+        LabelLancioStirLinea6.Text = ShowLanciProduzioneIncorso(75, 6)
 
     End Sub
 
@@ -1592,16 +1604,25 @@ Public Class DashboardProduzione
         LabelCurrentTime.Text = DateTime.Now.ToString()
     End Sub
 
-    Private Sub ButtonImportaLanci_Click(sender As Object, e As EventArgs) Handles ButtonImportaLanci.Click
+    Private Sub ButtonImportaLanci_Click(sender As Object, e As EventArgs) Handles ButtonImportaLanciStiratura.Click, ButtonImportaLanciMontaggio.Click
+
+        Dim myConn As New SqlConnection(LabelPathDatabase.Text)
+        Dim myCmd As SqlCommand
+        myCmd = myConn.CreateCommand()
+        myCmd.CommandText = "DELETE From LanciProduzione WHERE IdReparto=75"
+        myCmd.Connection.Open()
+        Dim Lancio As String = myCmd.ExecuteScalar()
+        myCmd.Connection.Close()
 
         'declare variables - edit these based on your particular situation 
         Dim ssqltable As String = "LanciProduzione"
         ' make sure your sheet name is correct, here sheet name is sheet1, so you can change your sheet name if have    different 
-        Dim myexceldataquery As String = "select * from [Foglio1$] WHERE Materiale='7800811'"
+        Dim myexceldataquery As String = "select * from [Stiratura$]"
         'Try
         'create our connection strings 
-        Dim sexcelconnectionstring As String = (Convert.ToString("provider=microsoft.jet.oledb.4.0;data source=D:\Progetti .Net\Visual Studio 2012 applicazioni\ArduinoFermi\lista lanci produzione.xlsx; extended properties=" + """excel 8.0;hdr=yes;"""))
-        Dim ssqlconnectionstring As String = "Data Source=localhost\SQLEXPRESS;Initial Catalog=DatabaseFermiSQL;Integrated Security=True"
+        Dim sexcelconnectionstring As String = (Convert.ToString("provider=microsoft.jet.oledb.4.0;data source=\\fiammitfs02\CorporateShare\Prod\IB_Fermi\ArduinoFermi\lista lanci produzione.xlsx; extended properties=" + """excel 8.0;hdr=no;"""))
+        Dim ssqlconnectionstring As String = "Server=DESKTOP-NFISVQ2\SQLEXPRESS;Database=VRNFermi;User Id=sa;Password=sa;"
+
         'execute a query to erase any previous data from our destination table 
         'series of commands to bulk copy data from the excel file into our sql table 
         Dim oledbconn As New OleDbConnection(sexcelconnectionstring)
@@ -1633,14 +1654,14 @@ Public Class DashboardProduzione
         End Try
     End Sub
 
-    Private Sub ButtonVisualizzaLanci_Click(sender As Object, e As EventArgs) Handles ButtonVisualizzaLanci.Click
+    Private Sub ButtonVisualizzaLanci_Click(sender As Object, e As EventArgs) Handles ButtonVisualizzaLanci.Click, ButtonVisualizzaLanciMontaggio.Click
 
         Dim myConn As New SqlConnection(LabelPathDatabase.Text)
         Dim myCmd As SqlCommand
 
         myCmd = myConn.CreateCommand()
 
-        myCmd.CommandText = "SELECT * FROM LanciProduzione"
+        myCmd.CommandText = "SELECT * FROM LanciProduzione WHERE IdReparto='75'"
 
         myCmd.Connection.Open()
         Dim dtRegistro As DataTable = New DataTable

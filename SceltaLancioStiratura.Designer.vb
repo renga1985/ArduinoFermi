@@ -22,7 +22,7 @@ Partial Class SceltaLancioStiratura
     'Non modificarla nell'editor del codice.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TextBoxCodiceProduzione = New System.Windows.Forms.TextBox()
+        Me.TextBoxLancioProduzione = New System.Windows.Forms.TextBox()
         Me.LabelMateriale = New System.Windows.Forms.Label()
         Me.LabelCodice = New System.Windows.Forms.Label()
         Me.LabelQP = New System.Windows.Forms.Label()
@@ -32,10 +32,10 @@ Partial Class SceltaLancioStiratura
         Me.LabelTurno = New System.Windows.Forms.Label()
         Me.ComboBoxTurno = New System.Windows.Forms.ComboBox()
         Me.LabelLancio = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.LabelCavalletti = New System.Windows.Forms.Label()
+        Me.LabelProduzioneTurno = New System.Windows.Forms.Label()
         Me.LabelScartoTurno = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.LabelPiastre = New System.Windows.Forms.Label()
         Me.LabelScartoDivider = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBoxCavalletti = New System.Windows.Forms.TextBox()
@@ -47,19 +47,20 @@ Partial Class SceltaLancioStiratura
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.ComboBoxCodice = New System.Windows.Forms.ComboBox()
+        Me.ComboBoxLancio = New System.Windows.Forms.ComboBox()
         Me.ButtonSalvaTurno = New System.Windows.Forms.Button()
         Me.ButtonConfermaLancio = New System.Windows.Forms.Button()
         Me.ButtonChiudiLancio = New System.Windows.Forms.Button()
         Me.ButtonCancella = New System.Windows.Forms.Button()
+        Me.LabelCodiceLinea = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'TextBoxCodiceProduzione
+        'TextBoxLancioProduzione
         '
-        Me.TextBoxCodiceProduzione.Location = New System.Drawing.Point(12, 42)
-        Me.TextBoxCodiceProduzione.Name = "TextBoxCodiceProduzione"
-        Me.TextBoxCodiceProduzione.Size = New System.Drawing.Size(118, 20)
-        Me.TextBoxCodiceProduzione.TabIndex = 0
+        Me.TextBoxLancioProduzione.Location = New System.Drawing.Point(12, 42)
+        Me.TextBoxLancioProduzione.Name = "TextBoxLancioProduzione"
+        Me.TextBoxLancioProduzione.Size = New System.Drawing.Size(118, 20)
+        Me.TextBoxLancioProduzione.TabIndex = 0
         '
         'LabelMateriale
         '
@@ -127,6 +128,7 @@ Partial Class SceltaLancioStiratura
         'ComboBoxTurno
         '
         Me.ComboBoxTurno.FormattingEnabled = True
+        Me.ComboBoxTurno.Items.AddRange(New Object() {"1", "2", "3"})
         Me.ComboBoxTurno.Location = New System.Drawing.Point(428, 2)
         Me.ComboBoxTurno.Name = "ComboBoxTurno"
         Me.ComboBoxTurno.Size = New System.Drawing.Size(41, 21)
@@ -138,28 +140,28 @@ Partial Class SceltaLancioStiratura
         Me.LabelLancio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelLancio.Location = New System.Drawing.Point(12, 20)
         Me.LabelLancio.Name = "LabelLancio"
-        Me.LabelLancio.Size = New System.Drawing.Size(58, 20)
+        Me.LabelLancio.Size = New System.Drawing.Size(56, 20)
         Me.LabelLancio.TabIndex = 1
-        Me.LabelLancio.Text = "Codice"
+        Me.LabelLancio.Text = "Lancio"
         '
-        'Label1
+        'LabelCavalletti
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(14, 105)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(50, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Cavalletti"
+        Me.LabelCavalletti.AutoSize = True
+        Me.LabelCavalletti.Location = New System.Drawing.Point(14, 105)
+        Me.LabelCavalletti.Name = "LabelCavalletti"
+        Me.LabelCavalletti.Size = New System.Drawing.Size(50, 13)
+        Me.LabelCavalletti.TabIndex = 1
+        Me.LabelCavalletti.Text = "Cavalletti"
         '
-        'Label3
+        'LabelProduzioneTurno
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(50, 71)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(122, 17)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Produzione Turno"
+        Me.LabelProduzioneTurno.AutoSize = True
+        Me.LabelProduzioneTurno.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelProduzioneTurno.Location = New System.Drawing.Point(50, 71)
+        Me.LabelProduzioneTurno.Name = "LabelProduzioneTurno"
+        Me.LabelProduzioneTurno.Size = New System.Drawing.Size(122, 17)
+        Me.LabelProduzioneTurno.TabIndex = 1
+        Me.LabelProduzioneTurno.Text = "Produzione Turno"
         '
         'LabelScartoTurno
         '
@@ -170,15 +172,16 @@ Partial Class SceltaLancioStiratura
         Me.LabelScartoTurno.Size = New System.Drawing.Size(91, 17)
         Me.LabelScartoTurno.TabIndex = 1
         Me.LabelScartoTurno.Text = "Scarto Turno"
+        Me.LabelScartoTurno.Visible = False
         '
-        'Label4
+        'LabelPiastre
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(22, 127)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 13)
-        Me.Label4.TabIndex = 1
-        Me.Label4.Text = "Piastre"
+        Me.LabelPiastre.AutoSize = True
+        Me.LabelPiastre.Location = New System.Drawing.Point(22, 127)
+        Me.LabelPiastre.Name = "LabelPiastre"
+        Me.LabelPiastre.Size = New System.Drawing.Size(39, 13)
+        Me.LabelPiastre.TabIndex = 1
+        Me.LabelPiastre.Text = "Piastre"
         '
         'LabelScartoDivider
         '
@@ -188,6 +191,7 @@ Partial Class SceltaLancioStiratura
         Me.LabelScartoDivider.Size = New System.Drawing.Size(40, 13)
         Me.LabelScartoDivider.TabIndex = 1
         Me.LabelScartoDivider.Text = "Divider"
+        Me.LabelScartoDivider.Visible = False
         '
         'Label6
         '
@@ -197,6 +201,7 @@ Partial Class SceltaLancioStiratura
         Me.Label6.Size = New System.Drawing.Size(52, 13)
         Me.Label6.TabIndex = 1
         Me.Label6.Text = "Impilatore"
+        Me.Label6.Visible = False
         '
         'TextBoxCavalletti
         '
@@ -218,6 +223,7 @@ Partial Class SceltaLancioStiratura
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 20)
         Me.TextBox1.TabIndex = 0
+        Me.TextBox1.Visible = False
         '
         'TextBox2
         '
@@ -225,6 +231,7 @@ Partial Class SceltaLancioStiratura
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(100, 20)
         Me.TextBox2.TabIndex = 0
+        Me.TextBox2.Visible = False
         '
         'TextBox3
         '
@@ -232,6 +239,7 @@ Partial Class SceltaLancioStiratura
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(100, 20)
         Me.TextBox3.TabIndex = 0
+        Me.TextBox3.Visible = False
         '
         'TextBox4
         '
@@ -239,6 +247,7 @@ Partial Class SceltaLancioStiratura
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(100, 20)
         Me.TextBox4.TabIndex = 0
+        Me.TextBox4.Visible = False
         '
         'Label5
         '
@@ -248,6 +257,7 @@ Partial Class SceltaLancioStiratura
         Me.Label5.Size = New System.Drawing.Size(40, 13)
         Me.Label5.TabIndex = 1
         Me.Label5.Text = "Divider"
+        Me.Label5.Visible = False
         '
         'Label7
         '
@@ -258,6 +268,7 @@ Partial Class SceltaLancioStiratura
         Me.Label7.Size = New System.Drawing.Size(94, 9)
         Me.Label7.TabIndex = 1
         Me.Label7.Text = "Peso Primo Cassone (Kg)"
+        Me.Label7.Visible = False
         '
         'Label8
         '
@@ -268,14 +279,15 @@ Partial Class SceltaLancioStiratura
         Me.Label8.Size = New System.Drawing.Size(102, 9)
         Me.Label8.TabIndex = 1
         Me.Label8.Text = "Peso Secondo Cassone (Kg)"
+        Me.Label8.Visible = False
         '
-        'ComboBoxCodice
+        'ComboBoxLancio
         '
-        Me.ComboBoxCodice.FormattingEnabled = True
-        Me.ComboBoxCodice.Location = New System.Drawing.Point(12, 12)
-        Me.ComboBoxCodice.Name = "ComboBoxCodice"
-        Me.ComboBoxCodice.Size = New System.Drawing.Size(118, 21)
-        Me.ComboBoxCodice.TabIndex = 3
+        Me.ComboBoxLancio.FormattingEnabled = True
+        Me.ComboBoxLancio.Location = New System.Drawing.Point(12, 12)
+        Me.ComboBoxLancio.Name = "ComboBoxLancio"
+        Me.ComboBoxLancio.Size = New System.Drawing.Size(118, 21)
+        Me.ComboBoxLancio.TabIndex = 3
         '
         'ButtonSalvaTurno
         '
@@ -292,16 +304,16 @@ Partial Class SceltaLancioStiratura
         Me.ButtonConfermaLancio.Name = "ButtonConfermaLancio"
         Me.ButtonConfermaLancio.Size = New System.Drawing.Size(99, 34)
         Me.ButtonConfermaLancio.TabIndex = 4
-        Me.ButtonConfermaLancio.Text = "Conferma Lancio"
+        Me.ButtonConfermaLancio.Text = "Conferma Produzione"
         Me.ButtonConfermaLancio.UseVisualStyleBackColor = True
         '
         'ButtonChiudiLancio
         '
         Me.ButtonChiudiLancio.Location = New System.Drawing.Point(323, 235)
         Me.ButtonChiudiLancio.Name = "ButtonChiudiLancio"
-        Me.ButtonChiudiLancio.Size = New System.Drawing.Size(99, 34)
+        Me.ButtonChiudiLancio.Size = New System.Drawing.Size(106, 34)
         Me.ButtonChiudiLancio.TabIndex = 4
-        Me.ButtonChiudiLancio.Text = "ChiudiLancio"
+        Me.ButtonChiudiLancio.Text = "Cambio Produzione"
         Me.ButtonChiudiLancio.UseVisualStyleBackColor = True
         '
         'ButtonCancella
@@ -313,6 +325,16 @@ Partial Class SceltaLancioStiratura
         Me.ButtonCancella.Text = "Cancella"
         Me.ButtonCancella.UseVisualStyleBackColor = True
         '
+        'LabelCodiceLinea
+        '
+        Me.LabelCodiceLinea.AutoSize = True
+        Me.LabelCodiceLinea.Location = New System.Drawing.Point(232, 5)
+        Me.LabelCodiceLinea.Name = "LabelCodiceLinea"
+        Me.LabelCodiceLinea.Size = New System.Drawing.Size(35, 13)
+        Me.LabelCodiceLinea.TabIndex = 1
+        Me.LabelCodiceLinea.Text = "Turno"
+        Me.LabelCodiceLinea.Visible = False
+        '
         'SceltaLancioStiratura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -322,24 +344,25 @@ Partial Class SceltaLancioStiratura
         Me.Controls.Add(Me.ButtonCancella)
         Me.Controls.Add(Me.ButtonConfermaLancio)
         Me.Controls.Add(Me.ButtonSalvaTurno)
-        Me.Controls.Add(Me.ComboBoxCodice)
+        Me.Controls.Add(Me.ComboBoxLancio)
         Me.Controls.Add(Me.ComboBoxTurno)
         Me.Controls.Add(Me.LabelQuantitàMancante)
         Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.LabelCodiceLinea)
         Me.Controls.Add(Me.LabelTurno)
         Me.Controls.Add(Me.LabelQuantitàLancio)
         Me.Controls.Add(Me.LabelQP)
         Me.Controls.Add(Me.LabelCodice)
         Me.Controls.Add(Me.LabelLancio)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.LabelPiastre)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.LabelScartoDivider)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.LabelCavalletti)
         Me.Controls.Add(Me.LabelScartoTurno)
-        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.LabelProduzioneTurno)
         Me.Controls.Add(Me.LabelMateriale)
         Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.TextBox2)
@@ -347,14 +370,14 @@ Partial Class SceltaLancioStiratura
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.TextBoxProduzionePiastre)
         Me.Controls.Add(Me.TextBoxCavalletti)
-        Me.Controls.Add(Me.TextBoxCodiceProduzione)
+        Me.Controls.Add(Me.TextBoxLancioProduzione)
         Me.Name = "SceltaLancioStiratura"
         Me.Text = "SceltaLancioStiratura"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TextBoxCodiceProduzione As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxLancioProduzione As System.Windows.Forms.TextBox
     Friend WithEvents LabelMateriale As System.Windows.Forms.Label
     Friend WithEvents LabelCodice As System.Windows.Forms.Label
     Friend WithEvents LabelQP As System.Windows.Forms.Label
@@ -364,10 +387,10 @@ Partial Class SceltaLancioStiratura
     Friend WithEvents LabelTurno As System.Windows.Forms.Label
     Friend WithEvents ComboBoxTurno As System.Windows.Forms.ComboBox
     Friend WithEvents LabelLancio As System.Windows.Forms.Label
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents LabelCavalletti As System.Windows.Forms.Label
+    Friend WithEvents LabelProduzioneTurno As System.Windows.Forms.Label
     Friend WithEvents LabelScartoTurno As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents LabelPiastre As System.Windows.Forms.Label
     Friend WithEvents LabelScartoDivider As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents TextBoxCavalletti As System.Windows.Forms.TextBox
@@ -379,9 +402,10 @@ Partial Class SceltaLancioStiratura
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents ComboBoxCodice As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBoxLancio As System.Windows.Forms.ComboBox
     Friend WithEvents ButtonSalvaTurno As System.Windows.Forms.Button
     Friend WithEvents ButtonConfermaLancio As System.Windows.Forms.Button
     Friend WithEvents ButtonChiudiLancio As System.Windows.Forms.Button
     Friend WithEvents ButtonCancella As System.Windows.Forms.Button
+    Friend WithEvents LabelCodiceLinea As System.Windows.Forms.Label
 End Class
