@@ -8,17 +8,15 @@ Public Class Form1
     Dim SerialPort As New IO.Ports.SerialPort
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
-        LabelContatoreFermata.Text = "0"
-        RetriveParametersFromConfigTxt()
-        SetUpSerialConnection()
-        SerialPortArduino.Open()
-        UpdateIstogram()
-        UpdateChartCausali()
-        UpdateStatistic()
-        LoadProductionDataOfCurrentShift()
-        CheckOperatorLoadedInLine()
-        SendToArduino("6")
-        LoadManpower()
+        'LabelContatoreFermata.Text = "0"
+        'RetriveParametersFromConfigTxt()
+        'SetUpSerialConnection()
+        'SerialPortArduino.Open()
+
+        'LoadProductionDataOfCurrentShift()
+        'CheckOperatorLoadedInLine()
+        'SendToArduino("6")
+        'LoadManpower()
     End Sub
 
     Private Sub LoadProductionDataOfCurrentShift()
@@ -101,7 +99,7 @@ Public Class Form1
         'SerialPortArduino.ReadTimeout = 200
 
         LblStatus.Text = ""
-        ButtonRitentaConnessione.Visible = False
+
         'Catch ex As Exception
         'TimerForRoutineRegistrationData.Stop()
         'LblStatus.Text = "Connessione seriale non presente"
@@ -205,8 +203,7 @@ Public Class Form1
         'Now we have to check if into the DB there are a stop not closed in the correct way
         'If we erase it and we show a message to the user
         EraseNotClosedStop()
-        'Everything is ok so we can update the graph
-        UpdateChart()
+        
     End Sub
 
     Private Sub TimerForRoutineRegistrationData_Tick(sender As Object, e As EventArgs) Handles TimerForRoutineRegistrationData.Tick
@@ -335,9 +332,8 @@ Public Class Form1
         If stringTime = "0:00" And LabelProduzioneSalvata.Text = "No" Then
 
             SaveProduction()
-            UpdateChart()
-            UpdateIstogram()
-            UpdateChartCausali()
+
+            
         Else
             If stringTime <> "0:00" Then
                 LabelProduzioneSalvata.Text = "No"
@@ -350,8 +346,7 @@ Public Class Form1
         'If stringTime = ":00" And LabelProduzioneSalvata.Text = "No" Then
         '    SaveProduction()
         '    UpdateChart()
-        '    UpdateIstogram()
-        '    UpdateChartCausali()
+        
         'Else
         '    If stringTime <> ":00" Then
         '        LabelProduzioneSalvata.Text = "No"
@@ -657,13 +652,7 @@ Public Class Form1
         'This tick is enabled from the beginning
         LabelCurrentTime.Text = DateTime.Now.ToString()
         'MsgBox(LabelCurrentTime.Text)
-        If ButtonRitentaConnessione.Visible = True Then
-            If ButtonRitentaConnessione.BackColor = Color.Transparent Then
-                ButtonRitentaConnessione.BackColor = Color.Silver
-            Else
-                ButtonRitentaConnessione.BackColor = Color.Transparent
-            End If
-        End If
+      
         If TimerForRoutineRegistrationData.Enabled = True Then
             ButtonStart.BackColor = Color.Transparent
         Else
@@ -729,34 +718,8 @@ Public Class Form1
         SerialPortArduino.Close()
     End Sub
 
-    Private Sub UpdateChart()
-        Try
-            'ROUTINE PER AGGIORNARE IL GRAFICO DELLA PRODUZIONE
+    
 
-            Dim myConn = New SqlConnection(LblPathDatabase.Text)
-
-            Dim DataFine As DateTime = DateTime.Now()
-            Dim DataInizio As DateTime = DateAdd(DateInterval.Hour, -8, DataFine)
-
-            Dim myCmd As SqlCommand
-            myCmd = myConn.CreateCommand()
-            myCmd.CommandText = ("SELECT Data, ProduzioneStep FROM DatiProduzione WHERE ((Id_Reparto='" & LblIdDepartment.Text & "') AND (Id_linea='" & LblIdLinea.Text & "')AND(DATA >= '" & DataFormatting(DataInizio) & "')AND(DATA <= '" & DataFormatting(DataFine) & "'))ORDER BY Data ")
-
-            myCmd.Connection.Open()
-            Dim myReader As SqlDataReader = myCmd.ExecuteReader(CommandBehavior.CloseConnection)
-            'Since the reader implements IEnumerable, pass the reader directly into
-            'the DataBind method with the name of the Column selected in the query    
-            ChartProduzioneOraria.Series("Series1").Points.DataBindXY(myReader, "Data", myReader, "ProduzioneStep")
-            Dim ds As New DataSet
-            Dim adapter As New SqlDataAdapter(myCmd.CommandText, myConn)
-            adapter.Fill(ds)
-            myReader.Close()
-            myCmd.Connection.Close()
-        Catch ex As Exception
-            MsgBox("Non è stato possibile connettersi al database")
-        End Try
-
-    End Sub
 
     Private Sub SaveProduction()
         Dim myConn = New SqlConnection(LblPathDatabase.Text)
@@ -831,9 +794,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub ButtonRitentaConnessione_Click(sender As Object, e As EventArgs) Handles ButtonRitentaConnessione.Click
-        SetUpSerialConnection()
-    End Sub
+  
 
 
     Private Sub UtilityToolStripMenuItem_Click(sender As Object, e As EventArgs)
@@ -842,83 +803,11 @@ Public Class Form1
 
 
 
-    Sub UpdateIstogram()
+   
 
-        ChartMacchine.Series.Clear()
-        'Enable 3D chart
-        ChartMacchine.ChartAreas("ChartArea1").Area3DStyle.Enable3D = True
-        'ChartMacchine.Series.Add("Serie2")
-        ChartMacchine.Series.Add("Serie1")
-        ChartMacchine.Series("Serie1").LegendText = "Totale minuti fermata"
-        Dim myConn As New SqlConnection(LblPathDatabase.Text)
-        Dim myCmd As SqlCommand
-        myCmd = myConn.CreateCommand()
+    
 
-        Dim DataFine As DateTime = DateTime.Now()
-        Dim DataInizio As DateTime = DateAdd(DateInterval.Hour, -8, DataFine)
-        'myCmd.CommandText = "SELECT DESCMACCHINA,SUM(DURATA) AS DurataTot FROM FERMI WHERE ((IdReparto=" & LblIdDepartment.Text & ") AND (Idlinea=" & LblIdLinea.Text & ")AND(DATA >= '" & DataInizio.ToString("yyyy-dd-MM HH:mm:ss") & "')AND(DATA <= '" & DataFine.ToString("yyyy-dd-MM HH:mm:ss") & "')) GROUP BY DESCMACCHINA ORDER BY SUM(DURATA);"
-        myCmd.CommandText = "SELECT DESCMACCHINA,SUM(DURATA) AS DurataTot FROM FERMI WHERE ((IdReparto=" & LblIdDepartment.Text & ") AND (Idlinea=" & LblIdLinea.Text & ")AND(DATA >= '" & DataFormatting(DataInizio) & "')AND(DATA <= '" & DataFormatting(DataFine) & "')) GROUP BY DESCMACCHINA ORDER BY SUM(DURATA);"
-
-        'Open the connection    
-        myCmd.Connection.Open()
-        ' Create a database reader    
-        Dim myReader As SqlDataReader = myCmd.ExecuteReader(CommandBehavior.CloseConnection)
-        ChartMacchine.Series("Serie1").Points.DataBindXY(myReader, "DESCMACCHINA", myReader, "DurataTot")
-        ' Close the reader and the connection
-        myReader.Close()
-        myCmd.Connection.Close()
-        'aggiungo l'etichette dei dati
-        ChartMacchine.Series("Serie1").IsValueShownAsLabel = True
-        'faccio in modo che l'etichetta dell'asse x sia visualizzata per ogni colonna di dati
-        ChartMacchine.ChartAreas("ChartArea1").AxisX.Interval = 1
-    End Sub
-
-    Sub UpdateChartCausali()
-
-        '---------------------------
-        ChartCausali.Series.Clear()
-        'Enable 3D chart
-        ChartCausali.ChartAreas("ChartArea1").Area3DStyle.Enable3D = True
-        ChartCausali.Series.Add("Serie1")
-        ChartCausali.Series("Serie1").LegendText = "Totale minuti fermata"
-        Dim myConn As New SqlConnection(LblPathDatabase.Text)
-        Dim myCmd As SqlCommand
-        myCmd = myConn.CreateCommand()
-        Dim DataFine As DateTime = DateTime.Now()
-        Dim DataInizio As DateTime = DateAdd(DateInterval.Hour, -8, DataFine)
-        'myCmd.CommandText = "SELECT DESCFERMO,SUM(DURATA) AS DurataTot FROM FERMI WHERE ((IdReparto=" & LblIdDepartment.Text & ") AND (Idlinea=" & LblIdLinea.Text & ")AND(DATA >= '" & DataInizio.ToString("yyyy-MM-ddTHH:mm:ss") & "')AND(DATA <= '" & DataFine.ToString("yyyy-MM-ddTHH:mm:ss") & "')AND(IdMacchina=0)) GROUP BY DESCFERMO ORDER BY SUM(DURATA);"
-        myCmd.CommandText = "SELECT DESCFERMO,SUM(DURATA) AS DurataTot FROM FERMI WHERE ((IdReparto=" & LblIdDepartment.Text & ") AND (Idlinea=" & LblIdLinea.Text & ")AND(DATA >= '" & DataFormatting(DataInizio) & "')AND(DATA <= '" & DataFormatting(DataFine) & "')AND(IdMacchina=0)) GROUP BY DESCFERMO ORDER BY SUM(DURATA);"
-
-        ' Open the connection    
-        myCmd.Connection.Open()
-        ' Create a database reader    
-        Dim myReader As SqlDataReader = myCmd.ExecuteReader(CommandBehavior.CloseConnection)
-        ChartCausali.Series("Serie1").Points.DataBindXY(myReader, "DESCFERMO", myReader, "DurataTot")
-        ' Close the reader and the connection
-        myReader.Close()
-        myCmd.Connection.Close()
-
-        'aggiungo il riferimento all'asse y di destra
-
-        'aggiungo l'etichette dei dati
-        ChartCausali.Series("Serie1").IsValueShownAsLabel = True
-
-        'faccio in modo che l'etichetta dell'asse x sia visualizzata per ogni colonna di dati
-        ChartCausali.ChartAreas("ChartArea1").AxisX.Interval = 1
-    End Sub
-
-    Sub UpdateStatistic()
-        'Dim fileAccess As String = ConfigurationManager.ConnectionStrings("ArduinoFermi.My.MySettings.DatabaseFermiConnectionString").ConnectionString
-        'Dim conAccess = New OleDb.OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & fileAccess & ";")
-        'Dim DataFine As DateTime = DateTime.Now()
-        'Dim DataInizio As DateTime = DateAdd(DateInterval.Hour, -8, DataFine)
-        'Dim queryAccess As String = "SELECT SUM(DURATA) AS DurataTot FROM FERMI WHERE ((DATA >= #" & DataInizio.Month.ToString & "/" & DataInizio.Day.ToString & "/" & DataInizio.Year.ToString & " " & DataInizio.Hour.ToString & ":" & DataInizio.Minute.ToString & ":" & DataInizio.Second.ToString & "#)AND(DATA <= #" & DataFine.Month.ToString & "/" & DataFine.Day.ToString & "/" & DataFine.Year.ToString & " " & DataFine.Hour.ToString & ":" & DataFine.Minute.ToString & ":" & DataFine.Second.ToString & "#));"
-        'Dim cmd As New OleDb.OleDbCommand(queryAccess, conAccess)
-        'conAccess.Open()
-        'LabelMinutiFermo.Text = cmd.ExecuteScalar()
-        'LabelUptime.Text = Strings.Left((((480 - CInt(LabelMinutiFermo.Text)) / 480) * 100).ToString, 2) & " %"
-        'conAccess.Close()
-    End Sub
+    
 
     Private Sub ButtonLineaGeneraleMontaggio_Click(sender As Object, e As EventArgs) Handles ButtonLineaGeneraleMontaggio.Click
         Dim pass As String = LabelIdFermo.Text
@@ -1206,7 +1095,7 @@ Public Class Form1
         Frm.ShowDialog()
     End Sub
 
-    Private Sub ButtonScaricoManuale_Click(sender As Object, e As EventArgs) Handles ButtonScaricoManuale.Click
+    Private Sub ButtonScaricoManuale_Click(sender As Object, e As EventArgs)
         Dim pass As String = LabelIdFermo.Text
         Dim idMacchina As String = "85"
         Dim DescMacchina As String = "Scarico manuale"
@@ -1356,7 +1245,7 @@ Public Class Form1
         ButtonVestizione.Enabled = True
         ButtonControlloVestizione.Enabled = True
         ButtonRobotCarica.Enabled = True
-        ButtonScaricoManuale.Enabled = True
+
         ButtonNastriTrasporto.Enabled = True
 
     End Sub
@@ -1421,7 +1310,7 @@ Public Class Form1
         ButtonVestizione.Enabled = False
         ButtonControlloVestizione.Enabled = False
         ButtonRobotCarica.Enabled = False
-        ButtonScaricoManuale.Enabled = False
+
         ButtonNastriTrasporto.Enabled = False
     End Sub
 
@@ -1668,4 +1557,6 @@ Public Class Form1
         End If
 
     End Sub
+
+    
 End Class

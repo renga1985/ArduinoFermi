@@ -1486,16 +1486,26 @@ Public Class DashboardProduzione
         Dim Lancio As String = myCmd.ExecuteScalar()
         myCmd.Connection.Close()
 
+        'aggiunta per ottenere codice linea (in stiratura lancio non è univoco per tutte le linee)
+
+        Dim myCmd1 As SqlCommand
+        myCmd1 = myConn.CreateCommand()
+        myCmd1.CommandText = "SELECT [Codice Linea] FROM Linee WHERE (IdReparto='" & Reparto & "') AND (IdLinea='" & Linea & "')"
+        myCmd1.Connection.Open()
+        Dim CodiceLinea As String
+        CodiceLinea = myCmd1.ExecuteScalar()
+        myCmd1.Connection.Close()
+
         Dim myCmd2 As SqlCommand
         myCmd2 = myConn.CreateCommand()
-        myCmd2.CommandText = "SELECT Materiale FROM LanciProduzione WHERE (Ordpian='" & Lancio & "')"
+        myCmd2.CommandText = "SELECT Materiale FROM LanciProduzione WHERE (Ordpian='" & Lancio & "') AND (Linea='" & CodiceLinea & "')"
         myCmd2.Connection.Open()
         Dim Testo As String = Lancio & " - " & myCmd2.ExecuteScalar()
         myCmd2.Connection.Close()
 
         Dim myCmd3 As SqlCommand
         myCmd3 = myConn.CreateCommand()
-        myCmd3.CommandText = "SELECT Serie FROM LanciProduzione WHERE (Ordpian=" & Lancio & ")"
+        myCmd3.CommandText = "SELECT Serie FROM LanciProduzione WHERE (Ordpian='" & Lancio & "') AND (Linea='" & CodiceLinea & "')"
         myCmd3.Connection.Open()
         Testo = Testo & " - " & myCmd3.ExecuteScalar()
         myCmd3.Connection.Close()

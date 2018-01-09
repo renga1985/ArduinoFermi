@@ -78,7 +78,7 @@ Public Class FormLineaGenerale
         Form1.ButtonVestizione.Enabled = False
         Form1.ButtonControlloVestizione.Enabled = False
         Form1.ButtonRobotCarica.Enabled = False
-        Form1.ButtonScaricoManuale.Enabled = False
+
         Form1.ButtonNastriTrasporto.Enabled = False
         'The we reset the counter
         Form1.LabelContatoreRipartenza.Text = "0"
