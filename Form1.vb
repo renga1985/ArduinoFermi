@@ -8,15 +8,15 @@ Public Class Form1
     Dim SerialPort As New IO.Ports.SerialPort
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
-        'LabelContatoreFermata.Text = "0"
-        'RetriveParametersFromConfigTxt()
-        'SetUpSerialConnection()
-        'SerialPortArduino.Open()
+        LabelContatoreFermata.Text = "0"
+        RetriveParametersFromConfigTxt()
+        SetUpSerialConnection()
+        SerialPortArduino.Open()
 
-        'LoadProductionDataOfCurrentShift()
-        'CheckOperatorLoadedInLine()
-        'SendToArduino("6")
-        'LoadManpower()
+        LoadProductionDataOfCurrentShift()
+        CheckOperatorLoadedInLine()
+        SendToArduino("6")
+        LoadManpower()
     End Sub
 
     Private Sub LoadProductionDataOfCurrentShift()
@@ -155,6 +155,7 @@ Public Class Form1
                     Tab.TabPages.Remove(TabStiratura)
                     Tab.TabPages.Remove(TabMontaggio)
                     Tab.TabPages.Remove(TabFormazione)
+
                 End If
                 'Here we have to use Me instead of Form1 to don't have an error
                 Me.Text = Me.Text & " - " & rowstring.Substring(24, rowstring.Length - 24)
@@ -616,52 +617,53 @@ Public Class Form1
         Frm.ShowDialog()
     End Sub
 
-    Private Sub ButtonStart_Click(sender As Object, e As EventArgs) Handles ButtonStart.Click
-        Try
-            'Turn on the green lamp
-            SendToArduino("5")
-            OvalShapeGreen.FillColor = Color.Green
+    'Private Sub ButtonStart_Click(sender As Object, e As EventArgs) Handles ButtonStart.Click
+    '    Try
+    '        'Turn on the green lamp
+    '        SendToArduino("5")
+    '        OvalShapeGreen.FillColor = Color.Green
 
 
-            Dim myConn = New SqlConnection(LblPathDatabase.Text)
-            Dim myCmd As SqlCommand
-            myCmd = myConn.CreateCommand()
-            myCmd.CommandText = "UPDATE StatoLinee SET Stato='Marcia' WHERE (Id_Reparto=" & LblIdDepartment.Text & " AND Id_Linea=" & LblIdLinea.Text & ")"
+    '        Dim myConn = New SqlConnection(LblPathDatabase.Text)
+    '        Dim myCmd As SqlCommand
+    '        myCmd = myConn.CreateCommand()
+    '        myCmd.CommandText = "UPDATE StatoLinee SET Stato='Marcia' WHERE (Id_Reparto=" & LblIdDepartment.Text & " AND Id_Linea=" & LblIdLinea.Text & ")"
 
-            myCmd.Connection.Open()
-            myCmd.ExecuteNonQuery()
-            myCmd.Connection.Close()
+    '        myCmd.Connection.Open()
+    '        myCmd.ExecuteNonQuery()
+    '        myCmd.Connection.Close()
 
 
-        Catch ex As Exception
-            TimerForRoutineRegistrationData.Stop()
-            Dim ans = MsgBox("Arduino is not connected", MsgBoxStyle.RetryCancel)
-            If ans = MsgBoxResult.Retry Then
+    '    Catch ex As Exception
+    '        TimerForRoutineRegistrationData.Stop()
+    '        Dim ans = MsgBox("Arduino is not connected", MsgBoxStyle.RetryCancel)
+    '        If ans = MsgBoxResult.Retry Then
 
-            End If
-        End Try
-        TimerForRoutineRegistrationData.Start()
+    '        End If
+    '    End Try
+    '    TimerForRoutineRegistrationData.Start()
 
-    End Sub
+    'End Sub
 
-    Private Sub ButtonStop_Click(sender As Object, e As EventArgs) Handles ButtonStop.Click
+    Private Sub ButtonStop_Click(sender As Object, e As EventArgs)
         TimerForRoutineRegistrationData.Stop()
     End Sub
 
     Private Sub TimerMain_Tick(sender As Object, e As EventArgs) Handles TimerMain.Tick
         'This tick is enabled from the beginning
         LabelCurrentTime.Text = DateTime.Now.ToString()
+        LabelLancio.Text = ShowLanciProduzioneIncorso(LblIdDepartment.Text, LblIdLinea.Text)
         'MsgBox(LabelCurrentTime.Text)
       
-        If TimerForRoutineRegistrationData.Enabled = True Then
-            ButtonStart.BackColor = Color.Transparent
-        Else
-            If ButtonStart.BackColor = Color.Transparent Then
-                ButtonStart.BackColor = Color.Silver
-            Else
-                ButtonStart.BackColor = Color.Transparent
-            End If
-        End If
+        'If TimerForRoutineRegistrationData.Enabled = True Then
+        '    ButtonStart.BackColor = Color.Transparent
+        'Else
+        '    If ButtonStart.BackColor = Color.Transparent Then
+        '        ButtonStart.BackColor = Color.Silver
+        '    Else
+        '        ButtonStart.BackColor = Color.Transparent
+        '    End If
+        'End If
 
     End Sub
 
@@ -1557,6 +1559,44 @@ Public Class Form1
         End If
 
     End Sub
+
+    Function ShowLanciProduzioneIncorso(Reparto As String, Linea As String)
+
+        Dim myConn As New SqlConnection(LblPathDatabase.Text)
+        Dim myCmd As SqlCommand
+        myCmd = myConn.CreateCommand()
+        myCmd.CommandText = "SELECT LancioInCorso FROM StatoLinee WHERE (Id_Reparto=" & Reparto & ") AND (Id_linea=" & Linea & ")"
+        myCmd.Connection.Open()
+        Dim Lancio As String = myCmd.ExecuteScalar()
+        myCmd.Connection.Close()
+
+        'aggiunta per ottenere codice linea (in stiratura lancio non è univoco per tutte le linee)
+
+        Dim myCmd1 As SqlCommand
+        myCmd1 = myConn.CreateCommand()
+        myCmd1.CommandText = "SELECT [Codice Linea] FROM Linee WHERE (IdReparto='" & Reparto & "') AND (IdLinea='" & Linea & "')"
+        myCmd1.Connection.Open()
+        Dim CodiceLinea As String
+        CodiceLinea = myCmd1.ExecuteScalar()
+        myCmd1.Connection.Close()
+
+        Dim myCmd2 As SqlCommand
+        myCmd2 = myConn.CreateCommand()
+        myCmd2.CommandText = "SELECT Materiale FROM LanciProduzione WHERE (Ordpian='" & Lancio & "') AND (Linea='" & CodiceLinea & "')"
+        myCmd2.Connection.Open()
+        Dim Testo As String = Lancio & " - " & myCmd2.ExecuteScalar()
+        myCmd2.Connection.Close()
+
+        Dim myCmd3 As SqlCommand
+        myCmd3 = myConn.CreateCommand()
+        myCmd3.CommandText = "SELECT Serie FROM LanciProduzione WHERE (Ordpian='" & Lancio & "') AND (Linea='" & CodiceLinea & "')"
+        myCmd3.Connection.Open()
+        Testo = Testo & " - " & myCmd3.ExecuteScalar()
+        myCmd3.Connection.Close()
+
+        Return Testo
+
+    End Function
 
     
 End Class

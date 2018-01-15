@@ -37,7 +37,6 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.LabelContatoreProduzione = New System.Windows.Forms.Label()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.OvalShapeGreen = New Microsoft.VisualBasic.PowerPacks.OvalShape()
         Me.OvalShapeYellow = New Microsoft.VisualBasic.PowerPacks.OvalShape()
         Me.OvalShapeRed = New Microsoft.VisualBasic.PowerPacks.OvalShape()
@@ -60,8 +59,6 @@ Partial Class Form1
         Me.LabelIdFermo = New System.Windows.Forms.Label()
         Me.LabelContatoreGiustificativo = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.ButtonStart = New System.Windows.Forms.Button()
-        Me.ButtonStop = New System.Windows.Forms.Button()
         Me.TimerMain = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBoxFiamm = New System.Windows.Forms.PictureBox()
         Me.LabelFermataDopo = New System.Windows.Forms.Label()
@@ -96,55 +93,59 @@ Partial Class Form1
         Me.LblPezziOgniImpulso = New System.Windows.Forms.Label()
         Me.Tab = New System.Windows.Forms.TabControl()
         Me.TabStiratura = New System.Windows.Forms.TabPage()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TabMontaggio = New System.Windows.Forms.TabPage()
-        Me.ButtonPinzaPaletizzatore = New System.Windows.Forms.Button()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.ButtonNastriTrasportatori = New System.Windows.Forms.Button()
-        Me.ButtonSaldapolari = New System.Windows.Forms.Button()
-        Me.ButtonRobot = New System.Windows.Forms.Button()
-        Me.ButtonTermosaldatrice = New System.Windows.Forms.Button()
-        Me.ButtonPosaCoperchi = New System.Windows.Forms.Button()
         Me.ButtonMarcatore = New System.Windows.Forms.Button()
-        Me.ButtonProvaCorti2 = New System.Windows.Forms.Button()
+        Me.ButtonPosaCoperchi = New System.Windows.Forms.Button()
+        Me.ButtonPinzaPaletizzatore = New System.Windows.Forms.Button()
+        Me.ButtonRobot = New System.Windows.Forms.Button()
         Me.ButtonProvaAltezzaPolari = New System.Windows.Forms.Button()
-        Me.ButtonPuntatrice = New System.Windows.Forms.Button()
+        Me.ButtonProvaCorti2 = New System.Windows.Forms.Button()
+        Me.ButtonTermosaldatrice = New System.Windows.Forms.Button()
+        Me.ButtonSaldapolari = New System.Windows.Forms.Button()
         Me.ButtonProvaPneumatica = New System.Windows.Forms.Button()
+        Me.ButtonPuntatrice = New System.Windows.Forms.Button()
         Me.ButtonProvaCorti1 = New System.Windows.Forms.Button()
+        Me.ButtonImbustatrice1 = New System.Windows.Forms.Button()
         Me.ButtonCOS = New System.Windows.Forms.Button()
+        Me.ButtonTranciasetti = New System.Windows.Forms.Button()
         Me.ButtonBuffer = New System.Windows.Forms.Button()
         Me.ButtonImbustatrice2 = New System.Windows.Forms.Button()
-        Me.ButtonImbustatrice1 = New System.Windows.Forms.Button()
-        Me.ButtonTranciasetti = New System.Windows.Forms.Button()
         Me.ButtonLineaGeneraleMontaggio = New System.Windows.Forms.Button()
         Me.TabFormazione = New System.Windows.Forms.TabPage()
-        Me.ButtonCarrelloScarico = New System.Windows.Forms.Button()
-        Me.ButtonNastriScarico = New System.Windows.Forms.Button()
-        Me.ButtonNastriCarico = New System.Windows.Forms.Button()
-        Me.ButtonCarrelloCarico = New System.Windows.Forms.Button()
-        Me.ButtonRotatoreSpintore1 = New System.Windows.Forms.Button()
-        Me.ButtonPosaRampeFormazione = New System.Windows.Forms.Button()
-        Me.ButtonPrimoRiempimento = New System.Windows.Forms.Button()
-        Me.ButtonInseritoreOcchioMagico = New System.Windows.Forms.Button()
-        Me.ButtonPinzaCarico = New System.Windows.Forms.Button()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.ButtonLineaGeneraleFormazione = New System.Windows.Forms.Button()
+        Me.ButtonCarrelloScarico = New System.Windows.Forms.Button()
+        Me.ButtonPinzaCarico = New System.Windows.Forms.Button()
+        Me.ButtonNastriScarico = New System.Windows.Forms.Button()
+        Me.ButtonInseritoreOcchioMagico = New System.Windows.Forms.Button()
+        Me.ButtonNastriCarico = New System.Windows.Forms.Button()
+        Me.ButtonPrimoRiempimento = New System.Windows.Forms.Button()
+        Me.ButtonCarrelloCarico = New System.Windows.Forms.Button()
+        Me.ButtonPosaRampeFormazione = New System.Windows.Forms.Button()
+        Me.ButtonRotatoreSpintore1 = New System.Windows.Forms.Button()
         Me.TabCarica = New System.Windows.Forms.TabPage()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.ButtonRotatore = New System.Windows.Forms.Button()
         Me.ButtonAKSI = New System.Windows.Forms.Button()
-        Me.ButtonNastriTrasporto = New System.Windows.Forms.Button()
-        Me.ButtonDielettrico = New System.Windows.Forms.Button()
-        Me.ButtonRobotCarica = New System.Windows.Forms.Button()
         Me.ButtonControlloVestizione = New System.Windows.Forms.Button()
-        Me.ButtonVestizione = New System.Windows.Forms.Button()
+        Me.ButtonRovesciatore = New System.Windows.Forms.Button()
         Me.ButtonMarcatoreCarica = New System.Windows.Forms.Button()
+        Me.ButtonDiluitore = New System.Windows.Forms.Button()
+        Me.ButtonRobotCarica = New System.Windows.Forms.Button()
+        Me.ButtonVestizione = New System.Windows.Forms.Button()
+        Me.ButtonDielettrico = New System.Windows.Forms.Button()
+        Me.Button2Riempimento = New System.Windows.Forms.Button()
+        Me.ButtonPosaTogliRampe = New System.Windows.Forms.Button()
+        Me.ButtonLineaGeneraleCarica = New System.Windows.Forms.Button()
+        Me.ButtonTunnelLavaggio = New System.Windows.Forms.Button()
         Me.ButtonControlloLivelli = New System.Windows.Forms.Button()
         Me.ButtonScaricaRapida = New System.Windows.Forms.Button()
         Me.ButtonTappatrice = New System.Windows.Forms.Button()
+        Me.ButtonNastriTrasporto = New System.Windows.Forms.Button()
         Me.ButtonPulisciPoli = New System.Windows.Forms.Button()
-        Me.ButtonTunnelLavaggio = New System.Windows.Forms.Button()
-        Me.ButtonPosaTogliRampe = New System.Windows.Forms.Button()
-        Me.Button2Riempimento = New System.Windows.Forms.Button()
-        Me.ButtonDiluitore = New System.Windows.Forms.Button()
-        Me.ButtonRovesciatore = New System.Windows.Forms.Button()
-        Me.ButtonRotatore = New System.Windows.Forms.Button()
-        Me.ButtonLineaGeneraleCarica = New System.Windows.Forms.Button()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.LabelProduzioneSalvata = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
@@ -154,13 +155,19 @@ Partial Class Form1
         Me.LabelNome = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.LabelStatus = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.LabelLancio = New System.Windows.Forms.Label()
         CType(Me.PictureBoxFiamm, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.Tab.SuspendLayout()
         Me.TabStiratura.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
         Me.TabMontaggio.SuspendLayout()
+        Me.TableLayoutPanel2.SuspendLayout()
         Me.TabFormazione.SuspendLayout()
+        Me.TableLayoutPanel3.SuspendLayout()
         Me.TabCarica.SuspendLayout()
+        Me.TableLayoutPanel4.SuspendLayout()
         CType(Me.DataGridViewManPower, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -168,9 +175,9 @@ Partial Class Form1
         '
         Me.ButtonSvolgitore.Enabled = False
         Me.ButtonSvolgitore.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonSvolgitore.Location = New System.Drawing.Point(16, 78)
+        Me.ButtonSvolgitore.Location = New System.Drawing.Point(3, 70)
         Me.ButtonSvolgitore.Name = "ButtonSvolgitore"
-        Me.ButtonSvolgitore.Size = New System.Drawing.Size(176, 73)
+        Me.ButtonSvolgitore.Size = New System.Drawing.Size(176, 61)
         Me.ButtonSvolgitore.TabIndex = 2
         Me.ButtonSvolgitore.Text = "Svolgitore"
         Me.ButtonSvolgitore.UseVisualStyleBackColor = True
@@ -179,9 +186,9 @@ Partial Class Form1
         '
         Me.ButtonEspansore.Enabled = False
         Me.ButtonEspansore.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonEspansore.Location = New System.Drawing.Point(198, 78)
+        Me.ButtonEspansore.Location = New System.Drawing.Point(187, 70)
         Me.ButtonEspansore.Name = "ButtonEspansore"
-        Me.ButtonEspansore.Size = New System.Drawing.Size(176, 73)
+        Me.ButtonEspansore.Size = New System.Drawing.Size(176, 61)
         Me.ButtonEspansore.TabIndex = 3
         Me.ButtonEspansore.Text = "Espansore"
         Me.ButtonEspansore.UseVisualStyleBackColor = True
@@ -190,9 +197,9 @@ Partial Class Form1
         '
         Me.ButtonTabBlanker.Enabled = False
         Me.ButtonTabBlanker.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonTabBlanker.Location = New System.Drawing.Point(380, 78)
+        Me.ButtonTabBlanker.Location = New System.Drawing.Point(371, 70)
         Me.ButtonTabBlanker.Name = "ButtonTabBlanker"
-        Me.ButtonTabBlanker.Size = New System.Drawing.Size(176, 73)
+        Me.ButtonTabBlanker.Size = New System.Drawing.Size(176, 61)
         Me.ButtonTabBlanker.TabIndex = 4
         Me.ButtonTabBlanker.Text = "Tab blanker"
         Me.ButtonTabBlanker.UseVisualStyleBackColor = True
@@ -201,9 +208,9 @@ Partial Class Form1
         '
         Me.ButtonMolazza.Enabled = False
         Me.ButtonMolazza.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonMolazza.Location = New System.Drawing.Point(562, 78)
+        Me.ButtonMolazza.Location = New System.Drawing.Point(555, 70)
         Me.ButtonMolazza.Name = "ButtonMolazza"
-        Me.ButtonMolazza.Size = New System.Drawing.Size(176, 73)
+        Me.ButtonMolazza.Size = New System.Drawing.Size(176, 61)
         Me.ButtonMolazza.TabIndex = 5
         Me.ButtonMolazza.Text = "Molazza"
         Me.ButtonMolazza.UseVisualStyleBackColor = True
@@ -212,9 +219,9 @@ Partial Class Form1
         '
         Me.ButtonSpalmatrice.Enabled = False
         Me.ButtonSpalmatrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonSpalmatrice.Location = New System.Drawing.Point(16, 157)
+        Me.ButtonSpalmatrice.Location = New System.Drawing.Point(3, 137)
         Me.ButtonSpalmatrice.Name = "ButtonSpalmatrice"
-        Me.ButtonSpalmatrice.Size = New System.Drawing.Size(176, 73)
+        Me.ButtonSpalmatrice.Size = New System.Drawing.Size(176, 63)
         Me.ButtonSpalmatrice.TabIndex = 6
         Me.ButtonSpalmatrice.Text = "Spalmatrice"
         Me.ButtonSpalmatrice.UseVisualStyleBackColor = True
@@ -223,9 +230,9 @@ Partial Class Form1
         '
         Me.ButtonDivider.Enabled = False
         Me.ButtonDivider.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonDivider.Location = New System.Drawing.Point(198, 157)
+        Me.ButtonDivider.Location = New System.Drawing.Point(187, 137)
         Me.ButtonDivider.Name = "ButtonDivider"
-        Me.ButtonDivider.Size = New System.Drawing.Size(176, 73)
+        Me.ButtonDivider.Size = New System.Drawing.Size(176, 63)
         Me.ButtonDivider.TabIndex = 7
         Me.ButtonDivider.Text = "Divider"
         Me.ButtonDivider.UseVisualStyleBackColor = True
@@ -234,9 +241,9 @@ Partial Class Form1
         '
         Me.ButtonTunnel.Enabled = False
         Me.ButtonTunnel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonTunnel.Location = New System.Drawing.Point(380, 157)
+        Me.ButtonTunnel.Location = New System.Drawing.Point(371, 137)
         Me.ButtonTunnel.Name = "ButtonTunnel"
-        Me.ButtonTunnel.Size = New System.Drawing.Size(176, 73)
+        Me.ButtonTunnel.Size = New System.Drawing.Size(176, 63)
         Me.ButtonTunnel.TabIndex = 8
         Me.ButtonTunnel.Text = "Tunnel"
         Me.ButtonTunnel.UseVisualStyleBackColor = True
@@ -245,9 +252,9 @@ Partial Class Form1
         '
         Me.ButtonImpilatore.Enabled = False
         Me.ButtonImpilatore.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonImpilatore.Location = New System.Drawing.Point(562, 157)
+        Me.ButtonImpilatore.Location = New System.Drawing.Point(555, 137)
         Me.ButtonImpilatore.Name = "ButtonImpilatore"
-        Me.ButtonImpilatore.Size = New System.Drawing.Size(176, 73)
+        Me.ButtonImpilatore.Size = New System.Drawing.Size(176, 63)
         Me.ButtonImpilatore.TabIndex = 9
         Me.ButtonImpilatore.Text = "Impilatore"
         Me.ButtonImpilatore.UseVisualStyleBackColor = True
@@ -288,20 +295,10 @@ Partial Class Form1
         Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape1, Me.OvalShapeGreen, Me.OvalShapeYellow, Me.OvalShapeRed, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1248, 729)
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.OvalShapeGreen, Me.OvalShapeYellow, Me.OvalShapeRed, Me.RectangleShape1})
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1008, 729)
         Me.ShapeContainer1.TabIndex = 17
         Me.ShapeContainer1.TabStop = False
-        '
-        'LineShape1
-        '
-        Me.LineShape1.BorderColor = System.Drawing.SystemColors.ControlDark
-        Me.LineShape1.BorderWidth = 2
-        Me.LineShape1.Name = "LineShape1"
-        Me.LineShape1.X1 = 0
-        Me.LineShape1.X2 = 1024
-        Me.LineShape1.Y1 = 277
-        Me.LineShape1.Y2 = 277
         '
         'OvalShapeGreen
         '
@@ -355,7 +352,7 @@ Partial Class Form1
         'LabelContatoreFermata
         '
         Me.LabelContatoreFermata.AutoSize = True
-        Me.LabelContatoreFermata.Location = New System.Drawing.Point(931, 188)
+        Me.LabelContatoreFermata.Location = New System.Drawing.Point(950, 188)
         Me.LabelContatoreFermata.Name = "LabelContatoreFermata"
         Me.LabelContatoreFermata.Size = New System.Drawing.Size(13, 13)
         Me.LabelContatoreFermata.TabIndex = 19
@@ -424,7 +421,7 @@ Partial Class Form1
         'LabelContatoreRipartenza
         '
         Me.LabelContatoreRipartenza.AutoSize = True
-        Me.LabelContatoreRipartenza.Location = New System.Drawing.Point(931, 218)
+        Me.LabelContatoreRipartenza.Location = New System.Drawing.Point(950, 218)
         Me.LabelContatoreRipartenza.Name = "LabelContatoreRipartenza"
         Me.LabelContatoreRipartenza.Size = New System.Drawing.Size(13, 13)
         Me.LabelContatoreRipartenza.TabIndex = 26
@@ -462,11 +459,12 @@ Partial Class Form1
         '
         'ButtonLineaGenerale
         '
+        Me.TableLayoutPanel1.SetColumnSpan(Me.ButtonLineaGenerale, 2)
         Me.ButtonLineaGenerale.Enabled = False
         Me.ButtonLineaGenerale.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonLineaGenerale.Location = New System.Drawing.Point(200, 3)
+        Me.ButtonLineaGenerale.Location = New System.Drawing.Point(187, 3)
         Me.ButtonLineaGenerale.Name = "ButtonLineaGenerale"
-        Me.ButtonLineaGenerale.Size = New System.Drawing.Size(339, 73)
+        Me.ButtonLineaGenerale.Size = New System.Drawing.Size(362, 61)
         Me.ButtonLineaGenerale.TabIndex = 30
         Me.ButtonLineaGenerale.Text = "Linea Generale"
         Me.ButtonLineaGenerale.UseVisualStyleBackColor = True
@@ -494,7 +492,7 @@ Partial Class Form1
         'LabelContatoreGiustificativo
         '
         Me.LabelContatoreGiustificativo.AutoSize = True
-        Me.LabelContatoreGiustificativo.Location = New System.Drawing.Point(931, 250)
+        Me.LabelContatoreGiustificativo.Location = New System.Drawing.Point(950, 243)
         Me.LabelContatoreGiustificativo.Name = "LabelContatoreGiustificativo"
         Me.LabelContatoreGiustificativo.Size = New System.Drawing.Size(13, 13)
         Me.LabelContatoreGiustificativo.TabIndex = 33
@@ -503,36 +501,12 @@ Partial Class Form1
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(789, 250)
+        Me.Label11.Location = New System.Drawing.Point(789, 243)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(114, 13)
         Me.Label11.TabIndex = 34
         Me.Label11.Text = "Contatore giustificativo"
         Me.Label11.Visible = False
-        '
-        'ButtonStart
-        '
-        Me.ButtonStart.BackColor = System.Drawing.Color.Transparent
-        Me.ButtonStart.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonStart.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.ButtonStart.Location = New System.Drawing.Point(366, 27)
-        Me.ButtonStart.Name = "ButtonStart"
-        Me.ButtonStart.Size = New System.Drawing.Size(101, 37)
-        Me.ButtonStart.TabIndex = 35
-        Me.ButtonStart.Text = "Start"
-        Me.ButtonStart.UseVisualStyleBackColor = False
-        Me.ButtonStart.Visible = False
-        '
-        'ButtonStop
-        '
-        Me.ButtonStop.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonStop.Location = New System.Drawing.Point(467, 27)
-        Me.ButtonStop.Name = "ButtonStop"
-        Me.ButtonStop.Size = New System.Drawing.Size(101, 37)
-        Me.ButtonStop.TabIndex = 36
-        Me.ButtonStop.Text = "Stop"
-        Me.ButtonStop.UseVisualStyleBackColor = True
-        Me.ButtonStop.Visible = False
         '
         'TimerMain
         '
@@ -572,7 +546,7 @@ Partial Class Form1
         'LabelGiustificativoDopo
         '
         Me.LabelGiustificativoDopo.AutoSize = True
-        Me.LabelGiustificativoDopo.Location = New System.Drawing.Point(593, 250)
+        Me.LabelGiustificativoDopo.Location = New System.Drawing.Point(205, 118)
         Me.LabelGiustificativoDopo.Name = "LabelGiustificativoDopo"
         Me.LabelGiustificativoDopo.Size = New System.Drawing.Size(93, 13)
         Me.LabelGiustificativoDopo.TabIndex = 40
@@ -602,7 +576,7 @@ Partial Class Form1
         'LabelGiustificativoDopoValue
         '
         Me.LabelGiustificativoDopoValue.AutoSize = True
-        Me.LabelGiustificativoDopoValue.Location = New System.Drawing.Point(706, 250)
+        Me.LabelGiustificativoDopoValue.Location = New System.Drawing.Point(318, 118)
         Me.LabelGiustificativoDopoValue.Name = "LabelGiustificativoDopoValue"
         Me.LabelGiustificativoDopoValue.Size = New System.Drawing.Size(13, 13)
         Me.LabelGiustificativoDopoValue.TabIndex = 43
@@ -632,7 +606,7 @@ Partial Class Form1
         'LabelPz2
         '
         Me.LabelPz2.AutoSize = True
-        Me.LabelPz2.Location = New System.Drawing.Point(745, 250)
+        Me.LabelPz2.Location = New System.Drawing.Point(357, 118)
         Me.LabelPz2.Name = "LabelPz2"
         Me.LabelPz2.Size = New System.Drawing.Size(22, 13)
         Me.LabelPz2.TabIndex = 46
@@ -735,7 +709,7 @@ Partial Class Form1
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label16.Location = New System.Drawing.Point(791, 716)
+        Me.Label16.Location = New System.Drawing.Point(789, 550)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(122, 13)
         Me.Label16.TabIndex = 63
@@ -744,7 +718,7 @@ Partial Class Form1
         'LblStatus
         '
         Me.LblStatus.AutoSize = True
-        Me.LblStatus.Location = New System.Drawing.Point(1248, 198)
+        Me.LblStatus.Location = New System.Drawing.Point(205, 95)
         Me.LblStatus.Name = "LblStatus"
         Me.LblStatus.Size = New System.Drawing.Size(0, 13)
         Me.LblStatus.TabIndex = 66
@@ -856,16 +830,8 @@ Partial Class Form1
         '
         'TabStiratura
         '
-        Me.TabStiratura.Controls.Add(Me.ButtonSvolgitore)
-        Me.TabStiratura.Controls.Add(Me.ButtonEspansore)
-        Me.TabStiratura.Controls.Add(Me.ButtonTabBlanker)
-        Me.TabStiratura.Controls.Add(Me.ButtonMolazza)
-        Me.TabStiratura.Controls.Add(Me.ButtonSpalmatrice)
-        Me.TabStiratura.Controls.Add(Me.ButtonLineaGenerale)
-        Me.TabStiratura.Controls.Add(Me.ButtonDivider)
-        Me.TabStiratura.Controls.Add(Me.ButtonImpilatore)
+        Me.TabStiratura.Controls.Add(Me.TableLayoutPanel1)
         Me.TabStiratura.Controls.Add(Me.ButtonPaletizzatore)
-        Me.TabStiratura.Controls.Add(Me.ButtonTunnel)
         Me.TabStiratura.Location = New System.Drawing.Point(4, 22)
         Me.TabStiratura.Name = "TabStiratura"
         Me.TabStiratura.Padding = New System.Windows.Forms.Padding(3)
@@ -874,26 +840,35 @@ Partial Class Form1
         Me.TabStiratura.Text = "Stiratura"
         Me.TabStiratura.UseVisualStyleBackColor = True
         '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.ColumnCount = 4
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.ButtonSvolgitore, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.ButtonSpalmatrice, 0, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.ButtonImpilatore, 3, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.ButtonDivider, 1, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.ButtonEspansore, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.ButtonTunnel, 2, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.ButtonTabBlanker, 2, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.ButtonMolazza, 3, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.ButtonLineaGenerale, 1, 0)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(126, 25)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 3
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(739, 203)
+        Me.TableLayoutPanel1.TabIndex = 31
+        '
         'TabMontaggio
         '
-        Me.TabMontaggio.Controls.Add(Me.ButtonPinzaPaletizzatore)
-        Me.TabMontaggio.Controls.Add(Me.ButtonNastriTrasportatori)
-        Me.TabMontaggio.Controls.Add(Me.ButtonSaldapolari)
-        Me.TabMontaggio.Controls.Add(Me.ButtonRobot)
-        Me.TabMontaggio.Controls.Add(Me.ButtonTermosaldatrice)
-        Me.TabMontaggio.Controls.Add(Me.ButtonPosaCoperchi)
-        Me.TabMontaggio.Controls.Add(Me.ButtonMarcatore)
-        Me.TabMontaggio.Controls.Add(Me.ButtonProvaCorti2)
-        Me.TabMontaggio.Controls.Add(Me.ButtonProvaAltezzaPolari)
-        Me.TabMontaggio.Controls.Add(Me.ButtonPuntatrice)
-        Me.TabMontaggio.Controls.Add(Me.ButtonProvaPneumatica)
-        Me.TabMontaggio.Controls.Add(Me.ButtonProvaCorti1)
-        Me.TabMontaggio.Controls.Add(Me.ButtonCOS)
-        Me.TabMontaggio.Controls.Add(Me.ButtonBuffer)
-        Me.TabMontaggio.Controls.Add(Me.ButtonImbustatrice2)
-        Me.TabMontaggio.Controls.Add(Me.ButtonImbustatrice1)
-        Me.TabMontaggio.Controls.Add(Me.ButtonTranciasetti)
-        Me.TabMontaggio.Controls.Add(Me.ButtonLineaGeneraleMontaggio)
+        Me.TabMontaggio.Controls.Add(Me.TableLayoutPanel2)
         Me.TabMontaggio.Location = New System.Drawing.Point(4, 22)
         Me.TabMontaggio.Name = "TabMontaggio"
         Me.TabMontaggio.Padding = New System.Windows.Forms.Padding(3)
@@ -902,156 +877,215 @@ Partial Class Form1
         Me.TabMontaggio.Text = "Montaggio"
         Me.TabMontaggio.UseVisualStyleBackColor = True
         '
-        'ButtonPinzaPaletizzatore
+        'TableLayoutPanel2
         '
-        Me.ButtonPinzaPaletizzatore.Enabled = False
-        Me.ButtonPinzaPaletizzatore.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonPinzaPaletizzatore.Location = New System.Drawing.Point(725, 151)
-        Me.ButtonPinzaPaletizzatore.Name = "ButtonPinzaPaletizzatore"
-        Me.ButtonPinzaPaletizzatore.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonPinzaPaletizzatore.TabIndex = 85
-        Me.ButtonPinzaPaletizzatore.Text = "Pinza\Paletizzatore"
-        Me.ButtonPinzaPaletizzatore.UseVisualStyleBackColor = True
+        Me.TableLayoutPanel2.ColumnCount = 5
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.ButtonNastriTrasportatori, 1, 4)
+        Me.TableLayoutPanel2.Controls.Add(Me.ButtonMarcatore, 3, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.ButtonPosaCoperchi, 3, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.ButtonPinzaPaletizzatore, 4, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.ButtonRobot, 0, 4)
+        Me.TableLayoutPanel2.Controls.Add(Me.ButtonProvaAltezzaPolari, 2, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.ButtonProvaCorti2, 2, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.ButtonTermosaldatrice, 4, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.ButtonSaldapolari, 0, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.ButtonProvaPneumatica, 1, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.ButtonPuntatrice, 1, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.ButtonProvaCorti1, 0, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.ButtonImbustatrice1, 1, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.ButtonCOS, 4, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.ButtonTranciasetti, 0, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.ButtonBuffer, 3, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.ButtonImbustatrice2, 2, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.ButtonLineaGeneraleMontaggio, 1, 0)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(43, 0)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 5
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(897, 268)
+        Me.TableLayoutPanel2.TabIndex = 88
         '
         'ButtonNastriTrasportatori
         '
         Me.ButtonNastriTrasportatori.Enabled = False
         Me.ButtonNastriTrasportatori.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonNastriTrasportatori.Location = New System.Drawing.Point(180, 205)
+        Me.ButtonNastriTrasportatori.Location = New System.Drawing.Point(182, 215)
         Me.ButtonNastriTrasportatori.Name = "ButtonNastriTrasportatori"
         Me.ButtonNastriTrasportatori.Size = New System.Drawing.Size(172, 48)
         Me.ButtonNastriTrasportatori.TabIndex = 87
         Me.ButtonNastriTrasportatori.Text = "Nastri Trasportatori"
         Me.ButtonNastriTrasportatori.UseVisualStyleBackColor = True
         '
-        'ButtonSaldapolari
+        'ButtonMarcatore
         '
-        Me.ButtonSaldapolari.Enabled = False
-        Me.ButtonSaldapolari.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonSaldapolari.Location = New System.Drawing.Point(-1, 151)
-        Me.ButtonSaldapolari.Name = "ButtonSaldapolari"
-        Me.ButtonSaldapolari.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonSaldapolari.TabIndex = 42
-        Me.ButtonSaldapolari.Text = "Saldapolari"
-        Me.ButtonSaldapolari.UseVisualStyleBackColor = True
-        '
-        'ButtonRobot
-        '
-        Me.ButtonRobot.Enabled = False
-        Me.ButtonRobot.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonRobot.Location = New System.Drawing.Point(0, 205)
-        Me.ButtonRobot.Name = "ButtonRobot"
-        Me.ButtonRobot.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonRobot.TabIndex = 86
-        Me.ButtonRobot.Text = "Robot"
-        Me.ButtonRobot.UseVisualStyleBackColor = True
-        '
-        'ButtonTermosaldatrice
-        '
-        Me.ButtonTermosaldatrice.Enabled = False
-        Me.ButtonTermosaldatrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonTermosaldatrice.Location = New System.Drawing.Point(725, 97)
-        Me.ButtonTermosaldatrice.Name = "ButtonTermosaldatrice"
-        Me.ButtonTermosaldatrice.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonTermosaldatrice.TabIndex = 41
-        Me.ButtonTermosaldatrice.Text = "Termosaldatrice"
-        Me.ButtonTermosaldatrice.UseVisualStyleBackColor = True
+        Me.ButtonMarcatore.Enabled = False
+        Me.ButtonMarcatore.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonMarcatore.Location = New System.Drawing.Point(540, 162)
+        Me.ButtonMarcatore.Name = "ButtonMarcatore"
+        Me.ButtonMarcatore.Size = New System.Drawing.Size(173, 47)
+        Me.ButtonMarcatore.TabIndex = 84
+        Me.ButtonMarcatore.Text = "Marcatore"
+        Me.ButtonMarcatore.UseVisualStyleBackColor = True
         '
         'ButtonPosaCoperchi
         '
         Me.ButtonPosaCoperchi.Enabled = False
         Me.ButtonPosaCoperchi.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonPosaCoperchi.Location = New System.Drawing.Point(541, 97)
+        Me.ButtonPosaCoperchi.Location = New System.Drawing.Point(540, 109)
         Me.ButtonPosaCoperchi.Name = "ButtonPosaCoperchi"
-        Me.ButtonPosaCoperchi.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonPosaCoperchi.Size = New System.Drawing.Size(173, 47)
         Me.ButtonPosaCoperchi.TabIndex = 40
         Me.ButtonPosaCoperchi.Text = "Posa Coperchi"
         Me.ButtonPosaCoperchi.UseVisualStyleBackColor = True
         '
-        'ButtonMarcatore
+        'ButtonPinzaPaletizzatore
         '
-        Me.ButtonMarcatore.Enabled = False
-        Me.ButtonMarcatore.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonMarcatore.Location = New System.Drawing.Point(541, 151)
-        Me.ButtonMarcatore.Name = "ButtonMarcatore"
-        Me.ButtonMarcatore.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonMarcatore.TabIndex = 84
-        Me.ButtonMarcatore.Text = "Marcatore"
-        Me.ButtonMarcatore.UseVisualStyleBackColor = True
+        Me.ButtonPinzaPaletizzatore.Enabled = False
+        Me.ButtonPinzaPaletizzatore.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonPinzaPaletizzatore.Location = New System.Drawing.Point(719, 162)
+        Me.ButtonPinzaPaletizzatore.Name = "ButtonPinzaPaletizzatore"
+        Me.ButtonPinzaPaletizzatore.Size = New System.Drawing.Size(174, 47)
+        Me.ButtonPinzaPaletizzatore.TabIndex = 85
+        Me.ButtonPinzaPaletizzatore.Text = "Pinza\Paletizzatore"
+        Me.ButtonPinzaPaletizzatore.UseVisualStyleBackColor = True
         '
-        'ButtonProvaCorti2
+        'ButtonRobot
         '
-        Me.ButtonProvaCorti2.Enabled = False
-        Me.ButtonProvaCorti2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonProvaCorti2.Location = New System.Drawing.Point(361, 97)
-        Me.ButtonProvaCorti2.Name = "ButtonProvaCorti2"
-        Me.ButtonProvaCorti2.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonProvaCorti2.TabIndex = 39
-        Me.ButtonProvaCorti2.Text = "Prova Corti 2"
-        Me.ButtonProvaCorti2.UseVisualStyleBackColor = True
+        Me.ButtonRobot.Enabled = False
+        Me.ButtonRobot.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonRobot.Location = New System.Drawing.Point(3, 215)
+        Me.ButtonRobot.Name = "ButtonRobot"
+        Me.ButtonRobot.Size = New System.Drawing.Size(173, 48)
+        Me.ButtonRobot.TabIndex = 86
+        Me.ButtonRobot.Text = "Robot"
+        Me.ButtonRobot.UseVisualStyleBackColor = True
         '
         'ButtonProvaAltezzaPolari
         '
         Me.ButtonProvaAltezzaPolari.Enabled = False
         Me.ButtonProvaAltezzaPolari.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonProvaAltezzaPolari.Location = New System.Drawing.Point(358, 151)
+        Me.ButtonProvaAltezzaPolari.Location = New System.Drawing.Point(361, 162)
         Me.ButtonProvaAltezzaPolari.Name = "ButtonProvaAltezzaPolari"
-        Me.ButtonProvaAltezzaPolari.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonProvaAltezzaPolari.Size = New System.Drawing.Size(173, 47)
         Me.ButtonProvaAltezzaPolari.TabIndex = 83
         Me.ButtonProvaAltezzaPolari.Text = "Prova Altezza Polari"
         Me.ButtonProvaAltezzaPolari.UseVisualStyleBackColor = True
         '
-        'ButtonPuntatrice
+        'ButtonProvaCorti2
         '
-        Me.ButtonPuntatrice.Enabled = False
-        Me.ButtonPuntatrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonPuntatrice.Location = New System.Drawing.Point(180, 97)
-        Me.ButtonPuntatrice.Name = "ButtonPuntatrice"
-        Me.ButtonPuntatrice.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonPuntatrice.TabIndex = 38
-        Me.ButtonPuntatrice.Text = "Puntatrice"
-        Me.ButtonPuntatrice.UseVisualStyleBackColor = True
+        Me.ButtonProvaCorti2.Enabled = False
+        Me.ButtonProvaCorti2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonProvaCorti2.Location = New System.Drawing.Point(361, 109)
+        Me.ButtonProvaCorti2.Name = "ButtonProvaCorti2"
+        Me.ButtonProvaCorti2.Size = New System.Drawing.Size(173, 47)
+        Me.ButtonProvaCorti2.TabIndex = 39
+        Me.ButtonProvaCorti2.Text = "Prova Corti 2"
+        Me.ButtonProvaCorti2.UseVisualStyleBackColor = True
+        '
+        'ButtonTermosaldatrice
+        '
+        Me.ButtonTermosaldatrice.Enabled = False
+        Me.ButtonTermosaldatrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonTermosaldatrice.Location = New System.Drawing.Point(719, 109)
+        Me.ButtonTermosaldatrice.Name = "ButtonTermosaldatrice"
+        Me.ButtonTermosaldatrice.Size = New System.Drawing.Size(174, 47)
+        Me.ButtonTermosaldatrice.TabIndex = 41
+        Me.ButtonTermosaldatrice.Text = "Termosaldatrice"
+        Me.ButtonTermosaldatrice.UseVisualStyleBackColor = True
+        '
+        'ButtonSaldapolari
+        '
+        Me.ButtonSaldapolari.Enabled = False
+        Me.ButtonSaldapolari.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonSaldapolari.Location = New System.Drawing.Point(3, 162)
+        Me.ButtonSaldapolari.Name = "ButtonSaldapolari"
+        Me.ButtonSaldapolari.Size = New System.Drawing.Size(173, 47)
+        Me.ButtonSaldapolari.TabIndex = 42
+        Me.ButtonSaldapolari.Text = "Saldapolari"
+        Me.ButtonSaldapolari.UseVisualStyleBackColor = True
         '
         'ButtonProvaPneumatica
         '
         Me.ButtonProvaPneumatica.Enabled = False
         Me.ButtonProvaPneumatica.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonProvaPneumatica.Location = New System.Drawing.Point(180, 151)
+        Me.ButtonProvaPneumatica.Location = New System.Drawing.Point(182, 162)
         Me.ButtonProvaPneumatica.Name = "ButtonProvaPneumatica"
-        Me.ButtonProvaPneumatica.Size = New System.Drawing.Size(172, 48)
+        Me.ButtonProvaPneumatica.Size = New System.Drawing.Size(172, 47)
         Me.ButtonProvaPneumatica.TabIndex = 43
         Me.ButtonProvaPneumatica.Text = "Prova Pneumatica"
         Me.ButtonProvaPneumatica.UseVisualStyleBackColor = True
+        '
+        'ButtonPuntatrice
+        '
+        Me.ButtonPuntatrice.Enabled = False
+        Me.ButtonPuntatrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonPuntatrice.Location = New System.Drawing.Point(182, 109)
+        Me.ButtonPuntatrice.Name = "ButtonPuntatrice"
+        Me.ButtonPuntatrice.Size = New System.Drawing.Size(173, 47)
+        Me.ButtonPuntatrice.TabIndex = 38
+        Me.ButtonPuntatrice.Text = "Puntatrice"
+        Me.ButtonPuntatrice.UseVisualStyleBackColor = True
         '
         'ButtonProvaCorti1
         '
         Me.ButtonProvaCorti1.Enabled = False
         Me.ButtonProvaCorti1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonProvaCorti1.Location = New System.Drawing.Point(0, 97)
+        Me.ButtonProvaCorti1.Location = New System.Drawing.Point(3, 109)
         Me.ButtonProvaCorti1.Name = "ButtonProvaCorti1"
-        Me.ButtonProvaCorti1.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonProvaCorti1.Size = New System.Drawing.Size(173, 47)
         Me.ButtonProvaCorti1.TabIndex = 37
         Me.ButtonProvaCorti1.Text = "Prova corti 1"
         Me.ButtonProvaCorti1.UseVisualStyleBackColor = True
+        '
+        'ButtonImbustatrice1
+        '
+        Me.ButtonImbustatrice1.Enabled = False
+        Me.ButtonImbustatrice1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonImbustatrice1.Location = New System.Drawing.Point(182, 56)
+        Me.ButtonImbustatrice1.Name = "ButtonImbustatrice1"
+        Me.ButtonImbustatrice1.Size = New System.Drawing.Size(173, 47)
+        Me.ButtonImbustatrice1.TabIndex = 33
+        Me.ButtonImbustatrice1.Text = "Imbustatrice 1"
+        Me.ButtonImbustatrice1.UseVisualStyleBackColor = True
         '
         'ButtonCOS
         '
         Me.ButtonCOS.Enabled = False
         Me.ButtonCOS.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonCOS.Location = New System.Drawing.Point(725, 43)
+        Me.ButtonCOS.Location = New System.Drawing.Point(719, 56)
         Me.ButtonCOS.Name = "ButtonCOS"
-        Me.ButtonCOS.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonCOS.Size = New System.Drawing.Size(174, 47)
         Me.ButtonCOS.TabIndex = 36
         Me.ButtonCOS.Text = "COS"
         Me.ButtonCOS.UseVisualStyleBackColor = True
+        '
+        'ButtonTranciasetti
+        '
+        Me.ButtonTranciasetti.Enabled = False
+        Me.ButtonTranciasetti.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonTranciasetti.Location = New System.Drawing.Point(3, 56)
+        Me.ButtonTranciasetti.Name = "ButtonTranciasetti"
+        Me.ButtonTranciasetti.Size = New System.Drawing.Size(173, 47)
+        Me.ButtonTranciasetti.TabIndex = 32
+        Me.ButtonTranciasetti.Text = "Tranciasetti"
+        Me.ButtonTranciasetti.UseVisualStyleBackColor = True
         '
         'ButtonBuffer
         '
         Me.ButtonBuffer.Enabled = False
         Me.ButtonBuffer.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonBuffer.Location = New System.Drawing.Point(543, 43)
+        Me.ButtonBuffer.Location = New System.Drawing.Point(540, 56)
         Me.ButtonBuffer.Name = "ButtonBuffer"
-        Me.ButtonBuffer.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonBuffer.Size = New System.Drawing.Size(173, 47)
         Me.ButtonBuffer.TabIndex = 35
         Me.ButtonBuffer.Text = "Buffer"
         Me.ButtonBuffer.UseVisualStyleBackColor = True
@@ -1060,58 +1094,28 @@ Partial Class Form1
         '
         Me.ButtonImbustatrice2.Enabled = False
         Me.ButtonImbustatrice2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonImbustatrice2.Location = New System.Drawing.Point(360, 43)
+        Me.ButtonImbustatrice2.Location = New System.Drawing.Point(361, 56)
         Me.ButtonImbustatrice2.Name = "ButtonImbustatrice2"
-        Me.ButtonImbustatrice2.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonImbustatrice2.Size = New System.Drawing.Size(173, 47)
         Me.ButtonImbustatrice2.TabIndex = 34
         Me.ButtonImbustatrice2.Text = "Imbustatrice 2"
         Me.ButtonImbustatrice2.UseVisualStyleBackColor = True
         '
-        'ButtonImbustatrice1
-        '
-        Me.ButtonImbustatrice1.Enabled = False
-        Me.ButtonImbustatrice1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonImbustatrice1.Location = New System.Drawing.Point(180, 43)
-        Me.ButtonImbustatrice1.Name = "ButtonImbustatrice1"
-        Me.ButtonImbustatrice1.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonImbustatrice1.TabIndex = 33
-        Me.ButtonImbustatrice1.Text = "Imbustatrice 1"
-        Me.ButtonImbustatrice1.UseVisualStyleBackColor = True
-        '
-        'ButtonTranciasetti
-        '
-        Me.ButtonTranciasetti.Enabled = False
-        Me.ButtonTranciasetti.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonTranciasetti.Location = New System.Drawing.Point(2, 43)
-        Me.ButtonTranciasetti.Name = "ButtonTranciasetti"
-        Me.ButtonTranciasetti.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonTranciasetti.TabIndex = 32
-        Me.ButtonTranciasetti.Text = "Tranciasetti"
-        Me.ButtonTranciasetti.UseVisualStyleBackColor = True
-        '
         'ButtonLineaGeneraleMontaggio
         '
+        Me.TableLayoutPanel2.SetColumnSpan(Me.ButtonLineaGeneraleMontaggio, 3)
         Me.ButtonLineaGeneraleMontaggio.Enabled = False
         Me.ButtonLineaGeneraleMontaggio.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonLineaGeneraleMontaggio.Location = New System.Drawing.Point(362, 0)
+        Me.ButtonLineaGeneraleMontaggio.Location = New System.Drawing.Point(182, 3)
         Me.ButtonLineaGeneraleMontaggio.Name = "ButtonLineaGeneraleMontaggio"
-        Me.ButtonLineaGeneraleMontaggio.Size = New System.Drawing.Size(339, 43)
+        Me.ButtonLineaGeneraleMontaggio.Size = New System.Drawing.Size(531, 43)
         Me.ButtonLineaGeneraleMontaggio.TabIndex = 31
         Me.ButtonLineaGeneraleMontaggio.Text = "Linea Generale"
         Me.ButtonLineaGeneraleMontaggio.UseVisualStyleBackColor = True
         '
         'TabFormazione
         '
-        Me.TabFormazione.Controls.Add(Me.ButtonCarrelloScarico)
-        Me.TabFormazione.Controls.Add(Me.ButtonNastriScarico)
-        Me.TabFormazione.Controls.Add(Me.ButtonNastriCarico)
-        Me.TabFormazione.Controls.Add(Me.ButtonCarrelloCarico)
-        Me.TabFormazione.Controls.Add(Me.ButtonRotatoreSpintore1)
-        Me.TabFormazione.Controls.Add(Me.ButtonPosaRampeFormazione)
-        Me.TabFormazione.Controls.Add(Me.ButtonPrimoRiempimento)
-        Me.TabFormazione.Controls.Add(Me.ButtonInseritoreOcchioMagico)
-        Me.TabFormazione.Controls.Add(Me.ButtonPinzaCarico)
-        Me.TabFormazione.Controls.Add(Me.ButtonLineaGeneraleFormazione)
+        Me.TabFormazione.Controls.Add(Me.TableLayoutPanel3)
         Me.TabFormazione.Location = New System.Drawing.Point(4, 22)
         Me.TabFormazione.Name = "TabFormazione"
         Me.TabFormazione.Size = New System.Drawing.Size(1016, 252)
@@ -1119,136 +1123,149 @@ Partial Class Form1
         Me.TabFormazione.Text = "Formazione"
         Me.TabFormazione.UseVisualStyleBackColor = True
         '
+        'TableLayoutPanel3
+        '
+        Me.TableLayoutPanel3.ColumnCount = 5
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel3.Controls.Add(Me.ButtonLineaGeneraleFormazione, 1, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.ButtonCarrelloScarico, 3, 2)
+        Me.TableLayoutPanel3.Controls.Add(Me.ButtonPinzaCarico, 0, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.ButtonNastriScarico, 2, 2)
+        Me.TableLayoutPanel3.Controls.Add(Me.ButtonInseritoreOcchioMagico, 1, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.ButtonNastriCarico, 1, 2)
+        Me.TableLayoutPanel3.Controls.Add(Me.ButtonPrimoRiempimento, 2, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.ButtonCarrelloCarico, 0, 2)
+        Me.TableLayoutPanel3.Controls.Add(Me.ButtonPosaRampeFormazione, 3, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.ButtonRotatoreSpintore1, 4, 1)
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(8, 14)
+        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
+        Me.TableLayoutPanel3.RowCount = 3
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(985, 179)
+        Me.TableLayoutPanel3.TabIndex = 42
+        '
+        'ButtonLineaGeneraleFormazione
+        '
+        Me.TableLayoutPanel3.SetColumnSpan(Me.ButtonLineaGeneraleFormazione, 3)
+        Me.ButtonLineaGeneraleFormazione.Enabled = False
+        Me.ButtonLineaGeneraleFormazione.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonLineaGeneraleFormazione.Location = New System.Drawing.Point(200, 3)
+        Me.ButtonLineaGeneraleFormazione.Name = "ButtonLineaGeneraleFormazione"
+        Me.ButtonLineaGeneraleFormazione.Size = New System.Drawing.Size(568, 43)
+        Me.ButtonLineaGeneraleFormazione.TabIndex = 32
+        Me.ButtonLineaGeneraleFormazione.Text = "Linea Generale"
+        Me.ButtonLineaGeneraleFormazione.UseVisualStyleBackColor = True
+        '
         'ButtonCarrelloScarico
         '
         Me.ButtonCarrelloScarico.Enabled = False
         Me.ButtonCarrelloScarico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonCarrelloScarico.Location = New System.Drawing.Point(548, 102)
+        Me.ButtonCarrelloScarico.Location = New System.Drawing.Point(594, 121)
         Me.ButtonCarrelloScarico.Name = "ButtonCarrelloScarico"
         Me.ButtonCarrelloScarico.Size = New System.Drawing.Size(174, 48)
         Me.ButtonCarrelloScarico.TabIndex = 41
         Me.ButtonCarrelloScarico.Text = "Carrello scarico"
         Me.ButtonCarrelloScarico.UseVisualStyleBackColor = True
         '
-        'ButtonNastriScarico
-        '
-        Me.ButtonNastriScarico.Enabled = False
-        Me.ButtonNastriScarico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonNastriScarico.Location = New System.Drawing.Point(368, 102)
-        Me.ButtonNastriScarico.Name = "ButtonNastriScarico"
-        Me.ButtonNastriScarico.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonNastriScarico.TabIndex = 40
-        Me.ButtonNastriScarico.Text = "Nastri scarico"
-        Me.ButtonNastriScarico.UseVisualStyleBackColor = True
-        '
-        'ButtonNastriCarico
-        '
-        Me.ButtonNastriCarico.Enabled = False
-        Me.ButtonNastriCarico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonNastriCarico.Location = New System.Drawing.Point(188, 102)
-        Me.ButtonNastriCarico.Name = "ButtonNastriCarico"
-        Me.ButtonNastriCarico.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonNastriCarico.TabIndex = 39
-        Me.ButtonNastriCarico.Text = "Nastri carico"
-        Me.ButtonNastriCarico.UseVisualStyleBackColor = True
-        '
-        'ButtonCarrelloCarico
-        '
-        Me.ButtonCarrelloCarico.Enabled = False
-        Me.ButtonCarrelloCarico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonCarrelloCarico.Location = New System.Drawing.Point(8, 102)
-        Me.ButtonCarrelloCarico.Name = "ButtonCarrelloCarico"
-        Me.ButtonCarrelloCarico.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonCarrelloCarico.TabIndex = 38
-        Me.ButtonCarrelloCarico.Text = "Carrello carico"
-        Me.ButtonCarrelloCarico.UseVisualStyleBackColor = True
-        '
-        'ButtonRotatoreSpintore1
-        '
-        Me.ButtonRotatoreSpintore1.Enabled = False
-        Me.ButtonRotatoreSpintore1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonRotatoreSpintore1.Location = New System.Drawing.Point(728, 48)
-        Me.ButtonRotatoreSpintore1.Name = "ButtonRotatoreSpintore1"
-        Me.ButtonRotatoreSpintore1.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonRotatoreSpintore1.TabIndex = 37
-        Me.ButtonRotatoreSpintore1.Text = "Rotatore e Spintore 1°riemp"
-        Me.ButtonRotatoreSpintore1.UseVisualStyleBackColor = True
-        '
-        'ButtonPosaRampeFormazione
-        '
-        Me.ButtonPosaRampeFormazione.Enabled = False
-        Me.ButtonPosaRampeFormazione.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonPosaRampeFormazione.Location = New System.Drawing.Point(548, 48)
-        Me.ButtonPosaRampeFormazione.Name = "ButtonPosaRampeFormazione"
-        Me.ButtonPosaRampeFormazione.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonPosaRampeFormazione.TabIndex = 36
-        Me.ButtonPosaRampeFormazione.Text = "Posa Rampe Formazione"
-        Me.ButtonPosaRampeFormazione.UseVisualStyleBackColor = True
-        '
-        'ButtonPrimoRiempimento
-        '
-        Me.ButtonPrimoRiempimento.Enabled = False
-        Me.ButtonPrimoRiempimento.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonPrimoRiempimento.Location = New System.Drawing.Point(368, 48)
-        Me.ButtonPrimoRiempimento.Name = "ButtonPrimoRiempimento"
-        Me.ButtonPrimoRiempimento.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonPrimoRiempimento.TabIndex = 35
-        Me.ButtonPrimoRiempimento.Text = "1° riempimento"
-        Me.ButtonPrimoRiempimento.UseVisualStyleBackColor = True
-        '
-        'ButtonInseritoreOcchioMagico
-        '
-        Me.ButtonInseritoreOcchioMagico.Enabled = False
-        Me.ButtonInseritoreOcchioMagico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonInseritoreOcchioMagico.Location = New System.Drawing.Point(188, 48)
-        Me.ButtonInseritoreOcchioMagico.Name = "ButtonInseritoreOcchioMagico"
-        Me.ButtonInseritoreOcchioMagico.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonInseritoreOcchioMagico.TabIndex = 34
-        Me.ButtonInseritoreOcchioMagico.Text = "Inseritore occhio magico"
-        Me.ButtonInseritoreOcchioMagico.UseVisualStyleBackColor = True
-        '
         'ButtonPinzaCarico
         '
         Me.ButtonPinzaCarico.Enabled = False
         Me.ButtonPinzaCarico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonPinzaCarico.Location = New System.Drawing.Point(8, 48)
+        Me.ButtonPinzaCarico.Location = New System.Drawing.Point(3, 62)
         Me.ButtonPinzaCarico.Name = "ButtonPinzaCarico"
         Me.ButtonPinzaCarico.Size = New System.Drawing.Size(174, 48)
         Me.ButtonPinzaCarico.TabIndex = 33
         Me.ButtonPinzaCarico.Text = "Pinza carico manuale"
         Me.ButtonPinzaCarico.UseVisualStyleBackColor = True
         '
-        'ButtonLineaGeneraleFormazione
+        'ButtonNastriScarico
         '
-        Me.ButtonLineaGeneraleFormazione.Enabled = False
-        Me.ButtonLineaGeneraleFormazione.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonLineaGeneraleFormazione.Location = New System.Drawing.Point(295, 3)
-        Me.ButtonLineaGeneraleFormazione.Name = "ButtonLineaGeneraleFormazione"
-        Me.ButtonLineaGeneraleFormazione.Size = New System.Drawing.Size(339, 43)
-        Me.ButtonLineaGeneraleFormazione.TabIndex = 32
-        Me.ButtonLineaGeneraleFormazione.Text = "Linea Generale"
-        Me.ButtonLineaGeneraleFormazione.UseVisualStyleBackColor = True
+        Me.ButtonNastriScarico.Enabled = False
+        Me.ButtonNastriScarico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonNastriScarico.Location = New System.Drawing.Point(397, 121)
+        Me.ButtonNastriScarico.Name = "ButtonNastriScarico"
+        Me.ButtonNastriScarico.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonNastriScarico.TabIndex = 40
+        Me.ButtonNastriScarico.Text = "Nastri scarico"
+        Me.ButtonNastriScarico.UseVisualStyleBackColor = True
+        '
+        'ButtonInseritoreOcchioMagico
+        '
+        Me.ButtonInseritoreOcchioMagico.Enabled = False
+        Me.ButtonInseritoreOcchioMagico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonInseritoreOcchioMagico.Location = New System.Drawing.Point(200, 62)
+        Me.ButtonInseritoreOcchioMagico.Name = "ButtonInseritoreOcchioMagico"
+        Me.ButtonInseritoreOcchioMagico.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonInseritoreOcchioMagico.TabIndex = 34
+        Me.ButtonInseritoreOcchioMagico.Text = "Inseritore occhio magico"
+        Me.ButtonInseritoreOcchioMagico.UseVisualStyleBackColor = True
+        '
+        'ButtonNastriCarico
+        '
+        Me.ButtonNastriCarico.Enabled = False
+        Me.ButtonNastriCarico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonNastriCarico.Location = New System.Drawing.Point(200, 121)
+        Me.ButtonNastriCarico.Name = "ButtonNastriCarico"
+        Me.ButtonNastriCarico.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonNastriCarico.TabIndex = 39
+        Me.ButtonNastriCarico.Text = "Nastri carico"
+        Me.ButtonNastriCarico.UseVisualStyleBackColor = True
+        '
+        'ButtonPrimoRiempimento
+        '
+        Me.ButtonPrimoRiempimento.Enabled = False
+        Me.ButtonPrimoRiempimento.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonPrimoRiempimento.Location = New System.Drawing.Point(397, 62)
+        Me.ButtonPrimoRiempimento.Name = "ButtonPrimoRiempimento"
+        Me.ButtonPrimoRiempimento.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonPrimoRiempimento.TabIndex = 35
+        Me.ButtonPrimoRiempimento.Text = "1° riempimento"
+        Me.ButtonPrimoRiempimento.UseVisualStyleBackColor = True
+        '
+        'ButtonCarrelloCarico
+        '
+        Me.ButtonCarrelloCarico.Enabled = False
+        Me.ButtonCarrelloCarico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonCarrelloCarico.Location = New System.Drawing.Point(3, 121)
+        Me.ButtonCarrelloCarico.Name = "ButtonCarrelloCarico"
+        Me.ButtonCarrelloCarico.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonCarrelloCarico.TabIndex = 38
+        Me.ButtonCarrelloCarico.Text = "Carrello carico"
+        Me.ButtonCarrelloCarico.UseVisualStyleBackColor = True
+        '
+        'ButtonPosaRampeFormazione
+        '
+        Me.ButtonPosaRampeFormazione.Enabled = False
+        Me.ButtonPosaRampeFormazione.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonPosaRampeFormazione.Location = New System.Drawing.Point(594, 62)
+        Me.ButtonPosaRampeFormazione.Name = "ButtonPosaRampeFormazione"
+        Me.ButtonPosaRampeFormazione.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonPosaRampeFormazione.TabIndex = 36
+        Me.ButtonPosaRampeFormazione.Text = "Posa Rampe Formazione"
+        Me.ButtonPosaRampeFormazione.UseVisualStyleBackColor = True
+        '
+        'ButtonRotatoreSpintore1
+        '
+        Me.ButtonRotatoreSpintore1.Enabled = False
+        Me.ButtonRotatoreSpintore1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonRotatoreSpintore1.Location = New System.Drawing.Point(791, 62)
+        Me.ButtonRotatoreSpintore1.Name = "ButtonRotatoreSpintore1"
+        Me.ButtonRotatoreSpintore1.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonRotatoreSpintore1.TabIndex = 37
+        Me.ButtonRotatoreSpintore1.Text = "Rotatore e Spintore 1°riemp"
+        Me.ButtonRotatoreSpintore1.UseVisualStyleBackColor = True
         '
         'TabCarica
         '
-        Me.TabCarica.Controls.Add(Me.ButtonAKSI)
+        Me.TabCarica.Controls.Add(Me.TableLayoutPanel4)
         Me.TabCarica.Controls.Add(Me.ButtonNastriTrasporto)
-        Me.TabCarica.Controls.Add(Me.ButtonDielettrico)
-        Me.TabCarica.Controls.Add(Me.ButtonRobotCarica)
-        Me.TabCarica.Controls.Add(Me.ButtonControlloVestizione)
-        Me.TabCarica.Controls.Add(Me.ButtonVestizione)
-        Me.TabCarica.Controls.Add(Me.ButtonMarcatoreCarica)
-        Me.TabCarica.Controls.Add(Me.ButtonControlloLivelli)
-        Me.TabCarica.Controls.Add(Me.ButtonScaricaRapida)
-        Me.TabCarica.Controls.Add(Me.ButtonTappatrice)
         Me.TabCarica.Controls.Add(Me.ButtonPulisciPoli)
-        Me.TabCarica.Controls.Add(Me.ButtonTunnelLavaggio)
-        Me.TabCarica.Controls.Add(Me.ButtonPosaTogliRampe)
-        Me.TabCarica.Controls.Add(Me.Button2Riempimento)
-        Me.TabCarica.Controls.Add(Me.ButtonDiluitore)
-        Me.TabCarica.Controls.Add(Me.ButtonRovesciatore)
-        Me.TabCarica.Controls.Add(Me.ButtonRotatore)
-        Me.TabCarica.Controls.Add(Me.ButtonLineaGeneraleCarica)
         Me.TabCarica.Location = New System.Drawing.Point(4, 22)
         Me.TabCarica.Name = "TabCarica"
         Me.TabCarica.Size = New System.Drawing.Size(1016, 252)
@@ -1256,16 +1273,216 @@ Partial Class Form1
         Me.TabCarica.Text = "Carica"
         Me.TabCarica.UseVisualStyleBackColor = True
         '
+        'TableLayoutPanel4
+        '
+        Me.TableLayoutPanel4.ColumnCount = 5
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel4.Controls.Add(Me.ButtonRotatore, 0, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.ButtonAKSI, 0, 3)
+        Me.TableLayoutPanel4.Controls.Add(Me.ButtonControlloVestizione, 3, 3)
+        Me.TableLayoutPanel4.Controls.Add(Me.ButtonRovesciatore, 1, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.ButtonMarcatoreCarica, 1, 3)
+        Me.TableLayoutPanel4.Controls.Add(Me.ButtonDiluitore, 2, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.ButtonRobotCarica, 4, 3)
+        Me.TableLayoutPanel4.Controls.Add(Me.ButtonVestizione, 2, 3)
+        Me.TableLayoutPanel4.Controls.Add(Me.ButtonDielettrico, 4, 2)
+        Me.TableLayoutPanel4.Controls.Add(Me.Button2Riempimento, 3, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.ButtonPosaTogliRampe, 4, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.ButtonLineaGeneraleCarica, 1, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.ButtonTunnelLavaggio, 0, 2)
+        Me.TableLayoutPanel4.Controls.Add(Me.ButtonControlloLivelli, 1, 2)
+        Me.TableLayoutPanel4.Controls.Add(Me.ButtonScaricaRapida, 3, 2)
+        Me.TableLayoutPanel4.Controls.Add(Me.ButtonTappatrice, 2, 2)
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(23, 21)
+        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        Me.TableLayoutPanel4.RowCount = 4
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(961, 228)
+        Me.TableLayoutPanel4.TabIndex = 92
+        '
+        'ButtonRotatore
+        '
+        Me.ButtonRotatore.Enabled = False
+        Me.ButtonRotatore.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonRotatore.Location = New System.Drawing.Point(3, 60)
+        Me.ButtonRotatore.Name = "ButtonRotatore"
+        Me.ButtonRotatore.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonRotatore.TabIndex = 33
+        Me.ButtonRotatore.Text = "Rotatore e spintore 2°riemp"
+        Me.ButtonRotatore.UseVisualStyleBackColor = True
+        '
         'ButtonAKSI
         '
         Me.ButtonAKSI.Enabled = False
         Me.ButtonAKSI.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonAKSI.Location = New System.Drawing.Point(-1, 163)
+        Me.ButtonAKSI.Location = New System.Drawing.Point(3, 174)
         Me.ButtonAKSI.Name = "ButtonAKSI"
         Me.ButtonAKSI.Size = New System.Drawing.Size(174, 48)
         Me.ButtonAKSI.TabIndex = 85
         Me.ButtonAKSI.Text = "AKSI"
         Me.ButtonAKSI.UseVisualStyleBackColor = True
+        '
+        'ButtonControlloVestizione
+        '
+        Me.ButtonControlloVestizione.Enabled = False
+        Me.ButtonControlloVestizione.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonControlloVestizione.Location = New System.Drawing.Point(579, 174)
+        Me.ButtonControlloVestizione.Name = "ButtonControlloVestizione"
+        Me.ButtonControlloVestizione.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonControlloVestizione.TabIndex = 88
+        Me.ButtonControlloVestizione.Text = "ControlloVestizione"
+        Me.ButtonControlloVestizione.UseVisualStyleBackColor = True
+        '
+        'ButtonRovesciatore
+        '
+        Me.ButtonRovesciatore.Enabled = False
+        Me.ButtonRovesciatore.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonRovesciatore.Location = New System.Drawing.Point(195, 60)
+        Me.ButtonRovesciatore.Name = "ButtonRovesciatore"
+        Me.ButtonRovesciatore.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonRovesciatore.TabIndex = 34
+        Me.ButtonRovesciatore.Text = "Rovesciatore"
+        Me.ButtonRovesciatore.UseVisualStyleBackColor = True
+        '
+        'ButtonMarcatoreCarica
+        '
+        Me.ButtonMarcatoreCarica.Enabled = False
+        Me.ButtonMarcatoreCarica.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonMarcatoreCarica.Location = New System.Drawing.Point(195, 174)
+        Me.ButtonMarcatoreCarica.Name = "ButtonMarcatoreCarica"
+        Me.ButtonMarcatoreCarica.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonMarcatoreCarica.TabIndex = 86
+        Me.ButtonMarcatoreCarica.Text = "Marcatore"
+        Me.ButtonMarcatoreCarica.UseVisualStyleBackColor = True
+        '
+        'ButtonDiluitore
+        '
+        Me.ButtonDiluitore.Enabled = False
+        Me.ButtonDiluitore.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonDiluitore.Location = New System.Drawing.Point(387, 60)
+        Me.ButtonDiluitore.Name = "ButtonDiluitore"
+        Me.ButtonDiluitore.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonDiluitore.TabIndex = 35
+        Me.ButtonDiluitore.Text = "Diluitore"
+        Me.ButtonDiluitore.UseVisualStyleBackColor = True
+        '
+        'ButtonRobotCarica
+        '
+        Me.ButtonRobotCarica.Enabled = False
+        Me.ButtonRobotCarica.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonRobotCarica.Location = New System.Drawing.Point(771, 174)
+        Me.ButtonRobotCarica.Name = "ButtonRobotCarica"
+        Me.ButtonRobotCarica.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonRobotCarica.TabIndex = 89
+        Me.ButtonRobotCarica.Text = "Robot"
+        Me.ButtonRobotCarica.UseVisualStyleBackColor = True
+        '
+        'ButtonVestizione
+        '
+        Me.ButtonVestizione.Enabled = False
+        Me.ButtonVestizione.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonVestizione.Location = New System.Drawing.Point(387, 174)
+        Me.ButtonVestizione.Name = "ButtonVestizione"
+        Me.ButtonVestizione.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonVestizione.TabIndex = 87
+        Me.ButtonVestizione.Text = "Vestizione"
+        Me.ButtonVestizione.UseVisualStyleBackColor = True
+        '
+        'ButtonDielettrico
+        '
+        Me.ButtonDielettrico.Enabled = False
+        Me.ButtonDielettrico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonDielettrico.Location = New System.Drawing.Point(771, 117)
+        Me.ButtonDielettrico.Name = "ButtonDielettrico"
+        Me.ButtonDielettrico.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonDielettrico.TabIndex = 84
+        Me.ButtonDielettrico.Text = "Dielettrico"
+        Me.ButtonDielettrico.UseVisualStyleBackColor = True
+        '
+        'Button2Riempimento
+        '
+        Me.Button2Riempimento.Enabled = False
+        Me.Button2Riempimento.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2Riempimento.Location = New System.Drawing.Point(579, 60)
+        Me.Button2Riempimento.Name = "Button2Riempimento"
+        Me.Button2Riempimento.Size = New System.Drawing.Size(174, 48)
+        Me.Button2Riempimento.TabIndex = 36
+        Me.Button2Riempimento.Text = "2°Riempimento"
+        Me.Button2Riempimento.UseVisualStyleBackColor = True
+        '
+        'ButtonPosaTogliRampe
+        '
+        Me.ButtonPosaTogliRampe.Enabled = False
+        Me.ButtonPosaTogliRampe.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonPosaTogliRampe.Location = New System.Drawing.Point(771, 60)
+        Me.ButtonPosaTogliRampe.Name = "ButtonPosaTogliRampe"
+        Me.ButtonPosaTogliRampe.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonPosaTogliRampe.TabIndex = 37
+        Me.ButtonPosaTogliRampe.Text = "Posa/Togli rampe"
+        Me.ButtonPosaTogliRampe.UseVisualStyleBackColor = True
+        '
+        'ButtonLineaGeneraleCarica
+        '
+        Me.TableLayoutPanel4.SetColumnSpan(Me.ButtonLineaGeneraleCarica, 3)
+        Me.ButtonLineaGeneraleCarica.Enabled = False
+        Me.ButtonLineaGeneraleCarica.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonLineaGeneraleCarica.Location = New System.Drawing.Point(195, 3)
+        Me.ButtonLineaGeneraleCarica.Name = "ButtonLineaGeneraleCarica"
+        Me.ButtonLineaGeneraleCarica.Size = New System.Drawing.Size(558, 43)
+        Me.ButtonLineaGeneraleCarica.TabIndex = 32
+        Me.ButtonLineaGeneraleCarica.Text = "Linea Generale"
+        Me.ButtonLineaGeneraleCarica.UseVisualStyleBackColor = True
+        '
+        'ButtonTunnelLavaggio
+        '
+        Me.ButtonTunnelLavaggio.Enabled = False
+        Me.ButtonTunnelLavaggio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonTunnelLavaggio.Location = New System.Drawing.Point(3, 117)
+        Me.ButtonTunnelLavaggio.Name = "ButtonTunnelLavaggio"
+        Me.ButtonTunnelLavaggio.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonTunnelLavaggio.TabIndex = 38
+        Me.ButtonTunnelLavaggio.Text = "Tunnel Lavaggio"
+        Me.ButtonTunnelLavaggio.UseVisualStyleBackColor = True
+        '
+        'ButtonControlloLivelli
+        '
+        Me.ButtonControlloLivelli.Enabled = False
+        Me.ButtonControlloLivelli.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonControlloLivelli.Location = New System.Drawing.Point(195, 117)
+        Me.ButtonControlloLivelli.Name = "ButtonControlloLivelli"
+        Me.ButtonControlloLivelli.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonControlloLivelli.TabIndex = 39
+        Me.ButtonControlloLivelli.Text = "Controllo Livelli"
+        Me.ButtonControlloLivelli.UseVisualStyleBackColor = True
+        '
+        'ButtonScaricaRapida
+        '
+        Me.ButtonScaricaRapida.Enabled = False
+        Me.ButtonScaricaRapida.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonScaricaRapida.Location = New System.Drawing.Point(579, 117)
+        Me.ButtonScaricaRapida.Name = "ButtonScaricaRapida"
+        Me.ButtonScaricaRapida.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonScaricaRapida.TabIndex = 83
+        Me.ButtonScaricaRapida.Text = "Scarica Rapida"
+        Me.ButtonScaricaRapida.UseVisualStyleBackColor = True
+        '
+        'ButtonTappatrice
+        '
+        Me.ButtonTappatrice.Enabled = False
+        Me.ButtonTappatrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonTappatrice.Location = New System.Drawing.Point(387, 117)
+        Me.ButtonTappatrice.Name = "ButtonTappatrice"
+        Me.ButtonTappatrice.Size = New System.Drawing.Size(174, 48)
+        Me.ButtonTappatrice.TabIndex = 40
+        Me.ButtonTappatrice.Text = "Tappatrice"
+        Me.ButtonTappatrice.UseVisualStyleBackColor = True
         '
         'ButtonNastriTrasporto
         '
@@ -1278,94 +1495,6 @@ Partial Class Form1
         Me.ButtonNastriTrasporto.Text = "Nastri Trasporto"
         Me.ButtonNastriTrasporto.UseVisualStyleBackColor = True
         '
-        'ButtonDielettrico
-        '
-        Me.ButtonDielettrico.Enabled = False
-        Me.ButtonDielettrico.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonDielettrico.Location = New System.Drawing.Point(726, 109)
-        Me.ButtonDielettrico.Name = "ButtonDielettrico"
-        Me.ButtonDielettrico.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonDielettrico.TabIndex = 84
-        Me.ButtonDielettrico.Text = "Dielettrico"
-        Me.ButtonDielettrico.UseVisualStyleBackColor = True
-        '
-        'ButtonRobotCarica
-        '
-        Me.ButtonRobotCarica.Enabled = False
-        Me.ButtonRobotCarica.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonRobotCarica.Location = New System.Drawing.Point(726, 163)
-        Me.ButtonRobotCarica.Name = "ButtonRobotCarica"
-        Me.ButtonRobotCarica.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonRobotCarica.TabIndex = 89
-        Me.ButtonRobotCarica.Text = "Robot"
-        Me.ButtonRobotCarica.UseVisualStyleBackColor = True
-        '
-        'ButtonControlloVestizione
-        '
-        Me.ButtonControlloVestizione.Enabled = False
-        Me.ButtonControlloVestizione.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonControlloVestizione.Location = New System.Drawing.Point(546, 163)
-        Me.ButtonControlloVestizione.Name = "ButtonControlloVestizione"
-        Me.ButtonControlloVestizione.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonControlloVestizione.TabIndex = 88
-        Me.ButtonControlloVestizione.Text = "ControlloVestizione"
-        Me.ButtonControlloVestizione.UseVisualStyleBackColor = True
-        '
-        'ButtonVestizione
-        '
-        Me.ButtonVestizione.Enabled = False
-        Me.ButtonVestizione.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonVestizione.Location = New System.Drawing.Point(362, 163)
-        Me.ButtonVestizione.Name = "ButtonVestizione"
-        Me.ButtonVestizione.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonVestizione.TabIndex = 87
-        Me.ButtonVestizione.Text = "Vestizione"
-        Me.ButtonVestizione.UseVisualStyleBackColor = True
-        '
-        'ButtonMarcatoreCarica
-        '
-        Me.ButtonMarcatoreCarica.Enabled = False
-        Me.ButtonMarcatoreCarica.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonMarcatoreCarica.Location = New System.Drawing.Point(181, 163)
-        Me.ButtonMarcatoreCarica.Name = "ButtonMarcatoreCarica"
-        Me.ButtonMarcatoreCarica.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonMarcatoreCarica.TabIndex = 86
-        Me.ButtonMarcatoreCarica.Text = "Marcatore"
-        Me.ButtonMarcatoreCarica.UseVisualStyleBackColor = True
-        '
-        'ButtonControlloLivelli
-        '
-        Me.ButtonControlloLivelli.Enabled = False
-        Me.ButtonControlloLivelli.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonControlloLivelli.Location = New System.Drawing.Point(181, 109)
-        Me.ButtonControlloLivelli.Name = "ButtonControlloLivelli"
-        Me.ButtonControlloLivelli.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonControlloLivelli.TabIndex = 39
-        Me.ButtonControlloLivelli.Text = "Controllo Livelli"
-        Me.ButtonControlloLivelli.UseVisualStyleBackColor = True
-        '
-        'ButtonScaricaRapida
-        '
-        Me.ButtonScaricaRapida.Enabled = False
-        Me.ButtonScaricaRapida.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonScaricaRapida.Location = New System.Drawing.Point(545, 109)
-        Me.ButtonScaricaRapida.Name = "ButtonScaricaRapida"
-        Me.ButtonScaricaRapida.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonScaricaRapida.TabIndex = 83
-        Me.ButtonScaricaRapida.Text = "Scarica Rapida"
-        Me.ButtonScaricaRapida.UseVisualStyleBackColor = True
-        '
-        'ButtonTappatrice
-        '
-        Me.ButtonTappatrice.Enabled = False
-        Me.ButtonTappatrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonTappatrice.Location = New System.Drawing.Point(362, 109)
-        Me.ButtonTappatrice.Name = "ButtonTappatrice"
-        Me.ButtonTappatrice.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonTappatrice.TabIndex = 40
-        Me.ButtonTappatrice.Text = "Tappatrice"
-        Me.ButtonTappatrice.UseVisualStyleBackColor = True
-        '
         'ButtonPulisciPoli
         '
         Me.ButtonPulisciPoli.Enabled = False
@@ -1377,87 +1506,10 @@ Partial Class Form1
         Me.ButtonPulisciPoli.Text = "PulisciPoli"
         Me.ButtonPulisciPoli.UseVisualStyleBackColor = True
         '
-        'ButtonTunnelLavaggio
-        '
-        Me.ButtonTunnelLavaggio.Enabled = False
-        Me.ButtonTunnelLavaggio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonTunnelLavaggio.Location = New System.Drawing.Point(0, 109)
-        Me.ButtonTunnelLavaggio.Name = "ButtonTunnelLavaggio"
-        Me.ButtonTunnelLavaggio.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonTunnelLavaggio.TabIndex = 38
-        Me.ButtonTunnelLavaggio.Text = "Tunnel Lavaggio"
-        Me.ButtonTunnelLavaggio.UseVisualStyleBackColor = True
-        '
-        'ButtonPosaTogliRampe
-        '
-        Me.ButtonPosaTogliRampe.Enabled = False
-        Me.ButtonPosaTogliRampe.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonPosaTogliRampe.Location = New System.Drawing.Point(724, 55)
-        Me.ButtonPosaTogliRampe.Name = "ButtonPosaTogliRampe"
-        Me.ButtonPosaTogliRampe.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonPosaTogliRampe.TabIndex = 37
-        Me.ButtonPosaTogliRampe.Text = "Posa/Togli rampe"
-        Me.ButtonPosaTogliRampe.UseVisualStyleBackColor = True
-        '
-        'Button2Riempimento
-        '
-        Me.Button2Riempimento.Enabled = False
-        Me.Button2Riempimento.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2Riempimento.Location = New System.Drawing.Point(545, 55)
-        Me.Button2Riempimento.Name = "Button2Riempimento"
-        Me.Button2Riempimento.Size = New System.Drawing.Size(174, 48)
-        Me.Button2Riempimento.TabIndex = 36
-        Me.Button2Riempimento.Text = "2°Riempimento"
-        Me.Button2Riempimento.UseVisualStyleBackColor = True
-        '
-        'ButtonDiluitore
-        '
-        Me.ButtonDiluitore.Enabled = False
-        Me.ButtonDiluitore.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonDiluitore.Location = New System.Drawing.Point(365, 55)
-        Me.ButtonDiluitore.Name = "ButtonDiluitore"
-        Me.ButtonDiluitore.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonDiluitore.TabIndex = 35
-        Me.ButtonDiluitore.Text = "Diluitore"
-        Me.ButtonDiluitore.UseVisualStyleBackColor = True
-        '
-        'ButtonRovesciatore
-        '
-        Me.ButtonRovesciatore.Enabled = False
-        Me.ButtonRovesciatore.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonRovesciatore.Location = New System.Drawing.Point(185, 55)
-        Me.ButtonRovesciatore.Name = "ButtonRovesciatore"
-        Me.ButtonRovesciatore.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonRovesciatore.TabIndex = 34
-        Me.ButtonRovesciatore.Text = "Rovesciatore"
-        Me.ButtonRovesciatore.UseVisualStyleBackColor = True
-        '
-        'ButtonRotatore
-        '
-        Me.ButtonRotatore.Enabled = False
-        Me.ButtonRotatore.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonRotatore.Location = New System.Drawing.Point(2, 55)
-        Me.ButtonRotatore.Name = "ButtonRotatore"
-        Me.ButtonRotatore.Size = New System.Drawing.Size(174, 48)
-        Me.ButtonRotatore.TabIndex = 33
-        Me.ButtonRotatore.Text = "Rotatore e spintore 2°riemp"
-        Me.ButtonRotatore.UseVisualStyleBackColor = True
-        '
-        'ButtonLineaGeneraleCarica
-        '
-        Me.ButtonLineaGeneraleCarica.Enabled = False
-        Me.ButtonLineaGeneraleCarica.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonLineaGeneraleCarica.Location = New System.Drawing.Point(381, 6)
-        Me.ButtonLineaGeneraleCarica.Name = "ButtonLineaGeneraleCarica"
-        Me.ButtonLineaGeneraleCarica.Size = New System.Drawing.Size(339, 43)
-        Me.ButtonLineaGeneraleCarica.TabIndex = 32
-        Me.ButtonLineaGeneraleCarica.Text = "Linea Generale"
-        Me.ButtonLineaGeneraleCarica.UseVisualStyleBackColor = True
-        '
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(447, 250)
+        Me.Label22.Location = New System.Drawing.Point(403, 250)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(96, 13)
         Me.Label22.TabIndex = 83
@@ -1467,7 +1519,7 @@ Partial Class Form1
         'LabelProduzioneSalvata
         '
         Me.LabelProduzioneSalvata.AutoSize = True
-        Me.LabelProduzioneSalvata.Location = New System.Drawing.Point(563, 250)
+        Me.LabelProduzioneSalvata.Location = New System.Drawing.Point(519, 250)
         Me.LabelProduzioneSalvata.Name = "LabelProduzioneSalvata"
         Me.LabelProduzioneSalvata.Size = New System.Drawing.Size(21, 13)
         Me.LabelProduzioneSalvata.TabIndex = 84
@@ -1478,7 +1530,7 @@ Partial Class Form1
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(444, 218)
+        Me.Label23.Location = New System.Drawing.Point(400, 218)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(96, 13)
         Me.Label23.TabIndex = 85
@@ -1533,11 +1585,29 @@ Partial Class Form1
         'LabelStatus
         '
         Me.LabelStatus.AutoSize = True
-        Me.LabelStatus.Location = New System.Drawing.Point(571, 236)
+        Me.LabelStatus.Location = New System.Drawing.Point(284, 27)
         Me.LabelStatus.Name = "LabelStatus"
         Me.LabelStatus.Size = New System.Drawing.Size(134, 13)
         Me.LabelStatus.TabIndex = 92
         Me.LabelStatus.Text = "Registrazione dati in STOP"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(583, 259)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(79, 13)
+        Me.Label17.TabIndex = 93
+        Me.Label17.Text = "Lancio in corso"
+        '
+        'LabelLancio
+        '
+        Me.LabelLancio.AutoSize = True
+        Me.LabelLancio.Location = New System.Drawing.Point(738, 259)
+        Me.LabelLancio.Name = "LabelLancio"
+        Me.LabelLancio.Size = New System.Drawing.Size(142, 13)
+        Me.LabelLancio.TabIndex = 94
+        Me.LabelLancio.Text = "Lancio - codice - descrizione"
         '
         'Form1
         '
@@ -1545,6 +1615,8 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1008, 729)
+        Me.Controls.Add(Me.LabelLancio)
+        Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.LabelStatus)
         Me.Controls.Add(Me.Label24)
         Me.Controls.Add(Me.LabelNome)
@@ -1581,8 +1653,6 @@ Partial Class Form1
         Me.Controls.Add(Me.LabelRipartenzaDopo)
         Me.Controls.Add(Me.LabelFermataDopo)
         Me.Controls.Add(Me.PictureBoxFiamm)
-        Me.Controls.Add(Me.ButtonStop)
-        Me.Controls.Add(Me.ButtonStart)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.LabelContatoreGiustificativo)
         Me.Controls.Add(Me.LabelIdFermo)
@@ -1615,9 +1685,13 @@ Partial Class Form1
         Me.MenuStrip1.PerformLayout()
         Me.Tab.ResumeLayout(False)
         Me.TabStiratura.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TabMontaggio.ResumeLayout(False)
+        Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TabFormazione.ResumeLayout(False)
+        Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TabCarica.ResumeLayout(False)
+        Me.TableLayoutPanel4.ResumeLayout(False)
         CType(Me.DataGridViewManPower, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -1655,11 +1729,8 @@ Partial Class Form1
     Friend WithEvents OvalShapeRed As Microsoft.VisualBasic.PowerPacks.OvalShape
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents LabelIdFermo As System.Windows.Forms.Label
-    Friend WithEvents LineShape1 As Microsoft.VisualBasic.PowerPacks.LineShape
     Friend WithEvents LabelContatoreGiustificativo As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents ButtonStart As System.Windows.Forms.Button
-    Friend WithEvents ButtonStop As System.Windows.Forms.Button
     Friend WithEvents TimerMain As System.Windows.Forms.Timer
     Friend WithEvents PictureBoxFiamm As System.Windows.Forms.PictureBox
     Friend WithEvents LabelFermataDopo As System.Windows.Forms.Label
@@ -1753,5 +1824,11 @@ Partial Class Form1
     Friend WithEvents ButtonInseritoreOcchioMagico As System.Windows.Forms.Button
     Friend WithEvents ButtonPinzaCarico As System.Windows.Forms.Button
     Friend WithEvents ScegliLancioProduzioneToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents TableLayoutPanel2 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents TableLayoutPanel3 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents TableLayoutPanel4 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents LabelLancio As System.Windows.Forms.Label
 
 End Class

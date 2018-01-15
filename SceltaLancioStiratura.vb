@@ -115,7 +115,7 @@ Public Class SceltaLancioStiratura
 
     Private Sub TextBoxLancioProduzione_TextChanged(sender As Object, e As EventArgs) Handles TextBoxLancioProduzione.TextChanged
 
-        If TextBoxLancioProduzione.Text.Length >= 3 Then
+        If TextBoxLancioProduzione.Text.Length >= 1 Then
 
             Dim myConn As New SqlConnection(Form1.LblPathDatabase.Text)
             Dim myCmd As SqlCommand
