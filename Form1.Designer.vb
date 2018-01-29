@@ -177,7 +177,7 @@ Partial Class Form1
         Me.ButtonSvolgitore.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonSvolgitore.Location = New System.Drawing.Point(3, 70)
         Me.ButtonSvolgitore.Name = "ButtonSvolgitore"
-        Me.ButtonSvolgitore.Size = New System.Drawing.Size(176, 61)
+        Me.ButtonSvolgitore.Size = New System.Drawing.Size(156, 61)
         Me.ButtonSvolgitore.TabIndex = 2
         Me.ButtonSvolgitore.Text = "Svolgitore"
         Me.ButtonSvolgitore.UseVisualStyleBackColor = True
@@ -186,9 +186,9 @@ Partial Class Form1
         '
         Me.ButtonEspansore.Enabled = False
         Me.ButtonEspansore.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonEspansore.Location = New System.Drawing.Point(187, 70)
+        Me.ButtonEspansore.Location = New System.Drawing.Point(165, 70)
         Me.ButtonEspansore.Name = "ButtonEspansore"
-        Me.ButtonEspansore.Size = New System.Drawing.Size(176, 61)
+        Me.ButtonEspansore.Size = New System.Drawing.Size(156, 61)
         Me.ButtonEspansore.TabIndex = 3
         Me.ButtonEspansore.Text = "Espansore"
         Me.ButtonEspansore.UseVisualStyleBackColor = True
@@ -197,9 +197,9 @@ Partial Class Form1
         '
         Me.ButtonTabBlanker.Enabled = False
         Me.ButtonTabBlanker.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonTabBlanker.Location = New System.Drawing.Point(371, 70)
+        Me.ButtonTabBlanker.Location = New System.Drawing.Point(327, 70)
         Me.ButtonTabBlanker.Name = "ButtonTabBlanker"
-        Me.ButtonTabBlanker.Size = New System.Drawing.Size(176, 61)
+        Me.ButtonTabBlanker.Size = New System.Drawing.Size(156, 61)
         Me.ButtonTabBlanker.TabIndex = 4
         Me.ButtonTabBlanker.Text = "Tab blanker"
         Me.ButtonTabBlanker.UseVisualStyleBackColor = True
@@ -208,9 +208,9 @@ Partial Class Form1
         '
         Me.ButtonMolazza.Enabled = False
         Me.ButtonMolazza.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonMolazza.Location = New System.Drawing.Point(555, 70)
+        Me.ButtonMolazza.Location = New System.Drawing.Point(489, 70)
         Me.ButtonMolazza.Name = "ButtonMolazza"
-        Me.ButtonMolazza.Size = New System.Drawing.Size(176, 61)
+        Me.ButtonMolazza.Size = New System.Drawing.Size(156, 61)
         Me.ButtonMolazza.TabIndex = 5
         Me.ButtonMolazza.Text = "Molazza"
         Me.ButtonMolazza.UseVisualStyleBackColor = True
@@ -221,7 +221,7 @@ Partial Class Form1
         Me.ButtonSpalmatrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonSpalmatrice.Location = New System.Drawing.Point(3, 137)
         Me.ButtonSpalmatrice.Name = "ButtonSpalmatrice"
-        Me.ButtonSpalmatrice.Size = New System.Drawing.Size(176, 63)
+        Me.ButtonSpalmatrice.Size = New System.Drawing.Size(156, 63)
         Me.ButtonSpalmatrice.TabIndex = 6
         Me.ButtonSpalmatrice.Text = "Spalmatrice"
         Me.ButtonSpalmatrice.UseVisualStyleBackColor = True
@@ -230,9 +230,9 @@ Partial Class Form1
         '
         Me.ButtonDivider.Enabled = False
         Me.ButtonDivider.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonDivider.Location = New System.Drawing.Point(187, 137)
+        Me.ButtonDivider.Location = New System.Drawing.Point(165, 137)
         Me.ButtonDivider.Name = "ButtonDivider"
-        Me.ButtonDivider.Size = New System.Drawing.Size(176, 63)
+        Me.ButtonDivider.Size = New System.Drawing.Size(156, 63)
         Me.ButtonDivider.TabIndex = 7
         Me.ButtonDivider.Text = "Divider"
         Me.ButtonDivider.UseVisualStyleBackColor = True
@@ -241,9 +241,9 @@ Partial Class Form1
         '
         Me.ButtonTunnel.Enabled = False
         Me.ButtonTunnel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonTunnel.Location = New System.Drawing.Point(371, 137)
+        Me.ButtonTunnel.Location = New System.Drawing.Point(327, 137)
         Me.ButtonTunnel.Name = "ButtonTunnel"
-        Me.ButtonTunnel.Size = New System.Drawing.Size(176, 63)
+        Me.ButtonTunnel.Size = New System.Drawing.Size(156, 63)
         Me.ButtonTunnel.TabIndex = 8
         Me.ButtonTunnel.Text = "Tunnel"
         Me.ButtonTunnel.UseVisualStyleBackColor = True
@@ -252,9 +252,9 @@ Partial Class Form1
         '
         Me.ButtonImpilatore.Enabled = False
         Me.ButtonImpilatore.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonImpilatore.Location = New System.Drawing.Point(555, 137)
+        Me.ButtonImpilatore.Location = New System.Drawing.Point(489, 137)
         Me.ButtonImpilatore.Name = "ButtonImpilatore"
-        Me.ButtonImpilatore.Size = New System.Drawing.Size(176, 63)
+        Me.ButtonImpilatore.Size = New System.Drawing.Size(156, 63)
         Me.ButtonImpilatore.TabIndex = 9
         Me.ButtonImpilatore.Text = "Impilatore"
         Me.ButtonImpilatore.UseVisualStyleBackColor = True
@@ -263,9 +263,9 @@ Partial Class Form1
         '
         Me.ButtonPaletizzatore.Enabled = False
         Me.ButtonPaletizzatore.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonPaletizzatore.Location = New System.Drawing.Point(1472, 71)
+        Me.ButtonPaletizzatore.Location = New System.Drawing.Point(651, 137)
         Me.ButtonPaletizzatore.Name = "ButtonPaletizzatore"
-        Me.ButtonPaletizzatore.Size = New System.Drawing.Size(176, 73)
+        Me.ButtonPaletizzatore.Size = New System.Drawing.Size(158, 63)
         Me.ButtonPaletizzatore.TabIndex = 10
         Me.ButtonPaletizzatore.Text = "Paletizzatore"
         Me.ButtonPaletizzatore.UseVisualStyleBackColor = True
@@ -296,7 +296,7 @@ Partial Class Form1
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.OvalShapeGreen, Me.OvalShapeYellow, Me.OvalShapeRed, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1008, 729)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1024, 725)
         Me.ShapeContainer1.TabIndex = 17
         Me.ShapeContainer1.TabStop = False
         '
@@ -462,9 +462,9 @@ Partial Class Form1
         Me.TableLayoutPanel1.SetColumnSpan(Me.ButtonLineaGenerale, 2)
         Me.ButtonLineaGenerale.Enabled = False
         Me.ButtonLineaGenerale.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonLineaGenerale.Location = New System.Drawing.Point(187, 3)
+        Me.ButtonLineaGenerale.Location = New System.Drawing.Point(165, 3)
         Me.ButtonLineaGenerale.Name = "ButtonLineaGenerale"
-        Me.ButtonLineaGenerale.Size = New System.Drawing.Size(362, 61)
+        Me.ButtonLineaGenerale.Size = New System.Drawing.Size(318, 61)
         Me.ButtonLineaGenerale.TabIndex = 30
         Me.ButtonLineaGenerale.Text = "Linea Generale"
         Me.ButtonLineaGenerale.UseVisualStyleBackColor = True
@@ -831,7 +831,6 @@ Partial Class Form1
         'TabStiratura
         '
         Me.TabStiratura.Controls.Add(Me.TableLayoutPanel1)
-        Me.TabStiratura.Controls.Add(Me.ButtonPaletizzatore)
         Me.TabStiratura.Location = New System.Drawing.Point(4, 22)
         Me.TabStiratura.Name = "TabStiratura"
         Me.TabStiratura.Padding = New System.Windows.Forms.Padding(3)
@@ -842,12 +841,14 @@ Partial Class Form1
         '
         'TableLayoutPanel1
         '
-        Me.TableLayoutPanel1.ColumnCount = 4
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel1.ColumnCount = 5
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.ButtonSvolgitore, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.ButtonPaletizzatore, 4, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.ButtonSpalmatrice, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.ButtonImpilatore, 3, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.ButtonDivider, 1, 2)
@@ -856,14 +857,13 @@ Partial Class Form1
         Me.TableLayoutPanel1.Controls.Add(Me.ButtonTabBlanker, 2, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.ButtonMolazza, 3, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.ButtonLineaGenerale, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(126, 25)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(105, 26)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 3
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(739, 203)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(812, 203)
         Me.TableLayoutPanel1.TabIndex = 31
         '
         'TabMontaggio
