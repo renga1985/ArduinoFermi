@@ -32,6 +32,7 @@ Partial Class Utility
         Me.LblIdDepartment = New System.Windows.Forms.Label()
         Me.LblIdLIne = New System.Windows.Forms.Label()
         Me.LabelPath = New System.Windows.Forms.Label()
+        Me.SerialPortpeso = New System.IO.Ports.SerialPort(Me.components)
         Me.SuspendLayout()
         '
         'ButtonResetCounter
@@ -45,6 +46,7 @@ Partial Class Utility
         '
         'SerialPortArduino
         '
+        Me.SerialPortArduino.DtrEnable = True
         Me.SerialPortArduino.PortName = "COM3"
         '
         'LabelProduzioneNascosto
@@ -132,4 +134,5 @@ Partial Class Utility
     Friend WithEvents LblIdDepartment As System.Windows.Forms.Label
     Friend WithEvents LblIdLIne As System.Windows.Forms.Label
     Friend WithEvents LabelPath As System.Windows.Forms.Label
+    Friend WithEvents SerialPortpeso As System.IO.Ports.SerialPort
 End Class

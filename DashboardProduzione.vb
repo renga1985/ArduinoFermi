@@ -1757,4 +1757,8 @@ Public Class DashboardProduzione
         Dim Frm As New AnalisiFermi(IdRepartoAnalisiFermi, RepartoAnalisiFermi, IdLineaAnalisiFermi, LineaAnalisiFermi)
         Frm.ShowDialog()
     End Sub
+
+    Private Sub ButtonVisualizzautility_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Utility.Show()
+    End Sub
 End Class

@@ -550,6 +550,7 @@ Partial Class DashboardProduzione
         Me.TimerCurrentTime = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBoxFiamm = New System.Windows.Forms.PictureBox()
         Me.LabelPathDatabase = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.ChartProduzioneOrariaStiratura1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartProduzioneOrariaStiratura2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartProduzioneOrariaStiratura3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -5289,6 +5290,7 @@ Partial Class DashboardProduzione
         '
         Me.TabPlanning.Controls.Add(Me.Label27)
         Me.TabPlanning.Controls.Add(Me.LabelStiratura)
+        Me.TabPlanning.Controls.Add(Me.Button1)
         Me.TabPlanning.Controls.Add(Me.ButtonVisualizzaLanciMontaggio)
         Me.TabPlanning.Controls.Add(Me.ButtonVisualizzaLanci)
         Me.TabPlanning.Controls.Add(Me.DataGridViewLanciMontaggio)
@@ -5397,6 +5399,15 @@ Partial Class DashboardProduzione
         Me.LabelPathDatabase.Size = New System.Drawing.Size(0, 13)
         Me.LabelPathDatabase.TabIndex = 141
         Me.LabelPathDatabase.Visible = False
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(393, 522)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(93, 23)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "pROVA"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'DashboardProduzione
         '
@@ -5931,4 +5942,5 @@ Partial Class DashboardProduzione
     Friend WithEvents Label27 As System.Windows.Forms.Label
     Friend WithEvents ButtonVisualizzaLanciMontaggio As System.Windows.Forms.Button
     Friend WithEvents ButtonImportaLanciMontaggio As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
