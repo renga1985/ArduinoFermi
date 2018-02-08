@@ -136,6 +136,12 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LineViewer.Designer.vb">
+      <DependentUpon>LineViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LineViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VisualizzaFermateManuale.Designer.vb">
       <DependentUpon>VisualizzaFermateManuale.vb</DependentUpon>
     </Compile>
@@ -254,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Launcher.resx">
       <DependentUpon>Launcher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LineViewer.resx">
+      <DependentUpon>LineViewer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

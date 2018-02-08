@@ -24,6 +24,10 @@ Public Class Launcher
                     DashboardProduzione.Show()
                     Me.Close()
                 End If
+                If rowstring.Substring(7, rowstring.Length - 7) = "LineViewer" Then
+                    LineViewer.Show()
+                    Me.Close()
+                End If
                 Exit Do
             End If
         Loop
