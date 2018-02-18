@@ -394,6 +394,15 @@ Public Class DashboardProduzione
             ChartProduzioneOrariaStiratura6.DataBind()
         End If
         '-----------------------
+        LabelProductionShiftStiratura1TurnoPrec.Text = ShiftProduction(75, 1)
+        LabelProductionShiftStiratura2TurnoPrec.Text = ShiftProduction(75, 2)
+        LabelProductionShiftStiratura3TurnoPrec.Text = ShiftProduction(75, 3)
+        LabelProductionShiftStiratura4TurnoPrec.Text = ShiftProduction(75, 4)
+        LabelProductionShiftStiratura5TurnoPrec.Text = ShiftProduction(75, 5)
+        LabelProductionShiftStiratura6TurnoPrec.Text = ShiftProduction(75, 6)
+        TotProduzioneStiraturaTurnoPrecedente.Text = (CInt(LabelProductionShiftStiratura1TurnoPrec.Text) + CInt(LabelProductionShiftStiratura2TurnoPrec.Text) + CInt(LabelProductionShiftStiratura3TurnoPrec.Text) + CInt(LabelProductionShiftStiratura4TurnoPrec.Text) + CInt(LabelProductionShiftStiratura5TurnoPrec.Text) + CInt(LabelProductionShiftStiratura6TurnoPrec.Text)).ToString
+
+        '-----------------------
         'MONTAGGIO LINEA 1
         'Update the traffic light
         status = UpdateTrafficLight(80, 1)
@@ -1595,6 +1604,57 @@ Public Class DashboardProduzione
         Return ProductionofShift
     End Function
 
+    Function PrecedentShiftProduction(Reparto As String, Linea As String)
+        Dim ProductionofShift As String = 0
+        Dim OraAttuale As DateTime
+        OraAttuale = DateTime.Now()
+
+        Dim myConn As New SqlConnection(LabelPathDatabase.Text)
+        Dim myCmd As SqlCommand
+        myCmd = myConn.CreateCommand()
+        Dim dataDa As String
+        Dim dataA As String
+
+        If OraAttuale.Hour.ToString >= 6 And OraAttuale.Hour.ToString < 14 Then
+            'Shift 1
+            dataDa = DateTime.Now.AddDays(-1).Year.ToString & "-" & DateTime.Now.AddDays(-1).Day.ToString & "-" & DateTime.Now.AddDays(-1).Month.ToString & " 22:00:00"
+            dataA = DateTime.Now.Year.ToString & "-" & DateTime.Now.Day.ToString & "-" & DateTime.Now.Month.ToString & " 05:59:59"
+
+        End If
+
+        If OraAttuale.Hour.ToString >= 14 And OraAttuale.Hour.ToString < 22 Then
+            'Shift 2
+            dataDa = DateTime.Now.Year.ToString & "-" & DateTime.Now.Day.ToString & "-" & DateTime.Now.Month.ToString & " 06:00:00"
+            dataA = DateTime.Now.Year.ToString & "-" & DateTime.Now.Day.ToString & "-" & DateTime.Now.Month.ToString & " 13:59:59"
+
+        End If
+
+        If OraAttuale.Hour.ToString >= 22 And OraAttuale.Hour.ToString < 24 Then
+            'Shift 3
+            dataDa = DateTime.Now.Year.ToString & "-" & DateTime.Now.Day.ToString & "-" & DateTime.Now.Month.ToString & " 14:00:00"
+            dataA = DateTime.Now.Year.ToString & "-" & DateTime.Now.Day.ToString & "-" & DateTime.Now.Month.ToString & " 21:59:59"
+
+        End If
+
+        If OraAttuale.Hour.ToString >= 0 And OraAttuale.Hour.ToString < 6 Then
+            'Shift 3
+            dataDa = DateTime.Now.AddDays(-1).Year.ToString & "-" & DateTime.Now.AddDays(-1).Day.ToString & "-" & DateTime.Now.AddDays(-1).Month.ToString & " 14:00:00"
+            dataA = DateTime.Now.AddDays(-1).Year.ToString & "-" & DateTime.Now.AddDays(-1).Day.ToString & "-" & DateTime.Now.AddDays(-1).Month.ToString & " 21:59:59"
+
+        End If
+
+        myCmd.CommandText = "SELECT SUM(ProduzioneStep) FROM DatiProduzione WHERE ((Id_reparto=" & Reparto & ")AND(Id_linea=" & Linea & ")AND(Data>='" & dataDa.ToString & "')AND(Data<='" & dataA.ToString() & "'))"
+
+        'Section to update the production shift
+        myCmd.Connection.Open()
+        If (IsDBNull(myCmd.ExecuteScalar())) Then
+        Else
+            ProductionofShift = myCmd.ExecuteScalar()
+        End If
+        myCmd.Connection.Close()
+        Return ProductionofShift
+    End Function
+
     Function UpdateChart(Reparto As String, Linea As String)
         Dim myConn As New SqlConnection(LabelPathDatabase.Text)
         Dim myCmd As SqlCommand
@@ -1761,4 +1821,5 @@ Public Class DashboardProduzione
     Private Sub ButtonVisualizzautility_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Utility.Show()
     End Sub
+
 End Class

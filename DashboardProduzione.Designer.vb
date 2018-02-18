@@ -541,6 +541,7 @@ Partial Class DashboardProduzione
         Me.TabPlanning = New System.Windows.Forms.TabPage()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.LabelStiratura = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.ButtonVisualizzaLanciMontaggio = New System.Windows.Forms.Button()
         Me.ButtonVisualizzaLanci = New System.Windows.Forms.Button()
         Me.DataGridViewLanciMontaggio = New System.Windows.Forms.DataGridView()
@@ -550,7 +551,15 @@ Partial Class DashboardProduzione
         Me.TimerCurrentTime = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBoxFiamm = New System.Windows.Forms.PictureBox()
         Me.LabelPathDatabase = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.LabelProductionShiftStiratura1TurnoPrec = New System.Windows.Forms.Label()
+        Me.LabelProductionShiftStiratura2TurnoPrec = New System.Windows.Forms.Label()
+        Me.LineShape120 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.LabelProductionShiftStiratura3TurnoPrec = New System.Windows.Forms.Label()
+        Me.LabelProductionShiftStiratura4TurnoPrec = New System.Windows.Forms.Label()
+        Me.LabelProductionShiftStiratura5TurnoPrec = New System.Windows.Forms.Label()
+        Me.LabelProductionShiftStiratura6TurnoPrec = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.TotProduzioneStiraturaTurnoPrecedente = New System.Windows.Forms.Label()
         CType(Me.ChartProduzioneOrariaStiratura1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartProduzioneOrariaStiratura2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartProduzioneOrariaStiratura3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -703,7 +712,7 @@ Partial Class DashboardProduzione
         Me.LineShape10.BorderWidth = 2
         Me.LineShape10.Name = "LineShape10"
         Me.LineShape10.X1 = -235
-        Me.LineShape10.X2 = 1094
+        Me.LineShape10.X2 = 1253
         Me.LineShape10.Y1 = 249
         Me.LineShape10.Y2 = 249
         '
@@ -712,7 +721,7 @@ Partial Class DashboardProduzione
         Me.LineShape9.BorderWidth = 2
         Me.LineShape9.Name = "LineShape9"
         Me.LineShape9.X1 = -272
-        Me.LineShape9.X2 = 1057
+        Me.LineShape9.X2 = 1255
         Me.LineShape9.Y1 = 161
         Me.LineShape9.Y2 = 161
         '
@@ -1246,11 +1255,19 @@ Partial Class DashboardProduzione
         Me.TabDashboard.Location = New System.Drawing.Point(1, 23)
         Me.TabDashboard.Name = "TabDashboard"
         Me.TabDashboard.SelectedIndex = 0
-        Me.TabDashboard.Size = New System.Drawing.Size(1005, 800)
+        Me.TabDashboard.Size = New System.Drawing.Size(1297, 800)
         Me.TabDashboard.TabIndex = 109
         '
         'TabStiratura
         '
+        Me.TabStiratura.Controls.Add(Me.TotProduzioneStiraturaTurnoPrecedente)
+        Me.TabStiratura.Controls.Add(Me.Label11)
+        Me.TabStiratura.Controls.Add(Me.LabelProductionShiftStiratura6TurnoPrec)
+        Me.TabStiratura.Controls.Add(Me.LabelProductionShiftStiratura5TurnoPrec)
+        Me.TabStiratura.Controls.Add(Me.LabelProductionShiftStiratura4TurnoPrec)
+        Me.TabStiratura.Controls.Add(Me.LabelProductionShiftStiratura3TurnoPrec)
+        Me.TabStiratura.Controls.Add(Me.LabelProductionShiftStiratura2TurnoPrec)
+        Me.TabStiratura.Controls.Add(Me.LabelProductionShiftStiratura1TurnoPrec)
         Me.TabStiratura.Controls.Add(Me.LabelLancioStirLinea6)
         Me.TabStiratura.Controls.Add(Me.LabelLancioStirLinea5)
         Me.TabStiratura.Controls.Add(Me.LabelLancioStirLinea3)
@@ -1323,7 +1340,7 @@ Partial Class DashboardProduzione
         Me.TabStiratura.Location = New System.Drawing.Point(4, 22)
         Me.TabStiratura.Name = "TabStiratura"
         Me.TabStiratura.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabStiratura.Size = New System.Drawing.Size(997, 774)
+        Me.TabStiratura.Size = New System.Drawing.Size(1289, 774)
         Me.TabStiratura.TabIndex = 0
         Me.TabStiratura.Text = "Stiratura"
         Me.TabStiratura.UseVisualStyleBackColor = True
@@ -1541,8 +1558,8 @@ Partial Class DashboardProduzione
         Me.ShapeContainer2.Location = New System.Drawing.Point(3, 3)
         Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer2.Name = "ShapeContainer2"
-        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.OvalShapeYellowStirLin6, Me.OvalShapeGreenStirLin6, Me.OvalShapeRedStirLin6, Me.OvalShapeGreenStirLin5, Me.OvalShapeYellowStirLin5, Me.OvalShapeRedStirLin5, Me.OvalShapeGreenStirLin4, Me.OvalShapeYellowStirLin4, Me.OvalShapeRedStirLin4, Me.LineShape30, Me.LineShape29, Me.LineShape28, Me.LineShape27, Me.LineShape22, Me.LineShape15, Me.LineShape12, Me.LineShape19, Me.LineShape13, Me.LineShape11, Me.OvalShape10, Me.LineShape18, Me.LineShape20, Me.LineShape16, Me.OvalShape14, Me.OvalShape7, Me.LineShape23, Me.LineShape24, Me.OvalShape11, Me.OvalShape9, Me.LineShape25, Me.OvalShape8, Me.LineShape14, Me.OvalShape13, Me.OvalShape15, Me.LineShape26, Me.LineShape21, Me.LineShape17, Me.OvalShape12, Me.OvalShapeGreenStirLin3, Me.OvalShapeYellowStirLin3, Me.OvalShapeRedStirLin3, Me.LineShape10, Me.LineShape8, Me.LineShape7, Me.LineShape6, Me.LineShape5, Me.OvalShapeRedStirLin2, Me.OvalShapeYellowStirLin2, Me.OvalShapeGreenStirLin2, Me.LineShape9, Me.LineShape4, Me.LineShape3, Me.LineShape2, Me.LineShape1, Me.OvalShapeGreenStirLin1, Me.OvalShapeYellowStirLin1, Me.OvalShapeRedStirLin1})
-        Me.ShapeContainer2.Size = New System.Drawing.Size(991, 768)
+        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape120, Me.OvalShapeYellowStirLin6, Me.OvalShapeGreenStirLin6, Me.OvalShapeRedStirLin6, Me.OvalShapeGreenStirLin5, Me.OvalShapeYellowStirLin5, Me.OvalShapeRedStirLin5, Me.OvalShapeGreenStirLin4, Me.OvalShapeYellowStirLin4, Me.OvalShapeRedStirLin4, Me.LineShape30, Me.LineShape29, Me.LineShape28, Me.LineShape27, Me.LineShape22, Me.LineShape15, Me.LineShape12, Me.LineShape19, Me.LineShape13, Me.LineShape11, Me.OvalShape10, Me.LineShape18, Me.LineShape20, Me.LineShape16, Me.OvalShape14, Me.OvalShape7, Me.LineShape23, Me.LineShape24, Me.OvalShape11, Me.OvalShape9, Me.LineShape25, Me.OvalShape8, Me.LineShape14, Me.OvalShape13, Me.OvalShape15, Me.LineShape26, Me.LineShape21, Me.LineShape17, Me.OvalShape12, Me.OvalShapeGreenStirLin3, Me.OvalShapeYellowStirLin3, Me.OvalShapeRedStirLin3, Me.LineShape10, Me.LineShape8, Me.LineShape7, Me.LineShape6, Me.LineShape5, Me.OvalShapeRedStirLin2, Me.OvalShapeYellowStirLin2, Me.OvalShapeGreenStirLin2, Me.LineShape9, Me.LineShape4, Me.LineShape3, Me.LineShape2, Me.LineShape1, Me.OvalShapeGreenStirLin1, Me.OvalShapeYellowStirLin1, Me.OvalShapeRedStirLin1})
+        Me.ShapeContainer2.Size = New System.Drawing.Size(1283, 768)
         Me.ShapeContainer2.TabIndex = 10
         Me.ShapeContainer2.TabStop = False
         '
@@ -1704,7 +1721,7 @@ Partial Class DashboardProduzione
         Me.LineShape11.BorderWidth = 2
         Me.LineShape11.Name = "LineShape11"
         Me.LineShape11.X1 = -118
-        Me.LineShape11.X2 = 1211
+        Me.LineShape11.X2 = 1250
         Me.LineShape11.Y1 = 337
         Me.LineShape11.Y2 = 337
         '
@@ -1738,9 +1755,9 @@ Partial Class DashboardProduzione
         Me.LineShape16.BorderWidth = 2
         Me.LineShape16.Name = "LineShape16"
         Me.LineShape16.X1 = -241
-        Me.LineShape16.X2 = 1088
+        Me.LineShape16.X2 = 1248
         Me.LineShape16.Y1 = 425
-        Me.LineShape16.Y2 = 425
+        Me.LineShape16.Y2 = 426
         '
         'OvalShape14
         '
@@ -1842,7 +1859,7 @@ Partial Class DashboardProduzione
         Me.LineShape26.BorderWidth = 2
         Me.LineShape26.Name = "LineShape26"
         Me.LineShape26.X1 = -211
-        Me.LineShape26.X2 = 1118
+        Me.LineShape26.X2 = 1242
         Me.LineShape26.Y1 = 603
         Me.LineShape26.Y2 = 603
         '
@@ -1859,7 +1876,7 @@ Partial Class DashboardProduzione
         Me.LineShape17.BorderWidth = 2
         Me.LineShape17.Name = "LineShape17"
         Me.LineShape17.X1 = -248
-        Me.LineShape17.X2 = 1081
+        Me.LineShape17.X2 = 1246
         Me.LineShape17.Y1 = 512
         Me.LineShape17.Y2 = 512
         '
@@ -5323,6 +5340,15 @@ Partial Class DashboardProduzione
         Me.LabelStiratura.TabIndex = 3
         Me.LabelStiratura.Text = "Stiratura"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(393, 522)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(93, 23)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "pROVA"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'ButtonVisualizzaLanciMontaggio
         '
         Me.ButtonVisualizzaLanciMontaggio.Location = New System.Drawing.Point(204, 522)
@@ -5385,9 +5411,10 @@ Partial Class DashboardProduzione
         '
         Me.PictureBoxFiamm.Image = CType(resources.GetObject("PictureBoxFiamm.Image"), System.Drawing.Image)
         Me.PictureBoxFiamm.InitialImage = Nothing
-        Me.PictureBoxFiamm.Location = New System.Drawing.Point(1011, 44)
+        Me.PictureBoxFiamm.Location = New System.Drawing.Point(1, -2)
         Me.PictureBoxFiamm.Name = "PictureBoxFiamm"
-        Me.PictureBoxFiamm.Size = New System.Drawing.Size(287, 175)
+        Me.PictureBoxFiamm.Size = New System.Drawing.Size(54, 22)
+        Me.PictureBoxFiamm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBoxFiamm.TabIndex = 140
         Me.PictureBoxFiamm.TabStop = False
         '
@@ -5400,14 +5427,94 @@ Partial Class DashboardProduzione
         Me.LabelPathDatabase.TabIndex = 141
         Me.LabelPathDatabase.Visible = False
         '
-        'Button1
+        'LabelProductionShiftStiratura1TurnoPrec
         '
-        Me.Button1.Location = New System.Drawing.Point(393, 522)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(93, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "pROVA"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.LabelProductionShiftStiratura1TurnoPrec.AutoSize = True
+        Me.LabelProductionShiftStiratura1TurnoPrec.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelProductionShiftStiratura1TurnoPrec.Location = New System.Drawing.Point(1134, 111)
+        Me.LabelProductionShiftStiratura1TurnoPrec.Name = "LabelProductionShiftStiratura1TurnoPrec"
+        Me.LabelProductionShiftStiratura1TurnoPrec.Size = New System.Drawing.Size(21, 24)
+        Me.LabelProductionShiftStiratura1TurnoPrec.TabIndex = 140
+        Me.LabelProductionShiftStiratura1TurnoPrec.Text = "0"
+        '
+        'LabelProductionShiftStiratura2TurnoPrec
+        '
+        Me.LabelProductionShiftStiratura2TurnoPrec.AutoSize = True
+        Me.LabelProductionShiftStiratura2TurnoPrec.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelProductionShiftStiratura2TurnoPrec.Location = New System.Drawing.Point(1134, 190)
+        Me.LabelProductionShiftStiratura2TurnoPrec.Name = "LabelProductionShiftStiratura2TurnoPrec"
+        Me.LabelProductionShiftStiratura2TurnoPrec.Size = New System.Drawing.Size(21, 24)
+        Me.LabelProductionShiftStiratura2TurnoPrec.TabIndex = 141
+        Me.LabelProductionShiftStiratura2TurnoPrec.Text = "0"
+        '
+        'LineShape120
+        '
+        Me.LineShape120.BorderWidth = 2
+        Me.LineShape120.Name = "LineShape120"
+        Me.LineShape120.X1 = 1039
+        Me.LineShape120.X2 = 1039
+        Me.LineShape120.Y1 = 602
+        Me.LineShape120.Y2 = 63
+        '
+        'LabelProductionShiftStiratura3TurnoPrec
+        '
+        Me.LabelProductionShiftStiratura3TurnoPrec.AutoSize = True
+        Me.LabelProductionShiftStiratura3TurnoPrec.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelProductionShiftStiratura3TurnoPrec.Location = New System.Drawing.Point(1134, 294)
+        Me.LabelProductionShiftStiratura3TurnoPrec.Name = "LabelProductionShiftStiratura3TurnoPrec"
+        Me.LabelProductionShiftStiratura3TurnoPrec.Size = New System.Drawing.Size(21, 24)
+        Me.LabelProductionShiftStiratura3TurnoPrec.TabIndex = 142
+        Me.LabelProductionShiftStiratura3TurnoPrec.Text = "0"
+        '
+        'LabelProductionShiftStiratura4TurnoPrec
+        '
+        Me.LabelProductionShiftStiratura4TurnoPrec.AutoSize = True
+        Me.LabelProductionShiftStiratura4TurnoPrec.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelProductionShiftStiratura4TurnoPrec.Location = New System.Drawing.Point(1134, 373)
+        Me.LabelProductionShiftStiratura4TurnoPrec.Name = "LabelProductionShiftStiratura4TurnoPrec"
+        Me.LabelProductionShiftStiratura4TurnoPrec.Size = New System.Drawing.Size(21, 24)
+        Me.LabelProductionShiftStiratura4TurnoPrec.TabIndex = 143
+        Me.LabelProductionShiftStiratura4TurnoPrec.Text = "0"
+        '
+        'LabelProductionShiftStiratura5TurnoPrec
+        '
+        Me.LabelProductionShiftStiratura5TurnoPrec.AutoSize = True
+        Me.LabelProductionShiftStiratura5TurnoPrec.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelProductionShiftStiratura5TurnoPrec.Location = New System.Drawing.Point(1134, 457)
+        Me.LabelProductionShiftStiratura5TurnoPrec.Name = "LabelProductionShiftStiratura5TurnoPrec"
+        Me.LabelProductionShiftStiratura5TurnoPrec.Size = New System.Drawing.Size(21, 24)
+        Me.LabelProductionShiftStiratura5TurnoPrec.TabIndex = 144
+        Me.LabelProductionShiftStiratura5TurnoPrec.Text = "0"
+        '
+        'LabelProductionShiftStiratura6TurnoPrec
+        '
+        Me.LabelProductionShiftStiratura6TurnoPrec.AutoSize = True
+        Me.LabelProductionShiftStiratura6TurnoPrec.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelProductionShiftStiratura6TurnoPrec.Location = New System.Drawing.Point(1134, 546)
+        Me.LabelProductionShiftStiratura6TurnoPrec.Name = "LabelProductionShiftStiratura6TurnoPrec"
+        Me.LabelProductionShiftStiratura6TurnoPrec.Size = New System.Drawing.Size(21, 24)
+        Me.LabelProductionShiftStiratura6TurnoPrec.TabIndex = 145
+        Me.LabelProductionShiftStiratura6TurnoPrec.Text = "0"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(1067, 66)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(179, 24)
+        Me.Label11.TabIndex = 146
+        Me.Label11.Text = "Turno precedente"
+        '
+        'TotProduzioneStiraturaTurnoPrecedente
+        '
+        Me.TotProduzioneStiraturaTurnoPrecedente.AutoSize = True
+        Me.TotProduzioneStiraturaTurnoPrecedente.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TotProduzioneStiraturaTurnoPrecedente.Location = New System.Drawing.Point(1134, 11)
+        Me.TotProduzioneStiraturaTurnoPrecedente.Name = "TotProduzioneStiraturaTurnoPrecedente"
+        Me.TotProduzioneStiraturaTurnoPrecedente.Size = New System.Drawing.Size(40, 42)
+        Me.TotProduzioneStiraturaTurnoPrecedente.TabIndex = 147
+        Me.TotProduzioneStiraturaTurnoPrecedente.Text = "0"
         '
         'DashboardProduzione
         '
@@ -5415,9 +5522,9 @@ Partial Class DashboardProduzione
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1310, 729)
         Me.Controls.Add(Me.LabelPathDatabase)
-        Me.Controls.Add(Me.PictureBoxFiamm)
         Me.Controls.Add(Me.LabelCurrentTime)
         Me.Controls.Add(Me.TabDashboard)
+        Me.Controls.Add(Me.PictureBoxFiamm)
         Me.Name = "DashboardProduzione"
         Me.Text = "DashboardProduzione"
         CType(Me.ChartProduzioneOrariaStiratura1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5943,4 +6050,13 @@ Partial Class DashboardProduzione
     Friend WithEvents ButtonVisualizzaLanciMontaggio As System.Windows.Forms.Button
     Friend WithEvents ButtonImportaLanciMontaggio As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents TotProduzioneStiraturaTurnoPrecedente As System.Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents LabelProductionShiftStiratura6TurnoPrec As System.Windows.Forms.Label
+    Friend WithEvents LabelProductionShiftStiratura5TurnoPrec As System.Windows.Forms.Label
+    Friend WithEvents LabelProductionShiftStiratura4TurnoPrec As System.Windows.Forms.Label
+    Friend WithEvents LabelProductionShiftStiratura3TurnoPrec As System.Windows.Forms.Label
+    Friend WithEvents LabelProductionShiftStiratura2TurnoPrec As System.Windows.Forms.Label
+    Friend WithEvents LabelProductionShiftStiratura1TurnoPrec As System.Windows.Forms.Label
+    Friend WithEvents LineShape120 As Microsoft.VisualBasic.PowerPacks.LineShape
 End Class
